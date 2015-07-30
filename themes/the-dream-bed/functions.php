@@ -12,6 +12,8 @@ show_admin_bar(false);
 remove_action('wp_head', 'wp_generator');
 remove_action('wp_head', 'wlwmanifest_link');
 remove_action('wp_head', 'rsd_link');
+remove_action('wp_head', 'print_emoji_detection_script', 7);
+remove_action('wp_print_styles', 'print_emoji_styles');
 
 
 /* add woocommerce support */
@@ -21,12 +23,11 @@ function woocommerce_support() {
 }
 
 /* hide product data tabs on woocommerce product page */
-add_filter( 'woocommerce_product_tabs', 'woo_remove_product_tabs', 98 );
-
-function woo_remove_product_tabs( $tabs ) {
-    unset( $tabs['description'] );      	// Remove the description tab
-    unset( $tabs['reviews'] ); 			// Remove the reviews tab
-    unset( $tabs['additional_information'] );  	// Remove the additional information tab
+add_filter('woocommerce_product_tabs', 'woo_remove_product_tabs', 98);
+function woo_remove_product_tabs($tabs) {
+    unset($tabs['description']); // remove the description tab
+    unset($tabs['reviews']); // remove the reviews tab
+    unset($tabs['additional_information']); // remove the additional information tab
     return $tabs;
 }
 
@@ -34,29 +35,38 @@ function woo_remove_product_tabs( $tabs ) {
 remove_action('woocommerce_after_single_product_summary', 'woocommerce_output_related_products', 20);
 
 /* change default text of the option dropdown */
-add_filter('gettext', 'choose_option');
-add_filter('ngettext', 'choose_option');
-
 function choose_option($translated) {
 	$translated = str_ireplace('Choose an option',  'Select an option',  $translated);
 	return $translated;
 }
+add_filter('gettext', 'choose_option');
+add_filter('ngettext', 'choose_option');
 
 /* custom header and footer menus */
 function custom_dreambed_menus() {
 	register_nav_menus(
 		array(
-			'header-menu' => __( 'Header Menu' ),
-			'footer-menu' => __( 'Footer Menu' )
+			'header-menu' => __('Header Menu'),
+			'footer-menu' => __('Footer Menu')
 			)
 	);
 }
-add_action( 'init', 'custom_dreambed_menus' );
+add_action('init', 'custom_dreambed_menus');
 
+/* remove visual editor */
+add_filter('user_can_richedit', create_function ('$a' , 'return false;') , 50);
 
+/* remove pods shortcode button from editor */
+function remove_pods_shortcode_button () {
+	remove_action('media_buttons', array( PodsInit::$admin, 'media_button' ), 12);
+}
+add_action('admin_init', 'remove_pods_shortcode_button', 14);
 
-
-
+/* remove "add media" button from editor */
+function z_remove_media_controls() {
+	remove_action('media_buttons', 'media_buttons');
+}
+add_action('admin_head','z_remove_media_controls');
 
 
 if ( ! function_exists( 'the_dream_bed_setup' ) ) :
