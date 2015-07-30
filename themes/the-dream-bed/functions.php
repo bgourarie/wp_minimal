@@ -74,7 +74,25 @@ function remove_ul($menu) {
 }
 add_filter('wp_nav_menu', 'remove_ul');
 
-
+/* change "Have a coupon?" to "Have a promo code?" */
+function woocommerce_rename_coupon_message_on_checkout() {
+	return 'Have a Promo Code?' . ' <a href="#" class="showcoupon">' . __( 'Click here to enter your code', 'woocommerce' ) . '</a>';
+}
+add_filter( 'woocommerce_checkout_coupon_message', 'woocommerce_rename_coupon_message_on_checkout' );
+/* rename coupon to promo code in checkout page */
+function woocommerce_rename_coupon_field_on_checkout( $translated_text, $text, $text_domain ) {
+/* don't do this in the admin panel */
+	if ( is_admin() || 'woocommerce' !== $text_domain ) {
+		return $translated_text;
+	}
+	if ('Coupon code' === $text) {
+		$translated_text = 'Promo Code';
+	} elseif ( 'Apply Coupon' === $text ) {
+		$translated_text = 'Apply Promo Code';
+	}
+	return $translated_text;
+}
+add_filter('gettext', 'woocommerce_rename_coupon_field_on_checkout', 10, 3);
 
 
 
