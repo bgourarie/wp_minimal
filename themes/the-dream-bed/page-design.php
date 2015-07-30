@@ -1,16 +1,31 @@
 <?php get_header(); ?>
 
+<img src="<?php echo get_field('hero_image'); ?>">
+<h1><?php echo get_field('header_text'); ?></h1>
+<p><?php echo get_field('header_subtext'); ?></p>
 
+<hr>
 
-<?php
-if (have_posts()) {
-	while (have_posts()) {
-		the_post();
-		the_title( '<h1>', '</h1>' );
-		the_content();
-	}
-}
-?>
+<?php if (have_rows('selling_points')) { ?>
+	<ol class="selling points list">
+	<?php while (have_rows('selling_points')) {
+		the_row();
+		$title = get_sub_field('header');
+		$desc = get_sub_field('description');
+		$icon = get_sub_field('icon');
+	?>
+		<li class="point">
+			<ul>
+				<li><?php echo $title; ?></li>
+				<li><?php echo $desc; ?></li>
+				<li><img src="<?php echo $icon; ?>"></li>
+			</ul>
+		</li>
+	<?php } ?>
+	</ol>
+<?php } ?>
+
+<hr>
 
 <?php if (have_rows('design_tab')) { ?>
 	<ul class="design list">
@@ -31,6 +46,7 @@ if (have_posts()) {
 	</ul>
 <?php } ?>
 
+<hr>
 
 
 
