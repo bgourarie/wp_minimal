@@ -29,7 +29,7 @@
 
 		<nav id="site-navigation" class="main-navigation" role="navigation">
 			<ul class="header nav">
-				<?php wp_nav_menu( array( 'theme_location' => 'header-menu', 'container' => '' ) ); ?>
+				<?php wp_nav_menu( array( 'theme_location' => 'header-menu' ) ); ?>
 
 				<?php
 				/* show cart link + quantity */

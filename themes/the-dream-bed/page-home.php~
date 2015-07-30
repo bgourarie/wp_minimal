@@ -12,16 +12,18 @@
 
 <?php if (have_rows('reasons_to_dream')) { ?>
 	<ol class="reasons list">
-	<?php while (have_rows('reasons_to_dream')) {
+	<?php $count = 0; while (have_rows('reasons_to_dream')) {
 		the_row();
 		$title = get_sub_field('reason_title');
 		$desc = get_sub_field('reason_description');
 		$btn_title = get_sub_field('reason_button_title');
 		$link = get_sub_field('reason_link');
 		$img = get_sub_field('reason_image');
+		$count++;
 	?>
 		<li class="reason">
 			<ul>
+				<li><?php echo $count; ?></li>
 				<li><?php echo $title; ?></li>
 				<li><?php echo $desc; ?></li>
 				<li><a href="<?php echo $link; ?>"><?php echo $btn_title; ?></a></li>

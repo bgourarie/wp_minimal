@@ -1,93 +1,81 @@
-<?php
-/**
- * The Template for displaying product archives, including the main shop page which is a post type archive.
- *
- * Override this template by copying it to yourtheme/woocommerce/archive-product.php
- *
- * @author 		WooThemes
- * @package 	WooCommerce/Templates
- * @version     2.0.0
- */
+<?php get_header(); ?>
 
-if ( ! defined( 'ABSPATH' ) ) {
-	exit; // Exit if accessed directly
+<hr>
+
+<h1>Everyone Deserves a Choice</h1>
+<p>Dream Bed? Cool Gel Bed? See which one is right for you.
+
+<hr>
+
+<?php
+
+$args = array(
+	'post_type' => 'product',
+//	'category_name' => 'mattress',
+	'orderby' => 'name',
+	'order' => 'DESC'
+);
+
+$product_query = new WP_Query($args);
+if ($product_query->have_posts()) {
+	echo '<ul class="products">';
+	while ($product_query->have_posts() ) {
+		$product_query->the_post();
+		$title = get_the_title();
+		$link = get_the_permalink();
+		$content = get_the_content();
+		$img_id = get_post_thumbnail_id();
+		$img_url_array = wp_get_attachment_image_src($img_id, 'full', true);
+		$img_url = $img_url_array[0];
+
+		echo '<li class="product"><ul>
+				<li>' . $title . '</li>
+				<li>' . $content .'</li>
+				<li><img src="' . $img_url .'"></li>
+				<li class="features">';
+
+
+/* get feature_ yes/no fields */
+/* all feature names should start with feature_ */
+$fields = get_fields();
+if( $fields ) {
+	foreach( $fields as $field_name => $value )	{
+		$field = get_field_object($field_name, false, array('load_value' => false));
+		if(substr($field_name, 0, 8) === "feature_") { 
+			echo '<div>';
+				echo $field_name;
+				echo " - ";
+				if ($value == 1) { echo "true"; } else { echo "false"; }
+			echo '</div>';
+		}
+	}
 }
 
-get_header( 'shop' ); ?>
 
-	<?php
-		/**
-		 * woocommerce_before_main_content hook
-		 *
-		 * @hooked woocommerce_output_content_wrapper - 10 (outputs opening divs for the content)
-		 * @hooked woocommerce_breadcrumb - 20
-		 */
-		do_action( 'woocommerce_before_main_content' );
-	?>
 
-		<?php if ( apply_filters( 'woocommerce_show_page_title', true ) ) : ?>
+echo "<hr>";
 
-			<h1 class="page-title"><?php woocommerce_page_title(); ?></h1>
 
-		<?php endif; ?>
+		echo '</li>
+		<li><a href="'. $link .'">Shop '. $title .'</a>
+		</ul></li>';
+	}
 
-		<?php do_action( 'woocommerce_archive_description' ); ?>
+/*
+echo "<pre>";
+print_r($product_query->posts);
+echo "</pre>";
+*/
 
-		<?php if ( have_posts() ) : ?>
 
-			<?php
-				/**
-				 * woocommerce_before_shop_loop hook
-				 *
-				 * @hooked woocommerce_result_count - 20
-				 * @hooked woocommerce_catalog_ordering - 30
-				 */
-				do_action( 'woocommerce_before_shop_loop' );
-			?>
+	echo '</ul>';
+} else {
+// no posts found
+}
+wp_reset_postdata();
 
-			<?php woocommerce_product_loop_start(); ?>
+?>
 
-				<?php woocommerce_product_subcategories(); ?>
+<hr>
 
-				<?php while ( have_posts() ) : the_post(); ?>
-
-					<?php wc_get_template_part( 'content', 'product' ); ?>
-
-				<?php endwhile; // end of the loop. ?>
-
-			<?php woocommerce_product_loop_end(); ?>
-
-			<?php
-				/**
-				 * woocommerce_after_shop_loop hook
-				 *
-				 * @hooked woocommerce_pagination - 10
-				 */
-				do_action( 'woocommerce_after_shop_loop' );
-			?>
-
-		<?php elseif ( ! woocommerce_product_subcategories( array( 'before' => woocommerce_product_loop_start( false ), 'after' => woocommerce_product_loop_end( false ) ) ) ) : ?>
-
-			<?php wc_get_template( 'loop/no-products-found.php' ); ?>
-
-		<?php endif; ?>
-
-	<?php
-		/**
-		 * woocommerce_after_main_content hook
-		 *
-		 * @hooked woocommerce_output_content_wrapper_end - 10 (outputs closing divs for the content)
-		 */
-		do_action( 'woocommerce_after_main_content' );
-	?>
-
-	<?php
-		/**
-		 * woocommerce_sidebar hook
-		 *
-		 * @hooked woocommerce_get_sidebar - 10
-		 */
-		//do_action( 'woocommerce_sidebar' );
-	?>
-
-<?php get_footer( 'shop' ); ?>
+<?php get_footer(); ?>
