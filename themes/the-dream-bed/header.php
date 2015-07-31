@@ -42,6 +42,16 @@
 				<li><a href="tel:888-888-8888">+1 888 888-8888</a></li>
 			</ul>
 		</nav><!-- #site-navigation -->
+		<?php if(is_page(array('cart', 'checkout', 'order-received'))) { ?>
+		<!-- cart breadcrumb menu -- use css to style this appropriately -->
+		<nav id="checkout-breadcrumbs" role="navigation">
+			<ul class="shop breadcrumb menu">
+				<li<?php if(is_page('cart')) { echo ' class="active"'; } ?>><a href="<?php echo bloginfo('url'); ?>/cart">Cart</a></li>
+				<li<?php if(is_page('checkout')) { echo ' class="active"'; } ?>><a href="<?php echo bloginfo('url'); ?>/checkout">Checkout</a></li>
+				<li<?php if(is_page('order-received')) { echo ' class="active"'; } ?>>Thanks!</li>
+			</ul>
+		</nav>
+		<?php } ?>
 	</header><!-- #masthead -->
 
 	<div id="content" class="site-content">
