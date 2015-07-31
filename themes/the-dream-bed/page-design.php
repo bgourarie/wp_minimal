@@ -36,8 +36,16 @@
 	?>
 		<li class="bed"><?php echo $bed->post_title; ?>
 			<ul class="features">
-				<?php foreach( $features as $feature ) { ?>
-	    		<li><?php print_r($feature); ?></li>
+				<?php foreach( $features as $feature ) {
+					$name = $feature['feature_name'];
+					$icon = $feature['feature_icon'];
+					$desc = $feature['feature_description'];
+					$img = $feature['feature_image'];
+				 ?>
+	    		<li><?php echo $name; ?></li>
+	    		<li><?php echo $icon; ?></li>
+	    		<li><?php echo $desc; ?></li>
+	    		<li><?php echo $img; ?></li>
 	    		<?php } ?>
 			</ul>
 		</li>
