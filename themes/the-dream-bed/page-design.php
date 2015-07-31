@@ -42,10 +42,14 @@
 					$desc = $feature['feature_description'];
 					$img = $feature['feature_image'];
 				 ?>
-	    		<li><?php echo $name; ?></li>
-	    		<li><?php echo $icon; ?></li>
-	    		<li><?php echo $desc; ?></li>
-	    		<li><?php echo $img; ?></li>
+	    		<li class="feature">
+					<ul>
+						<li><?php echo $name; ?></li>
+						<li><?php echo $icon; ?></li>
+						<li><?php echo $desc; ?></li>
+						<li><?php echo $img; ?></li>
+					</ul>
+				</li>
 	    		<?php } ?>
 			</ul>
 		</li>
