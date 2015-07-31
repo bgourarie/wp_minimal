@@ -130,18 +130,5 @@ $(function() {
 
 200 day sleep trial
 
-<hr>
-
-how it stacks up (features)
-
-<hr>
-
-see all beds (two boxes)
-
-<hr>
-
-reviews (top 3?) / link to reviews
-
-<hr>
 
 <?php get_footer( 'shop' ); ?>

@@ -14,45 +14,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 global $product, $post;
 ?>
 
-<script>
-/* insert fake label/input(radio) to be styled as option buttons instead of #size dropdown */
-/* these still select the "real" dropdown, so no other tweaking is necessary */
-$(function() {
-
-	$("#size option").each(function(i, e) {
-		if(i > 0) { /* skip the first one since it's a blank "Choose..." */
-
-			var $value = $(this).val();
-			var $title = $(this).text();
-
-			$("<label></label>")
-				.attr("for", $value)
-				.text($title)
-				.appendTo('#x');
-
-			$("<input type='radio'>")
-				.attr("id", $value)
-				.attr("value", $value)
-				.attr("checked", i <= 1) /* first option is default */
-				.change(function () {
-				    $("#size").val($value).trigger('change');
-					$('#size option').attr('selected', false);
-					$('#size option[value=' + $value + ']').attr('selected',true).parent().trigger('change');
-					$('input[type=radio]').not(this).prop('checked', false);
-				})
-				.appendTo("#x");
-		}
-	});
-
-$(document).on('click', '#x label', function() {
-	$('.variations_form').trigger('change');
-	$('#size').trigger('change');
-	$('.variations_form').trigger('change');
-});
-
-});
-</script>
-
 <?php do_action( 'woocommerce_before_add_to_cart_form' ); ?>
 
 <form class="variations_form cart" method="post" enctype='multipart/form-data' data-product_id="<?php echo $post->ID; ?>" data-product_variations="<?php echo esc_attr( json_encode( $available_variations ) ) ?>">

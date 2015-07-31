@@ -80,50 +80,75 @@ function woocommerce_button_proceed_to_checkout() {
 	echo '<a href="'. $checkout_url .'" class="checkout-button button alt wc-forward">Checkout</a>';
 }
 
-/* change "Have a coupon?" to "Have a promo code?" */
-function woocommerce_rename_coupon_message_on_checkout() {
-	return 'Have a Promo Code?' . ' <a href="#" class="showcoupon">' . __( 'Click here to enter your code', 'woocommerce' ) . '</a>';
+/* add "continue shopping" link to cart after cart contents table */
+function woocommerce_add_continue_shopping_button_to_cart() {
+	$shop_page_url = get_permalink(woocommerce_get_page_id('shop'));
+	echo ' <a class="continue shopping" href="' . $shop_page_url . '" class="button">Continue Shopping</a>';
 }
-add_filter( 'woocommerce_checkout_coupon_message', 'woocommerce_rename_coupon_message_on_checkout' );
-/* rename coupon to promo code in checkout page */
-function woocommerce_rename_coupon_field_on_checkout( $translated_text, $text, $text_domain ) {
+add_action('woocommerce_after_cart_table', 'woocommerce_add_continue_shopping_button_to_cart');
+
+
+/* change woocommerce text */
+function custom_text( $translated_text, $text, $text_domain ) {
+
 /* don't do this in the admin panel */
 	if ( is_admin() || 'woocommerce' !== $text_domain ) {
 		return $translated_text;
 	}
+
+/* custom text strings for woocommerce-generated page */
+
 	if ('Coupon code' === $text) {
-		$translated_text = 'Promo Code';
-	} elseif ( 'Apply Coupon' === $text ) {
-		$translated_text = 'Apply';
+		return 'Promo code';
 	}
-	return $translated_text;
-}
-add_filter('gettext', 'woocommerce_rename_coupon_field_on_checkout', 10, 3);
-
-/* change coupon/promo error messages */
-function custom_coupon_messages( $translated_text, $text, $text_domain ) {
-
-/* don't do this in the admin panel */
-	if ( is_admin() || 'woocommerce' !== $text_domain ) {
-		return $translated_text;
+	if ('Have a coupon?' === $text) {
+		return 'Have a promo code?';
 	}
-
-/* promo code error messages */
+	if ('Apply Coupon' === $text) {
+		return 'Apply';
+	}
 	if ('Coupon usage limit has been reached.' === $text) {
 		return 'Our records show that you have already used this promo code.';
 	}
-
 	if('This coupon has expired.' === $text) {
 		return 'Sorry, this promo code is no longer active.';
 	}
-
 	if('Coupon "%s" does not exist!' === $text) {
 		return 'Sorry, "%s" is not a valid promo code.';
 	}
-
+	if ('Return To Shop' === $text) {
+		return 'Continue Shopping'; /* change this */
+	}
+	/* checkout form text */
+	if ('Your order' === $text) {
+		return 'Order Summary';
+	}
+	if ('Town / City' === $text) {
+		return 'City';
+	}
+	if ('Zip' === $text) {
+		return 'Zip Code';
+	}
+	if ('Email Address' === $text) {
+		return 'Email';
+	}
 	return $translated_text;
 }
-add_filter('gettext', 'custom_coupon_messages', 10, 3);
+add_filter('gettext', 'custom_text', 10, 3);
+
+
+/* changing the text of the Place Order button is harder because it relies on jquery */
+function woocommerce_custom_order_button_text() {
+	return __('Place My Order!', 'woocommerce'); 
+}
+add_filter('woocommerce_order_button_text', 'woocommerce_custom_order_button_text');
+
+/* remove order notes field from checkout */
+function alter_woocommerce_checkout_fields($fields) {
+	unset($fields['order']['order_comments']);
+	return $fields;
+}
+add_filter('woocommerce_checkout_fields', 'alter_woocommerce_checkout_fields');
 
 
 function calculate_average($arr) {
