@@ -48,7 +48,7 @@
 			<ul class="shop breadcrumb menu">
 				<li<?php if(is_page('cart')) { echo ' class="active"'; } ?>><a href="<?php echo bloginfo('url'); ?>/cart">Cart</a></li>
 				<li<?php if(is_page('checkout')) { echo ' class="active"'; } ?>><a href="<?php echo bloginfo('url'); ?>/checkout">Checkout</a></li>
-				<li<?php if(is_page('order-received')) { echo ' class="active"'; } ?>>Thanks!</li>
+				<li<?php if(is_page('order-received')) { echo ' class="active"'; } ?>>Thank You!</li>
 			</ul>
 		</nav>
 		<?php } ?>
