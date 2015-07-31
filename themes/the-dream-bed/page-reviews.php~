@@ -48,7 +48,7 @@ wp_reset_postdata();
 $args = array(
 	'post_type' => 'review',
 /* review posts can be ordered by 'menu_order' (manual ordering), date, or meta key for a field such as 'rating' or 'product' */
-/* default should probably be menu_order (manual ordering) or by meta_key => rating, order => DESC so bad reviews aren't first */
+/* default should probably be menu_order (manual ordering) or by meta_key => rating, order => DESC so bad reviews aren't first' */
 	'meta_key' => 'rating',
 	'orderby' => 'meta_value_num',
 /* use meta_query to filter to only certain products */

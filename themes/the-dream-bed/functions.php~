@@ -110,7 +110,7 @@ function custom_coupon_messages( $translated_text, $text, $text_domain ) {
 
 /* promo code error messages */
 	if ('Coupon usage limit has been reached.' === $text) {
-		return 'Our records show that you have already used this promo code.';
+		return 'Our records show that you have already redeemed this promo code.';
 	}
 
 	if('This coupon has expired.' === $text) {
