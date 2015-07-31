@@ -13,6 +13,42 @@ $args = array(
 	'orderby' => 'menu_order',
 	'order' => 'ASC'
 );
+/* get all ratings */
+$review_query = new WP_Query($args);
+if ($review_query->have_posts()) {
+	$count = 0;
+	while ($review_query->have_posts() ) {
+		$review_query->the_post();
+		$rating = get_field('rating');
+		$ratings[] = $rating;
+		$count++;
+	}
+}
+wp_reset_postdata();
+?>
+
+<h2>Average Rating</h2>
+<p><?php echo calculate_average($ratings); ?></p>
+<small>Based on <?php echo $count; ?> reviews</small>
+
+<h2>Median Rating</h2>
+<p><?php echo calculate_median($ratings); ?></p>
+<small>Based on <?php echo $count; ?> reviews</small>
+
+<h2>Average Rating</h2>
+<h3>rounded to nearest half</h3>
+<p><?php echo round(calculate_average($ratings), 0, PHP_ROUND_HALF_UP); ?></p>
+<small>Based on <?php echo $count; ?> reviews</small>
+
+
+<hr>
+
+<?php
+$args = array(
+	'post_type' => 'review',
+	'orderby' => 'menu_order',
+	'order' => 'ASC'
+);
 
 $review_query = new WP_Query($args);
 if ($review_query->have_posts()) {
