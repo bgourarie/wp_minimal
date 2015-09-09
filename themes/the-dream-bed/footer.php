@@ -15,6 +15,9 @@
 		<ul class="footer nav">
 			<?php wp_nav_menu( array( 'theme_location' => 'footer-menu', 'container' => false ) ); ?>
 		</ul>
+		<div class="dreambeds sold">
+			<p>Dreambeds Donated: <?php echo get_field('dreambeds_donated', 'options'); ?></p>
+		</div>
 	</footer><!-- #colophon -->
 </div><!-- #page -->
 

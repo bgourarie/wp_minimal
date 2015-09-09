@@ -5,6 +5,12 @@
  * @package The Dream Bed
  */
 
+/* fix glitch on chrome for admin menus */
+function chromefix_inline_css() { 
+	wp_add_inline_style('wp-admin', '@media screen and (-webkit-min-device-pixel-ratio:0) { #adminmenu { transform: translateZ(0); } }' );
+}
+add_action('admin_enqueue_scripts', 'chromefix_inline_css');
+
 /* hide admin bar from normal view */
 show_admin_bar(false);
 
@@ -21,6 +27,7 @@ add_action('after_setup_theme', 'woocommerce_support');
 function woocommerce_support() {
     add_theme_support('woocommerce');
 }
+
 
 /* hide product data tabs on woocommerce product page */
 add_filter('woocommerce_product_tabs', 'woo_remove_product_tabs', 98);
@@ -52,6 +59,11 @@ function custom_dreambed_menus() {
 	);
 }
 add_action('init', 'custom_dreambed_menus');
+
+/* add options page for global settings */
+if(function_exists('acf_add_options_page')) {
+	acf_add_options_page();
+}
 
 /* remove visual editor */
 add_filter('user_can_richedit', create_function ('$a' , 'return false;') , 50);
@@ -174,7 +186,6 @@ function calculate_median($arr) {
 	}
 	return $median;
 }
-
 
 if ( ! function_exists( 'the_dream_bed_setup' ) ) :
 /**

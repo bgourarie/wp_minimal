@@ -39,7 +39,7 @@
 				echo '<li><a href="'. $cart_url .'">Cart <span class="qty">'. $qty .'</span></a></li>';
 				?>
 
-				<li><a href="tel:888-888-8888">+1 888 888-8888</a></li>
+				<li><a href="tel:<?php echo get_field('phone_number', 'options'); ?>"><?php echo get_field('phone_number', 'options'); ?></a></li>
 			</ul>
 		</nav><!-- #site-navigation -->
 		<?php if(is_page(array('cart', 'checkout', 'order-received'))) { ?>

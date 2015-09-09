@@ -8,37 +8,37 @@
 <hr>
 
 <?php
+
+/* defaults */
+$prod_show = array(96, 26); /* show both beds */
+$sort_by = "meta_value_num"; /* sort by rating */
+$sort_order = 'ASC'; /* sort ascending */
+
+
 /* review sorting */
-if(isset($_POST['show_product'])) {
-	if (htmlspecialchars($_POST["show_product"]) == "dreambed") {
+if(isset($_REQUEST['show_product'])) {
+	if (htmlspecialchars($_REQUEST["show_product"]) == "dreambed")  {
 		$prod_show = array(96);
-	} elseif (htmlspecialchars($_POST["show_product"]) == "coolgelbed") {
+	} elseif (htmlspecialchars($_REQUEST["show_product"]) == "coolgelbed") {
 		$prod_show = array(26);
-	} elseif (htmlspecialchars($_POST["show_product"]) == "") {
-		$prod_show = array(96, 26);
 	}
-} else {
-	$prod_show = array(96, 26);
 }
 
-if(isset($_POST['sort_by'])) {
-	if (htmlspecialchars($_POST["sort_by"]) == "date") {
+
+if(isset($_REQUEST['sort_by'])) {
+	if (htmlspecialchars($_REQUEST["sort_by"]) == "date") {
 		$sort_by = "date";
-	} elseif (htmlspecialchars($_POST["sort_by"]) == "rating") {
+	} elseif (htmlspecialchars($_REQUEST["sort_by"]) == "rating") {
 		$sort_by = "meta_value_num"; /* sort by rating */
 	}
-} else {
-	$sort_by = "meta_value_num"; /* sort by rating */
 }
 
-if(isset($_POST['sort_order'])) {
-	if (htmlspecialchars($_POST["sort_order"]) == "ASC") {
+if(isset($_REQUEST['sort_order'])) {
+	if (htmlspecialchars($_REQUEST["sort_order"]) == "ASC") {
 		$sort_order = "ASC";
-	} elseif (htmlspecialchars($_POST["sort_order"]) == "DESC") {
+	} elseif (htmlspecialchars($_REQUEST["sort_order"]) == "DESC") {
 		$sort_order = "DESC";
 	}
-} else {
-	$sort_order = 'ASC';
 }
 
 
@@ -79,22 +79,22 @@ wp_reset_postdata();
 		<label for="show_product">Show Reviews For:</label>
 		<select name="show_product" onchange="this.form.submit()">
 			<option value="">All Beds</option>
-			<option <?php if(isset($_POST['show_product']) && (htmlspecialchars($_POST["show_product"]) == "dreambed")) { echo "selected"; } ?> value="dreambed">Dream Bed</option>
-			<option <?php if(isset($_POST['show_product']) && (htmlspecialchars($_POST["show_product"]) == "coolgelbed")) { echo "selected"; } ?> value="coolgelbed">Cool Gel Bed</option>
+			<option <?php if(isset($_REQUEST['show_product']) && (htmlspecialchars($_REQUEST["show_product"]) == "dreambed")) { echo "selected"; } ?> value="dreambed">Dream Bed</option>
+			<option <?php if(isset($_REQUEST['show_product']) && (htmlspecialchars($_REQUEST["show_product"]) == "coolgelbed")) { echo "selected"; } ?> value="coolgelbed">Cool Gel Bed</option>
 		</select>
 	</div>
 	<div>
 		<label for="sort_by">Sort By:</label>
 		<select name="sort_by" onchange="this.form.submit()">
-			<option <?php if(isset($_POST['sort_by']) && (htmlspecialchars($_POST["sort_by"]) == "rating")) { echo "selected"; } ?>  value="rating">Rating</option>
-			<option <?php if(isset($_POST['sort_by']) && (htmlspecialchars($_POST["sort_by"]) == "date")) { echo "selected"; } ?>  value="date">Date</option>
+			<option <?php if(isset($_REQUEST['sort_by']) && (htmlspecialchars($_REQUEST["sort_by"]) == "rating")) { echo "selected"; } ?>  value="rating">Rating</option>
+			<option <?php if(isset($_REQUEST['sort_by']) && (htmlspecialchars($_REQUEST["sort_by"]) == "date")) { echo "selected"; } ?>  value="date">Date</option>
 		</select>
 	</div>
 	<div>
 		<label for="sort_order">Sort Order:</label>
 		<select name="sort_order" onchange="this.form.submit()">
-			<option <?php if(isset($_POST['sort_order']) && (htmlspecialchars($_POST["sort_order"]) == "DESC")) { echo "selected"; } ?>  value="DESC">Highest to Lowest</option>
-			<option <?php if(isset($_POST['sort_order']) && (htmlspecialchars($_POST["sort_order"]) == "ASC")) { echo "selected"; } ?>  value="ASC">Lowest to Highest</option>
+			<option <?php if(isset($_REQUEST['sort_order']) && (htmlspecialchars($_REQUEST["sort_order"]) == "DESC")) { echo "selected"; } ?>  value="DESC">Highest to Lowest</option>
+			<option <?php if(isset($_REQUEST['sort_order']) && (htmlspecialchars($_REQUEST["sort_order"]) == "ASC")) { echo "selected"; } ?>  value="ASC">Lowest to Highest</option>
 		</select>
 	</div>
 </form>
