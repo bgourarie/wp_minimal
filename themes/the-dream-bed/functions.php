@@ -54,6 +54,7 @@ function custom_dreambed_menus() {
 	register_nav_menus(
 		array(
 			'header-menu' => __('Header Menu'),
+			'header-right' => __('Header Right Menu'),
 			'footer-menu' => __('Footer Menu')
 			)
 	);

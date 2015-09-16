@@ -9,16 +9,56 @@
 
 ?>
 
+
 	</div><!-- #content -->
 
-	<footer id="colophon" class="site-footer" role="contentinfo">
-		<ul class="footer nav">
-			<?php wp_nav_menu( array( 'theme_location' => 'footer-menu', 'container' => false ) ); ?>
-		</ul>
-		<div class="dreambeds sold">
-			<p>Dreambeds Donated: <?php echo get_field('dreambeds_donated', 'options'); ?></p>
+<p class="dreambeds sold">Dreambeds Donated: <?php echo get_field('dreambeds_donated', 'options'); ?></p>
+
+
+	<footer class="footer">
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-md-2 col-sm-12"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><img src="<?php bloginfo("template_url"); ?>/images/logo-the-dream-bed.svg" width="116" height="35" alt="The Dream Bed" class="footer-logo"></a></div>
+				<div class="col-md-2 col-sm-2">
+					<ul class="list-unstyled footer-nav">
+						<?php wp_nav_menu( array( 'theme_location' => 'footer-menu', 'container' => false ) ); ?>
+					</ul>
+				</div>
+				<div class="col-md-2 col-sm-10">
+					<ul class="list-unstyled footer-social">
+						<li><a href="#"><img src="<?php bloginfo("template_url"); ?>/images/ico-instagram.svg" width="15" height="15" alt=""> Instagram</a></li>
+						<li><a href="#"><img src="<?php bloginfo("template_url"); ?>/images/ico-pinterest.svg" width="15" height="15" alt=""> Pinterest</a></li>
+						<li><a href="#"><img src="<?php bloginfo("template_url"); ?>/images/ico-twitter.svg" width="15" height="15" alt=""> Twitter</a></li>
+						<li><a href="#"><img src="<?php bloginfo("template_url"); ?>/images/ico-facebook.svg" width="15" height="15" alt=""> Facebook</a></li>
+						<li><a href="#"><img src="<?php bloginfo("template_url"); ?>/images/ico-youtube.svg" width="15" height="15" alt=""> YouTube</a></li>
+					</ul>
+				</div>
+				<div class="col-md-3 col-sm-12">
+					<div class="footer-contact">
+						<h4>Customer Service</h4>
+						<ul class="list-unstyled">
+							<li><a href="tel:<?php echo get_field('phone_number', 'options'); ?>" class="phone"><?php echo get_field('phone_number', 'options'); ?></a></li>
+							<li><a href="mailto:support@dreambed.com" class="email">support@dreambed.com</a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="col-md-3 col-sm-12">
+					<div class="footer-newsletter">
+						<h4>Newsletter Signup</h4>
+						<form>
+							<div class="input-group">
+								<input type="text" class="form-control newsletter-email" placeholder="Your Email">
+								<span class="input-group-btn">
+									<button class="btn btn-dream" type="button">Sign Up</button>
+								</span>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
 		</div>
-	</footer><!-- #colophon -->
+	</footer>
+
 </div><!-- #page -->
 
 <?php wp_footer(); ?>
