@@ -2,29 +2,20 @@
 
 <div id="home">
 
-<div class="jumbotron" style="background-image:url('<?php echo get_field('hero_image'); ?>')">
-	<div class="container">
-		<div class="row">
-			<div class="col-sm-8 col-sm-offset-2 col-xs-12">
-				<h1>Unbox a better tomorrow</h1>
-				<h2>When you buy a Dream Bed we will donate a bed to someone in need. 
-					Better Sleep. Better World.</h2>
-				<p><a href="<?php bloginfo('url'); ?>/giving" class="btn btn-dream" role="button">See How We Give</a></p>
-			</div>
-		</div>
-	</div>
-</div>
-
-<h1><?php echo get_field('header_text'); ?></h1>
-
-<a href="<?php echo get_field('button_link') ?>"><?php echo get_field('button_text') ?></a>
-
-<hr>
-
-<h2>Reasons to Dream...</h2>
 
 <?php if (have_rows('reasons_to_dream')) { ?>
-	<ol class="reasons list">
+	<div id="carousel-dream-home" class="carousel slide" data-ride="carousel">
+		<ol class="carousel-indicators">
+	
+	<?php while (have_rows('reasons_to_dream')) {
+		the_row();
+	?>
+		<li data-target="#carousel-dream-home" data-slide-to="<?php echo $number++; ?>"></li>
+	<?php } ?>
+
+
+		</ol>
+		<div class="carousel-inner" role="listbox">
 	<?php while (have_rows('reasons_to_dream')) {
 		the_row();
 		$title = get_sub_field('reason_title');
@@ -33,16 +24,29 @@
 		$link = get_sub_field('reason_link');
 		$img = get_sub_field('reason_image');
 	?>
-		<li class="reason">
-			<ul>
-				<li><?php echo $title; ?></li>
-				<li><?php echo $desc; ?></li>
-				<li><a href="<?php echo $link; ?>"><?php echo $btn_title; ?></a></li>
-				<li><img src="<?php echo $img; ?>"></li>
-			</ul>
-		</li>
+			<div class="item">
+				<div style="background-image:url(<?php echo $img; ?>);" class="slider-size">
+					<div class="carousel-caption">
+						<h1><?php echo $title; ?></h1> 
+						<h2><?php echo $desc; ?></h2>
+						<p><a href="<?php echo $link; ?>" class="btn btn-dream" role="button"><?php echo $btn_title; ?></a></p>
+					</div>
+				</div>
+			</div>
 	<?php } ?>
-	</ol>
+	</div>
+</div>
+
+<script>
+jQuery(document).ready(function($){
+	$("#carousel-dream-home .carousel-indicators li:first").addClass("active");
+	$("#carousel-dream-home .carousel-inner .item:first").addClass("active");
+	$("#carousel-dream-home").carousel({
+		interval: 8000
+		})
+	});
+</script>
+
 <?php } ?>
 
 <div class="container">
