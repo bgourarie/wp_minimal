@@ -6,9 +6,10 @@
 <?php if (have_rows('reasons_to_dream')) { ?>
 	<div id="carousel-dream-home" class="carousel slide" data-ride="carousel">
 		<ol class="carousel-indicators">
-	
+	<?php $number = 0; ?>
 	<?php while (have_rows('reasons_to_dream')) {
 		the_row();
+		
 	?>
 		<li data-target="#carousel-dream-home" data-slide-to="<?php echo $number++; ?>"></li>
 	<?php } ?>
@@ -27,9 +28,15 @@
 			<div class="item">
 				<div style="background-image:url(<?php echo $img; ?>);" class="slider-size">
 					<div class="carousel-caption">
-						<h1><?php echo $title; ?></h1> 
-						<h2><?php echo $desc; ?></h2>
-						<p><a href="<?php echo $link; ?>" class="btn btn-dream" role="button"><?php echo $btn_title; ?></a></p>
+						<div class="container">
+							<div class="row">
+								<div class="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 col-xs-12">
+									<h1><?php echo $title; ?></h1> 
+									<h2><?php echo $desc; ?></h2>
+									<p><a href="<?php echo $link; ?>" class="btn btn-dream" role="button"><?php echo $btn_title; ?></a></p>
+								</div>
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>

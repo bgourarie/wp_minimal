@@ -12,9 +12,6 @@
 
 	</div><!-- #content -->
 
-<p class="dreambeds sold">Dreambeds Donated: <?php echo get_field('dreambeds_donated', 'options'); ?></p>
-
-
 	<footer class="footer">
 		<div class="container-fluid">
 			<div class="row">

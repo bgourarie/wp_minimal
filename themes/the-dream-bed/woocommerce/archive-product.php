@@ -1,11 +1,15 @@
 <?php get_header(); ?>
 
-<hr>
-
-<h1>Everyone Deserves a Choice</h1>
-<p>Dream Bed? Cool Gel Bed? See which one is right for you.
-
-<hr>
+<div class="jumbotron">
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-8 col-sm-offset-2 col-xs-12">
+				<h1>Two comfy choices</h1>
+				<h2>Everyone deserves a choice! Pick between the Original Dream Bed and the Cool Dream Bed.</h2>
+			</div>
+		</div>
+	</div>
+</div>
 
 <?php
 
@@ -18,7 +22,7 @@ $args = array(
 
 $product_query = new WP_Query($args);
 if ($product_query->have_posts()) {
-	echo '<ul class="products">';
+	echo '<div class="container products"><div class="row">';
 	while ($product_query->have_posts() ) {
 		$product_query->the_post();
 		$title = get_the_title();
@@ -27,38 +31,16 @@ if ($product_query->have_posts()) {
 		$img_id = get_post_thumbnail_id();
 		$img_url_array = wp_get_attachment_image_src($img_id, 'full', true);
 		$img_url = $img_url_array[0];
+		$short_description = $post->post_excerpt;
 
-		echo '<li class="product"><ul>
-				<li>' . $title . '</li>
-				<li>' . $content .'</li>
-				<li><img src="' . $img_url .'"></li>
-				<li class="features">';
-
-
-/* get feature_ yes/no fields */
-/* all feature names should start with feature_ */
-$fields = get_fields();
-if( $fields ) {
-	foreach( $fields as $field_name => $value )	{
-		$field = get_field_object($field_name, false, array('load_value' => false));
-		if(substr($field_name, 0, 8) === "feature_") { 
-			echo '<div>';
-				echo $field_name;
-				echo " - ";
-				if ($value == 1) { echo "true"; } else { echo "false"; }
-			echo '</div>';
-		}
-	}
-}
-
-
-
-echo "<hr>";
-
-
-		echo '</li>
-		<li><a href="'. $link .'">Shop '. $title .'</a>
-		</ul></li>';
+		echo '<div class="col-sm-6 text-center "><div class="product">
+				<p><a href="'. $link .'"><img src="' . $img_url .'" class="product-img"></a></p>
+				<div class="product-text">
+					<h3>' . $title . ' Bed</h3>
+					<p>' . $short_description .'</p>
+					<p><a href="'. $link .'" class="btn btn-dream" role="button">Shop '. $title .'</a></p>
+				</div>
+		</div></div>';
 	}
 
 /*
@@ -68,7 +50,7 @@ echo "</pre>";
 */
 
 
-	echo '</ul>';
+	echo '</div><div class="row"><div class="col-xs-12"><div class="hidden-sm or-text">or</div></div></div></div>';
 } else {
 // no posts found
 }
@@ -76,6 +58,32 @@ wp_reset_postdata();
 
 ?>
 
-<hr>
+<div class="container">
+	<div class="row">
+		<div class="alternate">
+			<div class="col-sm-4 alt-side-image home-review-box">
+				<div class="inside">
+					<h3>A bed for everyone</h3>
+					<p class="fivestars"><img src="<?php bloginfo("template_url"); ?>/images/five-stars.svg" width="155" height="25" alt="5 stars reviews!"></p>
+					<p class="mattress-action"><a href="<?php bloginfo('url'); ?>/reviews" class="btn btn-dream-link" role="button">Read The Reviews</a></p>
+				</div>
+			</div>
+			<div class="col-sm-4 alt-side-image home-unboxing-box">
+				<div class="inside">
+					<div><img src="<?php bloginfo("template_url"); ?>/images/unboxing.svg" width="100" height="109" alt="unboxing demonstration"></div>
+					<h3>Unboxing?</h3>
+					<p class="mattress-action"><a href="<?php bloginfo('url'); ?>/design" class="btn btn-dream-link" role="button">Learn How-To</a></p>
+				</div>
+			</div>
+			<div class="col-sm-4 alt-side-image home-donation-box">
+				<div class="inside">
+					<h2 class="bedcount"><?php echo get_field('dreambeds_donated', 'options'); ?> beds</h2>
+					<h3>donated since 2015</h3>
+					<p class="mattress-action"><a href="<?php bloginfo('url'); ?>/giving" class="btn btn-dream-link" role="button">See How We Give</a></p>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
 
 <?php get_footer(); ?>
