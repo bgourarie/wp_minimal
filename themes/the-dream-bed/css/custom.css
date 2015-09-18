@@ -120,6 +120,10 @@ body {
 	text-align: left;
 }
 
+.carousel-inner {
+  -webkit-transform-style: preserve-3d;
+}
+
 .carousel h1 {
 	font-family: "ThirstySoftRegular", cursive;
 	text-transform: lowercase;
