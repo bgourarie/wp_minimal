@@ -475,6 +475,92 @@ h2.bedcount {
 	text-align: center;
 }
 
+/* buttons for shop radios */
+
+.btn-dream-size {
+	background-color: #fff;
+	border-color: #808284;
+ 	filter:progid:DXImageTransform.Microsoft.Gradient(enabled='false');
+	-webkit-box-shadow: none;
+	-moz-box-shadow: none;
+	box-shadow: none;
+	background-image: none;
+	color: #808284;
+	text-transform: uppercase;
+	-webkit-border-radius: 0;
+	-moz-border-radius: 0;
+	border-radius: 0;
+	width: 50%;
+	margin-top: -1px;
+}
+
+.btn-dream-size:first-child {
+	
+}
+
+.btn-dream-size:hover, .btn-dream-size:focus {
+	background-color: #fff;
+	border-color: #808284;
+	color: #FF9E14;
+}
+
+.btn-dream-size:active, .btn-dream-size.active {
+	background-color: #F2F2F2;
+	border-color: #808284;
+	color: #FF9E14;
+}
+
+.btn-dream-size.disabled:hover, .btn-dream-size.disabled:focus, .btn-dream-size.disabled:active, .btn-dream-size.disabled.active, .btn-dream[disabled]:hover, .btn-dream-size[disabled]:focus, .btn-dream[disabled]:active, .btn-dream[disabled].active, fieldset[disabled] .btn-dream-size:hover, fieldset[disabled] .btn-dream:focus, fieldset[disabled] .btn-dream-size:active, fieldset[disabled] .btn-dream-size.active {
+	background-color: #FD9D2E;
+	border-color: #FD9D2E;
+}
+
+.mattress-overview h1 {
+	text-align: center;
+	font-size: 2.143em;	
+}
+
+
+.mattress-add-ons > div {
+	border: 1px solid #808284;
+	padding: 4px;
+}
+
+.mattress-add-ons img.q {
+	width: 16px;
+	height: 16px;
+	margin-left: 5px;
+	vertical-align: -1px
+}
+
+.mattress-add-ons .price {
+	display: block;
+	
+}
+
+.mattress-add-cart {
+	text-align: center;	
+}
+
+.mattress-add-cart .price {
+	font-size: 1.714em;
+}
+
+.promise-text {
+	margin-top: 30px;
+	margin-bottom: 30px;
+}
+
+.promise-text img {
+	margin-right: 30px;
+	float:left!important;
+}
+
+.promise-text h3 {
+	font-size: 3.571em;
+	color: #808284;
+}
+
 /* Custom, iPhone Retina */ 
 @media only screen and (min-width : 320px) {
 
