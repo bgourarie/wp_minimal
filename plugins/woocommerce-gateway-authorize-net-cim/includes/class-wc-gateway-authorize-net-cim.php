@@ -191,7 +191,7 @@ class WC_Gateway_Authorize_Net_CIM extends SV_WC_Payment_Gateway_Direct {
 	 * @param int $order_id order ID being processed
 	 * @return WC_Order object with payment and transaction information attached
 	 */
-	protected function get_order( $order_id ) {
+	public function get_order( $order_id ) {
 
 		// add common order members
 		$order = parent::get_order( $order_id );
@@ -236,7 +236,7 @@ class WC_Gateway_Authorize_Net_CIM extends SV_WC_Payment_Gateway_Direct {
 	 * @param string $key meta key
 	 * @return mixed
 	 */
-	protected function get_order_meta( $order_id, $key ) {
+	public function get_order_meta( $order_id, $key ) {
 
 		// v1.x token order meta handling
 		if ( 'payment_token' === $key && ! metadata_exists( 'post', $order_id, $this->get_order_meta_prefix() . $key ) &&
@@ -414,6 +414,55 @@ class WC_Gateway_Authorize_Net_CIM extends SV_WC_Payment_Gateway_Direct {
 
 		// remove customer ID
 		$this->remove_customer_id( $user_id );
+	}
+
+
+	/** Subscriptions *********************************************************/
+
+
+	/**
+	 * Tweak the labels shown when editing the payment method for a Subscription,
+	 * hooked from SV_WC_Payment_Gateway_Integration_Subscriptions
+	 *
+	 *
+	 * @since 2.0.3
+	 * @see SV_WC_Payment_Gateway_Integration_Subscriptions::admin_add_payment_meta()
+	 * @param array $meta payment meta
+	 * @param \WC_Subscription $subscription subscription being edited
+	 * @return array
+	 */
+	public function subscriptions_admin_add_payment_meta( $meta, $subscription ) {
+
+		if ( isset( $meta[ $this->get_id() ] ) ) {
+			$meta[ $this->get_id() ]['post_meta'][ $this->get_order_meta_prefix() . 'payment_token' ]['label'] = __( 'Payment Profile ID', WC_Authorize_Net_CIM::TEXT_DOMAIN );
+			$meta[ $this->get_id() ]['post_meta'][ $this->get_order_meta_prefix() . 'customer_id' ]['label']   = __( 'Customer Profile ID', WC_Authorize_Net_CIM::TEXT_DOMAIN );
+		}
+
+		return $meta;
+	}
+
+
+	/**
+	 * Validate the CIM payment meta for a Subscription by ensuring the payment
+	 * profile ID and customer profile ID are both numeric
+	 *
+	 *
+	 * @since 2.0.3
+	 * @see SV_WC_Payment_Gateway_Integration_Subscriptions::admin_validate_payment_meta()
+	 * @param array $meta payment meta
+	 * @throws \Exception if payment profile/customer profile IDs are not numeric
+	 */
+	public function subscriptions_admin_validate_payment_meta( $meta ) {
+
+		// payment profile ID (payment_token) must be numeric
+		if ( ! ctype_digit( (string) $meta['post_meta'][ $this->get_order_meta_prefix() . 'payment_token' ]['value'] ) ) {
+			throw new Exception( __( 'Payment Profile ID must be numeric.', WC_Authorize_Net_CIM::TEXT_DOMAIN ) );
+		}
+
+		// customer profile ID (customer_id) must be numeric
+		if ( ! ctype_digit( (string) $meta['post_meta'][ $this->get_order_meta_prefix() . 'customer_id' ]['value'] ) ) {
+			throw new Exception( __( 'Customer Profile ID must be numeric.', WC_Authorize_Net_CIM::TEXT_DOMAIN ) );
+		}
 	}
 
 

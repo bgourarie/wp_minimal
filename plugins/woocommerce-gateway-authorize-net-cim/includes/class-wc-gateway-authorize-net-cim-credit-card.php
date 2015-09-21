@@ -70,20 +70,6 @@ class WC_Gateway_Authorize_Net_CIM_Credit_Card extends WC_Gateway_Authorize_Net_
 				'shared_settings'    => $this->shared_settings_names,
 			)
 		);
-
-		// subscriptions/pre-orders support
-		$this->add_support(
-			array(
-				'subscriptions',
-				'subscription_suspension',
-				'subscription_cancellation',
-				'subscription_reactivation',
-				'subscription_amount_changes',
-				'subscription_date_changes',
-				'subscription_payment_method_change',
-				'pre-orders',
-			)
-		);
 	}
 
 

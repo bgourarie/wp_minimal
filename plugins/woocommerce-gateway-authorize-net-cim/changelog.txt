@@ -1,5 +1,10 @@
 *** WooCommerce Authorize.net CIM Gateway Changelog ***
 
+2015.09.10 - version 2.0.3
+ * Tweak - Add specific width/height styling for payment method icons
+ * Misc - WooCommerce Subscriptions 2.0 Compatibility
+ * Misc - Update SkyVerge Payment Gateway Framework
+
 2015.08.05 - version 2.0.2
  * Fix - Fix issue with refunding non-profile transactions
 

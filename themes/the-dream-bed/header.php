@@ -70,3 +70,39 @@
 	</header><!-- #masthead -->
 
 	<div id="content" class="site-content">
+		
+	<!-- not sure where you want the single hero / slideshow, but this is the code that'll echo a single for one or a slideshow for multiple -->
+	<?php
+		$slides = get_field('slides');
+		if($slides) {
+			if(count($slides) == 1) {
+				/* single image/hero text */
+				echo get_sub_field('image');
+				echo get_sub_field('headline');
+				echo get_sub_field('subhead');
+			} else {
+				/* multiple / slideshow */
+				echo "<ul>";
+				
+				foreach($slides as $slide) {
+					$image = $slide['image'];
+					$headline = $slide['headline'];
+					$subhead = $slide['subhead'];
+					?>
+						<li>
+							<figure><img src="<?php echo $image['url']; ?>"></figure>
+							<figcaption>
+								<h1><?php echo $headline; ?></h1>
+								<h2><?php echo $subhead; ?></h2>
+							</figcaption>							
+						</li>
+					<?php
+				}
+				
+				echo "</ul>";
+			}
+		}
+		
+	?>
+	
+	

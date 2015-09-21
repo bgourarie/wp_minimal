@@ -47,6 +47,9 @@ class WC_Authorize_Net_CIM_API extends SV_WC_API_Base implements SV_WC_Payment_G
 	/** @var string request URI */
 	protected $request_uri;
 
+	/** @var \WC_Order|null order associated with the request, if any */
+	protected $order;
+
 	/** @var string gateway ID */
 	private $gateway_id;
 
@@ -197,6 +200,8 @@ class WC_Authorize_Net_CIM_API extends SV_WC_API_Base implements SV_WC_Payment_G
 	 */
 	protected function perform_transaction( $request, WC_Order $order ) {
 
+		$this->order = $order;
+
 		try {
 
 			return $this->perform_request( $request );
@@ -233,6 +238,8 @@ class WC_Authorize_Net_CIM_API extends SV_WC_API_Base implements SV_WC_Payment_G
 	 */
 	public function refund( WC_Order $order ) {
 
+		$this->order = $order;
+
 		$request = $this->get_new_request( $this->get_transaction_request_type( $order ) );
 
 		$request->create_refund( $order );
@@ -258,6 +265,8 @@ class WC_Authorize_Net_CIM_API extends SV_WC_API_Base implements SV_WC_Payment_G
 	 */
 	public function void( WC_Order $order ) {
 
+		$this->order = $order;
+
 		$request = $this->get_new_request( $this->get_transaction_request_type( $order ) );
 
 		$request->create_void( $order );
@@ -278,6 +287,8 @@ class WC_Authorize_Net_CIM_API extends SV_WC_API_Base implements SV_WC_Payment_G
 	 * @return \WC_Authorize_Net_CIM_API_Payment_Profile_Response|\WC_Authorize_Net_CIM_API_Customer_Profile_Response
 	 */
 	public function tokenize_payment_method( WC_Order $order ) {
+
+		$this->order = $order;
 
 		if ( $order->customer_id ) {
 
@@ -478,6 +489,8 @@ class WC_Authorize_Net_CIM_API extends SV_WC_API_Base implements SV_WC_Payment_G
 	 */
 	public function update_tokenized_payment_method( WC_Order $order ) {
 
+		$this->order = $order;
+
 		// best practice is to first get the existing payment profile data
 		$request = $this->get_new_request( 'payment-profile' );
 		$request->get_payment_profile( $order->customer_id, $order->payment->token );
@@ -549,6 +562,8 @@ class WC_Authorize_Net_CIM_API extends SV_WC_API_Base implements SV_WC_Payment_G
 	 */
 	public function create_shipping_address( WC_Order $order ) {
 
+		$this->order = $order;
+
 		try {
 
 			$request = $this->get_new_request( 'shipping-address' );
@@ -603,6 +618,8 @@ class WC_Authorize_Net_CIM_API extends SV_WC_API_Base implements SV_WC_Payment_G
 	 * @return \WC_Authorize_Net_CIM_API_Shipping_Address_Response response object
 	 */
 	public function update_shipping_address( WC_Order $order ) {
+
+		$this->order = $order;
 
 		$request = $this->get_new_request( 'shipping-address' );
 
@@ -760,6 +777,18 @@ class WC_Authorize_Net_CIM_API extends SV_WC_API_Base implements SV_WC_Payment_G
 		$handler_class = $this->get_response_handler();
 
 		return new $handler_class( $this->get_request(), $raw_response_body );
+	}
+
+
+	/**
+	 * Return the order associated with the request, if any
+	 *
+	 * @since 2.0.3
+	 * @return \WC_Order|null
+	 */
+	public function get_order() {
+
+		return $this->order;
 	}
 
 

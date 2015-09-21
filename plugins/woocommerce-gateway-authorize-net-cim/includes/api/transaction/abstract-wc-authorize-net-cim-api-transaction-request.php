@@ -106,8 +106,8 @@ abstract class WC_Authorize_Net_CIM_API_Transaction_Request extends WC_Authorize
 
 				$line_items[] = array(
 					'itemId'      => SV_WC_Helper::str_truncate( $item->id, 31 ),
-					'name'        => SV_WC_Helper::str_truncate( $item->name, 31 ),
-					'description' => SV_WC_Helper::str_truncate( $item->description, 255 ),
+					'name'        => SV_WC_Helper::str_to_sane_utf8( SV_WC_Helper::str_truncate( $item->name, 31 ) ),
+					'description' => SV_WC_Helper::str_to_sane_utf8( SV_WC_Helper::str_truncate( $item->description, 255 ) ),
 					'quantity'    => $item->quantity,
 					'unitPrice'   => SV_WC_Helper::number_format( $item->item_total ),
 				);
