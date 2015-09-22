@@ -58,7 +58,7 @@ body {
 	height: 100%;
 	background-size: cover;
 	overflow: hidden;
-	text-align: left;
+	text-align: center;
 	color: #fff;
 	-webkit-box-shadow: inset 0 20px 20px -20px rgba(0,0,0,0.8);
 	-moz-box-shadow: inset 0 20px 20px -20px rgba(0,0,0,0.8);
@@ -352,6 +352,10 @@ body {
 	margin: .7em auto;
 }
 
+.alt-side-image h3 {
+	text-shadow: 2px 2px 4px rgba(100, 100, 100, 1);
+}
+
 .callout-number {
 	display: inline-block;
 	font-weight: 400;
@@ -397,9 +401,14 @@ body {
 	bottom: 20px;	
 }
 
+#home-bottom h3 {
+	text-shadow: 1px 1px 4px rgba(100, 100, 100, 1);
+}
+
 .home-review-box {
-	background-image: none; 
-	background-color: #A27C5A;
+	background-image: url(../images/photos/feet-hanging-off-bed.jpg);
+	background-size: cover;
+	background-color: #F1F2F2;
 }
 
 .home-unboxing-box {
@@ -412,8 +421,8 @@ body {
 }
 
 .home-donation-box {
-	background-image: none; 
-	background-color: #0A547F;	
+	background-image: url(../images/photos/girl-crawling-in-box-with-dream-pillow.jpg); 
+	background-color: #F1F2F2;	
 }
 
 .home-light-grey {
@@ -824,7 +833,7 @@ body {
 }
 
 .alternate .col-sm-6 .inside {
-	padding: 30px 80px;
+	padding: 30px;
 }
 
 .btn-dream {

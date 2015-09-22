@@ -1,9 +1,5 @@
 <?php get_header(); ?>
 
-<img src="<?php echo get_field('hero_image'); ?>">
-<h1><?php echo get_field('header_text'); ?></h1>
-<p><?php echo get_field('header_subtext'); ?></p>
-
 <hr>
 
 <?php if (have_rows('selling_points')) { ?>
