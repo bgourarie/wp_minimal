@@ -343,6 +343,11 @@ body {
 	color: #fff;
 }
 
+.alternate h2 {
+	margin: .7em auto 130px;
+	text-shadow: 1px 1px 4px rgba(100, 100, 100, 1);
+}
+
 .alternate h3 {
 	margin: .7em auto;
 }
@@ -411,13 +416,18 @@ body {
 	background-color: #0A547F;	
 }
 
+.home-light-grey {
+	padding: 20px 0;
+	background-color: #f2f2f2;	
+}
+
 .home-middle1 {
-	background-image: none; 
+	background-image: url(../images/photos/blue-box-on-stoop.jpg); 
 	background-color: #999;	
 }
 
 .home-middle2 {
-	background-image: none; 
+	background-image: url(../images/photos/girl-on-pink-bed.jpg); 
 	background-color: #999;	
 }
 
