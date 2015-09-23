@@ -26,6 +26,10 @@ body {
 	color: #808284;
 }
 
+.navbar-default .navbar-nav>li.current-menu-item>a, .navbar-default .navbar-nav>li.current-page-item>a {
+	text-decoration: underline;
+}
+
 .navbar-default .navbar-toggle .icon-bar {
 	background-color: #B9D635;
 	height: 3px;

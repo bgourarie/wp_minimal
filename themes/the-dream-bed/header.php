@@ -84,26 +84,55 @@
 				
 			} else {
 				/* multiple / slideshow */
-				echo "<p>";
+				echo '
+				
+<div id="carousel-dream-page" class="carousel slide" data-ride="carousel">				
+	<ol class="carousel-indicators">
+		<!-- placeholder need to figure out how to gen these automatically -->
+		<li data-target="#carousel-dream-page" data-slide-to="0"></li>
+		<li data-target="#carousel-dream-page" data-slide-to="1"></li>
+	</ol>
+	<div class="carousel-inner" role="listbox">
+				';
 				
 				foreach($slides as $slide) {
 					$image = $slide['image'];
 					$headline = $slide['headline'];
 					$subhead = $slide['subhead'];
 					?>
-						
-						
-						<li>
-							<figure><img src="<?php echo $image['url']; ?>"></figure>
-							<figcaption>
-								<h1><?php echo $headline; ?></h1>
-								<h2><?php echo $subhead; ?></h2>
-							</figcaption>							
-						</li>
+						<div class="item">
+							<div style="background-image:url(<?php echo $image['url']; ?>);" class="slider-size">
+								<div class="carousel-caption">
+									<div class="container">
+										<div class="row">
+											<div class="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 col-xs-12">
+					
+												<h1><?php echo $headline; ?></h1>
+												<h2><?php echo $subhead; ?></h2>
+									
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
 					<?php
 				}
 				
-				echo "</p>";
+				echo '
+	</div>
+</div>			
+<script>
+jQuery(document).ready(function($){
+	$("#carousel-dream-page .carousel-indicators li:first").addClass("active");
+	$("#carousel-dream-page .carousel-inner .item:first").addClass("active");
+	$("#carousel-dream-page").carousel({
+		interval: 8000
+		})
+	});
+</script>
+				
+				';
 			}
 		}
 		
