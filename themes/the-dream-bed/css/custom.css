@@ -499,7 +499,7 @@ h2.bedcount {
 	text-align: center;
 }
 
-.design-page .row {
+.design-page .row, .giving-page .row {
 	margin-bottom: 30px;
 }
 
