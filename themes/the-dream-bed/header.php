@@ -71,36 +71,69 @@
 	</header><!-- #masthead -->
 
 	<div id="content" class="site-content">
-		
-	<!-- not sure where you want the single hero / slideshow, but this is the code that'll echo a single for one or a slideshow for multiple -->
+	
 	<?php
 		$slides = get_field('slides');
 		if($slides) {
 			if(count($slides) == 1) {
 				/* single image/hero text */
-				echo get_sub_field('image');
-				echo get_sub_field('headline');
-				echo get_sub_field('subhead');
+				echo '<div class="jumbotron" style="background-image: url(' . $slides[0][image][url] . ');"><div class="container"><div class="row"><div class="col-sm-8 col-sm-offset-2 col-xs-12">';
+				//echo '<img src="' . $slides[0][image][url] . '" />';
+				echo '<h1>' . $slides[0][headline] . '</h1>';
+				echo '<p>' . $slides[0][subhead] . '</p>';
+				echo '</div></div></div></div>';
+				
 			} else {
 				/* multiple / slideshow */
-				echo "<ul>";
+				echo '
+				
+<div id="carousel-dream-page" class="carousel slide" data-ride="carousel">				
+	<ol class="carousel-indicators">
+		<!-- placeholder need to figure out how to gen these automatically -->
+		<li data-target="#carousel-dream-page" data-slide-to="0"></li>
+		<li data-target="#carousel-dream-page" data-slide-to="1"></li>
+	</ol>
+	<div class="carousel-inner" role="listbox">
+				';
 				
 				foreach($slides as $slide) {
 					$image = $slide['image'];
 					$headline = $slide['headline'];
 					$subhead = $slide['subhead'];
 					?>
-						<li>
-							<figure><img src="<?php echo $image['url']; ?>"></figure>
-							<figcaption>
-								<h1><?php echo $headline; ?></h1>
-								<h2><?php echo $subhead; ?></h2>
-							</figcaption>							
-						</li>
+						<div class="item">
+							<div style="background-image:url(<?php echo $image['url']; ?>);" class="slider-size">
+								<div class="carousel-caption">
+									<div class="container">
+										<div class="row">
+											<div class="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 col-xs-12">
+					
+												<h1><?php echo $headline; ?></h1>
+												<h2><?php echo $subhead; ?></h2>
+									
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
 					<?php
 				}
 				
-				echo "</ul>";
+				echo '
+	</div>
+</div>			
+<script>
+jQuery(document).ready(function($){
+	$("#carousel-dream-page .carousel-indicators li:first").addClass("active");
+	$("#carousel-dream-page .carousel-inner .item:first").addClass("active");
+	$("#carousel-dream-page").carousel({
+		interval: 8000
+		})
+	});
+</script>
+				
+				';
 			}
 		}
 		

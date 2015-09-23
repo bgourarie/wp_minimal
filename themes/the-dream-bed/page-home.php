@@ -56,32 +56,34 @@ jQuery(document).ready(function($){
 
 <?php } ?>
 
-<div class="container">
+<div class="container design-page">
 	<div class="row">
 		<div class="alternate">
 			<div class="col-sm-6 alt-side-image home-middle1">
 				<div class="inside">
-					<div><img src="<?php bloginfo("template_url"); ?>/images/circle-best-in-box.png" alt="best in box - free shipping" /></div>
-					<h3>We guarantee free delivery right to your doorstep.</h3>
-					<p class="mattress-action"><a href="<?php bloginfo('url'); ?>/shop" class="btn btn-dream" role="button">Shop Now</a></p>
+					<h2>Free 2-day <br>
+						delivery!</h2>
+					<p><a href="<?php bloginfo('url'); ?>/shop" class="btn btn-dream" role="button">Shop Now</a></p>
 				</div>
 			</div>
 			<div class="col-sm-6 alt-side-image home-middle2">
 				<div class="inside">
-					<div><img src="<?php bloginfo("template_url"); ?>/images/circle-no-nightmare-guarantee.png" alt="no nightmare guarantee" /></div>
-					<h3>180 night sleep guarantee. Love it or get a full refund.</h3>
-					<p class="mattress-action"><a href="<?php bloginfo('url'); ?>/shop" class="btn btn-dream" role="button">Shop Now</a></p>
+					<h2>No nightmare<br>
+						180 night guarantee</h2>
+					<p><a href="<?php bloginfo('url'); ?>/design" class="btn btn-dream" role="button">See Design</a></p>
 				</div>
 			</div>
 		</div>
 	</div>
 </div>
-<div class="container">
-	<div class="row">
-		<div class="col-sm-12 center-block text-center home-bed-options">
-			<h2>Two comfy options</h2>
-			<p><img src="<?php bloginfo("template_url"); ?>/images/home-dream-mattress-options.png" alt="A gentleman demonstrates the difficulity of choosing between the two Dream Bed options." class="img-responsive center-block"></p>
-			<div class="center-block"> <a href="<?php bloginfo('url'); ?>/shop/mattress/dream-bed/" class="btn btn-dream" role="button">Shop Original Dream</a> <span class="or-text hidden-xs">or</span> <a href="<?php bloginfo('url'); ?>/shop/mattress/cool-gel-bed/" class="btn btn-dream" role="button">Shop Cool Dream</a> </div>
+<div class="home-light-grey">
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-12 center-block text-center home-bed-options">
+				<h2>Two dreamy choices</h2>
+				<p><img src="<?php bloginfo("template_url"); ?>/images/photos/two-dreamy-options-man.jpg" alt="A gentleman demonstrates the difficulty of choosing between the two Dream Bed options." class="img-responsive center-block"></p>
+				<div class="center-block"> <a href="<?php bloginfo('url'); ?>/shop/mattress/dream-bed/" class="btn btn-dream" role="button">Shop Original Dream</a> <span class="or-text hidden-xs">or</span> <a href="<?php bloginfo('url'); ?>/shop/mattress/cool-gel-bed/" class="btn btn-dream" role="button">Shop Cool Dream</a> </div>
+			</div>
 		</div>
 	</div>
 </div>
@@ -92,31 +94,23 @@ jQuery(document).ready(function($){
 				<div class="inside">
 					<h3>A bed for everyone</h3>
 					<p class="fivestars"><img src="<?php bloginfo("template_url"); ?>/images/five-stars.svg" width="155" height="25" alt="5 stars reviews!"></p>
-					<p class="mattress-action"><a href="<?php bloginfo('url'); ?>/reviews" class="btn btn-dream-link" role="button">Read The Reviews</a></p>
+					<p class="mattress-action"><a href="<?php bloginfo('url'); ?>/reviews" class="btn btn-dream" role="button">Read The Reviews</a></p>
 				</div>
 			</div>
-			<div class="col-sm-4 alt-side-image home-unboxing-box">
+			<div class="col-sm-4 home-unboxing-box">
 				<div class="inside">
 					<div><img src="<?php bloginfo("template_url"); ?>/images/unboxing.svg" width="100" height="109" alt="unboxing demonstration"></div>
 					<h3>Unboxing?</h3>
-					<p class="mattress-action"><a href="<?php bloginfo('url'); ?>/design" class="btn btn-dream-link" role="button">Learn How-To</a></p>
+					<p class="mattress-action"><a href="<?php bloginfo('url'); ?>/design" class="btn btn-dream" role="button">Learn How-To</a></p>
 				</div>
 			</div>
 			<div class="col-sm-4 alt-side-image home-donation-box">
 				<div class="inside">
 					<h2 class="bedcount"><?php echo get_field('dreambeds_donated', 'options'); ?> beds</h2>
 					<h3>donated since 2015</h3>
-					<p class="mattress-action"><a href="<?php bloginfo('url'); ?>/giving" class="btn btn-dream-link" role="button">See How We Give</a></p>
+					<p class="mattress-action"><a href="<?php bloginfo('url'); ?>/giving" class="btn btn-dream" role="button">See How We Give</a></p>
 				</div>
 			</div>
-		</div>
-	</div>
-</div>
-<div class="container">
-	<div class="row">
-		<div class="col-sm-12 text-center center-block home-find-store">
-			<h2>See the Dream Bed at one of our partner showrooms.</h2>
-			<p><a class="btn btn-dreaminv" href="<?php bloginfo('url'); ?>/store-finder" role="button">Find a Store</a></p>
 		</div>
 	</div>
 </div>
