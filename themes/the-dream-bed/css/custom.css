@@ -99,6 +99,13 @@ body {
 	background-position: bottom;
 }
 
+.jumbotron {
+	-webkit-clip-path: polygon(0% 0%, 100% 0%, 100% 480px, calc(50% + 20px) 480px, 50% 100%, calc(50% - 20px) 480px, 0 480px);
+	clip-path: polygon(0% 0%, 100% 0%, 100% 480px, 53% 480px, 50% 100%, 47% 480px, 0 480px);
+}
+
+
+
 /* begin carousel customization */
 
 .slider-size {
