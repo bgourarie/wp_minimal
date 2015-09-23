@@ -34,10 +34,10 @@ function uptop_product_images() {
 				</div>
 		    	<div id="side-by-side" class="row">
 			    	<div class="col-md-6 text-right">
-						<img src="'.$box_img.'" />
+						<img src="'.$product_shipping.'" />
 					</div>
 					<div class="col-md-6 text-left">
-						<img src="'.$product_shipping.'" />
+						<img src="'.$box_img.'" />
 					</div>
 				</div>
 			</div>
