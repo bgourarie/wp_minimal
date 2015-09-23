@@ -2,6 +2,7 @@
 
 body {
 	font-family: 'FFDINWebPro', sans-serif;
+	color: #808284;
 }
 
 .navbar {
@@ -493,6 +494,31 @@ h2.bedcount {
 	left: 45%;
 	text-align: center;
 }
+
+.design-page .row {
+	margin-bottom: 30px;
+}
+
+.design-page .img-responsive {
+	margin-bottom: 30px;
+}
+
+.original {
+	color: #FF6B00;
+}
+
+.original a {
+	color: #FF6B00;
+}
+
+.cool {
+	color: #61B4E4;
+}
+
+.cool a {
+	color: #61B4E4;
+}
+
 
 /* buttons for shop radios */
 

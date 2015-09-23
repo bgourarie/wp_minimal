@@ -56,7 +56,7 @@ jQuery(document).ready(function($){
 
 <?php } ?>
 
-<div class="container">
+<div class="container design-page">
 	<div class="row">
 		<div class="alternate">
 			<div class="col-sm-6 alt-side-image home-middle1">
