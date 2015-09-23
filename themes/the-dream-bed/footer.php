@@ -15,13 +15,13 @@
 	<footer class="footer">
 		<div class="container-fluid">
 			<div class="row">
-				<div class="col-md-2 col-sm-12"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><img src="<?php bloginfo("template_url"); ?>/images/logo-the-dream-bed.svg" width="116" height="35" alt="The Dream Bed" class="footer-logo"></a></div>
-				<div class="col-md-2 col-sm-2">
+				<div class="col-md-2 col-xs-12"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><img src="<?php bloginfo("template_url"); ?>/images/logo-the-dream-bed.svg" width="116" height="35" alt="The Dream Bed" class="footer-logo"></a></div>
+				<div class="col-md-2 col-xs-3 col-sm-3">
 					<ul class="list-unstyled footer-nav">
 						<?php wp_nav_menu( array( 'theme_location' => 'footer-menu', 'container' => false ) ); ?>
 					</ul>
 				</div>
-				<div class="col-md-2 col-sm-10">
+				<div class="col-md-2 col-xs-9 col-sm-3">
 					<ul class="list-unstyled footer-social">
 						<li><a href="#"><img src="<?php bloginfo("template_url"); ?>/images/ico-instagram.svg" width="15" height="15" alt=""> Instagram</a></li>
 						<li><a href="#"><img src="<?php bloginfo("template_url"); ?>/images/ico-pinterest.svg" width="15" height="15" alt=""> Pinterest</a></li>
@@ -30,7 +30,7 @@
 						<li><a href="#"><img src="<?php bloginfo("template_url"); ?>/images/ico-youtube.svg" width="15" height="15" alt=""> YouTube</a></li>
 					</ul>
 				</div>
-				<div class="col-md-3 col-sm-12">
+				<div class="col-md-3 col-xs-12 col-sm-6">
 					<div class="footer-contact">
 						<h4>Customer Service</h4>
 						<ul class="list-unstyled">
@@ -40,7 +40,7 @@
 						</ul>
 					</div>
 				</div>
-				<div class="col-md-3 col-sm-12">
+				<div class="col-md-3 col-xs-12">
 					<div class="footer-newsletter">
 						<h4>Newsletter Signup</h4>
 						<form>
