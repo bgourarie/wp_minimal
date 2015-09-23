@@ -12,11 +12,10 @@ remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_singl
 add_action('woocommerce_after_single_product', 'uptop_product_images');
 function uptop_product_images() {
 
-	$product_shipping = get_field('product_shipping_promo');
-	$product_material = get_field('product_materials');
-
-	$box_img = get_field('product_box_image');
+	$sleep_trial = get_field('product_sleep_trial');
 	$cutout_img = get_field('product_cutout_image');
+	$product_shipping = get_field('product_shipping_promo');
+	$box_img = get_field('product_box_image');
 
     echo '
     	<div class="container">
@@ -24,12 +23,12 @@ function uptop_product_images() {
 	    		<div id="stacked-images">
 			    	<div class="row">
 				    	<div class="col-md-12 text-center stacked-image">
-							<img src="'.$product_shipping.'" />
+							<img src="'.$sleep_trial.'" />
 						</div>
 					</div>
 			    	<div class="row">
 				    	<div class="col-md-12 text-center stacked-image">
-							<img src="'.$product_material.'" />
+							<img src="'.$cutout_img.'" />
 						</div>
 					</div>
 				</div>
@@ -38,7 +37,7 @@ function uptop_product_images() {
 						<img src="'.$box_img.'" />
 					</div>
 					<div class="col-md-6 text-left">
-						<img src="'.$cutout_img.'" />
+						<img src="'.$product_shipping.'" />
 					</div>
 				</div>
 			</div>
