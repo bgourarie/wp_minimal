@@ -19,38 +19,69 @@ if ( $attachment_ids ) {
 	$loop 		= 0;
 	$columns 	= apply_filters( 'woocommerce_product_thumbnails_columns', 3 );
 	?>
-	<div class="thumbnails <?php echo 'columns-' . $columns; ?>"><?php
+	<div id="product-slider" class="carousel slide" data-ride="carousel">
 
-		foreach ( $attachment_ids as $attachment_id ) {
+		<ol class="carousel-indicators">
+			<?php $slide = 0;
+			foreach ( $attachment_ids as $attachment_id ) { ?>
+				<li data-target="#product-slider" data-slide-to="<?php echo $slide; ?>" class="<?php echo ($slide == 0 ? 'active' : ''); ?>"></li>
+			<?php $slide++;
+			} ?>
+		</ol>
 
-			$classes = array( 'zoom' );
+		<div class="carousel-inner" role="listbox"><?php
 
-			if ( $loop == 0 || $loop % $columns == 0 )
-				$classes[] = 'first';
+			foreach ( $attachment_ids as $attachment_id ) { ?>
 
-			if ( ( $loop + 1 ) % $columns == 0 )
-				$classes[] = 'last';
+				<div class="item"><?php
 
-			$image_link = wp_get_attachment_url( $attachment_id );
+					$classes = array( 'zoom' );
 
-			if ( ! $image_link )
-				continue;
+					if ( $loop == 0 )
+						$classes[] = 'first active';
 
-			$image_title 	= esc_attr( get_the_title( $attachment_id ) );
-			$image_caption 	= esc_attr( get_post_field( 'post_excerpt', $attachment_id ) );
+					if ( ( $loop + 1 ) % $columns == 0 )
+						$classes[] = 'last';
 
-			$image       = wp_get_attachment_image( $attachment_id, apply_filters( 'single_product_small_thumbnail_size', 'shop_thumbnail' ), 0, $attr = array(
-				'title'	=> $image_title,
-				'alt'	=> $image_title
-				) );
+					$image_link = wp_get_attachment_url( $attachment_id );
 
-			$image_class = esc_attr( implode( ' ', $classes ) );
+					if ( ! $image_link )
+						continue;
 
-			echo apply_filters( 'woocommerce_single_product_image_thumbnail_html', sprintf( '<a href="%s" class="%s" title="%s" data-rel="prettyPhoto[product-gallery]">%s</a>', $image_link, $image_class, $image_caption, $image ), $attachment_id, $post->ID, $image_class );
+					$image_title 	= esc_attr( get_the_title( $attachment_id ) );
+					$image_caption 	= esc_attr( get_post_field( 'post_excerpt', $attachment_id ) );
 
-			$loop++;
-		}
+					$image       = wp_get_attachment_image( $attachment_id, apply_filters( 'single_product_small_thumbnail_size', 'full' ), 0, $attr = array(
+						'title'	=> $image_title,
+						'alt'	=> $image_title
+						) );
 
-	?></div>
+					$image_class = esc_attr( implode( ' ', $classes ) );
+
+					echo apply_filters( 'woocommerce_single_product_image_thumbnail_html', sprintf( '<a href="%s" class="%s" title="%s" data-rel="prettyPhoto[product-gallery]">%s</a>', $image_link, $image_class, $image_caption, $image ), $attachment_id, $post->ID, $image_class );
+
+					$loop++; ?>
+
+				</div><?php
+			} ?>
+
+		</div>
+	</div>
 	<?php
-}
+} ?>
+
+<script type="text/javascript">
+	jQuery(document).ready(function($){
+		var $slider = $("#product-slider");
+		$slider.carousel({
+			interval: 8000
+		});
+		$slider.find('.item:first').addClass('active');
+
+		$productOptions = $('.tm-extra-product-options-variations > li');
+		$productOptions.on('click', function() {
+			$productOptions.removeClass('active');
+			$(this).addClass('active');
+		});
+	});
+</script>

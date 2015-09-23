@@ -18,6 +18,7 @@
 
 <link href="<?php bloginfo("template_url"); ?>/css/bootstrap.min.css" rel="stylesheet">
 <link href="<?php bloginfo("template_url"); ?>/css/custom.css" rel="stylesheet">
+<link href="<?php bloginfo("template_url"); ?>/css/shop.css" rel="stylesheet">
 
 <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>

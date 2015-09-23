@@ -1,0 +1,213 @@
+
+body {
+	color: #828282;
+}
+
+body.single-product .woocommerce-breadcrumb {
+	display: none;
+}
+
+.woocommerce #respond input#submit,
+.woocommerce a.button, .woocommerce button.button,
+.woocommerce input.button {
+	border-radius: 0;
+}
+.woocommerce #respond input#submit.alt,
+.woocommerce a.button.alt,
+.woocommerce button.button.alt,
+.woocommerce input.button.alt {
+	background-color: #FF9E14;
+}
+.woocommerce #respond input#submit.alt:hover,
+.woocommerce a.button.alt:hover,
+.woocommerce button.button.alt:hover,
+.woocommerce input.button.alt:hover {
+	background-color: #808284;
+}
+
+
+
+/*--------------------------------------------------------------
+# Product Page
+--------------------------------------------------------------*/
+
+.mattress-overview {
+    padding-left: 60px;
+    padding-right: 65px;
+    padding-top: 32px;
+}
+
+/* Product Slider Image */
+
+.woocommerce #content div.product div.images,
+.woocommerce div.product div.images,
+.woocommerce-page #content div.product div.images,
+.woocommerce-page div.product div.images {
+    float: left;
+    width: 100%;
+}
+.woocommerce #content div.product div.thumbnails a,
+.woocommerce div.product div.thumbnails a,
+.woocommerce-page #content div.product div.thumbnails a,
+.woocommerce-page div.product div.thumbnails a {
+    float: left;
+    width: 100%;
+    margin-right: 3.8%;
+    margin-bottom: 1em;
+}
+
+#product-slider .carousel-indicators {
+	bottom: 0;
+}
+
+/* Product Options */
+
+.tm-epo-variation-section .reset_variations,
+.tm-extra-product-options .tm-epo-field-label {
+	display: none !important;
+}
+.tm-epo-field-label.tm-left + .tm-extra-product-options-container li.tmcp-field-wrap,
+.tm-epo-field-label.tm-right + .tm-extra-product-options-container li.tmcp-field-wrap {
+	padding: 7px;
+}
+.tm-epo-field-label.tm-left + .tm-extra-product-options-container,
+.tm-epo-field-label.tm-right + .tm-extra-product-options-container {
+    max-width: 100%;
+    width: 100% !important;
+}
+
+.tm-variation-ul-radio li {
+    display: inline-block;
+    width: 50% !important;
+    border: 1px solid #828282;
+    text-align: center;
+    text-transform: uppercase;
+}
+.tm-variation-ul-radio li,
+.tm-variation-ul-radio li label {
+    cursor: pointer;
+}
+.tm-variation-ul-radio li:hover {
+	color: #FF9E14;
+}
+.tm-variation-ul-radio li.active {
+    background-color: #efefef;
+    color: #FF9E14;
+}
+.tm-variation-ul-radio li:nth-child(even) {
+	border-top-width: 0;
+	border-left-width: 0;
+}
+.tm-variation-ul-radio li:nth-child(odd) {
+	border-top-width: 0;
+}
+.tm-variation-ul-radio li:nth-child(1),
+.tm-variation-ul-radio li:nth-child(2) {
+    border-top-width: 1px;
+}
+.tm-variation-ul-radio li:last-child {
+    border-right-width: 1px;
+}
+.tm-variation-ul-radio li input[type="radio"] {
+	display: none;
+}
+.tm-variation-ul-radio li label {
+	
+}
+
+/* Cross Sell */
+
+.tm-extra-product-options .col-12,
+.tm-extra-product-options .tm-cell.col-12 {
+    margin: 0;
+}
+.tm-extra-product-options ul.tmcp-elements li.tmcp-field-wrap {
+    padding: 0 0 1em 0;
+}
+.tm-quantity.tm-right + .tm-field-display {
+	border: 1px solid #828282;
+	width: 100%;
+    text-align: left;
+    padding: 10px;
+}
+
+/* Extra Images */
+
+#extra-images {
+	margin-bottom: 125px;
+}
+#extra-images .stacked-image {
+	padding: 30px 0;
+}
+#stacked-images {
+	margin-bottom: 50px;
+}
+#featured-product-reviews {
+	margin-bottom: 85px;
+}
+
+.woocommerce div.product p.price,
+.woocommerce div.product span.price {
+	color: #828282;
+}
+
+.single_variation_wrap {
+    text-align: center;
+    font-size: 20px;
+}
+.single_variation {
+    display: inline-block;
+}
+
+/* Add to Cart */
+
+button.single_add_to_cart_button {
+    width: 100%;
+    height: 50px;
+    margin-top: 5px;
+    font-size: 20px;
+    text-transform: uppercase;
+}
+
+#featured-product-reviews h3 {
+    font-size: 30px;
+    text-align: center;
+}
+
+/*--------------------------------------------------------------
+# Cart
+--------------------------------------------------------------*/
+
+.woocommerce .cart-collaterals .cart_totals,
+.woocommerce-page .cart-collaterals .cart_totals {
+    float: none;
+    width: auto;
+}
+
+.cart-collaterals .coupon label {
+	display: none;
+}
+.cart-collaterals .cart_totals h2 {
+	display: none;
+}
+
+.cart-collaterals {
+	border: 1px solid #231F20;
+	padding: 10px;
+}
+.cart-collaterals .coupon input {
+    border-width: 0;
+    border-radius: 0;
+}
+.cart-collaterals .coupon input.input-text {
+    background-color: #F8F8F8;
+    padding: 6px 5px;
+}
+.cart-collaterals .coupon input.button {
+    background-color: #808284;
+    color: #fff;
+}
+
+
+
+

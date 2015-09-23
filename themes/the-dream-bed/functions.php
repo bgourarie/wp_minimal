@@ -5,6 +5,9 @@
  * @package The Dream Bed
  */
 
+// adding shop pages
+require get_template_directory() . '/includes/shop.php';
+
 /* fix glitch on chrome for admin menus */
 function chromefix_inline_css() { 
 	wp_add_inline_style('wp-admin', '@media screen and (-webkit-min-device-pixel-ratio:0) { #adminmenu { transform: translateZ(0); } }' );
@@ -70,10 +73,10 @@ if(function_exists('acf_add_options_page')) {
 add_filter('user_can_richedit', create_function ('$a' , 'return false;') , 50);
 
 /* remove pods shortcode button from editor */
-function remove_pods_shortcode_button () {
+/*function remove_pods_shortcode_button () {
 	remove_action('media_buttons', array(PodsInit::$admin, 'media_button'), 12);
 }
-add_action('admin_init', 'remove_pods_shortcode_button', 14);
+add_action('admin_init', 'remove_pods_shortcode_button', 14);*/
 
 /* remove "add media" button from editor */
 function z_remove_media_controls() {
@@ -92,14 +95,6 @@ function woocommerce_button_proceed_to_checkout() {
 	$checkout_url = WC()->cart->get_checkout_url();
 	echo '<a href="'. $checkout_url .'" class="checkout-button button alt wc-forward">Checkout</a>';
 }
-
-/* add "continue shopping" link to cart after cart contents table */
-function woocommerce_add_continue_shopping_button_to_cart() {
-	$shop_page_url = get_permalink(woocommerce_get_page_id('shop'));
-	echo ' <a class="continue shopping" href="' . $shop_page_url . '" class="button">Continue Shopping</a>';
-}
-add_action('woocommerce_after_cart_table', 'woocommerce_add_continue_shopping_button_to_cart');
-
 
 /* change woocommerce text */
 function custom_text( $translated_text, $text, $text_domain ) {

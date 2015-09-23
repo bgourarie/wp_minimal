@@ -15,9 +15,9 @@ wc_print_notices();
 
 do_action( 'woocommerce_before_cart' ); ?>
 
-<form action="<?php echo esc_url( WC()->cart->get_cart_url() ); ?>" method="post">
-
 <?php do_action( 'woocommerce_before_cart_table' ); ?>
+
+<form action="<?php echo esc_url( WC()->cart->get_cart_url() ); ?>" method="post">
 
 <table class="shop_table cart" cellspacing="0">
 	<thead>
@@ -117,15 +117,6 @@ do_action( 'woocommerce_before_cart' ); ?>
 		<tr>
 			<td colspan="6" class="actions">
 
-				<?php if ( WC()->cart->coupons_enabled() ) { ?>
-					<div class="coupon">
-
-						<label for="coupon_code"><?php _e( 'Coupon', 'woocommerce' ); ?>:</label> <input type="text" name="coupon_code" class="input-text" id="coupon_code" value="" placeholder="<?php _e( 'Coupon code', 'woocommerce' ); ?>" /> <input type="submit" class="button" name="apply_coupon" value="<?php _e( 'Apply Coupon', 'woocommerce' ); ?>" />
-
-						<?php do_action( 'woocommerce_cart_coupon' ); ?>
-					</div>
-				<?php } ?>
-
 				<input type="submit" class="button" name="update_cart" value="<?php _e( 'Update Cart', 'woocommerce' ); ?>" />
 
 				<?php do_action( 'woocommerce_cart_actions' ); ?>
@@ -138,11 +129,20 @@ do_action( 'woocommerce_before_cart' ); ?>
 	</tbody>
 </table>
 
-<?php do_action( 'woocommerce_after_cart_table' ); ?>
-
 </form>
 
+<?php do_action( 'woocommerce_after_cart_table' ); ?>
+
 <div class="cart-collaterals">
+
+	<?php if ( WC()->cart->coupons_enabled() ) { ?>
+		<div class="coupon">
+
+			<label for="coupon_code"><?php _e( 'Coupon', 'woocommerce' ); ?></label> <input type="text" name="coupon_code" class="input-text" id="coupon_code" value="" placeholder="<?php _e( 'Coupon code', 'woocommerce' ); ?>" /> <input type="submit" class="button" name="apply_coupon" value="<?php _e( 'Apply Coupon', 'woocommerce' ); ?>" />
+
+			<?php do_action( 'woocommerce_cart_coupon' ); ?>
+		</div>
+	<?php } ?>
 
 	<?php do_action( 'woocommerce_cart_collaterals' ); ?>
 
