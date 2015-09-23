@@ -26,7 +26,7 @@
   			</div>
 
 			</div>
-		</div>
+		
 		<?php endif; ?>
 		
 		<div class="row">
@@ -40,10 +40,36 @@
 				
 			</div>
 		</div>
-		
 		<?php endwhile; // End of the loop. ?>
+	
+	
+		<div class="row">
+			<div class="col-xs-12 text-center">
+				<h2>How we dream</h2>
+			</div>
+		</div>
+		<div class="row how-we-dream">
+			<div class="col-sm-4 text-center">
+				<h2 class="callout-number">1</h2>
+				<h3>Buy a dream</h3>
+				<p>We believe access to a great night's sleep should be a universal right, and your purchase helps make it possible.</p>
+				<p>With the sale of each Dream Bed, you help provide dreams to children or person in need through our One for One&reg; model.</p>
+			</div>
+			<div class="col-sm-4 text-center">
+				<h2 class="callout-number">2</h2>
+				<h3>Give a dream</h3>
+				<p>Your purchase makes a difference.  Every Dream Bed bought gives a person in need an opportunity for a clean, comfortable and  healthy sleep space.</p>
+				<p>Better sleep heath means bigger dreams for everyone!</p>
+			</div>
+			<div class="col-sm-4 text-center">
+				<h2 class="callout-number">3</h2>
+				<h3>Dream it forward</h3>
+				<p>Our Dream Bed Team collaborates with numerous giving partners to determine where we can impact the dreams of others through products and services.</p>
+				<p>Our strategy is simple: Buy a dream, give a dream, dream it forward!</p>
+			</div>
+		</div>
 		
-	</div>
+	
 	
 	
 	

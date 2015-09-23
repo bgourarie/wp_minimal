@@ -366,10 +366,10 @@ body {
 	font-weight: 400;
 	text-align: center;
 	white-space: nowrap;
-	color: #000;
+	color: #fff;
 	line-height: 1.1;
 	background-image: url(../images/bg-callout-number@2x.png);
-	background-size: 36px 36px;
+	background-size: 72px 72px;
 }
 
 .giving {
@@ -501,6 +501,11 @@ h2.bedcount {
 
 .design-page .row, .giving-page .row {
 	margin-bottom: 30px;
+}
+
+.how-we-dream > div {
+	padding-left: 30px;
+	padding-right: 30px;
 }
 
 .design-page .img-responsive {
@@ -661,9 +666,9 @@ body {
 .callout-number {
 	width: 36px;
 	height: 36px;
-	padding: 6px 13px;
+	padding: 8px 13px;
 	font-size: 20px;
-	background: url(../images/bg-callout-number.png) center no-repeat transparent;
+	background: url(../images/bg-callout-number@2x.png) center no-repeat transparent;
 	background-size: 36px 36px;
 }
 
@@ -715,7 +720,7 @@ body {
 .callout-number {
 	width: 36px;
 	height: 36px;
-	padding: 6px 13px;
+	padding: 8px 13px;
 	font-size: 20px;
 	background: url(../images/bg-callout-number.png) center no-repeat transparent;
 	background-size: 36px 36px;
@@ -796,9 +801,9 @@ body {
 .callout-number {
 	width: 72px;
 	height: 72px;
-	padding: 12px 26px;
+	padding: 16px 26px;
 	font-size: 40px;
-	background: url(../images/bg-callout-number.png) center no-repeat transparent;
+	background: url(../images/bg-callout-number@2x.png) center no-repeat transparent;
 }
 
 .giving .box img.block {
@@ -905,7 +910,7 @@ body {
 @media (-webkit-min-device-pixel-ratio: 2) and (max-width : 767px) {
 
 .callout-number {
-	background-image: url(../images/bg-callout-number-thick@2x.png);
+	background-image: url(../images/bg-callout-number@2x.png);
 	background-size: 36px 36px;
 }
 }
