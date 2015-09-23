@@ -1,11 +1,10 @@
 <?php get_header(); ?>
 
-<div class="jumbotron">
+<div class="jumbotron shop-now-main">
 	<div class="container">
 		<div class="row">
 			<div class="col-sm-8 col-sm-offset-2 col-xs-12">
-				<h1>Two comfy choices</h1>
-				<h2>Everyone deserves a choice! Pick between the Original Dream Bed and the Cool Dream Bed.</h2>
+				<h1>Two dreamy choices</h1>
 			</div>
 		</div>
 	</div>
@@ -65,21 +64,21 @@ wp_reset_postdata();
 				<div class="inside">
 					<h3>A bed for everyone</h3>
 					<p class="fivestars"><img src="<?php bloginfo("template_url"); ?>/images/five-stars.svg" width="155" height="25" alt="5 stars reviews!"></p>
-					<p class="mattress-action"><a href="<?php bloginfo('url'); ?>/reviews" class="btn btn-dream-link" role="button">Read The Reviews</a></p>
+					<p class="mattress-action"><a href="<?php bloginfo('url'); ?>/reviews" class="btn btn-dream" role="button">Read The Reviews</a></p>
 				</div>
 			</div>
 			<div class="col-sm-4 alt-side-image home-unboxing-box">
 				<div class="inside">
 					<div><img src="<?php bloginfo("template_url"); ?>/images/unboxing.svg" width="100" height="109" alt="unboxing demonstration"></div>
 					<h3>Unboxing?</h3>
-					<p class="mattress-action"><a href="<?php bloginfo('url'); ?>/design" class="btn btn-dream-link" role="button">Learn How-To</a></p>
+					<p class="mattress-action"><a href="<?php bloginfo('url'); ?>/design" class="btn btn-dream" role="button">Learn How-To</a></p>
 				</div>
 			</div>
 			<div class="col-sm-4 alt-side-image home-donation-box">
 				<div class="inside">
 					<h2 class="bedcount"><?php echo get_field('dreambeds_donated', 'options'); ?> beds</h2>
 					<h3>donated since 2015</h3>
-					<p class="mattress-action"><a href="<?php bloginfo('url'); ?>/giving" class="btn btn-dream-link" role="button">See How We Give</a></p>
+					<p class="mattress-action"><a href="<?php bloginfo('url'); ?>/giving" class="btn btn-dream" role="button">See How We Give</a></p>
 				</div>
 			</div>
 		</div>

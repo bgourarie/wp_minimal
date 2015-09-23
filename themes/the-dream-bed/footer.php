@@ -35,7 +35,7 @@
 						<h4>Customer Service</h4>
 						<ul class="list-unstyled">
 							<li><a href="tel:<?php echo get_field('phone_number', 'options'); ?>" class="phone"><?php echo get_field('phone_number', 'options'); ?></a></li>
-							<li><a href="mailto:support@dreambed.com" class="email">support@dreambed.com</a></li>
+							<li><a href="mailto:email@dreambed.com" class="email">email@dreambed.com</a></li>
 						</ul>
 					</div>
 				</div>
