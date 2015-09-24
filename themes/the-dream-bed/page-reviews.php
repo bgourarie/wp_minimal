@@ -75,7 +75,7 @@ wp_reset_postdata();
                     if (!round($average_rating, 0) == $average_rating){
                         echo '<img src="' . get_bloginfo("template_url") . '/images/half-star.svg" />';
                     }
-                ?>
+                ?> (<?= $average_rating?>)
 			<small>based on <?php echo $count; ?> reviews</small></h3>
 		</div>
 		<div class="col-sm-6 text-right">
@@ -145,7 +145,13 @@ if ($review_query->have_posts()) {
 		$date = get_the_date($date_format);
 		$turl = get_bloginfo('template_url');
 
+        // Set product icon based on value of 'product'
         $product_icon = ($product == "Original Dream") ? "original" : "cool";
+
+        // Set default photo for review if not present.
+        if ($photo == ''){
+            $photo = ($product == "Original Dream") ? 'standard-review-original-dream.png': 'standard-review-cool-dream.png';
+        }
 		
 
 		echo "<div class='row'>
