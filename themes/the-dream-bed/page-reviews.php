@@ -72,7 +72,7 @@ wp_reset_postdata();
                         echo '<img src="' . get_bloginfo("template_url") . '/images/one-star.svg" />';
                     }
                     // If average rating is not a whole number, we need to print an additional half star after the loop.
-                    if (!round($average_rating, 0) == $average_rating){
+                    if (strpos($average_rating, '.')){
                         echo '<img src="' . get_bloginfo("template_url") . '/images/half-star.svg" />';
                     }
                 ?> (<?= $average_rating?>)
