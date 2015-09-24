@@ -75,7 +75,7 @@ wp_reset_postdata();
                     if (strpos($average_rating, '.')){
                         echo '<img src="' . get_bloginfo("template_url") . '/images/half-star.svg" />';
                     }
-                ?> (<?= $average_rating?>)
+                ?>
 			<small>based on <?php echo $count; ?> reviews</small></h3>
 		</div>
 		<div class="col-sm-6 text-right">
