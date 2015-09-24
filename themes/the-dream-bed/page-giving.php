@@ -53,7 +53,7 @@
 				<h2 class="callout-number">1</h2>
 				<h3>Buy a dream</h3>
 				<p>We believe access to a great night's sleep should be a universal right, and your purchase helps make it possible.</p>
-				<p>With the sale of each Dream Bed, you help provide dreams to children or person in need through our One for One&reg; model.</p>
+				<p>With the sale of each Dream Bed, you help provide dreams to children or persons in need through our buy one give one program.</p>
 			</div>
 			<div class="col-sm-4 text-center">
 				<h2 class="callout-number">2</h2>
