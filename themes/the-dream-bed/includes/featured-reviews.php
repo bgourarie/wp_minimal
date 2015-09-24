@@ -8,8 +8,12 @@ $args = array(
 	'post_type' => 'review',
 	'meta_query' => array(
 		array(
-			'key'     => 'product',
-			'value'   => $prod_show,
+			'key' => 'product',
+			'value' => $prod_show,
+		),
+		array(
+			'key' => '_is_featured',
+			'value' => true
 		),
 	),
 	'orderby' => 'menu_order',
