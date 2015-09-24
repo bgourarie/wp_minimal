@@ -9,56 +9,55 @@ remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_singl
 remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_excerpt', 20 );
 remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_meta', 40 );
 
-add_action('woocommerce_after_single_product', 'uptop_product_images');
+add_action('woocommerce_after_single_product', 'uptop_product_images', 20);
 function uptop_product_images() {
 
 	$sleep_trial = get_field('product_sleep_trial');
 	$cutout_img = get_field('product_cutout_image');
 	$product_shipping = get_field('product_shipping_promo');
-	$box_img = get_field('product_box_image');
+	$box_img = get_field('product_box_image'); ?>
 
-    echo '
     	<div class="container">
 	    	<div id="extra-images">
 	    		<div id="stacked-images">
 			    	<div class="row">
 				    	<div class="col-md-12 text-center stacked-image">
-							<img src="'.$sleep_trial.'" />
+							<img src="<?php echo $sleep_trial ?>" />
 						</div>
 					</div>
 			    	<div class="row">
 				    	<div class="col-md-12 text-center stacked-image">
-							<img src="'.$cutout_img.'" />
+							<img src="<?php echo $cutout_img ?>" />
 						</div>
 					</div>
 				</div>
 		    	<div id="side-by-side" class="row">
 			    	<div class="col-md-6 text-right">
-						<img src="'.$product_shipping.'" />
+						<img src="<?php echo $product_shipping ?>" />
 					</div>
 					<div class="col-md-6 text-left">
-						<img src="'.$box_img.'" />
+						<img src="<?php echo $box_img ?>" />
 					</div>
 				</div>
 			</div>
 
 			<div id="featured-product-reviews">
 				<h3>what our customers are saying</h3>
+
+				<?php // passing post id to featured reviews
+				include(get_template_directory() . '/includes/featured-reviews.php');
+				get_template_directory() . '/includes/featured-reviews.php'; ?>
+
 				<div class="text-center">
 					<button class="btn btn-dream" type="button">Read Cool Dream Reviews</button>
 				</div>
 			</div>
 
-		</div>
-    ';
+		</div><?php
 
 }
 
 if ( ! function_exists( 'woocommerce_single_variation' ) ) {
-
-	/**
-	 * Output placeholders for the single variation.
-	 */
 	function woocommerce_single_variation() {
 		echo '<div class="single_variation"></div> + FREE SHIPPING';
 	}

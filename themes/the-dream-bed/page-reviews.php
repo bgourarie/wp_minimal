@@ -9,7 +9,6 @@ $prod_show = array(96, 26); /* show both beds */
 $sort_by = "meta_value_num"; /* sort by rating */
 $sort_order = 'ASC'; /* sort ascending */
 
-
 /* review sorting */
 if(isset($_REQUEST['show_product'])) {
 	if (htmlspecialchars($_REQUEST["show_product"]) == "dreambed")  {
@@ -18,7 +17,6 @@ if(isset($_REQUEST['show_product'])) {
 		$prod_show = array(26);
 	}
 }
-
 
 if(isset($_REQUEST['sort_by'])) {
 	if (htmlspecialchars($_REQUEST["sort_by"]) == "date") {
@@ -35,7 +33,6 @@ if(isset($_REQUEST['sort_order'])) {
 		$sort_order = "DESC";
 	}
 }
-
 
 /* query to get all ratings and build average rating */
 $args = array(
