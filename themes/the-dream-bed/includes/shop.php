@@ -41,17 +41,9 @@ function uptop_product_images() {
 				</div>
 			</div>
 
-			<div id="featured-product-reviews">
-				<h3>what our customers are saying</h3>
-
-				<?php // passing post id to featured reviews
-				include(get_template_directory() . '/includes/featured-reviews.php');
-				get_template_directory() . '/includes/featured-reviews.php'; ?>
-
-				<div class="text-center">
-					<button class="btn btn-dream" type="button">Read Cool Dream Reviews</button>
-				</div>
-			</div>
+			<?php // passing post id to featured reviews
+			include(get_template_directory() . '/includes/featured-reviews.php');
+			get_template_directory() . '/includes/featured-reviews.php'; ?>
 
 		</div><?php
 

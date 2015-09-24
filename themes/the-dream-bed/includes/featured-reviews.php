@@ -36,38 +36,47 @@ $review_query = new WP_Query($args);
 
 if ($review_query->have_posts()) { ?>
 
-	<div id="customers-saying" class="container">
-		<div class="row"><?php
-			while ($review_query->have_posts() ) {
-				$review_query->the_post();
-				$title = get_the_title();
-				$content = get_the_content();
-				$rating = get_field('rating');
-				$name = get_field('name');
-				$city = get_field('city');
-				$state = get_field('state');
-				$product = get_the_title(get_field('product'));
-				$date_format = "n-d-Y";
-				$date = get_the_date($date_format);
-				$turl = get_bloginfo('template_url'); ?>
+	<div id="featured-product-reviews">
+		<h3>what our customers are saying</h3>
 
-				<div class="col-xs-12 col-sm-6 col-md-4">
-					<div class="review">
-						<h3><?php echo $title ?></h3>
-						<p class="stars">
-							<img src="<?php echo $turl .'/images/' . $rating ?>-stars.svg">
-						</p>
-						<p class="the-review"><?php echo $content ?></p>
-						<p class="reviewer">
-							<?php echo $name . ', ' . $city .' ' . $state ?><br>
-							<?php echo $date ?>
-						</p>
-					</div>
-			  	</div><?php
+		<div id="customers-saying" class="container">
+			<div class="row"><?php
+				while ($review_query->have_posts() ) {
+					$review_query->the_post();
+					$title = get_the_title();
+					$content = get_the_content();
+					$rating = get_field('rating');
+					$name = get_field('name');
+					$city = get_field('city');
+					$state = get_field('state');
+					$product = get_the_title(get_field('product'));
+					$date_format = "n-d-Y";
+					$date = get_the_date($date_format);
+					$turl = get_bloginfo('template_url'); ?>
 
-			} ?>
+					<div class="col-xs-12 col-sm-6 col-md-4">
+						<div class="review">
+							<h3><?php echo $title ?></h3>
+							<p class="stars">
+								<img src="<?php echo $turl .'/images/' . $rating ?>-stars.svg">
+							</p>
+							<p class="the-review"><?php echo $content ?></p>
+							<p class="reviewer">
+								<?php echo $name . ', ' . $city .' ' . $state ?><br>
+								<?php echo $date ?>
+							</p>
+						</div>
+				  	</div><?php
+
+				} ?>
+			</div>
+		</div>
+
+		<div class="text-center">
+			<button class="btn btn-dream" type="button">Read Cool Dream Reviews</button>
 		</div>
 	</div><?php
-}
+
+} // have_posts
 
 wp_reset_postdata(); ?>
