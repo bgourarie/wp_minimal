@@ -563,6 +563,17 @@ h2.bedcount {
 	margin-right: 10px;
 }
 
+.review-header small {
+	display: block;
+}
+
+.review-header img {
+	width: auto;
+	height: 24px;
+	vertical-align: middle;
+	margin-left: 10px;
+}
+
 /* buttons for shop radios */
 
 .btn-dream-size {
