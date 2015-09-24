@@ -7,6 +7,21 @@ body.single-product .woocommerce-breadcrumb {
 	display: none;
 }
 
+a {
+    color: #828282;
+    text-decoration: none;
+}
+
+button,
+a.button,
+input.button {
+    text-transform: uppercase;
+}
+
+#main .woocommerce {
+	margin-bottom: 40px;
+}
+
 .woocommerce #respond input#submit,
 .woocommerce a.button, .woocommerce button.button,
 .woocommerce input.button {
@@ -25,6 +40,18 @@ body.single-product .woocommerce-breadcrumb {
 	background-color: #808284;
 }
 
+
+/* Icons */
+
+.woocommerce .woocommerce-message::before {
+	color: #FF9E14;
+}
+.woocommerce .woocommerce-info {
+    border-top-color: #FF9E14;
+}
+.woocommerce .woocommerce-info:before {
+    color: #FF9E14;
+}
 
 
 /*--------------------------------------------------------------
@@ -170,7 +197,6 @@ button.single_add_to_cart_button {
     height: 50px;
     margin-top: 5px;
     font-size: 20px;
-    text-transform: uppercase;
 }
 
 /* Reviews */
@@ -193,6 +219,51 @@ button.single_add_to_cart_button {
 # Cart
 --------------------------------------------------------------*/
 
+
+.woocommerce table.shop_table {
+    margin: 0 -1px 24px 0;
+    border-radius: 0;
+    border-width: 0;
+}
+.woocommerce-cart table.cart td,
+.woocommerce-cart table.cart th {
+    border-color: #828282;
+}
+
+.woocommerce a.remove:hover {
+    background: #FF9E14;
+}
+.woocommerce a.remove {
+    color: #FF9E14!important;
+}
+
+.woocommerce-cart table.cart tr:last-child td {
+    padding: 25px 0 0;
+}
+
+.woocommerce-cart table.cart .product-thumbnail {
+    width: 75px;
+}
+
+.woocommerce td.product-name dl.variation {
+    margin: 0;
+}
+.woocommerce td.product-name dl.variation dd {
+    padding: 0;
+}
+.woocommerce td.product-name dl.variation dd,
+.woocommerce td.product-name dl.variation dt {
+    margin-bottom: 0;
+}
+
+.woocommerce-cart .wc-proceed-to-checkout a.checkout-button {
+    margin-bottom: 0;
+    height: 50px;
+    line-height: 35px;
+}
+
+/* Collaterals */
+
 .woocommerce .cart-collaterals .cart_totals,
 .woocommerce-page .cart-collaterals .cart_totals {
     float: none;
@@ -206,9 +277,17 @@ button.single_add_to_cart_button {
 	display: none;
 }
 
-.cart-collaterals {
-	border: 1px solid #231F20;
-	padding: 10px;
+.cart-collaterals .coupon {
+    border-style: solid;
+    border-color: #231F20;
+    border-width: 1px 1px 0;
+    padding: 10px;
+}
+.cart-collaterals .cart_totals {
+    border-style: solid;
+    border-color: #231F20;
+    border-width: 0 1px 1px;
+    padding: 10px;
 }
 .cart-collaterals .coupon input {
     border-width: 0;
@@ -216,13 +295,68 @@ button.single_add_to_cart_button {
 }
 .cart-collaterals .coupon input.input-text {
     background-color: #F8F8F8;
-    padding: 6px 5px;
+    padding: 6px 15px;
 }
 .cart-collaterals .coupon input.button {
     background-color: #808284;
     color: #fff;
 }
 
+a.continue.shopping {
+    color: #FF9E14;
+    font-size: 20px;
+    background: url(../images/icon-arrow-back.png) no-repeat scroll left 5px;
+    padding-left: 12px;
+    text-transform: uppercase;
+    margin-top: -50px;
+    position: absolute;
+}
+
+.cart-collaterals .coupon {
+    border-style: solid;
+    border-color: #231F20;
+    border-width: 1px 1px 0;
+    padding: 10px;
+    position: relative;
+    height: 61px;
+    width: 100%;
+}
+.cart-collaterals .coupon input.input-text {
+    background-color: #F8F8F8;
+    padding: 6px 15px;
+    height: 40px;
+    padding-right: 100px;
+    width: 100%;
+    display: inline-block;
+}
+.cart-collaterals .coupon input.button {
+    background-color: #808284;
+    color: #fff;
+    width: 90px;
+    height: 40px;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+.woocommerce-cart .cart-collaterals .cart_totals table {
+    width: 100%;
+    font-size: 16px;
+}
+.woocommerce-cart .cart-collaterals .cart_totals tr td,
+.woocommerce-cart .cart-collaterals .cart_totals tr th {
+    border-top-width: 0;
+    padding: 0;
+}
+.woocommerce-cart .cart-collaterals .cart_totals tr td:nth-child(even) {
+    text-align: right;
+}
+
+.cart-collaterals tr.cart-subtotal {
+    display: none;
+}
+.cart-collaterals tr.shipping form {
+	display: none;
+}
 
 
 
