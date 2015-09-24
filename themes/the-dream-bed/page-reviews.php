@@ -144,6 +144,8 @@ if ($review_query->have_posts()) {
 		$date_format = "n-d-Y";
 		$date = get_the_date($date_format);
 		$turl = get_bloginfo('template_url');
+
+        $product_icon = ($product == "Original Dream") ? "original" : "cool";
 		
 
 		echo "<div class='row'>
@@ -165,7 +167,7 @@ if ($review_query->have_posts()) {
 						style:  $style
 					</p>
 					<p class='iconset'>
-						<img src='$turl/images/ico-$product.svg'>
+						<img src='$turl/images/ico-$product_icon.svg'>
 						<img src='$turl/images/ico-$size.svg'>
 						<img src='$turl/images/ico-$style.svg'>
 					</p>
