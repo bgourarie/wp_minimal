@@ -146,31 +146,31 @@ if ($review_query->have_posts()) {
 		$turl = get_bloginfo('template_url');
 		
 
-		echo '<div class="row">
-				<div class="col-sm-3 col-sm-offset-1 col-md-4 col-md-offset-1 review-personal-img">
-					<img src="' . $photo . '" class="img-responsive">
+		echo "<div class='row'>
+				<div class='col-sm-3 col-sm-offset-1 col-md-4 col-md-offset-1 review-personal-img'>
+					<img src='$photo' class='img-responsive'>
 				</div>
-				<div class="col-sm-7 col-md-6 review-personal-text">
-					<h3>' . $title . '</h3>
-					<p class="stars">
-						<img src="' . $turl .'/images/' . $rating .'-stars.svg">
+				<div class='col-sm-7 col-md-6 review-personal-text'>
+					<h3>$title</h3>
+					<p class='stars'>
+						<img src='$turl/images/$rating-stars.svg'>
 					</p>
-					<p class="the-review">' . $content .'</p>
-					<p class="reviewer">
-						' . $name . ', ' . $city .' ' . $state .' <br>
-						' . $date .'
+					<p class='the-review'>$content</p>
+					<p class='reviewer'>
+						$name, $city $state <br>
+						$date
 					</p>
-					<p>product: ' . $product .' <br>
-						size: ' . $size .' <br>
-						style: ' . $style .'
+					<p>product: $product <br>
+						size: $size <br>
+						style:  $style
 					</p>
-					<p class="iconset"> 
-						<img src="' . $turl .'/images/ico-original.svg">
-						<img src="' . $turl .'/images/ico-king.svg">
-						<img src="' . $turl .'/images/ico-partner.svg">
+					<p class='iconset'>
+						<img src='$turl/images/ico-$product.svg'>
+						<img src='$turl/images/ico-$size.svg'>
+						<img src='$turl/images/ico-$style.svg'>
 					</p>
-			  	</div
-			  </div>';
+			  	</div>
+			  </div>";
 	}
 	echo '<!-- end reviews -->';
 } else {
