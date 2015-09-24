@@ -64,7 +64,18 @@ wp_reset_postdata();
 
 	<div class="row">
 		<div class="col-sm-4 col-sm-offset-1 review-header">
-			<h3>average rating: <?php echo round(calculate_average($ratings), 0, PHP_ROUND_HALF_UP); ?>
+			<h3>average rating:
+                <?php
+                    $average_rating = round(calculate_average($ratings), 0, PHP_ROUND_HALF_UP);
+                    // Loop and print a whole star for each step.
+                    for ($i = 1; $i <= $average_rating; $i++) {
+                        echo '<img src="one-star.svg" />';
+                    }
+                    // If average rating is not a whole number, we need to print an additional half star after the loop.
+                    if (!round($average_rating, 0) == $average_rating){
+                        echo '<img src="half-star.svg" />';
+                    }
+                ?>
 			<small>based on <?php echo $count; ?> reviews</small></h3>
 		</div>
 		<div class="col-sm-6 text-right">
