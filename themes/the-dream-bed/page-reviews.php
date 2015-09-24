@@ -66,7 +66,7 @@ wp_reset_postdata();
 		<div class="col-sm-4 col-sm-offset-1 review-header">
 			<h3>average rating:
                 <?php
-                    $average_rating = round(calculate_average($ratings), 0, PHP_ROUND_HALF_UP);
+                    $average_rating = round((calculate_average($ratings) * 2), 0) / 2;
                     // Loop and print a whole star for each step.
                     for ($i = 1; $i <= $average_rating; $i++) {
                         echo '<img src="' . get_bloginfo("template_url") . '/images/one-star.svg" />';
@@ -150,7 +150,8 @@ if ($review_query->have_posts()) {
 
         // Set default photo for review if not present.
         if ($photo == ''){
-            $photo = ($product == "Original Dream") ? 'standard-review-original-dream.png': 'standard-review-cool-dream.png';
+            $photo = $turl . '/images/';
+            $photo .= ($product == "Original Dream") ? 'standard-review-original-dream.png': 'standard-review-cool-dream.png';
         }
 		
 
