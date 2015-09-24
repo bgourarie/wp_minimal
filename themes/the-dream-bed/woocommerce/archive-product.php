@@ -49,7 +49,7 @@ echo "</pre>";
 */
 
 
-	echo '</div><div class="row"><div class="col-xs-12"><div class="hidden-sm or-text">or</div></div></div></div>';
+	echo '</div><div class="row"><div class="col-xs-12"><div class="hidden-xs hidden-sm or-text">or</div></div></div></div>';
 } else {
 // no posts found
 }

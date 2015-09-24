@@ -539,6 +539,29 @@ h2.bedcount {
 	color: #61B4E4;
 }
 
+.reviews-page .row {
+	margin-bottom: 30px;
+}
+	
+.stars img {
+	height: 24px;
+	width: 150px;
+}
+
+.review-personal-text h3 {
+	margin-top: 0;
+}
+
+.review-personal-text .reviewer {
+	font-weight: 700;
+}
+
+.review-personal-text .iconset img {
+	height: 40px;
+	width: auto;
+	vertical-align: middle;
+	margin-right: 10px;
+}
 
 /* buttons for shop radios */
 

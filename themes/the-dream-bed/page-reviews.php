@@ -2,11 +2,6 @@
 <?php acf_form_head(); ?>
 <?php get_header(); ?>
 
-<?php echo get_field('header'); ?>
-<img src="<?php echo get_field('header_image'); ?>">
-
-<hr>
-
 <?php
 
 /* defaults */
@@ -67,38 +62,41 @@ if ($review_query->have_posts()) {
 wp_reset_postdata();
 ?>
 
-<h2>Average Rating</h2>
-<p><?php echo round(calculate_average($ratings), 0, PHP_ROUND_HALF_UP); ?>/5</p>
-<small>Based on <?php echo $count; ?> reviews</small>
+<div class="container reviews-page">
 
-<hr>
-<h2>Sorting</h2>
 
-<form action="<?php bloginfo('url'); ?>/reviews" method="post">
-	<div>
-		<label for="show_product">Show Reviews For:</label>
-		<select name="show_product" onchange="this.form.submit()">
-			<option value="">All Beds</option>
-			<option <?php if(isset($_REQUEST['show_product']) && (htmlspecialchars($_REQUEST["show_product"]) == "dreambed")) { echo "selected"; } ?> value="dreambed">Dream Bed</option>
-			<option <?php if(isset($_REQUEST['show_product']) && (htmlspecialchars($_REQUEST["show_product"]) == "coolgelbed")) { echo "selected"; } ?> value="coolgelbed">Cool Gel Bed</option>
-		</select>
+	<div class="row">
+		<div class="col-sm-4 col-sm-offset-1 review-header">
+			<h3>average rating: <?php echo round(calculate_average($ratings), 0, PHP_ROUND_HALF_UP); ?>
+			<small>based on <?php echo $count; ?> reviews</small></h3>
+		</div>
+		<div class="col-sm-6 text-right">
+		<form action="<?php bloginfo('url'); ?>/reviews" method="post">
+				<div>
+					<label for="show_product">Show Reviews For:</label>
+					<select name="show_product" onchange="this.form.submit()">
+						<option value="">All Beds</option>
+						<option <?php if(isset($_REQUEST['show_product']) && (htmlspecialchars($_REQUEST["show_product"]) == "dreambed")) { echo "selected"; } ?> value="dreambed">Dream Bed</option>
+						<option <?php if(isset($_REQUEST['show_product']) && (htmlspecialchars($_REQUEST["show_product"]) == "coolgelbed")) { echo "selected"; } ?> value="coolgelbed">Cool Gel Bed</option>
+					</select>
+				</div>
+				<div>
+					<label for="sort_by">Sort By:</label>
+					<select name="sort_by" onchange="this.form.submit()">
+						<option <?php if(isset($_REQUEST['sort_by']) && (htmlspecialchars($_REQUEST["sort_by"]) == "rating")) { echo "selected"; } ?>  value="rating">Rating</option>
+						<option <?php if(isset($_REQUEST['sort_by']) && (htmlspecialchars($_REQUEST["sort_by"]) == "date")) { echo "selected"; } ?>  value="date">Date</option>
+					</select>
+				</div>
+				<div>
+					<label for="sort_order">Sort Order:</label>
+					<select name="sort_order" onchange="this.form.submit()">
+						<option <?php if(isset($_REQUEST['sort_order']) && (htmlspecialchars($_REQUEST["sort_order"]) == "DESC")) { echo "selected"; } ?>  value="DESC">Highest to Lowest</option>
+						<option <?php if(isset($_REQUEST['sort_order']) && (htmlspecialchars($_REQUEST["sort_order"]) == "ASC")) { echo "selected"; } ?>  value="ASC">Lowest to Highest</option>
+					</select>
+				</div>
+			</form></div>
 	</div>
-	<div>
-		<label for="sort_by">Sort By:</label>
-		<select name="sort_by" onchange="this.form.submit()">
-			<option <?php if(isset($_REQUEST['sort_by']) && (htmlspecialchars($_REQUEST["sort_by"]) == "rating")) { echo "selected"; } ?>  value="rating">Rating</option>
-			<option <?php if(isset($_REQUEST['sort_by']) && (htmlspecialchars($_REQUEST["sort_by"]) == "date")) { echo "selected"; } ?>  value="date">Date</option>
-		</select>
-	</div>
-	<div>
-		<label for="sort_order">Sort Order:</label>
-		<select name="sort_order" onchange="this.form.submit()">
-			<option <?php if(isset($_REQUEST['sort_order']) && (htmlspecialchars($_REQUEST["sort_order"]) == "DESC")) { echo "selected"; } ?>  value="DESC">Highest to Lowest</option>
-			<option <?php if(isset($_REQUEST['sort_order']) && (htmlspecialchars($_REQUEST["sort_order"]) == "ASC")) { echo "selected"; } ?>  value="ASC">Lowest to Highest</option>
-		</select>
-	</div>
-</form>
-<hr>
+	
 
 <?php
 
@@ -120,8 +118,9 @@ $args = array(
 );
 
 $review_query = new WP_Query($args);
+
 if ($review_query->have_posts()) {
-	echo '<ol class="reviews">';
+	echo '<!-- start reviews -->';
 	while ($review_query->have_posts() ) {
 		$review_query->the_post();
 		$title = get_the_title();
@@ -134,55 +133,79 @@ if ($review_query->have_posts()) {
 		$product = get_the_title(get_field('product'));
 		$size = get_field('size');
 		$style = get_field('sleep_style');
-		$date_format = "n/d/Y";
+		$date_format = "n-d-Y";
 		$date = get_the_date($date_format);
+		$turl = get_bloginfo('template_url');
+		
 
-
-		echo '<li class="review"><ul>
-				<li><img width=100 src="' . $photo . '"></li>
-				<li>title: ' . $title . '</li>
-				<li>rating: ' . $rating .'</li>
-				<li>name: ' . $name . '</li>
-				<li>city: ' . $city .'</li>
-				<li>state: ' . $state .'</li>
-				<li>date: ' . $date .'</li>
-				<li>content: ' . $content .'</li>
-				<li>product: ' . $product .'</li>
-				<li>size: ' . $size .'</li>
-				<li>style: ' . $style .'</li>
-			  </ul></li>';
+		echo '<div class="row">
+				<div class="col-sm-3 col-sm-offset-1 col-md-4 col-md-offset-1 review-personal-img">
+					<img src="' . $photo . '" class="img-responsive">
+				</div>
+				<div class="col-sm-7 col-md-6 review-personal-text">
+					<h3>' . $title . '</h3>
+					<p class="stars">
+						<img src="' . $turl .'/images/' . $rating .'-stars.svg">
+					</p>
+					<p class="the-review">' . $content .'</p>
+					<p class="reviewer">
+						' . $name . ', ' . $city .' ' . $state .' <br>
+						' . $date .'
+					</p>
+					<p class="iconset">product: ' . $product .' <br>
+						size: ' . $size .' <br>
+						style: ' . $style .'
+					</p>
+			  	</div>
+			  </div>';
 	}
-	echo '</ol>';
+	echo '<!-- end reviews -->';
 } else {
 // no reviews found
 }
 wp_reset_postdata();
 ?>
 
+<div class="row">
+	<div class="col-xs-12">
+		<p class="text-center"><a class="btn btn-dream" role="button" data-toggle="collapse" href="#new-review-form" aria-expanded="false" aria-controls="new-review-form">Write a review</a></p>
+	</div>
+	<div class="col-xs-12">
+		<div class="collapse" id="new-review-form">
+			<?php
+			/* generate the review form for users to submit reviews directly to the custom post type for review */
+			/* reviews will be submitted as 'pending' and require an editor or admin to publish */
+			while ( have_posts()) {
+				the_post();
+			}
+				acf_form(array(
+					'post_id' => 'new_post',
+					'new_post' => array(
+						'post_type' => 'review',
+						'post_status' => 'pending'
+					),
+					'submit_value' => 'Submit Review'
+				));
+			
+			?>
+			</div>
+	</div>
+</div>
+
+<div class="row">
+		<div class="col-xs-12">
+			<h1 class="text-center">Share your dreams</h1>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-sm-3"> <img src="<?php bloginfo("template_url"); ?>/images/photos/instagram-submission-1.jpg" class="img-responsive" alt="Instagram submission to the Dream Bed contest"> </div>
+		<div class="col-sm-3"> <img src="<?php bloginfo("template_url"); ?>/images/photos/instagram-submission-2.jpg" class="img-responsive" alt="Instagram submission to the Dream Bed contest"> </div>
+		<div class="col-sm-3"> <img src="<?php bloginfo("template_url"); ?>/images/photos/instagram-submission-3.jpg" class="img-responsive" alt="Instagram submission to the Dream Bed contest"> </div>
+		<div class="col-sm-3"> <img src="<?php bloginfo("template_url"); ?>/images/photos/instagram-submission-4.jpg" class="img-responsive" alt="Instagram submission to the Dream Bed contest"> </div>
+	</div>
+
+</div>
 
 
-
-<hr>
-
-<a href="#" class="button">Write a review</a>
-
-<?php
-/* generate the review form for users to submit reviews directly to the custom post type for review */
-/* reviews will be submitted as 'pending' and require an editor or admin to publish */
-while ( have_posts()) {
-	the_post();
-}
-	acf_form(array(
-		'post_id' => 'new_post',
-		'new_post' => array(
-			'post_type' => 'review',
-			'post_status' => 'pending'
-		),
-		'submit_value' => 'Submit Review'
-	));
-
-?>
-
-<hr>
 
 <?php get_footer(); ?>
