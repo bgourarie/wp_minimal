@@ -64,7 +64,7 @@ wp_reset_postdata();
 
 	<div class="row">
 		<div class="col-sm-4 col-sm-offset-1 review-header">
-			<h3>average rating: <?php echo round(calculate_average($ratings), 0, PHP_ROUND_HALF_UP); ?>
+			<h3>average rating: <?php echo round(calculate_average($ratings), 0, PHP_ROUND_HALF_UP); ?> <img src="<?php bloginfo("template_url"); ?>/images/one-star.svg"><img src="<?php bloginfo("template_url"); ?>/images/half-star.svg">
 			<small>based on <?php echo $count; ?> reviews</small></h3>
 		</div>
 		<div class="col-sm-6 text-right">
@@ -149,11 +149,16 @@ if ($review_query->have_posts()) {
 						' . $name . ', ' . $city .' ' . $state .' <br>
 						' . $date .'
 					</p>
-					<p class="iconset">product: ' . $product .' <br>
+					<p>product: ' . $product .' <br>
 						size: ' . $size .' <br>
 						style: ' . $style .'
 					</p>
-			  	</div>
+					<p class="iconset"> 
+						<img src="' . $turl .'/images/ico-original.svg">
+						<img src="' . $turl .'/images/ico-king.svg">
+						<img src="' . $turl .'/images/ico-partner.svg">
+					</p>
+			  	</div
 			  </div>';
 	}
 	echo '<!-- end reviews -->';
