@@ -23,11 +23,12 @@
 				</div>
 				<div class="col-md-2 col-xs-9 col-sm-3">
 					<ul class="list-unstyled footer-social">
-						<li><a href="#"><img src="<?php bloginfo("template_url"); ?>/images/ico-instagram.svg" width="15" height="15" alt=""> Instagram</a></li>
+						<li><a href="https://instagram.com/thedreambed/" target="_blank"><img src="<?php bloginfo("template_url"); ?>/images/ico-instagram.svg" width="15" height="15" alt=""> Instagram</a></li>
 						<li><a href="#"><img src="<?php bloginfo("template_url"); ?>/images/ico-pinterest.svg" width="15" height="15" alt=""> Pinterest</a></li>
-						<li><a href="#"><img src="<?php bloginfo("template_url"); ?>/images/ico-twitter.svg" width="15" height="15" alt=""> Twitter</a></li>
-						<li><a href="#"><img src="<?php bloginfo("template_url"); ?>/images/ico-facebook.svg" width="15" height="15" alt=""> Facebook</a></li>
-						<li><a href="#"><img src="<?php bloginfo("template_url"); ?>/images/ico-youtube.svg" width="15" height="15" alt=""> YouTube</a></li>
+						<li><a href="https://twitter.com/thedreambed" target="_blank"><img src="<?php bloginfo("template_url"); ?>/images/ico-twitter.svg" width="15" height="15" alt=""> Twitter</a></li>
+						<li><a href="https://facebook.com/thedreambed/" target="_blank"><img src="<?php bloginfo("template_url"); ?>/images/ico-facebook.svg" width="15" height="15" alt=""> Facebook</a></li>
+						<li><a href="https://www.youtube.com/channel/UChw0QPCQZVobODpG1cjeiuQ" target="_blank"><img src="<?php bloginfo("template_url"); ?>/images/ico-youtube.svg" width="15" height="15" alt=""> YouTube</a></li>
+						<li><a href="https://plus.google.com/+dreambed/" target="_blank"><img src="<?php bloginfo("template_url"); ?>/images/ico-youtube.svg" width="15" height="15" alt=""> YouTube</a></li>
 					</ul>
 				</div>
 				<div class="col-md-3 col-xs-12 col-sm-6">
