@@ -69,11 +69,11 @@ wp_reset_postdata();
                     $average_rating = round(calculate_average($ratings), 0, PHP_ROUND_HALF_UP);
                     // Loop and print a whole star for each step.
                     for ($i = 1; $i <= $average_rating; $i++) {
-                        echo '<img src="one-star.svg" />';
+                        echo get_bloginfo("template_url") . '/images/one-star.svg';
                     }
                     // If average rating is not a whole number, we need to print an additional half star after the loop.
                     if (!round($average_rating, 0) == $average_rating){
-                        echo '<img src="half-star.svg" />';
+                        echo get_bloginfo("template_url") . '/images/half-star.svg';
                     }
                 ?>
 			<small>based on <?php echo $count; ?> reviews</small></h3>
@@ -160,11 +160,16 @@ if ($review_query->have_posts()) {
 						' . $name . ', ' . $city .' ' . $state .' <br>
 						' . $date .'
 					</p>
-					<p class="iconset">product: ' . $product .' <br>
+					<p>product: ' . $product .' <br>
 						size: ' . $size .' <br>
 						style: ' . $style .'
 					</p>
-			  	</div>
+					<p class="iconset"> 
+						<img src="' . $turl .'/images/ico-original.svg">
+						<img src="' . $turl .'/images/ico-king.svg">
+						<img src="' . $turl .'/images/ico-partner.svg">
+					</p>
+			  	</div
 			  </div>';
 	}
 	echo '<!-- end reviews -->';
