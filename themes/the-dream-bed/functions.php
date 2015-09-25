@@ -128,6 +128,13 @@ function custom_text( $translated_text, $text, $text_domain ) {
 		return 'Continue Shopping'; /* change this */
 	}
 	/* checkout form text */
+	
+	if('Billing Details' === $text) {
+		return 'Contact Info';
+	}
+	if('Ship to a different address?' === $text) {
+		return 'Shipping Address';
+	}
 	if ('Your order' === $text) {
 		return 'Order Summary';
 	}

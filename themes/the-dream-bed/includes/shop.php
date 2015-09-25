@@ -117,3 +117,88 @@ function woocommerce_add_continue_shopping_button_to_cart() {
 }
 add_action('woocommerce_after_cart_table', 'woocommerce_add_continue_shopping_button_to_cart', 10);
 
+
+/*--------------------------------------------------------------
+# Checkout
+--------------------------------------------------------------*/
+
+add_action('woocommerce_before_checkout_form', 'uptop_before_checkout', 10);
+add_action('woocommerce_after_checkout_form', 'uptop_after_checkout', 10);
+
+function uptop_before_checkout() {
+	?><div class="woocommerce container"><?php
+}
+function uptop_after_checkout() {
+	?><div class="woocommerce container"><?php
+}
+
+/* Checkout form layout */
+
+add_action('woocommerce_checkout_before_customer_details', 'checkout_wrapper_start');
+function checkout_wrapper_start() {
+    echo '
+		<div class="row">
+			<div id="checkout-form-container" class="col-md-7">
+    ';
+}
+add_action('woocommerce_checkout_after_customer_details', 'checkout_wrapper_end', 30);
+function checkout_wrapper_end() {
+    echo '
+			</div>
+			<div id="order-summary-container" class="col-md-5">
+    ';
+}
+
+add_action('woocommerce_checkout_after_order_review', 'order_review_end', 10);
+function order_review_end() {
+    echo '
+			</div>
+		</div>
+    ';
+}
+
+remove_action('woocommerce_checkout_order_review', 'woocommerce_checkout_payment', 20);
+
+// add_action('woocommerce_checkout_after_customer_details', 'woocommerce_checkout_payment_start', 15);
+// function woocommerce_checkout_payment_start() {
+//     echo '
+// 		<div class="row seperator">
+// 			<div class="col-md-12">
+//     ';
+// }
+add_action('woocommerce_checkout_after_customer_details', 'woocommerce_checkout_payment', 10);
+// add_action('woocommerce_checkout_after_customer_details', 'woocommerce_checkout_payment_end', 25);
+// function woocommerce_checkout_payment_end() {
+//     echo '
+// 			</div>
+// 		</div>
+//     ';
+// }
+
+
+
+add_filter( 'woocommerce_checkout_fields' , 'custom_override_checkout_fields' );
+
+// Our hooked in function - $fields is passed via the filter!
+function custom_override_checkout_fields( $fields ) {
+
+	$billing_heading['Billing Address Heading'] = array(
+		'type' => 'text',
+        'label'         => __('Billing Address'),
+        'placeholder'   => __(''),
+	    'required'  => false,
+	    'class'     => array('form-row-wide billing-address-label'),
+	    'clear'     => true
+    );
+	array_splice( $fields['billing'], 5, 0, $billing_heading );
+
+	$fields_billing = $fields['billing'];
+
+    return $fields;
+}
+
+
+
+
+
+

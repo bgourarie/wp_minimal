@@ -19,7 +19,7 @@ input.button {
 }
 
 #main .woocommerce {
-	margin-bottom: 40px;
+    margin-bottom: 40px;
 }
 
 .woocommerce #respond input#submit,
@@ -365,6 +365,160 @@ a.continue.shopping {
 .cart-collaterals tr.shipping form {
 	display: none;
 }
+
+
+/*--------------------------------------------------------------
+# Checkout
+--------------------------------------------------------------*/
+
+#checkout-form-container .seperator {
+	border-bottom: 1px solid #828282;
+	margin-bottom: 30px;
+	padding-bottom: 30px;
+}
+
+/* Order Summary */
+#checkout-form-container {
+    padding-right: 80px;
+}
+#order-summary-container {
+    padding: 5px 20px;
+    border: 1px solid #828282;
+}
+.woocommerce table.shop_table {
+	border-top: 1px solid #828282;
+}
+.woocommerce table.shop_table tbody td {
+    border-bottom: 1px solid #828282;
+    padding: 10px 0;
+}
+.woocommerce table.shop_table tbody td,
+.woocommerce table.shop_table tfoot td,
+.woocommerce table.shop_table tfoot th {
+    border-top: none;
+}
+.woocommerce table.shop_table tfoot td,
+.woocommerce table.shop_table tfoot th {
+    padding: 5px 0;
+}
+.woocommerce td.product-name dl {
+	margin-bottom: 0;
+}
+.woocommerce table.shop_table td:nth-child(even) {
+    text-align: right;
+}
+.woocommerce table.shop_table td.product-name img {
+    float: left;
+    width: 50px;
+    display: inline-block;
+    margin-right: 15px;
+}
+.woocommerce td.product-name dl.variation {
+    margin: 0;
+    float: left;
+}
+
+
+
+.woocommerce form .form-row label {
+    line-height: 1em;
+}
+.woocommerce-checkout #payment {
+    background: transparent;
+    border-radius: 0;
+}
+
+#customer_details .billing-address-label:before {
+    border-top: 1px solid #828283;
+    content: "";
+    display: block;
+    margin-top: 20px;
+    padding-bottom: 20px;
+}
+#customer_details .billing-address-label label {
+    font-size: 20px;
+    text-transform: uppercase;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    font-family: inherit;
+    font-weight: 500;
+    line-height: 1.1;
+    color: inherit;
+}
+#customer_details .billing-address-label input {
+	display: none;
+}
+
+#ship-to-different-address:before {
+    border-top: 1px solid #828283;
+    content: "";
+    display: block;
+    padding-bottom: 29px;
+}
+
+#billing_country_field {
+	display: none;
+}
+
+.select2-container .select2-choice {
+    display: block;
+    height: 40px;
+    padding: 0 0 0 10px;
+    overflow: hidden;
+    position: relative;
+    border: 1px solid #828283;
+    white-space: nowrap;
+    line-height: 38px;
+    color: #444;
+    border-radius: 0;
+    background-image: none;
+}
+.select2-drop-active {
+    border: inherit;
+    border-top: none;
+}
+
+#checkout-form-container h3 {
+    font-size: 20px;
+    text-transform: uppercase;
+}
+#checkout-form-container h3 label {
+	font-weight: 500;
+}
+
+/* Shipping text inline */
+
+#customer_details #ship-to-different-address span {
+    font-size: 0.6em;
+}
+
+.woocommerce form .form-row.woocommerce-validated .select2-container,
+.woocommerce form .form-row.woocommerce-validated input.input-text,
+.woocommerce form .form-row.woocommerce-validated select,
+.woocommerce form .form-row.woocommerce-invalid .select2-container,
+.woocommerce form .form-row.woocommerce-invalid input.input-text,
+.woocommerce form .form-row.woocommerce-invalid select {
+    border-color: inherit;
+}
+.woocommerce form .form-row input.input-text,
+.woocommerce form .form-row textarea {
+    line-height: 1.2;
+    padding: 10px 10px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

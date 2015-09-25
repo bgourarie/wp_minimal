@@ -18,6 +18,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 <?php endif; ?>
 
 <div id="payment" class="woocommerce-checkout-payment">
+
+	<h3><?php _e( 'Payment', 'woocommerce' ); ?></h3>
+
 	<?php if ( WC()->cart->needs_payment() ) : ?>
 	<ul class="payment_methods methods">
 		<?php
