@@ -141,7 +141,7 @@ function checkout_wrapper_start() {
 			<div id="checkout-form-container" class="col-md-7">
     ';
 }
-add_action('woocommerce_checkout_after_customer_details', 'checkout_wrapper_end', 30);
+add_action('woocommerce_checkout_after_customer_details', 'checkout_wrapper_end', 40);
 function checkout_wrapper_end() {
     echo '
 			</div>
@@ -166,15 +166,19 @@ remove_action('woocommerce_checkout_order_review', 'woocommerce_checkout_payment
 // 			<div class="col-md-12">
 //     ';
 // }
-add_action('woocommerce_checkout_after_customer_details', 'woocommerce_checkout_payment', 10);
-// add_action('woocommerce_checkout_after_customer_details', 'woocommerce_checkout_payment_end', 25);
-// function woocommerce_checkout_payment_end() {
-//     echo '
-// 			</div>
-// 		</div>
-//     ';
-// }
-
+add_action('woocommerce_checkout_after_customer_details', 'woocommerce_checkout_container_before', 10);
+add_action('woocommerce_checkout_after_customer_details', 'woocommerce_checkout_payment', 20);
+add_action('woocommerce_checkout_after_customer_details', 'woocommerce_checkout_container_after', 30);
+function woocommerce_checkout_container_before() {
+    echo '
+		<div id="order_review">
+    ';
+}
+function woocommerce_checkout_container_after() {
+    echo '
+		</div>
+    ';
+}
 
 
 add_filter( 'woocommerce_checkout_fields' , 'custom_override_checkout_fields' );
