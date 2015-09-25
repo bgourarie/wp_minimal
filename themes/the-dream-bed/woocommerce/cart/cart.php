@@ -135,14 +135,18 @@ do_action( 'woocommerce_before_cart' ); ?>
 
 <div class="cart-collaterals">
 
-	<?php if ( WC()->cart->coupons_enabled() ) { ?>
-		<div class="coupon">
+	<form action="<?php echo esc_url( WC()->cart->get_cart_url() ); ?>" method="post">
 
-			<label for="coupon_code"><?php _e( 'Coupon', 'woocommerce' ); ?></label> <input type="text" name="coupon_code" class="input-text" id="coupon_code" value="" placeholder="<?php _e( 'Coupon code', 'woocommerce' ); ?>" /> <input type="submit" class="button" name="apply_coupon" value="<?php _e( 'Apply Coupon', 'woocommerce' ); ?>" />
+		<?php if ( WC()->cart->coupons_enabled() ) { ?>
+			<div class="coupon">
 
-			<?php do_action( 'woocommerce_cart_coupon' ); ?>
-		</div>
-	<?php } ?>
+				<label for="coupon_code"><?php _e( 'Coupon', 'woocommerce' ); ?></label> <input type="text" name="coupon_code" class="input-text" id="coupon_code" value="" placeholder="<?php _e( 'Coupon code', 'woocommerce' ); ?>" /> <input type="submit" class="button" name="apply_coupon" value="<?php _e( 'Apply Coupon', 'woocommerce' ); ?>" />
+
+				<?php do_action( 'woocommerce_cart_coupon' ); ?>
+			</div>
+		<?php } ?>
+
+	</form>
 
 	<?php do_action( 'woocommerce_cart_collaterals' ); ?>
 
