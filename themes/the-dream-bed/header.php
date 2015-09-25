@@ -38,12 +38,17 @@
 				</div>
 				<a class="navbar-brand" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><img src="<?php bloginfo("template_url"); ?>/images/logo-the-dream-bed.svg" width="116" height="35" alt="The Dream Bed"></a>
 				<div class="navbar-collapse collapse">
+					<?php if(!is_page(array('checkout', 'order-received'))) { ?>
 					<ul class="nav navbar-nav navbar-left">
 						<?php wp_nav_menu( array( 'theme_location' => 'header-menu', 'container' => '' ) ); ?>
 					</ul>
+					<?php } ?>
 					<ul class="nav navbar-nav navbar-right">
+					
+					<?php if(!is_page(array('checkout', 'order-received'))) { ?>
+					
 						<?php wp_nav_menu( array( 'theme_location' => 'header-right', 'container' => '' ) ); ?>
-						
+					<?php } ?>	
 						<?php
 						/* show cart link + quantity */
 						global $woocommerce;
@@ -51,22 +56,26 @@
 						$cart_url = $woocommerce->cart->get_cart_url();
 						echo '<li><a href="'. $cart_url .'">Cart <span class="qty badge">'. $qty .'</span></a></li>';
 						?>
-						
+					
+					
 						<li><a href="tel:<?php echo get_field('phone_number', 'options'); ?>" class="phone"><?php echo get_field('phone_number', 'options'); ?></a></li>
 					</ul>
 				</div>
 			</div>
 		</nav><!-- #site-navigation -->
 		
-		<?php if(is_page(array('cart', 'checkout', 'order-received'))) { ?>
-		<!-- cart breadcrumb menu - use css to style this appropriately -->
-		<nav id="checkout-breadcrumbs" role="navigation">
-			<ul class="shop breadcrumb menu">
-				<li<?php if(is_page('cart')) { echo ' class="active"'; } ?>><a href="<?php echo bloginfo('url'); ?>/cart">Cart</a></li>
-				<li<?php if(is_page('checkout')) { echo ' class="active"'; } ?>><a href="<?php echo bloginfo('url'); ?>/checkout">Checkout</a></li>
-				<li<?php if(is_page('order-received')) { echo ' class="active"'; } ?>>Thank You!</li>
-			</ul>
-		</nav>
+		<?php if(is_page(array('checkout', 'order-received'))) { ?>
+		
+		<div class="container-fluid">
+			<div class="row">
+				<div class="btn-group btn-breadcrumb">
+					<a href="?php echo bloginfo('url'); ?>/cart" class="btn btn-default<?php if(is_page('cart')) { echo ' show'; } ?>">Your Cart</a>
+					<a href="<?php echo bloginfo('url'); ?>/checkout" class="btn btn-default<?php if(is_page('checkout')) { echo ' show'; } ?>">Checkout &amp; Place Order</a>
+					<a href="#" class="btn disabled btn-default<?php if(is_page('order-received')) { echo ' show'; } ?>">Thank You!</a>
+				</div>
+			</div>
+		</div>
+		
 		<?php } ?>
 	</header><!-- #masthead -->
 

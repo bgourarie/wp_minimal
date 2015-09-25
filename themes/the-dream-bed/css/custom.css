@@ -676,6 +676,83 @@ h2.bedcount {
 	color: #808284;
 }
 
+.btn-breadcrumb {
+	width: 100%;
+	margin-top: 2px;
+}
+
+.btn-breadcrumb .btn:not(:last-child):after {
+  content: " ";
+  display: block;
+  width: 0;
+  height: 0;
+  border-top: 17px solid transparent;
+  border-bottom: 17px solid transparent;
+  border-left: 10px solid white;
+  position: absolute;
+  top: 50%;
+  margin-top: -17px;
+  left: 100%;
+  z-index: 3;
+}
+.btn-breadcrumb .btn:not(:last-child):before {
+  content: " ";
+  display: block;
+  width: 0;
+  height: 0;
+  border-top: 17px solid transparent;
+  border-bottom: 17px solid transparent;
+  border-left: 10px solid rgb(173, 173, 173);
+  position: absolute;
+  top: 50%;
+  margin-top: -17px;
+  margin-left: 1px;
+  left: 100%;
+  z-index: 3;
+}
+
+.btn-breadcrumb .btn {
+  padding:8px 12px 8px 24px;
+  text-transform: uppercase;
+	-webkit-border-radius: 0;
+	-moz-border-radius: 0;
+	border-radius: 0;
+	width: 33%;
+}
+.btn-breadcrumb .btn:first-child {
+  padding:8px 6px 8px 10px;
+}
+
+.btn-breadcrumb .btn:hover {
+  filter:progid:DXImageTransform.Microsoft.Gradient(enabled='false');
+	-webkit-box-shadow: none;
+	-moz-box-shadow: none;
+	box-shadow: none;
+}
+
+.btn-breadcrumb .btn:last-child {
+  padding:8px 18px 8px 24px;
+  width: 34%;
+}
+
+.btn-breadcrumb .show {
+	color: #FF9E14;
+}
+
+/** Default button **/
+.btn-breadcrumb .btn.btn-default:not(:last-child):after {
+  border-left: 10px solid #fff;
+}
+.btn-breadcrumb .btn.btn-default:not(:last-child):before {
+  border-left: 10px solid #ccc;
+}
+.btn-breadcrumb .btn.btn-default:hover:not(:last-child):after {
+  border-left: 10px solid #ebebeb;
+}
+.btn-breadcrumb .btn.btn-default:hover:not(:last-child):before {
+  border-left: 10px solid #adadad;
+}
+
 /* Custom, iPhone Retina */ 
 @media only screen and (min-width : 320px) {
 
