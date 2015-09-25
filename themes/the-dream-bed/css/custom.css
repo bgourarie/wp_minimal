@@ -574,6 +574,15 @@ h2.bedcount {
 	margin-left: 4px;
 }
 
+.how-to-dream-page {
+	padding-top: 30px;
+	padding-bottom: 30px; 
+}
+
+.how-to-dream-page .editable-content {
+	padding-bottom: 30px; 
+}
+
 /* buttons for shop radios */
 
 .btn-dream-size {
