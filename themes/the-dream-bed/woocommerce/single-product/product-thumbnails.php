@@ -78,10 +78,10 @@ if ( $attachment_ids ) {
 		});
 		$slider.find('.item:first').addClass('active');
 
-		$productOptions = $('.tm-extra-product-options-variations > li');
+		$productOptions = $('.tm-extra-product-options-variations > li > label');
 		$productOptions.on('click', function() {
-			$productOptions.removeClass('active');
-			$(this).addClass('active');
+			$productOptions.parent().removeClass('active');
+			$(this).parent().addClass('active');
 		});
 	});
 </script>
