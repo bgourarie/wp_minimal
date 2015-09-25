@@ -95,7 +95,7 @@ input.button {
 }
 .tm-epo-field-label.tm-left + .tm-extra-product-options-container li.tmcp-field-wrap,
 .tm-epo-field-label.tm-right + .tm-extra-product-options-container li.tmcp-field-wrap {
-	padding: 7px;
+	padding: 0;
 }
 .tm-epo-field-label.tm-left + .tm-extra-product-options-container,
 .tm-epo-field-label.tm-right + .tm-extra-product-options-container {
@@ -113,6 +113,14 @@ input.button {
 .tm-variation-ul-radio li,
 .tm-variation-ul-radio li label {
     cursor: pointer;
+}
+.tm-extra-product-options .tmcp-field-wrap > label {
+    display: block;
+    float: none;
+    width: 100%;
+    padding: 7px;
+    margin: 0;
+    line-height: 1em;
 }
 .tm-variation-ul-radio li:hover {
 	color: #FF9E14;
