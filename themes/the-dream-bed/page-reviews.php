@@ -169,10 +169,6 @@ if ($review_query->have_posts()) {
 						$name, $city $state <br>
 						$date
 					</p>
-					<p>product: $product <br>
-						size: $size <br>
-						style:  $style
-					</p>
 					<p class='iconset'>
 						<img src='$turl/images/ico-$product_icon.svg'>
 						<img src='$turl/images/ico-$size.svg'>
