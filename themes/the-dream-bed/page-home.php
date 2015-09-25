@@ -101,7 +101,7 @@ jQuery(document).ready(function($){
 				<div class="inside">
 					<div><img src="<?php bloginfo("template_url"); ?>/images/unboxing.svg" width="100" height="109" alt="unboxing demonstration"></div>
 					<h3>Unboxing?</h3>
-					<p class="mattress-action"><a href="<?php bloginfo('url'); ?>/design" class="btn btn-dream" role="button">Learn How-To</a></p>
+					<p class="mattress-action"><a href="<?php bloginfo('url'); ?>/how-to-dream" class="btn btn-dream" role="button">Learn How-To</a></p>
 				</div>
 			</div>
 			<div class="col-sm-4 alt-side-image home-donation-box">
