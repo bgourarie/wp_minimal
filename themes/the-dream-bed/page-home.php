@@ -106,8 +106,7 @@ jQuery(document).ready(function($){
 			</div>
 			<div class="col-sm-4 alt-side-image home-donation-box">
 				<div class="inside">
-					<h2 class="bedcount"><?php echo get_field('dreambeds_donated', 'options'); ?> beds</h2>
-					<h3>donated since 2015</h3>
+					<h3>Unbox a better tomorrow</h3>
 					<p class="mattress-action"><a href="<?php bloginfo('url'); ?>/giving" class="btn btn-dream" role="button">See How We Give</a></p>
 				</div>
 			</div>
