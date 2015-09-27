@@ -18,6 +18,16 @@ body {
 	padding: 0;
 }
 
+a:focus, a:active,
+button,
+input[type="reset"]::-moz-focus-inner,
+input[type="button"]::-moz-focus-inner,
+input[type="submit"]::-moz-focus-inner,
+select::-moz-focus-inner,
+input[type="file"] > input[type="button"]::-moz-focus-inner {
+    outline: none !important;
+}
+
 .navbar-default .navbar-nav>li>a.phone {
 	color: #FD9D2E;
 }
@@ -808,6 +818,7 @@ body {
 }
 
 .jumbotron {
+	height: 300px;
 	min-height: 300px;
 }
 
@@ -1011,6 +1022,7 @@ body {
 }
 
 .jumbotron {
+	height: 500px;
 	min-height: 500px;
 }
 
