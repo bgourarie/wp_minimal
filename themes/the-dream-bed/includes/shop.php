@@ -16,13 +16,18 @@ function uptop_product_images() {
 	$cutout_img = get_field('product_cutout_image');
 	$product_shipping = get_field('product_shipping_promo');
 	$box_img = get_field('product_box_image'); ?>
-
+	
     	<div class="container">
 	    	<div id="extra-images">
 	    		<div id="stacked-images">
 			    	<div class="row">
 				    	<div class="col-md-12 text-center stacked-image">
 							<img src="<?php echo $sleep_trial ?>" />
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-sm-8 col-sm-offset-2">
+							<?php the_content(); ?>
 						</div>
 					</div>
 			    	<div class="row">
