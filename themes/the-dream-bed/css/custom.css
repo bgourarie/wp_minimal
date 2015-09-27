@@ -641,6 +641,70 @@ h2.bedcount {
 	padding-bottom: 30px; 
 }
 
+.nav-tabs {
+	text-transform: uppercase;
+}
+
+.nav-tabs.nav-justified>li>a {
+	-webkit-border-radius: 0;
+	-moz-border-radius: 0;
+	border-radius: 0;
+}
+
+.nav-tabs.nav-justified>.active>a, .nav-tabs.nav-justified>.active>a:hover, .nav-tabs.nav-justified>.active>a:focus {
+	border-bottom-color: #DDDDDD;
+	color: #FF9E14;
+	background-color: #F2F2F2;
+	border-right: none;
+}
+
+.nav-tabs.nav-justified>li>a:hover {
+	background-color: #fff;
+	color: #FF9E14;
+}
+
+.nav-tabs.nav-justified>li>a {
+	border-top: 1px solid #DDDDDD;
+	border-left: 1px solid #DDDDDD;
+}	
+
+.nav-tabs.nav-justified>li:last-child>a {
+	border-right: 1px solid #DDDDDD;
+}
+
+.tab-pane {
+	border: 1px solid #DDDDDD;
+	padding: 15px;
+	margin-top: 15px;
+	margin-bottom: 15px;
+}
+
+.tab-pane h3:first-child {
+	margin-top: 0;
+}
+
+.tab-pane p:last-child {
+	margin-bottom: 0;
+}
+
+.faq-footer {
+	font-size: 1.429em;
+	padding-bottom: 30px;
+}
+
+.faq-footer a:hover {
+	text-decoration: none;
+}
+
+.faq-footer .email {
+	color: #FD9D2E;
+	text-transform: uppercase;
+}
+
+.faq-footer .phone {
+	color: #808284;
+}
+
 /* buttons for shop radios */
 
 .btn-dream-size {
