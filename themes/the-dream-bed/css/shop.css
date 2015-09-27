@@ -159,7 +159,7 @@ input.button {
     margin: 0;
 }
 .tm-extra-product-options ul.tmcp-elements li.tmcp-field-wrap {
-    padding: 0 0 1em 0;
+    padding: 0;
 }
 .tm-quantity.tm-right + .tm-field-display {
 	border: 1px solid #828282;
