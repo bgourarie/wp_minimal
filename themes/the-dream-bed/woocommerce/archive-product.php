@@ -56,7 +56,11 @@ echo "</pre>";
 wp_reset_postdata();
 
 ?>
-
+<div class="jump-on-bed">
+	<div class="jump-on-bed-cta">
+		<a href="<?php bloginfo('url'); ?>/giving" class="btn btn-dream" role="button">Learn More</a>
+	</div>
+</div>
 <div class="container">
 	<div class="row">
 		<div class="alternate">
