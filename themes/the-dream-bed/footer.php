@@ -13,7 +13,7 @@
 	</div><!-- #content -->
 
 	<footer class="footer">
-		<div class="container-fluid">
+		<div class="container">
 			<div class="row">
 				<div class="col-md-2 col-xs-12"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><img src="<?php bloginfo("template_url"); ?>/images/logo-the-dream-bed.svg" width="116" height="35" alt="The Dream Bed" class="footer-logo"></a></div>
 				<div class="col-md-2 col-xs-3 col-sm-3">
