@@ -76,7 +76,7 @@ jQuery(document).ready(function($){
 		</div>
 	</div>
 </div>
-<div class="home-light-grey">
+<div class="light-grey-fill">
 	<div class="container">
 		<div class="row">
 			<div class="col-sm-12 center-block text-center home-bed-options">
@@ -85,6 +85,11 @@ jQuery(document).ready(function($){
 				<div class="center-block"> <a href="<?php bloginfo('url'); ?>/shop/mattress/dream-bed/" class="btn btn-dream" role="button">Shop Original Dream</a> <span class="or-text hidden-xs">or</span> <a href="<?php bloginfo('url'); ?>/shop/mattress/cool-gel-bed/" class="btn btn-dream" role="button">Shop Cool Dream</a> </div>
 			</div>
 		</div>
+	</div>
+</div>
+<div class="jump-on-bed">
+	<div class="jump-on-bed-cta">
+		<a href="<?php bloginfo('url'); ?>/giving" class="btn btn-dream" role="button">Learn More</a>
 	</div>
 </div>
 <div class="container">

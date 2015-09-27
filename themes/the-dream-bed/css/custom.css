@@ -443,7 +443,7 @@ body {
 	background-color: #F1F2F2;	
 }
 
-.home-light-grey {
+.light-grey-fill {
 	padding: 20px 0;
 	background-color: #f2f2f2;	
 }
@@ -458,17 +458,44 @@ body {
 	background-color: #999;	
 }
 
+.home-bed-options {
+	padding-bottom: 30px;
+}
+
+.jump-on-bed {
+	height: 534px;
+	background-image: url(../images/photos/kids-jumping-on-dream-bed.jpg);
+	background-position: top center;	
+	position: relative; 
+	width: 100%;
+	padding: 0;
+}
+
+.jump-on-bed-cta {
+	position: absolute;
+	top: 441px;
+	text-align: center;
+	width: 100%;
+	padding: 0;
+}
+
 .home-find-store p:last-child {
 	margin-bottom: 50px;
 }
 
-.home-review-box h3, .home-donation-box h3 {
+.home-review-box h3 {
 	line-height: 1;
 	margin-top: 0;
 }
 
+.home-donation-box h3 {
+	line-height: 1;
+	margin-top: 0;
+	margin-bottom: 57px;
+}
+
 .fivestars {
-	margin-bottom: 16.799999237060547px;
+	margin-bottom: 17px;
 }
 
 h2.bedcount {

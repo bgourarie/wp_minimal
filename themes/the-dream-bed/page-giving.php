@@ -42,7 +42,10 @@
 		</div>
 		<?php endwhile; // End of the loop. ?>
 	
-	
+</div>
+
+<div class="light-grey-fill">
+	<div class="container">
 		<div class="row">
 			<div class="col-xs-12 text-center">
 				<h2>How we dream</h2>
@@ -69,7 +72,7 @@
 			</div>
 		</div>
 		
-	
+	</div>
 	
 	
 	
