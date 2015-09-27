@@ -547,10 +547,20 @@ h2.bedcount {
 
 .products .or-text {
 	position: relative;
-	top: -100px;
+	top: -70px;
 	width: 10%;
 	left: 45%;
 	text-align: center;
+}
+
+.product-image-cta {
+	position: relative;
+}
+
+.product-image-cta .product-cta {
+	position: absolute;
+	bottom: 35px;
+	width: 100%;
 }
 
 .design-page .row, .giving-page .row {

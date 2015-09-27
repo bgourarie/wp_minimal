@@ -39,12 +39,15 @@ if ($product_query->have_posts()) {
 		$img_url = $img_url_array[0];
 		$short_description = $post->post_excerpt;
 
-		echo '<div class="col-sm-6 text-center "><div class="product">
-				<p><a href="'. $link .'"><img src="' . $img_url .'" class="product-img"></a></p>
+		echo '<div class="col-sm-6 text-center"><div class="product">
+				<div class="product-image-cta">
+					<a href="'. $link .'"><img src="' . $img_url .'" class="product-img"></a>
+					<div class="product-cta"><a href="'. $link .'" class="btn btn-dream" role="button">Shop '. $title .'</a></div>
+				</div>
 				<div class="product-text">
 					<h3>' . $title . ' Bed</h3>
 					<p>' . $short_description .'</p>
-					<p><a href="'. $link .'" class="btn btn-dream" role="button">Shop '. $title .'</a></p>
+					
 				</div>
 		</div></div>';
 	}
