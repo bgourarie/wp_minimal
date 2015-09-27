@@ -453,6 +453,10 @@ input[type="file"] > input[type="button"]::-moz-focus-inner {
 	background-color: #F1F2F2;	
 }
 
+.shop-day-guarantee {
+	padding-bottom: 30px;
+}
+
 .light-grey-fill {
 	padding: 20px 0;
 	background-color: #f2f2f2;	
