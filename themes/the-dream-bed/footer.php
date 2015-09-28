@@ -53,18 +53,6 @@
 							</div>
 						</form>
 					</div>
-				</div>
-			</div>
-		</div>
-	</footer>
-
-</div><!-- #page -->
-
-<?php wp_footer(); ?>
-
-<script src="<?php bloginfo("template_url"); ?>/js/bootstrap.min.js"></script> 
-<script src="<?php bloginfo("template_url"); ?>/js/ie10-viewport-bug-workaround.js"></script>
-
 <!-- START The Company Publisher Pixels Dream Bed All Pages -->
 <script type="text/javascript">
   (function () {
@@ -104,7 +92,18 @@
 
 <img src="https://secure.fastclick.net/w/tre?ad_id=36039;evt=28711;cat1=39157;cat2=39158;rand=[CACHEBUSTER]" width="1" height="1" border="0">
 
-<!-- END The Company Publisher Pixels Dream Bed All Pages -->
+<!-- END The Company Publisher Pixels Dream Bed All Pages -->					
+				</div>
+			</div>
+		</div>
+	</footer>
+
+</div><!-- #page -->
+
+<?php wp_footer(); ?>
+
+<script src="<?php bloginfo("template_url"); ?>/js/bootstrap.min.js"></script> 
+<script src="<?php bloginfo("template_url"); ?>/js/ie10-viewport-bug-workaround.js"></script>
 
 </body>
 </html>
