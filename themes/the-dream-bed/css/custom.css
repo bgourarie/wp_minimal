@@ -383,6 +383,38 @@ input[type="file"] > input[type="button"]::-moz-focus-inner {
 	margin: .7em auto;
 }
 
+.same {
+	padding-bottom: 30px;
+	margin-top: 30px;
+}
+
+.same > div {
+	text-align: center;
+	background-postion: center;
+	background-size: cover;
+	border-left: 15px solid #fff;
+	border-right: 15px solid #fff;
+	color: #fff;
+	height: 300px;
+	margin-bottom: 30px;
+}
+
+.same .inner {
+	position: absolute;
+	bottom: 30px;
+	width: calc(100% - 30px);
+	text-align: center;
+}
+
+.same > div p:last-child {
+	margin-bottom: 0;
+	padding-bottom: 0;
+}
+
+.same h3 {
+	text-shadow: 0 1px 4px rgba(100, 100, 100, 1);
+}
+
 .alt-side-image h3 {
 	text-shadow: 2px 2px 4px rgba(100, 100, 100, 1);
 }
@@ -451,10 +483,6 @@ input[type="file"] > input[type="button"]::-moz-focus-inner {
 	color: #808284;
 }
 
-.home-unboxing-box h3 {
-	text-shadow: none;
-}
-
 .home-donation-box {
 	background-image: url(../images/photos/girl-crawling-in-box-with-dream-pillow.jpg); 
 	background-color: #F1F2F2;	
@@ -507,12 +535,6 @@ input[type="file"] > input[type="button"]::-moz-focus-inner {
 .home-review-box h3 {
 	line-height: 1;
 	margin-top: 0;
-}
-
-.home-donation-box h3 {
-	line-height: 1;
-	margin-top: 0;
-	margin-bottom: 57px;
 }
 
 .fivestars {

@@ -94,23 +94,23 @@ jQuery(document).ready(function($){
 </div>
 <div class="container">
 	<div class="row">
-		<div class="alternate">
-			<div class="col-sm-4 alt-side-image home-review-box">
-				<div class="inside">
-					<h3>A bed for everyone</h3>
+		<div class="same">
+			<div class="col-sm-4 home-review-box">
+				<div class="inner">
 					<p class="fivestars"><img src="<?php bloginfo("template_url"); ?>/images/five-stars.svg" width="155" height="25" alt="5 stars reviews!"></p>
+					<h3>A better bed for everyone</h3>
 					<p class="mattress-action"><a href="<?php bloginfo('url'); ?>/reviews" class="btn btn-dream" role="button">Read The Reviews</a></p>
 				</div>
 			</div>
 			<div class="col-sm-4 home-unboxing-box">
-				<div class="inside">
-					<div><img src="<?php bloginfo("template_url"); ?>/images/unboxing.svg" width="100" height="109" alt="unboxing demonstration"></div>
-					<h3>Unboxing?</h3>
-					<p class="mattress-action"><a href="<?php bloginfo('url'); ?>/how-to-dream" class="btn btn-dream" role="button">Learn How-To</a></p>
+				<div class="inner">
+					<div><img src="<?php bloginfo("template_url"); ?>/images/dreamy-sleeper.svg" width="114" height="99" alt="happy dream bed dreams"></div>
+					<h3>Want to learn more?</h3>
+					<p class="mattress-action"><a href="<?php bloginfo('url'); ?>/faq" class="btn btn-dream" role="button">Get the Facts</a></p>
 				</div>
 			</div>
-			<div class="col-sm-4 alt-side-image home-donation-box">
-				<div class="inside">
+			<div class="col-sm-4 home-donation-box">
+				<div class="inner">
 					<h3>Unbox a better tomorrow</h3>
 					<p class="mattress-action"><a href="<?php bloginfo('url'); ?>/giving" class="btn btn-dream" role="button">See How We Give</a></p>
 				</div>
