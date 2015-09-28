@@ -13,6 +13,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 if ( $order ) : ?>
 
+	<div class="row">
+		<div class="col-sm-12">
+
 	<?php if ( $order->has_status( 'failed' ) ) : ?>
 
 		<p><?php _e( 'Unfortunately your order cannot be processed as the originating bank/merchant has declined your transaction.', 'woocommerce' ); ?></p>
@@ -33,24 +36,32 @@ if ( $order ) : ?>
 
 	<?php else : ?>
 
+<div class="text-center">
+
 		<h1><?php echo apply_filters( 'woocommerce_thankyou_order_received_text', __( 'Your order has been placed.', 'woocommerce' ), $order ); ?></h1>
 
 		<p class="order-confirmation-text">You will receive an email confirmation shortly.<br />Don't hesitate to contact us with any questions!
 
-		<div class="email"><a href="mailto:help@dreambed.com">help@dreambed.com</a></div>
+		<div class="email"><a href="mailto:help@dreambed.com">email@dreambed.com</a></div>
 		<div class="phone"><a href="tel:855-708-8555">855-708-8555</a></div>
 
-		<a class="button alt" href="#">See how your puchase helps</a>
+		<p><a href="<?php bloginfo('url'); ?>/giving" class="btn btn-dream" role="button">See how your purchase helps</a></p>
 
-		<div class="clear"></div>
+</div>	
 
 	<?php endif; ?>
+<div class="text-center">
 
 	<?php do_action( 'woocommerce_thankyou_' . $order->payment_method, $order->id ); ?>
+
+</div>
 	<?php do_action( 'woocommerce_thankyou', $order->id ); ?>
 
 <?php else : ?>
 
 	<p><?php echo apply_filters( 'woocommerce_thankyou_order_received_text', __( 'Thank you. Your order has been received.', 'woocommerce' ), null ); ?></p>
+
+	</div>
+</div>
 
 <?php endif; ?>

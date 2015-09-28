@@ -16,6 +16,8 @@
 
 <?php wp_head(); ?>
 
+
+
 <link href="<?php bloginfo("template_url"); ?>/css/bootstrap.min.css" rel="stylesheet">
 <link href="<?php bloginfo("template_url"); ?>/css/custom.css" rel="stylesheet">
 <link href="<?php bloginfo("template_url"); ?>/css/shop.css" rel="stylesheet">
@@ -66,7 +68,7 @@
 		
 		<?php if(is_page(array('checkout', 'order-received'))) { ?>
 		
-		<div class="container-fluid">
+		<div class="container">
 			<div class="row">
 				<div class="btn-group btn-breadcrumb">
 					<a href="?php echo bloginfo('url'); ?>/cart" class="btn btn-default<?php if(is_page('cart')) { echo ' show'; } ?>">Your Cart</a>

@@ -417,10 +417,21 @@ a.continue.shopping {
 }
 .woocommerce td.product-name dl.variation {
     margin: 0;
-    float: left;
+   display: block;
 }
 
+.woocommerce td.product-name dl.variation dt {
+  font-weight: 400;
+}
 
+.woocommerce td.product-name dl.variation dt.variation- {
+	display: none;
+}
+
+.woocommerce td.product-name dl.variation dd.variation- {
+	display: block;
+	clear: left;
+}
 
 .woocommerce form .form-row label {
     line-height: 1em;
