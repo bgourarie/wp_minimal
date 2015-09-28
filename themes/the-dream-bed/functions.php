@@ -64,6 +64,38 @@ function custom_dreambed_menus() {
 }
 add_action('init', 'custom_dreambed_menus');
 
+/* allow for deleting all tax rates and starting over */
+/**
+ * Delete ALL WooCommerce tax rates
+ *
+ * Add to your theme functions.php then go to woocommerce -> system status -> tools and there will be a delete all tax rates button http://cld.wthms.co/tXvp
+ */
+
+add_filter( 'woocommerce_debug_tools', 'custom_woocommerce_debug_tools' );
+
+function custom_woocommerce_debug_tools( $tools ) {
+	$tools['woocommerce_delete_tax_rates'] = array(
+		'name'		=> __( 'Delete Tax Rates',''),
+		'button'	=> __( 'Delete ALL tax rates from WooCommerce','' ),
+		'desc'		=> __( 'This tool will delete all your tax rates allowing you to start fresh.', '' ),
+		'callback'  => 'woocommerce_delete_tax_rates'
+	);
+	return $tools;
+}
+
+/**
+ * Delete Tax rates
+ */
+function woocommerce_delete_tax_rates() {
+	global $wpdb;
+			
+	$wpdb->query( "TRUNCATE " . $wpdb->prefix . "woocommerce_tax_rates" );
+	$wpdb->query( "TRUNCATE " . $wpdb->prefix . "woocommerce_tax_rate_locations" );
+
+	echo '<div class="updated"><p>' . __( 'Tax rates successfully deleted', 'woocommerce' ) . '</p></div>';
+}
+
+
 /* add options page for global settings */
 if(function_exists('acf_add_options_page')) {
 	acf_add_options_page();
