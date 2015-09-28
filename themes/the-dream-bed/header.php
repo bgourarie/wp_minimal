@@ -71,7 +71,7 @@
 		<div class="container">
 			<div class="row">
 				<div class="btn-group btn-breadcrumb">
-					<a href="?php echo bloginfo('url'); ?>/cart" class="btn btn-default<?php if(is_cart()) { echo ' show'; } ?>">Your Cart</a>
+					<a href="<?php echo bloginfo('url'); ?>/cart" class="btn btn-default<?php if(is_cart()) { echo ' show'; } ?>">Your Cart</a>
 					<a href="<?php echo bloginfo('url'); ?>/checkout" class="btn btn-default<?php if(is_checkout() && !is_wc_endpoint_url( 'order-received' )) { echo ' show'; } ?>">Checkout &amp; Place Order</a>
 					<a href="#" class="btn disabled btn-default<?php if(is_wc_endpoint_url( 'order-received' )) { echo ' show'; } ?>">Thank You!</a>
 				</div>
