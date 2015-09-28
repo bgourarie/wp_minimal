@@ -70,10 +70,10 @@
 		
 		<div class="container">
 			<div class="row">
-				<div class="btn-group btn-breadcrumb">
-					<a href="<?php echo bloginfo('url'); ?>/cart" class="btn btn-default<?php if(is_cart()) { echo ' show'; } ?>">Your Cart</a>
-					<a href="<?php echo bloginfo('url'); ?>/checkout" class="btn btn-default<?php if(is_checkout() && !is_wc_endpoint_url( 'order-received' )) { echo ' show'; } ?>">Checkout &amp; Place Order</a>
-					<a href="#" class="btn disabled btn-default<?php if(is_wc_endpoint_url( 'order-received' )) { echo ' show'; } ?>">Thank You!</a>
+				<div class="btn-group btn-breadcrumb<?php if(is_wc_endpoint_url( 'order-received' )) { echo ' thanks-down'; } ?>">
+					<a href="<?php echo bloginfo('url'); ?>/cart" class="btn btn-default<?php if(is_cart()) { echo ' show'; } ?>"><span class="hidden-sm hidden-xs">Your </span>Cart</a>
+					<a href="<?php echo bloginfo('url'); ?>/checkout" class="btn btn-default<?php if(is_checkout() && !is_wc_endpoint_url( 'order-received' )) { echo ' show'; } ?>">Checkout<span class="hidden-sm hidden-xs"> &amp; Place Order</span></a>
+					<a href="#" class="btn disabled btn-default<?php if(is_wc_endpoint_url( 'order-received' )) { echo ' show'; } ?>"><span class="hidden-sm hidden-xs">Thank You!</span><span class="hidden-md hidden-lg hidden-xl">Thanks!</span></a>
 				</div>
 			</div>
 		</div>
@@ -151,7 +151,7 @@ jQuery(document).ready(function($){
 	?>
 
 <?php if ( is_wc_endpoint_url( 'order-received' ) ) { ?>
-	<div class="jumbotron shop-now-main">
+	<div class="jumbotron thanks-page">
 		<div class="container">
 			<div class="row">
 				<div class="col-sm-8 col-sm-offset-2 col-xs-12">
@@ -161,5 +161,3 @@ jQuery(document).ready(function($){
 		</div>
 	</div>
 <?php } ?>
-
-	

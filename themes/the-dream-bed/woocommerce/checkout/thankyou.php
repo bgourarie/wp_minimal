@@ -36,15 +36,18 @@ if ( $order ) : ?>
 
 	<?php else : ?>
 
-<div class="text-center">
+<div class="text-center thanks-text">
 
 		<h1><?php echo apply_filters( 'woocommerce_thankyou_order_received_text', __( 'Your order has been placed.', 'woocommerce' ), $order ); ?></h1>
 
-		<p class="order-confirmation-text">You will receive an email confirmation shortly.<br />Don't hesitate to contact us with any questions!
-
-		<div class="email"><a href="mailto:help@dreambed.com">email@dreambed.com</a></div>
-		<div class="phone"><a href="tel:855-708-8555">855-708-8555</a></div>
-
+		<p class="order-confirmation-text">You will receive an email confirmation shortly.<br />
+			Don't hesitate to contact us with any questions!</p>
+		
+		<ul class="list-unstyled contact">
+			<li><a href="mailto:help@dreambed.com" class="email">email@dreambed.com</a></li>
+			<li><a href="tel:<?php echo get_field('phone_number', 'options'); ?>" class="phone"><?php echo get_field('phone_number', 'options'); ?></a></li>
+		</ul>
+		
 		<p><a href="<?php bloginfo('url'); ?>/giving" class="btn btn-dream" role="button">See how your purchase helps</a></p>
 
 </div>	
@@ -55,7 +58,6 @@ if ( $order ) : ?>
 	<?php do_action( 'woocommerce_thankyou_' . $order->payment_method, $order->id ); ?>
 
 </div>
-	<?php do_action( 'woocommerce_thankyou', $order->id ); ?>
 
 <?php else : ?>
 
@@ -65,3 +67,4 @@ if ( $order ) : ?>
 </div>
 
 <?php endif; ?>
+</div>

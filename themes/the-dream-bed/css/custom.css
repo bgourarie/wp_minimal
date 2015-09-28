@@ -111,7 +111,9 @@ input[type="file"] > input[type="button"]::-moz-focus-inner {
 
 .thanks-page {
 	background-image: url(../images/photos/woman-curled-on-pink-dream-bed.jpg);
-	background-position: bottom;
+	background-position: center;
+	top: -35px;
+	margin-bottom: -35px;
 }
 
 .jumbotron {
@@ -801,6 +803,12 @@ h2.bedcount {
 	margin-top: 2px;
 }
 
+.thanks-down {
+	position: relative;
+	top: 40px;
+	z-index: 1000;
+}
+
 .btn-breadcrumb .btn:not(:last-child):after {
   content: " ";
   display: block;
@@ -839,6 +847,11 @@ h2.bedcount {
 	border-radius: 0;
 	width: 33%;
 }
+
+.btn-breadcrumb .btn.disabled {
+	opacity: 1;
+}
+
 .btn-breadcrumb .btn:first-child {
   padding:8px 6px 8px 10px;
 }
@@ -871,6 +884,28 @@ h2.bedcount {
 }
 .btn-breadcrumb .btn.btn-default:hover:not(:last-child):before {
   border-left: 10px solid #adadad;
+}
+
+.thanks-text {
+	margin-bottom: 30px;
+	
+}
+
+.thanks-text a.email {
+	color: #FD9D2E;
+	text-transform: uppercase;
+}
+
+.thanks-text a.phone {
+	color: #808284;
+}
+
+.thanks-text ul.contact {
+	font-size: 1.429em;
+}
+
+.thanks-text a.phone:hover {
+	text-decoration: none;
 }
 
 /* Custom, iPhone Retina */ 
@@ -984,6 +1019,12 @@ body {
 	background: url(../images/bg-callout-number.png) center no-repeat transparent;
 	background-size: 36px 36px;
 }
+
+.btn-breadcrumb {
+	width: 100%;
+	margin-top: 0
+}
+
 }
 
 /* Small Devices, Tablets */
