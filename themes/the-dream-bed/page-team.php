@@ -1,30 +1,58 @@
 <?php get_header(); ?>
 
-<h1><?php echo get_field('header'); ?></h1>
-<h2><?php echo get_field('sub_header'); ?></h2>
-<img src="<?php echo get_field('header_image'); ?>">
+<div class="team-page">
 
-<hr>
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-12 text-center">
+				<h1>At Dream Bed, giving back is more than an idea&#8212;it&#8217;s a way of life.</h1>
+				<p>In the community, on the streets, wherever we&#8217;re needed most&hellip;Dream Bed makes giving big a big deal.</p>
+			</div>
+		</div>
+	</div>
 
-<?php if (have_rows('team_members')) { ?>
-	<ul class="team list">
-	<?php while (have_rows('team_members')) {
-		the_row();
-		$name = get_sub_field('name');
-		$title = get_sub_field('title');
-		$photo = get_sub_field('photo');
-	?>
-		<li class="member">
-			<ul>
-				<li><?php echo $name; ?></li>
-				<li><?php echo $title; ?></li>
-				<li><img src="<?php echo $photo; ?>"></li>
-			</ul>
-		</li>
-	<?php } ?>
-	</ul>
-<?php } ?>
+	<div class="light-grey-fill">
+		<div class="container">
+			<div class="row">
+				<div class="col-xs-12 text-center">
+					<h2>How we dream</h2>
+				</div>
+			</div>
+			<div class="row how-we-dream">
+				<div class="col-sm-4 text-center">
+					<h2 class="callout-number">1</h2>
+					<h3>What we dream</h3>
+					<p>Our dream is that everyone all over the world can get the proper sleep they deserve so they can dream big.</p>
+				</div>
+				<div class="col-sm-4 text-center">
+					<h2 class="callout-number">2</h2>
+					<h3>Where we dream</h3>
+					<p>Dream Bed currently provides dreams with the help of giving partners nationwide.</p>
+				</div>
+				<div class="col-sm-4 text-center">
+					<h2 class="callout-number">3</h2>
+					<h3>Share your dream</h3>
+					<p>With your help, the we are improving lives one night at a time. The gift of sleep is one of the most important gifts of all.</p>
+					<p>Help us Dream it Forward.</p>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<div class="container insta">
+		<div class="row">
+			<div class="col-xs-12">
+				<h1 class="text-center">See us dreaming it forward</h1>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-3"><img src="<?php bloginfo("template_url"); ?>/images/photos/instagram-team-1.jpg" class="img-responsive" alt="Our team giving photo 1"></div>
+			<div class="col-sm-3"><img src="<?php bloginfo("template_url"); ?>/images/photos/instagram-team-2.jpg" class="img-responsive" alt="Our team giving photo 2"></div>
+			<div class="col-sm-3"><img src="<?php bloginfo("template_url"); ?>/images/photos/instagram-team-3.jpg" class="img-responsive" alt="Our team giving photo 3"></div>
+			<div class="col-sm-3"><img src="<?php bloginfo("template_url"); ?>/images/photos/instagram-team-4.jpg" class="img-responsive" alt="Our team giving photo 4"></div>
+		</div>
+	</div>
 
-<hr>
+</div>
 
 <?php get_footer(); ?>

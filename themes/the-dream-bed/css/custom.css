@@ -570,7 +570,20 @@ h2.bedcount {
 	width: 100%;
 }
 
-.design-page .row, .giving-page .row {
+.design-page .row, .giving-page .row  {
+	margin-bottom: 30px;
+}
+
+.team-page {
+	margin-bottom: 30px;
+}
+
+.team-page .light-grey-fill {
+	margin-top: 30px;
+	margin-bottom: 30px;
+}
+
+.team-page .insta .row {
 	margin-bottom: 30px;
 }
 
