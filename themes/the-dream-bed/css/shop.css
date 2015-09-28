@@ -551,7 +551,13 @@ a.continue.shopping {
 
 
 
+@media only screen and (max-width : 768px) {
 
+a.continue.shopping {
+    margin-top: 0;
+    position: relative;
+    display: block;
+    padding-bottom: 30px;
+}
 
-
-
+}
