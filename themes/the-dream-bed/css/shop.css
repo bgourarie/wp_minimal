@@ -526,8 +526,13 @@ a.continue.shopping {
 
 
 
-
-
+.btn-breadcrumb .show {
+    color: #FF9E14;
+    background-color: #efefef;
+}
+.btn-breadcrumb .btn.show.btn-default:not(:last-child):after {
+    border-left: 10px solid #efefef;
+}
 
 
 

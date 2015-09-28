@@ -71,9 +71,9 @@
 		<div class="container">
 			<div class="row">
 				<div class="btn-group btn-breadcrumb">
-					<a href="?php echo bloginfo('url'); ?>/cart" class="btn btn-default<?php if(is_page('cart')) { echo ' show'; } ?>">Your Cart</a>
-					<a href="<?php echo bloginfo('url'); ?>/checkout" class="btn btn-default<?php if(is_page('checkout')) { echo ' show'; } ?>">Checkout &amp; Place Order</a>
-					<a href="#" class="btn disabled btn-default<?php if(is_page('order-received')) { echo ' show'; } ?>">Thank You!</a>
+					<a href="?php echo bloginfo('url'); ?>/cart" class="btn btn-default<?php if(is_cart()) { echo ' show'; } ?>">Your Cart</a>
+					<a href="<?php echo bloginfo('url'); ?>/checkout" class="btn btn-default<?php if(is_checkout() && !is_wc_endpoint_url( 'order-received' )) { echo ' show'; } ?>">Checkout &amp; Place Order</a>
+					<a href="#" class="btn disabled btn-default<?php if(is_wc_endpoint_url( 'order-received' )) { echo ' show'; } ?>">Thank You!</a>
 				</div>
 			</div>
 		</div>
@@ -149,5 +149,17 @@ jQuery(document).ready(function($){
 		}
 		
 	?>
-	
+
+<?php if ( is_wc_endpoint_url( 'order-received' ) ) { ?>
+	<div class="jumbotron shop-now-main">
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-8 col-sm-offset-2 col-xs-12">
+					<h1>thank you!</h1>
+				</div>
+			</div>
+		</div>
+	</div>
+<?php } ?>
+
 	
