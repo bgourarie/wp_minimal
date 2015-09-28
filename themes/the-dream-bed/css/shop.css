@@ -161,11 +161,26 @@ input.button {
 .tm-extra-product-options ul.tmcp-elements li.tmcp-field-wrap {
     padding: 0;
 }
+
 .tm-quantity.tm-right + .tm-field-display {
-	border: 1px solid #828282;
-	width: 100%;
+	/*border: 1px solid #828282;*/
     text-align: left;
     padding: 10px;
+    
+}
+
+.tm-extra-product-options-container .tmcp-field-wrap {
+	border: 1px solid #828282;
+}
+
+.tm-field-display {
+    float: left;
+}
+
+.tm-quantity.tm-right {
+	float: right;
+	margin-top: 5px;
+	margin-right: 5px;
 }
 
 /* Extra Images */
