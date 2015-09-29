@@ -9,7 +9,7 @@
 			</div>
 			<div class="col-sm-8">
 				<h2>When you purchase The Dream Bed, we give a bed to a child or a person in need.</h2>
-				<p>A good night's sleep is the foundation for everything we do. It affects our health, happiness, success and ability to dream big. That's why we want to share the gift of sleep with everyoneeverywhere.</p>
+				<p>A good night's sleep is the foundation for everything we do. It affects our health, happiness, success and ability to dream big. That's why we want to share the gift of sleep with everyone everywhere.</p>
 			</div>
 		</div>
 		
