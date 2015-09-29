@@ -28,7 +28,6 @@
 						<li><a href="https://twitter.com/thedreambed" target="_blank"><img src="<?php bloginfo("template_url"); ?>/images/ico-twitter.svg" width="15" height="15" alt="Twitter"> Twitter</a></li>
 						<li><a href="https://facebook.com/thedreambed/" target="_blank"><img src="<?php bloginfo("template_url"); ?>/images/ico-facebook.svg" width="15" height="15" alt="Facebook"> Facebook</a></li>
 						<li><a href="https://www.youtube.com/channel/UChw0QPCQZVobODpG1cjeiuQ" target="_blank"><img src="<?php bloginfo("template_url"); ?>/images/ico-youtube.svg" width="15" height="15" alt="YouTube"> YouTube</a></li>
-						<li><a href="https://plus.google.com/+dreambed/" target="_blank"><img src="<?php bloginfo("template_url"); ?>/images/ico-googleplus.svg" width="15" height="15" alt="Google"> Google+</a></li>
 					</ul>
 				</div>
 				<div class="col-md-3 col-xs-12 col-sm-6">
