@@ -105,10 +105,11 @@ if(function_exists('acf_add_options_page')) {
 add_filter('user_can_richedit', create_function ('$a' , 'return false;') , 50);
 
 /* remove pods shortcode button from editor */
-/*function remove_pods_shortcode_button () {
+function remove_pods_shortcode_button () {
 	remove_action('media_buttons', array(PodsInit::$admin, 'media_button'), 12);
 }
-add_action('admin_init', 'remove_pods_shortcode_button', 14);*/
+
+add_action('admin_init', 'remove_pods_shortcode_button', 14);
 
 /* remove "add media" button from editor */
 function z_remove_media_controls() {
@@ -196,6 +197,13 @@ function alter_woocommerce_checkout_fields($fields) {
 	return $fields;
 }
 add_filter('woocommerce_checkout_fields', 'alter_woocommerce_checkout_fields');
+
+// WooCommerce remove "company name" field from Woo Checkout Page
+add_filter ( 'woocommerce_default_address_fields' , 'custom_override_default_address_fields' );
+	function custom_override_default_address_fields( $address_fields ) {
+	unset($address_fields['company']);
+	return $address_fields;
+}
 
 
 function calculate_average($arr) {
