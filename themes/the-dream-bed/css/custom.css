@@ -943,6 +943,45 @@ h2.bedcount {
 	text-decoration: none;
 }
 
+.footer-newsletter .gfield_label {
+	display: none;
+}
+
+.footer-newsletter .gform_wrapper .button, .footer-newsletter .gform_button {
+	border-color: #FD9D2E;
+	background-color: #FDA641;
+}
+
+.footer-newsletter .gform_button:hover, .footer-newsletter .gform_button:focus, .footer-newsletter .gform_button:active, .footer-newsletter .gform_button.active, .open .dropdown-toggle.gform_button {
+	border-color: #FDA641;
+	background-color: #FDA641;
+	color: #fff;
+}
+
+.footer-newsletter .gform_wrapper .button:hover, .footer-newsletter .gform_button:hover, .footer-newsletter .gform_button:focus {
+	border-color: #FDA641;
+	background-color: #FDA641;
+	color: #fff;
+}
+
+.footer-newsletter .ginput_container {
+	display:inline-block;
+	float: left;
+	width: 62%;
+}
+
+.footer-newsletter .gform_footer {
+	display:inline-block;
+	float: left;
+	width: auto;
+	margin-bottom: 0;
+}
+
+.footer-newsletter .input#gform_submit_button_1.gform_button.button {
+	float: right;
+}
+
+
 /* Custom, iPhone Retina */ 
 @media only screen and (min-width : 320px) {
 

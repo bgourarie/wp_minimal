@@ -44,14 +44,7 @@
 				<div class="col-md-3 col-xs-12">
 					<div class="footer-newsletter">
 						<h4>Newsletter Signup</h4>
-						<form>
-							<div class="input-group">
-								<input type="text" class="form-control newsletter-email" placeholder="Your Email">
-								<span class="input-group-btn">
-									<button class="btn btn-dream" type="button">Sign Up</button>
-								</span>
-							</div>
-						</form>
+						<?php gravity_form(1, false, false, false, '', true, 12); ?>
 					</div>
 <!-- START The Company Publisher Pixels Dream Bed All Pages -->
 <script type="text/javascript">
