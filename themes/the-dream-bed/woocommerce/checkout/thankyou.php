@@ -10,7 +10,7 @@
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly
 }
-die(print_r($order));
+
 if ( $order ) : ?>
 
 	<div class="row">
@@ -55,9 +55,9 @@ if ( $order ) : ?>
 <script type="extole/widget">
      {"zone":"db_order_confirm"
       "params":{
-       "f":"JOHN",
-       "l":"TEST",
-       "e":"JOHN@EMAIL.COM"
+       "f":"<?= $order->billing_first_name ?>",
+       "l":"<?= $order->billing_last_name ?>",
+       "e":"<?= $order->billing_email ?>"
        }
 </script>		
 <!-- end extole script -->
