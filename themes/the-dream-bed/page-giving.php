@@ -61,8 +61,8 @@
 			<div class="col-sm-4 text-center">
 				<h2 class="callout-number">2</h2>
 				<h3>Give a dream</h3>
-				<p>Your purchase makes a difference.  Every Dream Bed bought gives a person in need an opportunity for a clean, comfortable and  healthy sleep space.</p>
-				<p>Better sleep heath means bigger dreams for everyone!</p>
+				<p>Your purchase makes a difference. Every Dream Bed purchased gives a person in need an opportunity for a clean, comfortable and  healthy sleep space.</p>
+				<p>Better sleep health means bigger dreams for everyone!</p>
 			</div>
 			<div class="col-sm-4 text-center">
 				<h2 class="callout-number">3</h2>
