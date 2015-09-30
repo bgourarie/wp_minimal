@@ -102,6 +102,6 @@
 
 <script src="<?php bloginfo("template_url"); ?>/js/bootstrap.min.js"></script> 
 <script src="<?php bloginfo("template_url"); ?>/js/ie10-viewport-bug-workaround.js"></script>
-<script src="//tags.extole.com/1301851859/core.js"></script>
+
 </body>
 </html>
