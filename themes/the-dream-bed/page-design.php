@@ -9,7 +9,7 @@
 			</div>
 			<div class="col-sm-8">
 				<h2>What makes a perfect mattress?</h2>
-				<p>The Dream Bed comes in two universally likable and flawlessly functional options: the Original Dream Bed and the Cool Dream Bed. Both offer optimal support, constant comfort, and an unobtrusive footprint. The Dream Bed doesnt need a frame, box spring, or head board. It fits to a tee for your sleek, seamless lifestyle.</p>
+				<p>The Dream Bed comes in two universally likable and flawlessly functional options: the Original Dream Bed and the Cool Dream Bed. Both offer optimal support, constant comfort, and an unobtrusive footprint. The Dream Bed doesn't need a frame, box spring, or headboard. It fits to a tee for your sleek, seamless lifestyle.</p>
 			</div>
 		</div>
 	</div>
