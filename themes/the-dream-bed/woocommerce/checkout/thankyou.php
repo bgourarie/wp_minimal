@@ -49,6 +49,19 @@ if ( $order ) : ?>
 		</ul>
 		
 		<p><a href="<?php bloginfo('url'); ?>/giving" class="btn btn-dream" role="button">See how your purchase helps</a></p>
+		
+		<div class="refer-thanks-page">
+<!-- begin extole script -- need to dynamically fill f:firtsname l:lastname e:email -->		
+<script type="extole/widget">
+     {"zone":"db_order_confirm"
+      "params":{
+       "f":"JOHN",
+       "l":"TEST",
+       "e":"JOHN@EMAIL.COM"
+       }
+</script>		
+<!-- end extole script -->
+		</div>
 
 </div>	
 
