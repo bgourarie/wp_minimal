@@ -41,10 +41,16 @@
 					</div>
 				</div>
 				<div class="col-md-3 col-xs-12">
-					<div class="footer-newsletter">
+					<div class="footer-newsletter clearfix">
 						<h4>Newsletter Signup</h4>
 						<?php gravity_form(1, false, false, false, '', true, 12); ?>
 					</div>
+					<div class="footer-refer clearfix">
+<script type="extole/widget">
+	{"zone":db_global_footer"}
+</script>
+					</div>
+					
 <!-- START The Company Publisher Pixels Dream Bed All Pages -->
 <script type="text/javascript">
   (function () {
@@ -96,6 +102,6 @@
 
 <script src="<?php bloginfo("template_url"); ?>/js/bootstrap.min.js"></script> 
 <script src="<?php bloginfo("template_url"); ?>/js/ie10-viewport-bug-workaround.js"></script>
-
+<script src="//tags.extole.com/1301851859/core.js"></script>
 </body>
 </html>

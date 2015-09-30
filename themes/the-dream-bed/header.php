@@ -48,7 +48,9 @@
 					<ul class="nav navbar-nav navbar-right">
 					
 					<?php if(!is_page(array('checkout', 'order-received'))) { ?>
-					
+<script type="extole/widget">
+	{"zone":db_global_header"}
+</script>
 						<?php wp_nav_menu( array( 'theme_location' => 'header-right', 'container' => '' ) ); ?>
 					<?php } ?>	
 						<?php

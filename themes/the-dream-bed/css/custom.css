@@ -943,6 +943,10 @@ h2.bedcount {
 	text-decoration: none;
 }
 
+.footer-newsletter  {
+	margin-bottom: .7em;
+}
+
 .footer-newsletter .gfield_label {
 	display: none;
 }
@@ -979,6 +983,10 @@ h2.bedcount {
 
 .footer-newsletter .input#gform_submit_button_1.gform_button.button {
 	float: right;
+}
+
+.footer-refer {
+	
 }
 
 
