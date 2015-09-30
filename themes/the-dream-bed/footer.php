@@ -45,11 +45,6 @@
 						<h4>Newsletter Signup</h4>
 						<?php gravity_form(1, false, false, false, '', true, 12); ?>
 					</div>
-					<div class="footer-refer clearfix">
-<script type="extole/widget">
-	{"zone":db_global_footer"}
-</script>
-					</div>
 					
 <!-- START The Company Publisher Pixels Dream Bed All Pages -->
 <script type="text/javascript">
