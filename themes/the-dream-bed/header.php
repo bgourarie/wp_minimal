@@ -13,8 +13,8 @@
 <meta charset="<?php bloginfo( 'charset' ); ?>">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="icon" href="<?php bloginfo("template_url"); ?>/dream-favicon.ico" type="image/x-icon">
-<link rel="shortcut icon" href="<?php bloginfo("template_url"); ?>/dream-favicon.ico" type="image/x-icon">
+<link rel="icon" href="<?php bloginfo("template_url"); ?>/images/favicon.ico" type="image/x-icon">
+<link rel="shortcut icon" href="<?php bloginfo("template_url"); ?>/images/favicon.ico" type="image/x-icon">
 <?php wp_head(); ?>
 
 
@@ -48,6 +48,10 @@
 					<ul class="nav navbar-nav navbar-right">
 					
 					<?php if(!is_page(array('checkout', 'order-received'))) { ?>
+
+<script type="extole/widget">
+	{"zone":db_global_header"}
+</script>
 
 						<?php wp_nav_menu( array( 'theme_location' => 'header-right', 'container' => '' ) ); ?>
 					<?php } ?>	
