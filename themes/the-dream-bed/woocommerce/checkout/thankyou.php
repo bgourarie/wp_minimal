@@ -10,10 +10,8 @@
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly
 }
-$coupons = $order->get_used_coupons();
-die(print_r($coupons));
-if ( $order ) : ?>
 
+if ( $order ) : ?>
 	<div class="row">
 		<div class="col-sm-12">
 
@@ -52,15 +50,34 @@ if ( $order ) : ?>
 		<p><a href="<?php bloginfo('url'); ?>/giving" class="btn btn-dream" role="button">See how your purchase helps</a></p>
 
 		<div class="refer-thanks-page center-block">
-<!-- begin extole script -->		
-<script type="extole/widget">
-     {"zone":"db_order_confirm"
-      "params":{
-       "f":"<?= $order->billing_first_name ?>",
-       "l":"<?= $order->billing_last_name ?>",
-       "e":"<?= $order->billing_email ?>"
-       }
-</script>
+
+        <!-- begin extole script -->
+        <script type="extole/widget">
+             {"zone":"db_order_confirm"
+              "params":{
+               "f":"<?= $order->billing_first_name ?>",
+               "l":"<?= $order->billing_last_name ?>",
+               "e":"<?= $order->billing_email ?>"
+               }
+        </script>
+
+        <?php
+            $coupons = $order->get_used_coupons();
+            if (count($coupons)) {
+            $coupon_code = $coupons[0];
+        ?>
+            <script type="extole/conversion">
+                 {"zone":"db_order_confirm"
+                  "params":{
+                   "f":"<?= $order->billing_first_name ?>",
+                   "l":"<?= $order->billing_last_name ?>",
+                   "e":"<?= $order->billing_email ?>",
+                   "partner_conversion_id":"<?= $order->get_order_number() ?>",
+                   "tag:cart_value":"<?= $order->order_total ?>",
+                   "tag:coupon_code":"<?= $coupon_code ?>"
+                   }
+            </script>
+        <?php } ?>
 
             <!-- end extole script -->
 		</div>
