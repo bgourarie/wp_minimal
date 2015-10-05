@@ -58,13 +58,22 @@ if ( $order ) : ?>
       "params":{
        "f":"<?= $order->billing_first_name ?>",
        "l":"<?= $order->billing_last_name ?>",
+       "e":"<?= $order->billing_email ?>"
+       }
+</script>
+
+<script type="extole/conversion">
+     {"zone":"db_order_confirm"
+      "params":{
+       "f":"<?= $order->billing_first_name ?>",
+       "l":"<?= $order->billing_last_name ?>",
        "e":"<?= $order->billing_email ?>",
        "partner_conversion_id":"<?= $order->get_order_number()?>",
        "tag:cart_value":"<?= $order->order_total ?>",
-       "tag:coupon_code":"<?= ?>"
+       "tag:coupon_code":"<?= $coupons ?>"
        }
-</script>		
-<!-- end extole script -->
+</script>
+            <!-- end extole script -->
 		</div>
 
 <!-- START The Company Publisher Pixels Dream Bed Conversion -->
