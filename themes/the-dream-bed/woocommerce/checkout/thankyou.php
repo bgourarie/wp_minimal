@@ -10,7 +10,7 @@
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly
 }
-
+die(print_r($order));
 if ( $order ) : ?>
 
 	<div class="row">
