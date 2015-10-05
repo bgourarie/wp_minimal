@@ -10,7 +10,8 @@
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly
 }
-die(print_r($order));
+$coupons = $order->get_used_coupons();
+die(print_r($coupons));
 if ( $order ) : ?>
 
 	<div class="row">
@@ -57,7 +58,10 @@ if ( $order ) : ?>
       "params":{
        "f":"<?= $order->billing_first_name ?>",
        "l":"<?= $order->billing_last_name ?>",
-       "e":"<?= $order->billing_email ?>"
+       "e":"<?= $order->billing_email ?>",
+       "partner_conversion_id":"<?= $order->get_order_number()?>",
+       "tag:cart_value":"<?= $order->order_total ?>",
+       "tag:coupon_code":"<?= ?>"
        }
 </script>		
 <!-- end extole script -->
