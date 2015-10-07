@@ -52,22 +52,21 @@ if ( $order ) : ?>
 		<div class="refer-thanks-page center-block">
 
         <!-- begin extole script -->
-        <script type="extole/widget">
-             {"zone":"db_order_confirm"
+			<script type="extole/widget">{
+             "zone":"db_order_confirm",
               "params":{
                "f":"<?= $order->billing_first_name ?>",
                "l":"<?= $order->billing_last_name ?>",
                "e":"<?= $order->billing_email ?>"
-               }
-        </script>
+			}}</script>
 
         <?php
             $coupons = $order->get_used_coupons();
             if (count($coupons)) {
             $coupon_code = $coupons[0];
         ?>
-            <script type="extole/conversion">
-                 {"zone":"db_order_confirm"
+			<script type="extole/conversion">{
+                 "type":"purchase",
                   "params":{
                    "f":"<?= $order->billing_first_name ?>",
                    "l":"<?= $order->billing_last_name ?>",
@@ -75,8 +74,7 @@ if ( $order ) : ?>
                    "partner_conversion_id":"<?= $order->get_order_number() ?>",
                    "tag:cart_value":"<?= $order->order_total ?>",
                    "tag:coupon_code":"<?= $coupon_code ?>"
-                   }
-            </script>
+			}}</script>
         <?php } ?>
 
             <!-- end extole script -->
