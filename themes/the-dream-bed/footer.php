@@ -45,9 +45,7 @@
 						<?php gravity_form(1, false, false, false, '', true, 12); ?>
 					</div>
 					<div class="footer-refer clearfix">
-<script type="extole/widget">
-	{"zone":db_global_footer"}
-</script>
+<script type="extole/widget">{"zone":"db_global_footer"}</script>
 					</div>				
 				</div>
 			</div>
