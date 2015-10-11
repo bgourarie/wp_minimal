@@ -50,7 +50,7 @@
 
 					<?php // to use a image just replace the bloginfo('name') with your img src and remove the surrounding <p> ?>
 					<a href="<?php echo home_url(); ?>" rel="nofollow">
-						<img class="header-logo" src="<?php echo get_bloginfo('template_directory'); ?>/library/rcain-logo.jpg">
+						<img class="header-logo" src="<?php echo get_bloginfo('template_directory'); ?>/library/images/rcain-logo.jpg">
 					</a>
 
 					<?php // if you'd like to use the site description you can un-comment it below ?>
