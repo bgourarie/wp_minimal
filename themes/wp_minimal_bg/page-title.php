@@ -12,14 +12,12 @@
  * For more info: http://codex.wordpress.org/Page_Templates
 */
 ?>
-
-<div id="padding-top">
-	<div id="padding-left">
-		<div id="logo">
-			<a href="<?php echo home_url(); ?>" rel="nofollow">
+<head>
+	<link rel="stylesheet" type="text/css" href="<?php get_bloginfo('template_directory');?>/library/css/page-title.css">
+</head>
+		<div id="logo-splashscreen">
+			<a href="/?p=7" rel="nofollow">
 				<img class="header-logo" src="<?php echo get_bloginfo('template_directory'); ?>/library/images/rcain-logo.jpg">
 			</a>
 		</div>
-		<div id="padding-right"> </div>
-	</div>
-</div>		
+	
