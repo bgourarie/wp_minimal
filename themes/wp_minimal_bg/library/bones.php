@@ -126,12 +126,9 @@ function bones_scripts_and_styles() {
 
 		// modernizr (without media query polyfill)
 		wp_register_script( 'bones-modernizr', get_stylesheet_directory_uri() . '/library/js/libs/modernizr.custom.min.js', array(), '2.5.3', false );
-		wp_register_script( 'sliding-min', get_stylesheet_directory_uri() . '/library/js/libs/itemslide.min.js', array(), '2.5.3', false );
 
 		// register main stylesheet
 		wp_register_style( 'bones-stylesheet', get_stylesheet_directory_uri() . '/library/css/style.css', array(), '', 'all' );
-		wp_register_style( 'page-gallery', get_stylesheet_directory_uri() . '/library/css/page-gallery.css', array(), '', 'all' );
-		wp_register_style( 'page-title', get_stylesheet_directory_uri() . '/library/css/page-title.css', array(), '', 'all' );
 
 		// ie-only style sheet
 		wp_register_style( 'bones-ie-only', get_stylesheet_directory_uri() . '/library/css/ie.css', array(), '' );
@@ -143,16 +140,27 @@ function bones_scripts_and_styles() {
 
 		//adding scripts file in the footer
 		wp_register_script( 'bones-js', get_stylesheet_directory_uri() . '/library/js/scripts.js', array( 'jquery' ), '', true );
-		wp_register_script( 'sliding-bg', get_stylesheet_directory_uri() . '/library/js/sliding.js', array( 'jquery' ), '', true );
 
 		// enqueue styles and scripts
 		wp_enqueue_script( 'bones-modernizr' );
-		wp_enqueue_script( 'sliding-min' );
 		wp_enqueue_style( 'bones-stylesheet' );
 		wp_enqueue_style( 'bones-ie-only' );
-		wp_enqueue_style( 'page-gallery' );
-		wp_enqueue_style( 'page-title' );
+		
+		if(is_page_template('page-gallery.php')){
+			wp_register_script( 'sliding-bg', get_stylesheet_directory_uri() . '/library/js/sliding.js', array( 'jquery' ), '', true );
+			wp_register_style( 'page-gallery', get_stylesheet_directory_uri() . '/library/css/page-gallery.css', array(), '', 'all' );
+			wp_register_script( 'sliding-min', get_stylesheet_directory_uri() . '/library/js/libs/portfolio.pack.min.js', array(), '', false );
+			wp_register_script( 'horscroll-min', get_stylesheet_directory_uri() . '/library/js/libs/horwheel.min.js', array(), '', false );
+			wp_enqueue_style( 'page-gallery' );
+			wp_enqueue_script( 'sliding-min' );
+			wp_enqueue_script( 'horscroll-min' );
+			wp_enqueue_script('sliding-bg');
+		}
 
+		if(is_page_template('page-title.php')){
+			wp_register_style( 'page-title', get_stylesheet_directory_uri() . '/library/css/page-title.css', array(), '', 'all' );
+			wp_enqueue_style( 'page-title' );
+		}
 
 		$wp_styles->add_data( 'bones-ie-only', 'conditional', 'lt IE 9' ); // add conditional wrapper around ie stylesheet
 

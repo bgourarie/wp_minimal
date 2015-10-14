@@ -30,14 +30,10 @@
 						);
 						$images = get_children( $args );
 						if($images){ ?>
-							<div id="gallery">
-								<ul>
+							<div id="photo-gallery-slider">
 							    <?php foreach($images as $image){ ?>
-							   		<li>
 							   			<img src="<?php echo $image->guid; ?>" alt="<?php echo $image->post_title; ?>" title="<?php echo $image->post_title; ?>" />
-							   		</li>
 							    <?php    } ?>
-							  </ul>
 						  </div>
 						<?php } ?>
 				</div>

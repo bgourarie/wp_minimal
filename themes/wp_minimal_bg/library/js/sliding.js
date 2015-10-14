@@ -1,14 +1,6 @@
-
-var carousel;
-jQuery(document).ready(function () {
-
-    carousel = jQuery("ul");
-
-    carousel.itemslide({
-
-    }); //initialize itemslide
-
-    jQuery(window).resize(function () {
-        carousel.reload();
-    }); //Recalculate width and center positions and sizes when window is resized
+JQuery(document).ready(function($) {
+    var p = $("#photo-gallery-slider").portfolio();
+	  p.init();
+	  var wrapper = document.querySelector('#inner-content');
+	  horwheel(wrapper);
 });
