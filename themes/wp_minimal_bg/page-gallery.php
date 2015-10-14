@@ -12,15 +12,6 @@
  * For more info: http://codex.wordpress.org/Page_Templates
 */
 ?>
-	<!-- css -->
-	<script src="library/css/page-gallery.css"/>
-	<!--Plugins-->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-  <script src="library/js/libs/itemslide.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-mousewheel/3.1.12/jquery.mousewheel.min.js"></script>
-  <!--Scripts-->
-  <script src="library/js/sliding.js"></script>
-
 
 <?php get_header(); ?>
 
@@ -48,7 +39,7 @@
 							    <?php    } ?>
 							  </ul>
 						  </div>
-						<?php s} ?>
+						<?php v} ?>
 				</div>
 
 			</div>
