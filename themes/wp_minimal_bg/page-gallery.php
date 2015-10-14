@@ -39,7 +39,7 @@
 							    <?php    } ?>
 							  </ul>
 						  </div>
-						<?php v} ?>
+						<?php } ?>
 				</div>
 
 			</div>
