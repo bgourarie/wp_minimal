@@ -104,12 +104,6 @@ function loadGravatars() {
 	}
 } // end function
 
-function loadGallery(){
-  var carousel;
-  carousel = $("ul");
-  carousel.itemslide();
-}
-
 /*
  * Put all your regular jQuery in here.
 */
