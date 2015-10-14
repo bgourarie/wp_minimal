@@ -18,7 +18,6 @@ require_once( 'library/bones.php' );
 LAUNCH BONES
 Let's get everything up and running.
 *********************/
-
 function bones_ahoy() {
 
   //Allow editor style.
