@@ -1,4 +1,4 @@
-JQuery(document).ready(function($) {
+jQuery(document).ready(function($) {
     var p = $("#photo-gallery-slider").portfolio({
     	showArrows: false,
     	loop: false,
