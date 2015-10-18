@@ -32,7 +32,7 @@
 						if($images){ ?>
 							<div id="photo-gallery-slider">
 							    <?php foreach($images as $image){ ?>
-							   			<img src="<?php echo $image->guid; ?>" alt="<?php echo $image->post_title; ?>" title="<?php echo $image->post_title; ?>" />
+							   			<img data-src="<?php echo $image->guid; ?>" alt="<?php echo $image->post_title; ?>" title="<?php echo $image->post_title; ?>" />
 							    <?php    } ?>
 						  </div>
 						<?php } ?>
