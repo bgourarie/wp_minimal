@@ -1367,7 +1367,10 @@ HEADER STYLES
   background-color: #323944; }
 
 #logo {
-  margin: 0.75em 0; }
+  margin: 0.75em 0; 
+  width: 340px;
+
+}
   #logo a {
     color: white; }
 
