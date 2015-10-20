@@ -57,23 +57,21 @@ jQuery(document).ready(function($){
 <?php } ?>
 
 <div class="container design-page">
-	<div class="row">
-		<div class="badge-row">
-			<div class="col-sm-3">
-				<div class="home-badge1">
-				</div>
+	<div class="row" style="display:block;margin:auto;">
+		<div class="col-sm-3">
+			<div class="home-badge home-freeship">
 			</div>
-			<div class="col-sm-3">
-				<div class="home-badge2">
-				</div>
+		</div>
+		<div class="col-sm-3">
+			<div class="home-badge home-dreamforward">
 			</div>
-			<div class="col-sm-3">
-				<div class="home-badge3">
-				</div>
+		</div>
+		<div class="col-sm-3">
+			<div class="home-badge home-bestinbox">
 			</div>
-			<div class="col-sm-3">
-				<div class="home-badge4">
-				</div>
+		</div>
+		<div class="col-sm-3">
+			<div class="home-badge home-nightmares">
 			</div>
 		</div>
 	</div>

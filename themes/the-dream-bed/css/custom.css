@@ -496,26 +496,23 @@ input[type="file"] > input[type="button"]::-moz-focus-inner {
 	padding: 20px 0;
 	background-color: #f2f2f2;	
 }
-
-.home-badge1{
+.home-badge{
+	width: 171px;
+  height: 171px;
+  display: block;
+  margin: auto;
+}
+.home-bestinbox{
 	background-image: url(../images/Badges_BestInBox.png);
-	width:171px;
-	height:171px;
 }
-.home-badge2{
+.home-dreamforward{
 	background-image: url(../images/Badges_DreamItForward.png);
-	width:171px;
-	height:171px;
 }
-.home-badge3{
+.home-freeship{
 	background-image: url(../images/Badges_FreeShipping.png);
-	width:171px;
-	height:171px;
 }
-.home-badge4{
+.home-nightmares{
 	background-image: url(../images/Badges_NoNightmares.png);
-	width:171px;
-	height:171px;
 }
 .home-middle1 {
 	background-image: url(../images/photos/blue-box-on-stoop.jpg); 
