@@ -532,7 +532,7 @@ input[type="file"] > input[type="button"]::-moz-focus-inner {
 }
 
 .jump-on-bed {
-	height: 534px;
+	height: 352px;
 	background-image: url(../images/photos/DreamBedGiveMPLS.png);
 	background-position: top center;	
 	position: relative; 
@@ -540,14 +540,16 @@ input[type="file"] > input[type="button"]::-moz-focus-inner {
 	padding: 0;
 }
 .jump-on-bed-badge {
-	position:relative;
-	vertical-align:center;
+	display:block;
+	margin:auto;
 	background-image:url(../images/DreamItForward_WhiteBadge.png);
+	width:300px;
+	height:300px;
 }
 
 .jump-on-bed-cta {
 	position: absolute;
-	top: 441px;
+	top: 305px;
 	text-align: center;
 	width: 100%;
 	padding: 0;

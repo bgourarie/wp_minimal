@@ -59,13 +59,21 @@ jQuery(document).ready(function($){
 <div class="container design-page">
 	<div class="row">
 		<div class="badge-row">
-			<div class="col-sm-3 home-badge1">
+			<div class="col-sm-3">
+				<div class="home-badge1">
+				</div>
 			</div>
-			<div class="col-sm-3 home-badge2">
+			<div class="col-sm-3">
+				<div class="home-badge2">
+				</div>
 			</div>
-			<div class="col-sm-3 home-badge3">
+			<div class="col-sm-3">
+				<div class="home-badge3">
+				</div>
 			</div>
-			<div class="col-sm-3 home-badge4">
+			<div class="col-sm-3">
+				<div class="home-badge4">
+				</div>
 			</div>
 		</div>
 	</div>
