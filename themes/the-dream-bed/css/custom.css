@@ -89,7 +89,7 @@ input[type="file"] > input[type="button"]::-moz-focus-inner {
 }
 
 .jumbotron h1 {
-	font-family: "ThirstySoftRegular", cursive;
+	font-family: 'FFDINWebPro', sans-serif;
 	text-transform: lowercase;
 	text-shadow: 1px 1px 4px rgba(100, 100, 100, 1);
 	line-height: 1;
@@ -156,7 +156,7 @@ input[type="file"] > input[type="button"]::-moz-focus-inner {
 }
 
 .carousel h1 {
-	font-family: "ThirstySoftRegular", cursive;
+	font-family: 'FFDINWebPro', sans-serif;
 	text-transform: lowercase;
 	text-shadow: 1px 1px 4px rgba(100, 100, 100, 1);
 	line-height: 1;
@@ -542,7 +542,7 @@ input[type="file"] > input[type="button"]::-moz-focus-inner {
 }
 
 h2.bedcount {
-	font-family: "ThirstySoftRegular", cursive;
+	font-family: 'FFDINWebPro', sans-serif;
 	text-transform: lowercase;
 	line-height: 1;
 	padding-bottom: 0;
