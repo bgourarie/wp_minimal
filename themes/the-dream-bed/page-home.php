@@ -58,6 +58,18 @@ jQuery(document).ready(function($){
 
 <div class="container design-page">
 	<div class="row">
+		<div class="badge-row">
+			<div class="col-sm-3 home-badge1">
+			</div>
+			<div class="col-sm-3 home-badge2">
+			</div>
+			<div class="col-sm-3 home-badge3">
+			</div>
+			<div class="col-sm-3 home-badge4">
+			</div>
+		</div>
+	</div>
+	<div class="row">
 		<div class="alternate">
 			<div class="col-sm-6 alt-side-image home-middle1">
 				<div class="inside">

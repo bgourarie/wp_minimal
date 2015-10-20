@@ -497,6 +497,18 @@ input[type="file"] > input[type="button"]::-moz-focus-inner {
 	background-color: #f2f2f2;	
 }
 
+.home-badge1{
+	background-image: url(../images/photos/badge1.png);
+}
+.home-badge2{
+	background-image: url(../images/photos/badge1.png);
+}
+.home-badge3{
+	background-image: url(../images/photos/badge1.png);
+}
+.home-badge4{
+	background-image: url(../images/photos/badge1.png);
+}
 .home-middle1 {
 	background-image: url(../images/photos/blue-box-on-stoop.jpg); 
 	background-color: #999;	
