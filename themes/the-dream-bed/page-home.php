@@ -110,6 +110,7 @@ jQuery(document).ready(function($){
 	</div>
 </div>
 <div class="jump-on-bed">
+	<div class="jump-on-bed-badge"></div>
 	<div class="jump-on-bed-cta">
 		<a href="<?php bloginfo('url'); ?>/giving" class="btn btn-dream" role="button">Learn More</a>
 	</div>
