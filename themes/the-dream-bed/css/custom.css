@@ -498,16 +498,24 @@ input[type="file"] > input[type="button"]::-moz-focus-inner {
 }
 
 .home-badge1{
-	background-image: url(../images/photos/badge1.png);
+	background-image: url(../images/Badges_BestInBox.png);
+	width:171px;
+	height:171px;
 }
 .home-badge2{
-	background-image: url(../images/photos/badge1.png);
+	background-image: url(../images/Badges_DreamItForward.png);
+	width:171px;
+	height:171px;
 }
 .home-badge3{
-	background-image: url(../images/photos/badge1.png);
+	background-image: url(../images/Badges_FreeShipping.png);
+	width:171px;
+	height:171px;
 }
 .home-badge4{
-	background-image: url(../images/photos/badge1.png);
+	background-image: url(../images/Badges_NoNightmares.png);
+	width:171px;
+	height:171px;
 }
 .home-middle1 {
 	background-image: url(../images/photos/blue-box-on-stoop.jpg); 
@@ -525,11 +533,16 @@ input[type="file"] > input[type="button"]::-moz-focus-inner {
 
 .jump-on-bed {
 	height: 534px;
-	background-image: url(../images/photos/kids-jumping-on-dream-bed.jpg);
+	background-image: url(../images/photos/DreamBedGiveMPLS.png);
 	background-position: top center;	
 	position: relative; 
 	width: 100%;
 	padding: 0;
+}
+.jump-on-bed-badge {
+	position:relative;
+	vertical-align:center;
+	background-image:url(../images/DreamItForward_WhiteBadge.png);
 }
 
 .jump-on-bed-cta {
