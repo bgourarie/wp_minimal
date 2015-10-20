@@ -80,9 +80,11 @@ jQuery(document).ready(function($){
 	<div class="container">
 		<div class="row">
 			<div class="col-sm-12 center-block text-center home-bed-options">
-				<h2>Two dreamy choices</h2>
+				<h2>The Dream Bed coms in two dreamy choices</h2>
 				<p><img src="<?php bloginfo("template_url"); ?>/images/photos/two-dreamy-options-man.jpg" alt="A gentleman demonstrates the difficulty of choosing between the two Dream Bed options." class="img-responsive center-block"></p>
-				<div class="center-block"> <a href="<?php bloginfo('url'); ?>/shop/mattress/dream-bed/" class="btn btn-dream" role="button">Shop Original Dream</a> <span class="or-text hidden-xs">or</span> <a href="<?php bloginfo('url'); ?>/shop/mattress/cool-gel-bed/" class="btn btn-dream" role="button">Shop Cool Dream</a> </div>
+				<div class="center-block"> 
+					<a href="<?php bloginfo('url'); ?>/shop/" class="btn btn-dream" role="button">Shop The Dream Bed</a>
+				</div>
 			</div>
 		</div>
 	</div>
