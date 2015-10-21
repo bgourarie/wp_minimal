@@ -542,23 +542,29 @@ input[type="file"] > input[type="button"]::-moz-focus-inner {
 	padding: 0;
 }
 .jump-on-bed-content {
-
+	margin-left:25%;
+	width:20%;
+	padding-top:1%;
+	align-content:center;
 }
 .jump-on-bed-text{
-		color:#FFFFFF;
-		text-align: center;
-		top: 10px;
-		margin-left:2%;
+	color:#FFFFFF;
+	text-align: center;
+	padding:.2em;
+	max-width:14em;
+	min-width:12em;
+	margin-left:.3em;
+	font-size:1.2em;
 }
 .jump-on-bed-badge {
-	width:100%;
+	width:80%;
+	margin-left: .3em;
 }
 
 .jump-on-bed-cta {
 	text-align: center;
 	width: 100%;
-	padding: 0;
-	margin-left:10%;
+	padding: .3em;
 }
 
 .home-find-store p:last-child {

@@ -111,7 +111,7 @@ jQuery(document).ready(function($){
 </div>
 <div class="jump-on-bed">
 	<div class="jump-on-bed-content">
-		<div class="jump-on-bed-badge"><img src="<?php bloginfo("template_url"); ?>/images/photos/DreamItForward_WhiteBadge.png"/></div>
+		<div class="jump-on-bed-badge"><img src="<?php bloginfo("template_url"); ?>/images/DreamItForward_WhiteBadge.png"/></div>
 		<div class="jump-on-bed-text">
 			For every Dream Bed purchased a bed is donated to someone in need
 		</div>
