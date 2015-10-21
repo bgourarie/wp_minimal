@@ -506,6 +506,10 @@ input[type="file"] > input[type="button"]::-moz-focus-inner {
 	max-width:171px;
 	height:100%;
 }
+.home-middle1 {
+	background-image: url(../images/photos/blue-box-on-stoop.jpg); 
+	background-color: #999;	
+}
 .home-middle2 {
 	background-image: url(../images/photos/girl-on-pink-bed.jpg); 
 	background-color: #999;	
