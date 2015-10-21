@@ -110,12 +110,9 @@ jQuery(document).ready(function($){
 	</div>
 </div>
 <div class="jump-on-bed">
-	<div class="col-sm-4"></div>
-	<div class="col-sm-4 jump-on-bed-content">
-		<div class="col-sm-4"></div>
-		<div class="col-sm-4 jump-on-bed-badge"></div>
-		<div class="col-sm-4"></div>
-		<div class="col-sm-6 jump-on-bed-text">
+	<div class="jump-on-bed-content">
+		<div class="jump-on-bed-badge"><img src="<?php bloginfo("template_url"); ?>/images/photos/DreamItForward_WhiteBadge.png"/></div>
+		<div class="jump-on-bed-text">
 			For every Dream Bed purchased a bed is donated to someone in need
 		</div>
 		<div class="jump-on-bed-cta">

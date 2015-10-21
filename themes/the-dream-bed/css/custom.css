@@ -534,39 +534,31 @@ input[type="file"] > input[type="button"]::-moz-focus-inner {
 
 .jump-on-bed {
 	height: 352px;
-	background-image: url(../images/photos/GivingImageBackground.png);
+	background-image: url(../images/photos/GivingImageBackground.jpeg);
 	background-position: top center;	
+	background-repeat: no-repeat;
 	position: relative; 
 	width: 100%;
 	padding: 0;
 }
 .jump-on-bed-content {
-		float:right;
+
 }
 .jump-on-bed-text{
 		color:#FFFFFF;
 		text-align: center;
 		top: 10px;
+		margin-left:2%;
 }
 .jump-on-bed-badge {
-	background-image:url(../images/DreamItForward_WhiteBadge.png);
-	background-size: 100%;
-	width:40%;
-	height:190px;
-	background-repeat:no-repeat;
-	margin-top:10px;
-	margin-left:5%;
-
+	width:100%;
 }
 
 .jump-on-bed-cta {
-	position: absolute;
-	top: 305px;
 	text-align: center;
 	width: 100%;
 	padding: 0;
-	margin-left:5%
-	;
+	margin-left:10%;
 }
 
 .home-find-store p:last-child {
