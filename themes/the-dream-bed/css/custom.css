@@ -106,7 +106,7 @@ input[type="file"] > input[type="button"]::-moz-focus-inner {
 
 .shop-now-main {
 	background-image: url(../images/photos/two-dreamy-options-man.jpg);
-	background-position: bottom;
+	background-position: top;
 }
 
 .thanks-page {
