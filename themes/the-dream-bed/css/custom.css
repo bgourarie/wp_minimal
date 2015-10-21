@@ -556,6 +556,7 @@ input[type="file"] > input[type="button"]::-moz-focus-inner {
 	position: relative; 
 	width: 1280px;
 	padding: 0;
+	margin:auto;
 }
 .dream-it-fwd-content {
 	margin-left:25%;
