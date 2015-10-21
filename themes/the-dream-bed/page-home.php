@@ -57,25 +57,32 @@ jQuery(document).ready(function($){
 <?php } ?>
 
 <div class="container design-page">
-	<div class="row" style="display:block;margin:auto;">
-		<div class="home-badge-row">
-			<div class="col-sm-3">
-				<div class="home-badge home-freeship">
-				</div>
-			</div>
-			<div class="col-sm-3">
-				<div class="home-badge home-dreamforward">
-				</div>
-			</div>
-			<div class="col-sm-3">
-				<div class="home-badge home-bestinbox">
-				</div>
-			</div>
-			<div class="col-sm-3">
-				<div class="home-badge home-nightmares">
-				</div>
-			</div>
+	<div class="row">
+		<div class="col-sm-3">
+			<img class="home-badge" src="<?php bloginfo("template_url"); ?>/images/Badges_DreamItForward.png">
+      <div class="home-badge-text">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse condimentum.
+      </div>
 		</div>
+		<div class="col-sm-3">
+			<img class="home-badge" src="<?php bloginfo("template_url"); ?>/images/Badges_NoNightmares.png">
+  	  <div class="home-badge-text">
+	  		180 Night in home trial with nightmare free refund or return.
+	    </div>
+		</div>
+		<div class="col-sm-3">
+			<img class="home-badge" src="<?php bloginfo("template_url"); ?>/images/Badges_FreeShipping.png">
+      <div class="home-badge-text">
+				Nationwide delivery right to your door within 48 hours!	
+      </div>
+		</div>
+		<div class="col-sm-3">
+			<img class="home-badge" src="<?php bloginfo("template_url"); ?>/images/Badges_BestInBox.png">
+	 	  <div class="home-badge-text">
+	      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse condimentum.
+	    </div>
+		</div>
+		
 	</div>
 	<div class="row">
 		<div class="alternate">

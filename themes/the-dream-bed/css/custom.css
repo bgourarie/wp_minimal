@@ -496,33 +496,16 @@ input[type="file"] > input[type="button"]::-moz-focus-inner {
 	padding: 20px 0;
 	background-color: #f2f2f2;	
 }
-.home-badge-row{
+.home-badge-text{
 	text-align:center;
+	color:#F36B22;
 }
 .home-badge{
-	width: 171px;
-  height: 171px;
-  display: block;
-  margin: auto;
+	padding:0;
+	width:100%;
+	max-width:171px;
+	height:100%;
 }
-.home-bestinbox{
-	background-image: url(../images/Badges_BestInBox.png);
-}
-.home-dreamforward{
-	background-image: url(../images/Badges_DreamItForward.png);
-}
-.home-freeship{
-	background-image: url(../images/Badges_FreeShipping.png);
-}
-.home-nightmares{
-	background-image: url(../images/Badges_NoNightmares.png);
-}
-.home-middle1 {
-	background-image: url(../images/photos/blue-box-on-stoop.jpg); 
-	background-color: #999;	
-}
-
-
 .home-middle2 {
 	background-image: url(../images/photos/girl-on-pink-bed.jpg); 
 	background-color: #999;	
