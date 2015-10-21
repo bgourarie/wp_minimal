@@ -533,12 +533,12 @@ input[type="file"] > input[type="button"]::-moz-focus-inner {
 }
 
 .jump-on-bed {
-	height: 352px;
+	height: 100%;
 	background-image: url(../images/photos/GivingImageBackground.jpeg);
 	background-position: top center;	
 	background-repeat: no-repeat;
 	position: relative; 
-	width: 100%;
+	width: 1280px;
 	padding: 0;
 }
 .jump-on-bed-content {
@@ -558,13 +558,17 @@ input[type="file"] > input[type="button"]::-moz-focus-inner {
 }
 .jump-on-bed-badge {
 	width:80%;
-	margin-left: .3em;
+	margin-left: 10%;
+}
+.jump-on-bed-badge img{
+	width:100%;
 }
 
 .jump-on-bed-cta {
 	text-align: center;
-	width: 100%;
-	padding: .3em;
+	width: 80%;
+	margin-left:10%;
+	padding: 2%;
 }
 
 .home-find-store p:last-child {
