@@ -109,13 +109,13 @@ jQuery(document).ready(function($){
 		</div>
 	</div>
 </div>
-<div class="jump-on-bed">
-	<div class="jump-on-bed-content">
-		<div class="jump-on-bed-badge"><img src="<?php bloginfo("template_url"); ?>/images/DreamItForward_WhiteBadge.png"/></div>
-		<div class="jump-on-bed-text">
+<div class="dream-it-fwd">
+	<div class="dream-it-fwd-content">
+		<div class="dream-it-fwd-badge"><img src="<?php bloginfo("template_url"); ?>/images/DreamItForward_WhiteBadge.png"/></div>
+		<div class="dream-it-fwd-text">
 			For every Dream Bed purchased a bed is donated to someone in need
 		</div>
-		<div class="jump-on-bed-cta">
+		<div class="dream-it-fwd-cta">
 			<a href="<?php bloginfo('url'); ?>/giving" class="btn btn-dream" role="button">Learn More</a>
 		</div>
 	</div>
