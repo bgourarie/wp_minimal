@@ -531,8 +531,24 @@ input[type="file"] > input[type="button"]::-moz-focus-inner {
 .home-bed-options {
 	padding-bottom: 30px;
 }
-
 .jump-on-bed {
+	height: 534px;
+	background-image: url(../images/photos/kids-jumping-on-dream-bed.jpg);
+	background-position: top center;	
+	position: relative; 
+	width: 100%;
+	padding: 0;
+}
+
+.jump-on-bed-cta {
+	position: absolute;
+	top: 441px;
+	text-align: center;
+	width: 100%;
+	padding: 0;
+}
+
+.dream-it-fwd {
 	height: 100%;
 	background-image: url(../images/photos/GivingImageBackground.jpeg);
 	background-position: top center;	
@@ -541,13 +557,13 @@ input[type="file"] > input[type="button"]::-moz-focus-inner {
 	width: 1280px;
 	padding: 0;
 }
-.jump-on-bed-content {
+.dream-it-fwd-content {
 	margin-left:25%;
 	width:20%;
 	padding-top:1%;
 	align-content:center;
 }
-.jump-on-bed-text{
+.dream-it-fwd-text{
 	color:#FFFFFF;
 	text-align: center;
 	padding:.2em;
@@ -556,15 +572,15 @@ input[type="file"] > input[type="button"]::-moz-focus-inner {
 	margin-left:.3em;
 	font-size:1.2em;
 }
-.jump-on-bed-badge {
+.dream-it-fwd-badge {
 	width:80%;
 	margin-left: 10%;
 }
-.jump-on-bed-badge img{
+.dream-it-fwd-badge img{
 	width:100%;
 }
 
-.jump-on-bed-cta {
+.dream-it-fwd-cta {
 	text-align: center;
 	width: 80%;
 	margin-left:10%;
