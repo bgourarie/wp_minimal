@@ -58,20 +58,22 @@ jQuery(document).ready(function($){
 
 <div class="container design-page">
 	<div class="row" style="display:block;margin:auto;">
-		<div class="col-sm-3">
-			<div class="home-badge home-freeship">
+		<div class="home-badge-row">
+			<div class="col-sm-3">
+				<div class="home-badge home-freeship">
+				</div>
 			</div>
-		</div>
-		<div class="col-sm-3">
-			<div class="home-badge home-dreamforward">
+			<div class="col-sm-3">
+				<div class="home-badge home-dreamforward">
+				</div>
 			</div>
-		</div>
-		<div class="col-sm-3">
-			<div class="home-badge home-bestinbox">
+			<div class="col-sm-3">
+				<div class="home-badge home-bestinbox">
+				</div>
 			</div>
-		</div>
-		<div class="col-sm-3">
-			<div class="home-badge home-nightmares">
+			<div class="col-sm-3">
+				<div class="home-badge home-nightmares">
+				</div>
 			</div>
 		</div>
 	</div>
@@ -108,9 +110,17 @@ jQuery(document).ready(function($){
 	</div>
 </div>
 <div class="jump-on-bed">
-	<div class="jump-on-bed-badge"></div>
-	<div class="jump-on-bed-cta">
-		<a href="<?php bloginfo('url'); ?>/giving" class="btn btn-dream" role="button">Learn More</a>
+	<div class="col-sm-4"></div>
+	<div class="col-sm-4 jump-on-bed-content">
+		<div class="col-sm-4"></div>
+		<div class="col-sm-4 jump-on-bed-badge"></div>
+		<div class="col-sm-4"></div>
+		<div class="col-sm-6 jump-on-bed-text">
+			For every Dream Bed purchased a bed is donated to someone in need
+		</div>
+		<div class="jump-on-bed-cta">
+			<a href="<?php bloginfo('url'); ?>/giving" class="btn btn-dream" role="button">Learn More</a>
+		</div>
 	</div>
 </div>
 <div class="container">
