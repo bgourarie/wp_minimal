@@ -40,16 +40,16 @@ if ($product_query->have_posts()) {
 		$short_description = $post->post_excerpt;
 
 		echo '<div class="col-sm-6 text-center"><div class="product">
-				<div class="product-image-cta">
-					<a href="'. $link .'"><img src="' . $img_url .'" class="product-img"></a>
-					<div class="product-cta"><a href="'. $link .'" class="btn btn-dream" role="button">Shop '. $title .'</a></div>
-				</div>
 				<div class="product-text">
 					<h3>' . $title . ' Bed</h3>
 					<p>' . $short_description .'</p>
 					
 				</div>
-		</div></div>';
+				<div class="product-image-cta">
+					<a href="'. $link .'"><img src="' . $img_url .'" class="product-img"></a>
+					<div class="product-cta"><a href="'. $link .'" class="btn btn-dream" role="button">Shop '. $title .'</a></div>
+				</div>
+						</div></div>';
 	}
 
 /*
@@ -59,7 +59,7 @@ echo "</pre>";
 */
 
 
-	echo '</div><div class="row"><div class="col-xs-12"><div class="hidden-xs hidden-sm or-text">or</div></div></div></div>';
+	//echo '</div><div class="row"><div class="col-xs-12"><div class="hidden-xs hidden-sm or-text">or</div></div></div></div>';
 } else {
 // no posts found
 }
