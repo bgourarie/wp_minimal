@@ -505,10 +505,12 @@ input[type="file"] > input[type="button"]::-moz-focus-inner {
 	padding: 20px 0;
 	background-color: #f2f2f2;	
 }
+
 .home-middle1 {
 	background-image: url(../images/photos/blue-box-on-stoop.jpg); 
 	background-color: #999;	
 }
+
 .home-middle2 {
 	background-image: url(../images/photos/girl-on-pink-bed.jpg); 
 	background-color: #999;	
@@ -517,6 +519,23 @@ input[type="file"] > input[type="button"]::-moz-focus-inner {
 .home-bed-options {
 	padding-bottom: 30px;
 }
+
+.special-circles {
+	margin-top: 30px;
+}
+
+.special-circles img {
+	margin-bottom: 15px;
+	display: block;
+	width: 80%;
+	height: auto;
+}
+
+.special-circles p {
+	margin-left: 10%;
+	width: 80%;
+}
+
 .jump-on-bed {
 	height: 534px;
 	background-image: url(../images/photos/kids-jumping-on-dream-bed.jpg);

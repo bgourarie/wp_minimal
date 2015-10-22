@@ -56,56 +56,27 @@ jQuery(document).ready(function($){
 
 <?php } ?>
 
-<div class="container design-page">
-	<div class="row">
-		<div class="center-content col-xs-6 col-sm-3 text-center">
-			<div class="row">
-				<div class="col-sm-12">
-					<img src="<?php bloginfo("template_url"); ?>/images/Badges_DreamItForward.png">
-        </div>
-      </div>
-      <div class="row">
-      	<div class="col-sm-12">
-      		Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse condimentum.
-      	</div>
-      </div>
-		</div>
-		<div class="center-content col-xs-6 col-sm-3 text-center">
-			<div class="row">
-    		<div class="col-sm-12">
-					<img src="<?php bloginfo("template_url"); ?>/images/Badges_NoNightmares.png">
-  			</div>
-  		</div>
-			<div class="row">
-	    	<div class="col-sm-12">
-		  		180 Night in home trial with nightmare free refund or return.
-		  	</div>
-		  </div>
-		</div>
-		<div class="center-content col-xs-6 col-sm-3 text-center">
-			<div class="row">
-				<div class="col-sm-12">
-					<img src="<?php bloginfo("template_url"); ?>/images/Badges_FreeShipping.png">
-			  </div>
+<div class="container">
+	<div class="special-circles">
+		<div class="row">
+			<div class="col-sm-3 col-xs-6 text-center">
+				<img src="<?php bloginfo("template_url"); ?>/images/Badges_DreamItForward.png" class="center-block">
+				<p>1 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse condimentum.</p>   
 			</div>
-			<div class="row">
-        <div class="col-sm-12">
-					Nationwide delivery right to your door within 48 hours!	
-				</div>
+			<div class="col-sm-3 col-xs-6 text-center">
+				<img src="<?php bloginfo("template_url"); ?>/images/Badges_NoNightmares.png" class="center-block">
+				<p>2 180 Night in home trial with nightmare free refund or return.</p>
 			</div>
+			 <div class="clearfix visible-xs-block"></div>
+			<div class="col-sm-3 col-xs-6 text-center">
+				<img src="<?php bloginfo("template_url"); ?>/images/Badges_FreeShipping.png" class="center-block">
+				<p>3 Nationwide delivery right to your door within 48 hours!</p>
+			</div>
+			<div class="col-sm-3 col-xs-6 text-center">
+				<img src="<?php bloginfo("template_url"); ?>/images/Badges_BestInBox.png" class="center-block">
+				<p>4 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse condimentum.</p>
+			</div>		
 		</div>
-		<div class="center-content col-xs-6 col-sm-3 text-center">
-			<div class="row">
-        <div class="col-sm-12">
-					<img src="<?php bloginfo("template_url"); ?>/images/Badges_BestInBox.png">
-	    	</div>
-	  	</div>
-			<div class="row">
-        <div class="col-sm-12">
-		      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse condimentum.
-				</div>
-			</div>
-		</div>		
 	</div>
 	<div class="row">
 		<div class="alternate">
