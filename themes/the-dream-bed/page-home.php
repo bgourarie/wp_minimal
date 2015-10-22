@@ -60,20 +60,20 @@ jQuery(document).ready(function($){
 	<div class="special-circles">
 		<div class="row">
 			<div class="col-sm-3 col-xs-6 text-center">
-				<img src="<?php bloginfo("template_url"); ?>/images/Badges_DreamItForward.png" class="center-block" alt="Dream it forward: buy a dream, give a dream">
+				<img src="<?php bloginfo("template_url"); ?>/images/circle-orange-dream-it-forward.svg" class="center-block" alt="Dream it forward: buy a dream, give a dream">
 				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse condimentum.</p>   
 			</div>
 			<div class="col-sm-3 col-xs-6 text-center">
-				<img src="<?php bloginfo("template_url"); ?>/images/Badges_NoNightmares.png" class="center-block" alt="180 night no nightmare guarantee">
+				<img src="<?php bloginfo("template_url"); ?>/images/circle-orange-no-nightmare-guarantee.svg" class="center-block" alt="180 night no nightmare guarantee">
 				<p>180 Night in home trial with nightmare free refund or return.</p>
 			</div>
 			 <div class="clearfix visible-xs-block"></div>
 			<div class="col-sm-3 col-xs-6 text-center">
-				<img src="<?php bloginfo("template_url"); ?>/images/Badges_FreeShipping.png" class="center-block" alt="Dream team delivery: free shipping">
+				<img src="<?php bloginfo("template_url"); ?>/images/circle-orange-dream-team-delivery.svg" class="center-block" alt="Dream team delivery: free shipping">
 				<p>Nationwide delivery right to your door within 48 hours!</p>
 			</div>
 			<div class="col-sm-3 col-xs-6 text-center">
-				<img src="<?php bloginfo("template_url"); ?>/images/Badges_BestInBox.png" class="center-block" alt="Best in Box: Quality Craftsmanship">
+				<img src="<?php bloginfo("template_url"); ?>/images/circle-orange-quality-craftsmanship.svg" class="center-block" alt="Best in Box: Quality Craftsmanship">
 				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse condimentum.</p>
 			</div>		
 		</div>
