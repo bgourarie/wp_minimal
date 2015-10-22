@@ -34,6 +34,23 @@
 
 	<header id="masthead" class="site-header" role="banner">
 		<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+			<div class="container-fluid">
+				<div class="row">
+					<div class="col-sm-12 center-content text-center hidden-xs extole-header">
+						GIVE $50, GET $50 when you share Dream Bed with a friend!
+						<a href="#" class="btn dream-btn btn-small extole-button" role="button">
+							SHARE NOW
+							<script type="extole/widget">{"zone":"db_global_header"}</script>
+						</a>
+					</div>
+					<div class="col-xs-12 visible-xs-*">
+						<a href="#" class="btn dream-btn btn-small extole-button" role="button">
+							Get $50 off!
+							<script type="extole/widget">{"zone":"db_global_header"}</script>
+						</a>
+					</div>
+				</div>
+			</div>
 			<div class="container">
 				<div class="navbar-header">
 					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
@@ -49,9 +66,7 @@
 					
 					<?php if(!is_page(array('checkout', 'order-received'))) { ?>
 <li>
-  <a href="#">
-<script type="extole/widget">{"zone":"db_global_header"}</script>
-  </a>
+  
 </li>
 						<?php wp_nav_menu( array( 'theme_location' => 'header-right', 'container' => '' ) ); ?>
 					<?php } ?>	
