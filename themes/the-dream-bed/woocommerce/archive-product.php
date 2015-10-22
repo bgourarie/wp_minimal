@@ -11,9 +11,26 @@
 </div>
 <div class="container">
 	<div class="row">
-		<div class="col-xs-12 shop-day-guarantee">
-			<img src="<?php bloginfo("template_url"); ?>/images/dream-bed-try-guarantee.png" alt="Try your Dream Bed for 180 nights. If after 180 nights you don't love your new Dream Bed, we promise a nightmare-free return and full refund." class="img-responsive">
+		<div class="col-sm-6">
+			<div class="row text-center">
+				<div class="col-sm-6">
+					<img src="<?php bloginfo("template_url"); ?>/images/Badges_NoNightmares.png">
+				</div>
+				<div class="col-sm-6">
+					180 night in home trial with nightmare free refund or return
+				</div>
+			</div>
 		</div>
+		<div class="col-sm-6">
+			<div class="row text-center"> 
+				<div class="col-sm-6">
+					<img src="<?php bloginfo("template_url"); ?>/images/Badges_FreeShipping.png">
+				</div>
+				<div class="col-sm-6">
+					Nationwide free delivery right to your door within 48 hours!
+				<div>
+			</div>
+		</div>		
 	</div>
 </div>
 
