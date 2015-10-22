@@ -554,43 +554,28 @@ input[type="file"] > input[type="button"]::-moz-focus-inner {
 }
 
 .dream-it-fwd {
-	height: 100%;
-	background-image: url(../images/photos/GivingImageBackground.jpeg);
-	background-position: top center;	
-	background-repeat: no-repeat;
-	position: relative; 
-	width: 1280px;
-	padding: 0;
-	margin:auto;
-}
-.dream-it-fwd-content {
-	margin-left:25%;
-	width:20%;
-	padding-top:1%;
-	align-content:center;
-}
-.dream-it-fwd-text{
-	color:#FFFFFF;
-	text-align: center;
-	padding:.2em;
-	max-width:14em;
-	min-width:12em;
-	margin-left:.3em;
-	font-size:1.2em;
-}
-.dream-it-fwd-badge {
-	width:80%;
-	margin-left: 10%;
-}
-.dream-it-fwd-badge img{
-	width:100%;
+	background: url(../images/photos/dream-it-fwd-mattress.jpg) no-repeat;
+	background-size: cover;
+	height: 411px;
+	background-position: top right -160px;
 }
 
-.dream-it-fwd-cta {
+.dream-it-fwd-content {
 	text-align: center;
-	width: 80%;
-	margin-left:10%;
-	padding: 2%;
+}
+
+.dream-it-fwd-content img {
+	margin: 20px auto;
+	width: 218px;
+	height: auto;
+}
+
+.dream-it-fwd h3 {
+	text-shadow: 1px 1px 4px rgba(100, 100, 100, 1);
+	color: #fff;
+	font-weight: 700;
+	margin-top: 0;
+	font-size: 20px;
 }
 
 .home-find-store p:last-child {
@@ -1172,6 +1157,16 @@ body {
 	margin-top: 0
 }
 
+.dream-it-fwd {
+	background-position: top right -100px;
+	padding-top: 15px;
+}
+
+
+.dream-it-fwd h3 {
+	font-size: 1.143em;
+}
+
 }
 
 /* Small Devices, Tablets */
@@ -1179,6 +1174,11 @@ body {
 
 body {
 	padding-top: 96px;	/* this is for the fixed navbar - take out if not using */
+}
+
+.dream-it-fwd {
+	background-position: right top;
+	padding-top: 0;
 }
 
 .navbar-brand {
@@ -1274,6 +1274,14 @@ body {
 
 .navbar-brand {
 	padding-left: 0;
+}
+
+.dream-it-fwd {
+	background-position: top center;
+}
+
+.dream-it-fwd h3 {
+	font-size: 1.429em;
 }
 
 .giving h2 {

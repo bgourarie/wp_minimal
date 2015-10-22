@@ -60,21 +60,21 @@ jQuery(document).ready(function($){
 	<div class="special-circles">
 		<div class="row">
 			<div class="col-sm-3 col-xs-6 text-center">
-				<img src="<?php bloginfo("template_url"); ?>/images/Badges_DreamItForward.png" class="center-block">
-				<p>1 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse condimentum.</p>   
+				<img src="<?php bloginfo("template_url"); ?>/images/Badges_DreamItForward.png" class="center-block" alt="Dream it forward: buy a dream, give a dream">
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse condimentum.</p>   
 			</div>
 			<div class="col-sm-3 col-xs-6 text-center">
-				<img src="<?php bloginfo("template_url"); ?>/images/Badges_NoNightmares.png" class="center-block">
-				<p>2 180 Night in home trial with nightmare free refund or return.</p>
+				<img src="<?php bloginfo("template_url"); ?>/images/Badges_NoNightmares.png" class="center-block" alt="180 night no nightmare guarantee">
+				<p>180 Night in home trial with nightmare free refund or return.</p>
 			</div>
 			 <div class="clearfix visible-xs-block"></div>
 			<div class="col-sm-3 col-xs-6 text-center">
-				<img src="<?php bloginfo("template_url"); ?>/images/Badges_FreeShipping.png" class="center-block">
-				<p>3 Nationwide delivery right to your door within 48 hours!</p>
+				<img src="<?php bloginfo("template_url"); ?>/images/Badges_FreeShipping.png" class="center-block" alt="Dream team delivery: free shipping">
+				<p>Nationwide delivery right to your door within 48 hours!</p>
 			</div>
 			<div class="col-sm-3 col-xs-6 text-center">
-				<img src="<?php bloginfo("template_url"); ?>/images/Badges_BestInBox.png" class="center-block">
-				<p>4 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse condimentum.</p>
+				<img src="<?php bloginfo("template_url"); ?>/images/Badges_BestInBox.png" class="center-block" alt="Best in Box: Quality Craftsmanship">
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse condimentum.</p>
 			</div>		
 		</div>
 	</div>
@@ -110,14 +110,16 @@ jQuery(document).ready(function($){
 		</div>
 	</div>
 </div>
-<div class="dream-it-fwd">
-	<div class="dream-it-fwd-content">
-		<div class="dream-it-fwd-badge"><img src="<?php bloginfo("template_url"); ?>/images/DreamItForward_WhiteBadge.png"/></div>
-		<div class="dream-it-fwd-text">
-			For every Dream Bed purchased a bed is donated to someone in need
-		</div>
-		<div class="dream-it-fwd-cta">
-			<a href="<?php bloginfo('url'); ?>/giving" class="btn btn-dream" role="button">Learn More</a>
+<div class="container-fluid dream-it-fwd">
+	<div class="row">
+		<div class="container">
+			<div class="col-md-3 col-md-offset-2 col-sm-4 col-xs-6">
+				<div class="dream-it-fwd-content">
+					<img src="<?php bloginfo("template_url"); ?>/images/circle-dream-it-forward-buy-a-dream-give-a-dream.png" class="img-responsive">
+					<h3>For every Dream Bed purchased a bed is donated to someone in need.</h3>
+					<p><a href="<?php bloginfo('url'); ?>/giving" class="btn btn-dream" role="button">Learn More</a></p>
+				</div>
+			</div>
 		</div>
 	</div>
 </div>
