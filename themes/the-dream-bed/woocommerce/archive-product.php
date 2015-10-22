@@ -10,27 +10,19 @@
 	</div>
 </div>
 <div class="container">
-	<div class="row">
-		<div class="col-sm-6">
-			<div class="row text-center">
-				<div class="col-sm-6">
-					<img src="<?php bloginfo("template_url"); ?>/images/Badges_NoNightmares.png">
-				</div>
-				<div class="col-sm-6">
-					180 night in home trial with nightmare free refund or return
-				</div>
-			</div>
+	<div class="row text-justified text-center">
+		<div class="col-sm-3">
+			<img src="<?php bloginfo("template_url"); ?>/images/Badges_NoNightmares.png">
 		</div>
-		<div class="col-sm-6">
-			<div class="row text-center"> 
-				<div class="col-sm-6">
-					<img src="<?php bloginfo("template_url"); ?>/images/Badges_FreeShipping.png">
-				</div>
-				<div class="col-sm-6">
-					Nationwide free delivery right to your door within 48 hours!
-				<div>
-			</div>
-		</div>		
+		<div class="col-sm-3">
+			<h3>180 night in home trial with nightmare free refund or return</h3>
+		</div>
+		<div class="col-sm-3 ">
+			<h3>Nationwide free delivery right to your door within 48 hours!</h3>
+		</div>
+		<div class="col-sm-3">
+			<img src="<?php bloginfo("template_url"); ?>/images/Badges_FreeShipping.png">
+		</div>	
 	</div>
 </div>
 

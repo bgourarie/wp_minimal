@@ -45,7 +45,7 @@
 					<div class="col-xs-5 visible-xs"></div>
 					<div class="col-xs-4 visible-xs">
 						<a href="#" class="btn btn-dream btn-xs" role="button">
-							<script type="extole/widget">{"zone":"db_banner"}</script>
+							<script type="extole/widget">{"zone":"db_global_banner"}</script>
 						</a>
 					</div>
 				</div>
