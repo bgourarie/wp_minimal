@@ -38,14 +38,14 @@
 				<div class="row">
 					<div class="col-sm-12 center-content text-center hidden-xs extole-header">
 						GIVE $50, GET $50 when you share Dream Bed with a friend!
-						<a href="#" class="btn btn-dreaminv btn-small extole-button" role="button">
+						<a href="#">
 							<script type="extole/widget">{"zone":"db_banner"}</script>
 						</a>
 					</div>
 					<div class="col-xs-5 visible-xs"></div>
 					<div class="col-xs-4 visible-xs">
-						<a href="#" class="btn btn-dream btn-xs" role="button">
-							<script type="extole/widget">{"zone":"db_global_header"}</script>
+						<a href="#">
+							<script type="extole/widget">{"zone":"db_banner"}</script>
 						</a>
 					</div>
 				</div>
