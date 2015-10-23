@@ -10,9 +10,9 @@
 	</div>
 </div>
 <div class="container">
-	<div class="row text-justified text-center">
+	<div class="row vertical-align shop-badges">
 		<div class="col-xs-5 col-sm-3">
-			<img src="<?php bloginfo("template_url"); ?>/images/Badges_NoNightmares.png">
+			<img src="<?php bloginfo("template_url"); ?>/images/circle-orange-no-nightmare-guarantee.svg" class="center-block shop-badge-img" alt="180 night no nightmare guarantee">
 		</div>
 		<div class="col-xs-7 col-sm-3">
 			<div class="shop-badge-text">
@@ -21,7 +21,7 @@
 		</div>
 		<div class="clearfix visible-xs-block"></div>
 		<div class="col-xs-5 col-sm-3">
-			<img src="<?php bloginfo("template_url"); ?>/images/Badges_FreeShipping.png">
+			<img src="<?php bloginfo("template_url"); ?>/images/circle-orange-dream-team-delivery.svg" class="center-block shop-badge-img" alt="Dream team delivery: free shipping">
 		</div>	
 		<div class="col-xs-7 col-sm-3">
 			<div class="shop-badge-text">
@@ -42,7 +42,7 @@ $args = array(
 
 $product_query = new WP_Query($args);
 if ($product_query->have_posts()) {
-	echo '<div class="container products"><div class="row">';
+	echo '<div class="container products"><div class="row"><div class="col-xs-12"><div class="hidden-xs hidden-sm or-text">or</div></div></div><div class="row">';
 	while ($product_query->have_posts() ) {
 		$product_query->the_post();
 		$title = get_the_title();
@@ -55,7 +55,7 @@ if ($product_query->have_posts()) {
 
 		echo '<div class="col-sm-6 text-center"><div class="product">
 				<div class="product-text">
-					<h3>' . $title . ' Bed</h3>
+					<h3><a href="'. $link .'">' . $title . ' Bed</a></h3>
 					<p>' . $short_description .'</p>
 					
 				</div>
@@ -63,7 +63,7 @@ if ($product_query->have_posts()) {
 					<a href="'. $link .'"><img src="' . $img_url .'" class="product-img"></a>
 					<div class="product-cta"><a href="'. $link .'" class="btn btn-dream" role="button">Shop '. $title .'</a></div>
 				</div>
-						</div></div>';
+			  </div></div>';
 	}
 
 /*
@@ -73,7 +73,7 @@ echo "</pre>";
 */
 
 
-	echo '</div><div class="row"><div class="col-xs-12"><div class="hidden-xs hidden-sm or-text"></div></div></div></div>';
+	echo '</div></div>';
 } else {
 // no posts found
 }

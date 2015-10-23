@@ -271,10 +271,20 @@ input[type="file"] > input[type="button"]::-moz-focus-inner {
 .btn-dream-link:active, .btn-dream-link.active {
 	background-color: rgba(255,255,255,.08);
 }
-
-.shop-badge-text{
+/*
+.shop-badge-text {
 	padding-top:30px;
 	padding-bottom:30px;
+}
+*/
+
+.shop-badges {
+	text-align: center;
+}
+
+.shop-badge-img {
+	width: 180px;
+	height: auto;
 }
 
 .footer {
@@ -617,6 +627,11 @@ h2.bedcount {
 	color: #FF6B00;
 }
 
+.products h3 a {
+	color: #FF6B00;
+	text-decoration: none;
+}
+
 .products .product-img {
 	width: 100%;
 	max-width: 100%;
@@ -633,9 +648,13 @@ h2.bedcount {
 	color: #61B4E4; /* as long as cool dream is the last product, this'll make it blue */
 }
 
+.products div div:last-child .product h3 a {
+	color: #61B4E4;
+}
+
 .products .or-text {
 	position: relative;
-	top: -70px;
+	top: 70px;
 	width: 10%;
 	left: 45%;
 	text-align: center;
@@ -1176,6 +1195,10 @@ body {
 	font-size: 1.143em;
 }
 
+.shop-badge-text {
+	padding-top: 30px;
+}
+
 }
 
 /* Small Devices, Tablets */
@@ -1274,7 +1297,22 @@ body {
 	margin-right: 40px;
 }
 
+.shop-badge-text {
+	padding-top: 0;
+}
 
+.vertical-align {
+	display: flex;
+	flex-direction: row;
+}
+
+.vertical-align > [class^="col-"],
+.vertical-align > [class*=" col-"] {
+	display: flex;
+	align-items: center;
+	justify-content: center; 
+	
+}
 
 }
 

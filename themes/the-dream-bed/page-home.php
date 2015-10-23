@@ -67,7 +67,7 @@ jQuery(document).ready(function($){
 				<img src="<?php bloginfo("template_url"); ?>/images/circle-orange-no-nightmare-guarantee.svg" class="center-block" alt="180 night no nightmare guarantee">
 				<p>180 Night in home trial with nightmare free refund or return.</p>
 			</div>
-			 <div class="clearfix visible-xs-block"></div>
+			<div class="clearfix visible-xs-block"></div>
 			<div class="col-sm-3 col-xs-6 text-center">
 				<img src="<?php bloginfo("template_url"); ?>/images/circle-orange-dream-team-delivery.svg" class="center-block" alt="Dream team delivery: free shipping">
 				<p>Nationwide delivery right to your door within 48 hours!</p>
