@@ -161,7 +161,7 @@ input[type="file"] > input[type="button"]::-moz-focus-inner {
 	left: 0;
 	text-align: center;
 	bottom: auto;
-	top: 200px;
+	top: 30px;
 }
 
 .carousel-inner {
@@ -170,7 +170,6 @@ input[type="file"] > input[type="button"]::-moz-focus-inner {
 
 .carousel h1 {
 	font-family: 'FFDINWebPro', sans-serif;
-	text-transform: lowercase;
 	text-shadow: 1px 1px 4px rgba(100, 100, 100, 1);
 	line-height: 1;
 	padding-bottom: 0;
@@ -1091,13 +1090,6 @@ body {
 	margin: auto;
 }
 
-.btn-lg {
-	padding-left: 10px;
-	padding-right: 10px;
-	font-size: 1em;
-	font-weight: 400;
-}
-
 .jumbotron h1 {
 	font-size: 2.857em;
 	/*margin-bottom: 15px;*/
@@ -1172,6 +1164,13 @@ body {
 	margin: 0;
 	padding: 0;
 	line-height: 1;
+}
+
+.btn-lg {
+	padding-left: 20px;
+	padding-right: 20px;
+	font-size: 1em;
+	font-weight: 700;
 }
 
 }
@@ -1343,13 +1342,6 @@ body {
 	font-size: 40px;
 }
 
-.btn-lg {
-	padding-left: 30px;
-	padding-right: 30px;
-	font-size: 1.429em;
-	font-weight: 400;
-}
-
 .jumbotron h1 {
 	font-size: 4.286em;
 	/*margin-bottom: 45px;*/
@@ -1384,6 +1376,12 @@ body {
 
 .btn-dream {
 	padding: 6px 32px;	
+}
+
+.btn-lg {
+	padding: 14px 32px 12px;
+	font-size: 1.429em;
+	font-weight: 400;
 }
 
 .footer .btn-dream {

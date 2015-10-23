@@ -33,7 +33,7 @@
 								<div class="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 col-xs-12">
 									<h1><?php echo $title; ?></h1> 
 									<h2><?php echo $desc; ?></h2>
-									<p><a href="<?php echo $link; ?>" class="btn btn-dream" role="button"><?php echo $btn_title; ?></a></p>
+									<p><a href="<?php echo $link; ?>" class="btn btn-dream btn-lg" role="button"><?php echo $btn_title; ?></a></p>
 								</div>
 							</div>
 						</div>
