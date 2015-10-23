@@ -60,22 +60,26 @@ jQuery(document).ready(function($){
 	<div class="special-circles">
 		<div class="row">
 			<div class="col-sm-3 col-xs-6 text-center">
-				<img src="<?php bloginfo("template_url"); ?>/images/circle-orange-dream-it-forward.svg" class="center-block" alt="Dream it forward: buy a dream, give a dream">
-				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse condimentum.</p>   
+				<img src="<?php bloginfo("template_url"); ?>/images/circle-orange-no-nightmare-guarantee.svg" class="center-block" alt="180 night no nightmare guarantee">
+				<h3>180 Night Guarantee</h3>
+				<p>180 night in home trial. Really.</p>
 			</div>
 			<div class="col-sm-3 col-xs-6 text-center">
-				<img src="<?php bloginfo("template_url"); ?>/images/circle-orange-no-nightmare-guarantee.svg" class="center-block" alt="180 night no nightmare guarantee">
-				<p>180 Night in home trial with nightmare free refund or return.</p>
+				<img src="<?php bloginfo("template_url"); ?>/images/circle-orange-dream-team-delivery.svg" class="center-block" alt="Dream team delivery: free shipping">
+				<h3>Free Delivery</h3>
+				<p>You are 48 hours away from a better night&#8217;s sleep.</p>
 			</div>
 			<div class="clearfix visible-xs-block"></div>
 			<div class="col-sm-3 col-xs-6 text-center">
-				<img src="<?php bloginfo("template_url"); ?>/images/circle-orange-dream-team-delivery.svg" class="center-block" alt="Dream team delivery: free shipping">
-				<p>Nationwide delivery right to your door within 48 hours!</p>
+				<img src="<?php bloginfo("template_url"); ?>/images/circle-orange-quality-craftsmanship.svg" class="center-block" alt="Best in Box: Quality Craftsmanship">
+				<h3>Best In Box</h3>
+				<p>2 dreamy mattresses. Both offering optimum support &amp; comfort.</p>
 			</div>
 			<div class="col-sm-3 col-xs-6 text-center">
-				<img src="<?php bloginfo("template_url"); ?>/images/circle-orange-quality-craftsmanship.svg" class="center-block" alt="Best in Box: Quality Craftsmanship">
-				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse condimentum.</p>
-			</div>		
+				<img src="<?php bloginfo("template_url"); ?>/images/circle-orange-dream-it-forward.svg" class="center-block" alt="Dream it forward: buy a dream, give a dream">
+				<h3>Dream It Forward</h3>
+				<p>Purchase a dream bed and we will give a bed to a person in need.</p>   
+			</div>
 		</div>
 	</div>
 	<div class="row">
