@@ -11,18 +11,23 @@
 </div>
 <div class="container">
 	<div class="row text-justified text-center">
-		<div class="col-sm-3">
+		<div class="col-xs-5 col-sm-3">
 			<img src="<?php bloginfo("template_url"); ?>/images/Badges_NoNightmares.png">
 		</div>
-		<div class="col-sm-3">
-			<h3>180 night in home trial with nightmare free refund or return</h3>
+		<div class="col-xs-7 col-sm-3">
+			<div class="shop-badge-text">
+				<h3>180 night in home trial with nightmare free refund or return</h3>
+			</div>
 		</div>
-		<div class="col-sm-3 ">
-			<h3>Nationwide free delivery right to your door within 48 hours!</h3>
-		</div>
-		<div class="col-sm-3">
+		<div class="clearfix visible-xs-block"></div>
+		<div class="col-xs-5 col-sm-3">
 			<img src="<?php bloginfo("template_url"); ?>/images/Badges_FreeShipping.png">
 		</div>	
+		<div class="col-xs-7 col-sm-3">
+			<div class="shop-badge-text">
+				<h3>Nationwide free delivery right to your door within 48 hours!</h3>
+			</div>
+		</div>		
 	</div>
 </div>
 
