@@ -37,7 +37,7 @@
 			<div class="container-fluid">
 				<div class="row">
 					<div class="col-sm-12 center-content text-center hidden-xs extole-header">
-						GIVE $50, GET $50 when you share Dream Bed with a friend!
+						<span class="text">GIVE $50, GET $50 when you share Dream Bed with a friend!</span>
 						<a href="#">
 							<script type="extole/widget">{"zone":"db_banner"}</script>
 						</a>

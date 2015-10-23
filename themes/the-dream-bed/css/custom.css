@@ -51,11 +51,15 @@ input[type="file"] > input[type="button"]::-moz-focus-inner {
 	background-color: transparent;
 }
 
-.extole-header{
+.extole-header {
 	background-color:#FD9D2E;
-	background-size:cover;
 	color:#FFFFFF;
 	padding:2px;
+	height: 36px;
+}
+
+.extole-header .text {
+	padding-right: 15px;
 }
 
 
@@ -1049,13 +1053,13 @@ h2.bedcount {
 @media only screen and (min-width : 320px) {
 
 body {
-	padding-top: 51px;	
+	padding-top: 84px;	
 }
 
 .navbar-brand {
 	position: absolute;
 	left: 15px;
-	top: 7px;
+	top: 15px;
 	text-align: left;
 	margin: auto;
 }
@@ -1178,7 +1182,7 @@ body {
 @media only screen and (min-width : 768px) {
 
 body {
-	padding-top: 96px;	/* this is for the fixed navbar - take out if not using */
+	padding-top: 135px;	/* this is for the fixed navbar - take out if not using */
 }
 
 .dream-it-fwd {
@@ -1192,7 +1196,7 @@ body {
 	left: 0;
 	text-align: center;
 	margin: auto;
-	top: 30px;
+	top: 50px;
 	padding-left: 20px;
 }
 
