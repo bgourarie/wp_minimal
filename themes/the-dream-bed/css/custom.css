@@ -161,7 +161,7 @@ input[type="file"] > input[type="button"]::-moz-focus-inner {
 	left: 0;
 	text-align: center;
 	bottom: auto;
-	top: 30px;
+	top: 0; /* use 200px if you want this vertically aligned */
 }
 
 .carousel-inner {
@@ -599,6 +599,18 @@ input[type="file"] > input[type="button"]::-moz-focus-inner {
 	font-weight: 700;
 	margin-top: 0;
 	font-size: 20px;
+}
+
+.dream-it-forward-jumbo {
+	background-image: url(../images/photos/dream-it-fwd-mattress-delivery.jpg);
+	-webkit-clip-path: none;
+	clip-path: none;
+	margin-bottom: 0;
+}
+
+.dream-it-forward-jumbo h1 {
+	text-transform: none;
+	margin-bottom: 20px;
 }
 
 .home-find-store p:last-child {

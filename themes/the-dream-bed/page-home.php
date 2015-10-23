@@ -114,19 +114,17 @@ jQuery(document).ready(function($){
 		</div>
 	</div>
 </div>
-<div class="container-fluid dream-it-fwd">
-	<div class="row">
-		<div class="container">
-			<div class="col-md-3 col-md-offset-2 col-sm-4 col-xs-6">
-				<div class="dream-it-fwd-content">
-					<img src="<?php bloginfo("template_url"); ?>/images/circle-dream-it-forward-buy-a-dream-give-a-dream.png" class="img-responsive">
-					<h3>For every Dream Bed purchased a bed is donated to someone in need.</h3>
-					<p><a href="<?php bloginfo('url'); ?>/giving" class="btn btn-dream" role="button">Learn More</a></p>
-				</div>
+<div class="jumbotron dream-it-forward-jumbo">
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-8 col-sm-offset-2 col-xs-12">
+				<h1>For every Dream Bed purchased a bed is donated to someone in need. #dreamitforward</h1>
+				<div><a href="<?php bloginfo('url'); ?>/giving/" class="btn btn-dream btn-lg" role="button">See How We Give</a></div>
 			</div>
 		</div>
 	</div>
 </div>
+
 <div class="container">
 	<div class="row">
 		<div class="same">
