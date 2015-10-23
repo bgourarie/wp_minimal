@@ -9,25 +9,27 @@
 		</div>
 	</div>
 </div>
-<div class="container">
-	<div class="row vertical-align shop-badges">
-		<div class="col-xs-5 col-sm-3">
-			<img src="<?php bloginfo("template_url"); ?>/images/circle-orange-no-nightmare-guarantee.svg" class="center-block shop-badge-img" alt="180 night no nightmare guarantee">
-		</div>
-		<div class="col-xs-7 col-sm-3">
-			<div class="shop-badge-text">
-				<h3>180 night in home trial with nightmare free refund or return</h3>
+<div class="light-grey-fill">
+	<div class="container">
+		<div class="row vertical-align shop-badges">
+			<div class="col-xs-5 col-sm-3">
+				<img src="<?php bloginfo("template_url"); ?>/images/circle-orange-no-nightmare-guarantee.svg" class="center-block shop-badge-img" alt="180 night no nightmare guarantee">
 			</div>
-		</div>
-		<div class="clearfix visible-xs-block"></div>
-		<div class="col-xs-5 col-sm-3">
-			<img src="<?php bloginfo("template_url"); ?>/images/circle-orange-dream-team-delivery.svg" class="center-block shop-badge-img" alt="Dream team delivery: free shipping">
-		</div>	
-		<div class="col-xs-7 col-sm-3">
-			<div class="shop-badge-text">
-				<h3>Nationwide free delivery right to your door within 48 hours!</h3>
+			<div class="col-xs-7 col-sm-3">
+				<div class="shop-badge-text">
+					<h3>180 night in home trial with nightmare free refund or return</h3>
+				</div>
 			</div>
-		</div>		
+			<div class="clearfix visible-xs-block"></div>
+			<div class="col-xs-5 col-sm-3">
+				<img src="<?php bloginfo("template_url"); ?>/images/circle-orange-dream-team-delivery.svg" class="center-block shop-badge-img" alt="Dream team delivery: free shipping">
+			</div>	
+			<div class="col-xs-7 col-sm-3">
+				<div class="shop-badge-text">
+					<h3>Nationwide free delivery right to your door within 48 hours!</h3>
+				</div>
+			</div>		
+		</div>
 	</div>
 </div>
 
