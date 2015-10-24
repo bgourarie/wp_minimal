@@ -22,20 +22,19 @@ http://thesassway.com/advanced/modular-css-naming-conventions
 ******************************************************************/
 
 .navbar-logo{
-  float: left;
-  padding-right: 40px;
-  width: 40%;
-  max-width: 430px;
   text-align: left;
   min-height: 30px;
   max-height: 150px;
   box-sizing: border-box;
 }
-.ryan-menu-padding{
-  padding: 1.5em 2em;
+.ryan-menu-left{
+  max-width:30%;
+}
+.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
+    background-color: #c5c5c5;
+    color: #444444;
 }
 .ryan-menu{
-  position: fixed;
   width: 100%;
   margin: auto 0px;
   text-align: center;
