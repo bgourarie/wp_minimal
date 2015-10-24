@@ -20,6 +20,35 @@ Helpful articles on Sass file organization:
 http://thesassway.com/advanced/modular-css-naming-conventions
 
 ******************************************************************/
+
+.navbar-logo{
+  float: left;
+  padding-right: 40px;
+  width: 40%;
+  max-width: 430px;
+  text-align: left;
+  min-height: 30px;
+  max-height: 150px;
+  box-sizing: border-box;
+}
+.ryan-menu-padding{
+  padding: 1.5em 2em;
+}
+.ryan-menu{
+  position: fixed;
+  width: 100%;
+  margin: auto 0px;
+  text-align: center;
+  z-index: 33333;
+  top: 0;
+  background: #ffffff!important;
+}
+.navbar-logo-png{
+  border: 0px;
+  max-width: 100%;
+  width: auto;
+  max-height: 110px
+}
 /*********************
 IMPORTING PARTIALS
 These files are needed at the beginning so that we establish all
