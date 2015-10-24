@@ -42,38 +42,32 @@
 
 	<body <?php body_class(); ?> itemscope itemtype="http://schema.org/WebPage">
 
-		<div id="container">
+	<nav class="navbar navbar-default">
+	  <div class="container-fluid">
+	    <div class="navbar-header">
+	      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+	        <span class="sr-only">Toggle navigation</span>
+	        <span class="icon-bar"></span>
+	        <span class="icon-bar"></span>
+	        <span class="icon-bar"></span>
+	      </button>
+	      <a class="navbar-brand" href="#"><img src="<?php echo get_bloginfo('template_directory'); ?>/library/images/rcain-logo.jpg"/></a>
+	    </div>
+    <div class="collapse navbar-collapse" id="navbar-collapse">
+      <ul class="nav navbar-nav navbar-right">
+        <?php
+        $pages = get_pages(); 
+  			foreach ( $pages as $page ) :?>
+  				<li class"active">
+						<a href='<?php echo get_page_link($page->ID);?>'>
+  						<?php echo $page->post_title;?> 
+  					</a>
+  				</li>
 
-			<header class="header" role="banner" itemscope itemtype="http://schema.org/WPHeader">
+  			<?php endforeach?>
+  		</ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
 
-				<div id="inner-header" class="wrap cf">
-
-					<?php // to use a image just replace the bloginfo('name') with your img src and remove the surrounding <p> ?>
-					<a href="<?php echo home_url(); ?>" rel="nofollow">
-						<img class="header-logo" src="<?php echo get_bloginfo('template_directory'); ?>/library/images/rcain-logo.jpg">
-					</a>
-
-					<?php // if you'd like to use the site description you can un-comment it below ?>
-					<?php // bloginfo('description'); ?>
-
-
-					<nav role="navigation" itemscope itemtype="http://schema.org/SiteNavigationElement">
-						<?php wp_nav_menu(array(
-    					         'container' => false,                           // remove nav container
-    					         'container_class' => 'menu cf',                 // class of container (should you choose to use it)
-    					         'menu' => __( 'The Main Menu', 'bonestheme' ),  // nav name
-    					         'menu_class' => 'nav top-nav cf',               // adding custom nav class
-    					         'theme_location' => 'main-nav',                 // where it's located in the theme
-    					         'before' => '',                                 // before the menu
-        			               'after' => '',                                  // after the menu
-        			               'link_before' => '',                            // before each link
-        			               'link_after' => '',                             // after each link
-        			               'depth' => 0,                                   // limit the depth of the nav
-    					         'fallback_cb' => ''                             // fallback function (if there is one)
-						)); ?>
-
-					</nav>
-
-				</div>
-
-			</header>
+</header>
