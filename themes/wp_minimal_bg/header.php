@@ -57,11 +57,16 @@
 	      
 	    </div>
     <div class="collapse navbar-collapse" id="navbar-collapse">
-      <ul class="nav navbar-nav navbar-right">
+      <ul class="nav navbar-nav navbar-right override-gallery">
         <?php
-        $pages = get_pages(); 
-  			foreach ( $pages as $page ) :?>
-  				<li class"active">
+        $pages = get_pages(array('sort_column'=>'menu_order')); 
+        $curr= get_the_title();
+
+  			foreach ( $pages as $page ) :
+  				$is_current_page = $curr == $page->post_title;
+  				?>
+
+  				<li class="override-gallery <?php echo $is_current_page ? "active":"";?>"> 
 						<a href='<?php echo get_page_link($page->ID);?>'>
   						<?php echo $page->post_title;?> 
   					</a>
