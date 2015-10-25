@@ -40,10 +40,17 @@ http://thesassway.com/advanced/modular-css-naming-conventions
     transform-style: inherit;
     float: inherit;
 }
-.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
-    background-color: #c5c5c5;
-    color: #444444;
+.override-gallery > a:hover, .override-gallery> li > a:focus {
+  background-color: #c5c5c5;
+  color: #444444;
 }
+.navbar-default{
+  background: none !important; 
+  border: 0 !important;
+  box-shadow: none !important;
+  -webkit-box-shadow: none !important;
+}
+
 .ryan-menu{
   width: 100%;
   margin: auto 0px;
