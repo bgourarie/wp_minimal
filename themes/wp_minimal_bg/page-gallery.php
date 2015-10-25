@@ -14,10 +14,6 @@
 ?>
 
 <?php get_header(); ?>
-
-			<div id="content">
-
-				<div id="inner-content" class="wrap cf">
 					<?php
 						$args = array(
 						    'numberposts' => -1, // Using -1 loads all posts
@@ -36,9 +32,4 @@
 							    <?php    } ?>
 						  </div>
 						<?php } ?>
-				</div>
-
-			</div>
-
-
 <?php get_footer(); ?>

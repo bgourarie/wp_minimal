@@ -30,6 +30,16 @@ http://thesassway.com/advanced/modular-css-naming-conventions
 .ryan-menu-left{
   max-width:30%;
 }
+.override-gallery{
+    margin: inherit;
+    padding: inherit;
+    list-style-type: inherit;
+    position: inherit;
+    -webkit-transform-style: inherit;
+    -ms-transform-style: inherit;
+    transform-style: inherit;
+    float: inherit;
+}
 .navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
     background-color: #c5c5c5;
     color: #444444;
