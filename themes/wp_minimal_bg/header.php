@@ -48,16 +48,17 @@
 	      <a class="navbar-logo" href="#">
 	      	<img class="navbar-logo-png" src="<?php echo get_bloginfo('template_directory'); ?>/library/images/rcain-logo.jpg"/>
 	      </a>
-	      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse" aria-expanded="false">
-	        <span class="sr-only">Toggle navigation</span>
-	        <span class="icon-bar"></span>
-	        <span class="icon-bar"></span>
-	        <span class="icon-bar"></span>
-	      </button>
+	     
 	      
-	    </div>
+	    </div> 
+	    <button type="button" class="navbar-toggle collapsed move-button" data-toggle="collapse" data-target=".navbar-collapse" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
     <div class="collapse navbar-collapse" id="navbar-collapse">
-      <ul class="nav navbar-nav navbar-right override-gallery">
+      <ul class="nav nav-pill navbar-nav navbar-right override-gallery">
         <?php
         $pages = get_pages(array('sort_column'=>'menu_order')); 
         $curr= get_the_title();
