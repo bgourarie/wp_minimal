@@ -54,7 +54,7 @@
 				<div class="navbar-header">
 					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
 				</div>
-				<a class="navbar-brand" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><img src="<?php bloginfo("template_url"); ?>/images/logo-the-dream-bed.svg" width="116" height="35" alt="The Dream Bed"></a>
+				<div class="navbar-brand"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><img src="<?php bloginfo("template_url"); ?>/images/logo-the-dream-bed.svg" alt="The Dream Bed"></a></div>
 				<div class="navbar-collapse collapse">
 					<?php if(!is_page(array('checkout', 'order-received'))) { ?>
 					<ul class="nav navbar-nav navbar-left">
@@ -62,11 +62,8 @@
 					</ul>
 					<?php } ?>
 					<ul class="nav navbar-nav navbar-right">
-					
+						<li><a href="tel:<?php echo get_field('phone_number', 'options'); ?>" class="phone"><?php echo get_field('phone_number', 'options'); ?></a></li>
 					<?php if(!is_page(array('checkout', 'order-received'))) { ?>
-<li>
-  
-</li>
 						<?php wp_nav_menu( array( 'theme_location' => 'header-right', 'container' => '' ) ); ?>
 					<?php } ?>	
 						<?php
@@ -76,9 +73,6 @@
 						$cart_url = $woocommerce->cart->get_cart_url();
 						echo '<li><a href="'. $cart_url .'">Cart <span class="qty badge">'. $qty .'</span></a></li>';
 						?>
-					
-					
-						<li><a href="tel:<?php echo get_field('phone_number', 'options'); ?>" class="phone"><?php echo get_field('phone_number', 'options'); ?></a></li>
 					</ul>
 				</div>
 			</div>
