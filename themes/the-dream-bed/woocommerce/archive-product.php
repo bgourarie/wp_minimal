@@ -44,7 +44,7 @@ $args = array(
 
 $product_query = new WP_Query($args);
 if ($product_query->have_posts()) {
-	echo '<div class="container products"><div class="row"><div class="col-xs-12"><div class="hidden-xs hidden-sm or-text">or</div></div></div><div class="row">';
+	echo '<div class="container products"><div class="row">';
 	while ($product_query->have_posts() ) {
 		$product_query->the_post();
 		$title = get_the_title();
