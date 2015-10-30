@@ -89,6 +89,11 @@ input.button {
 
 /* Product Options */
 
+.cart-instructions {
+	text-transform: uppercase;
+	text-align: center;
+}
+
 .tm-epo-variation-section .reset_variations,
 .tm-extra-product-options .tm-epo-field-label {
 	display: none !important;
