@@ -16,8 +16,13 @@ li {
     float: left;
 }
 
+#photo-gallery-slider{
+	height:100% !important;
+	max-height:none !important;
+}
 .gallery-image {
 	height: 100% !important;
+	max-height:none !important;
 	max-width:none;
 	min-height: 200px;
 }
