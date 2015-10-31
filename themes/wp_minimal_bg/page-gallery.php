@@ -29,7 +29,7 @@
 						if($images){ ?>
 							<div id="photo-gallery-slider">
 							    <?php foreach($images as $image){ ?>
-							   			<img class="gallery-image" data-src="<?php echo $image->guid; ?>" title="<?php echo $image->post_title; ?>" />
+							   			<img class="gallery-image" data-src="<?php echo $image->guid; ?>"/>
 							    <?php    } ?>
 						  </div>
 						<?php } ?>
