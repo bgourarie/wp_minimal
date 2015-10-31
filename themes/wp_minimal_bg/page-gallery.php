@@ -18,7 +18,7 @@
 					<?php
 						$args = array(
 						    'numberposts' => -1, // Using -1 loads all posts
-						    'orderby' => 'menu_order', // This ensures images are in the order set in the page media manager
+						    'orderby' => 'title', // This ensures images are in the order set in the page media manager
 						    'order'=> 'ASC',
 						    'post_mime_type' => 'image', // Make sure it doesn't pull other resources, like videos
 						    'post_parent' => $post->ID, // Important part - ensures the associated images are loaded
