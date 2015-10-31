@@ -14,6 +14,7 @@
 ?>
 
 <?php get_header(); ?>
+	<div id="content">
 					<?php
 						$args = array(
 						    'numberposts' => -1, // Using -1 loads all posts
@@ -28,8 +29,10 @@
 						if($images){ ?>
 							<div id="photo-gallery-slider">
 							    <?php foreach($images as $image){ ?>
-							   			<img data-src="<?php echo $image->guid; ?>" alt="<?php echo $image->post_title; ?>" title="<?php echo $image->post_title; ?>" />
+							   			<img class="gallery-image" data-src="<?php echo $image->guid; ?>" title="<?php echo $image->post_title; ?>" />
 							    <?php    } ?>
 						  </div>
 						<?php } ?>
+
+	</div>
 <?php get_footer(); ?>
