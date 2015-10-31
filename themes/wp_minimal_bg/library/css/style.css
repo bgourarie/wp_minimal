@@ -31,14 +31,14 @@ http://thesassway.com/advanced/modular-css-naming-conventions
   max-width:40%;
 }
 .override-gallery{
-    margin: inherit;
-    padding: inherit;
-    list-style-type: inherit;
-    position: inherit;
-    -webkit-transform-style: inherit;
-    -ms-transform-style: inherit;
-    transform-style: inherit;
-    float: inherit;
+    margin: inherit !important;
+    padding: inherit !important;
+    list-style-type: inherit !important;
+    position: inherit !important;
+    -webkit-transform-style: inherit !important;
+    -ms-transform-style: inherit !important;
+    transform-style: inherit !important;
+    float: inherit !important;
 }
 .navbar-default{
   background: none !important; 
@@ -47,9 +47,9 @@ http://thesassway.com/advanced/modular-css-naming-conventions
   -webkit-box-shadow: none !important;
 }
 .move-button{
-  position:absolute;
-  top:0px;
-  right:0px;
+  position:absolute !important;
+  top:0px !important;
+  right:0px !important;
 }
 .ryan-menu{
   width: 100%;
