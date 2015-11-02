@@ -9,7 +9,6 @@
     var local_input_decimal_separator = (tm_epo_js.tm_epo_global_input_decimal_separator=="")?tm_epo_js.currency_format_decimal_sep:getSystemDecimalSeparator();
     var local_decimal_separator = (tm_epo_js.tm_epo_global_displayed_decimal_separator=="")?tm_epo_js.currency_format_decimal_sep:getSystemDecimalSeparator();
     var local_thousand_separator = (tm_epo_js.tm_epo_global_displayed_decimal_separator=="")?tm_epo_js.currency_format_thousand_sep:(getSystemDecimalSeparator()==","?".":",");
-    var test_currency_precision = (tm_epo_js.currency_format_num_decimals =="")?  tm_epo_js.currency_format_num_decimals : 
     var global_variation_object=false;
     String.prototype.tmtoFloat = function(){
         var a=accounting.unformat(this,local_input_decimal_separator),
