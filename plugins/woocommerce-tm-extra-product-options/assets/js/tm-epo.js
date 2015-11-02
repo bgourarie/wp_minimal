@@ -9,6 +9,7 @@
     var local_input_decimal_separator = (tm_epo_js.tm_epo_global_input_decimal_separator=="")?tm_epo_js.currency_format_decimal_sep:getSystemDecimalSeparator();
     var local_decimal_separator = (tm_epo_js.tm_epo_global_displayed_decimal_separator=="")?tm_epo_js.currency_format_decimal_sep:getSystemDecimalSeparator();
     var local_thousand_separator = (tm_epo_js.tm_epo_global_displayed_decimal_separator=="")?tm_epo_js.currency_format_thousand_sep:(getSystemDecimalSeparator()==","?".":",");
+    var test_currency_precision = (tm_epo_js.currency_format_num_decimals =="")?  tm_epo_js.currency_format_num_decimals : 
     var global_variation_object=false;
     String.prototype.tmtoFloat = function(){
         var a=accounting.unformat(this,local_input_decimal_separator),
@@ -710,15 +711,18 @@
         if (inc_tax_string==undefined){
             inc_tax_string='';
         }
+        var alt_precision = is_on_product_page() ? 0:tm_epo_js.currency_format_num_decimals;
         return accounting.formatMoney(value, {
             symbol: tm_epo_js.currency_format_symbol,
             decimal: local_decimal_separator,
             thousand: local_thousand_separator,
-            precision: tm_epo_js.currency_format_num_decimals,
+            precision: alt_precision,
             format: tm_epo_js.currency_format
         }) + inc_tax_string;
     }
-
+    function is_on_product_page(){
+        return $('.dreambed-product-addons').length == 0;
+    }
     function tm_update_price(obj,price,formated_price){
         if ((tm_epo_js.tm_epo_auto_hide_price_if_zero=="yes" && price!=0) || tm_epo_js.tm_epo_auto_hide_price_if_zero!="yes"){
             $(obj).html(formated_price);
