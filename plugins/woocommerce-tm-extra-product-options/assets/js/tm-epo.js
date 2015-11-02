@@ -710,7 +710,7 @@
         if (inc_tax_string==undefined){
             inc_tax_string='';
         }
-        var alt_precision = is_on_product_page() ? 0:tm_epo_js.currency_format_num_decimals;
+        var  alt_precision = is_on_product_page() ? tm_epo_js.currency_format_num_decimals : 0;
         return accounting.formatMoney(value, {
             symbol: tm_epo_js.currency_format_symbol,
             decimal: local_decimal_separator,
