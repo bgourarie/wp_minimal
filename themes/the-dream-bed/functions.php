@@ -31,6 +31,13 @@ function woocommerce_support() {
     add_theme_support('woocommerce');
 }
 
+/* hide decimal places on PDP pages but not on checkout */
+// Show trailing zeros on prices, default is to hide it.
+add_filter( 'woocommerce_price_trim_zeros', 'wc_hide_trailing_zeros', 10, 1 );
+function wc_hide_trailing_zeros( $trim ) {     
+    // show trailing zeroes only on checkout
+    return !is_checkout();
+}
 
 /* hide product data tabs on woocommerce product page */
 add_filter('woocommerce_product_tabs', 'woo_remove_product_tabs', 98);
