@@ -49,9 +49,59 @@ function uptop_product_images() {
 			<?php // passing post id to featured reviews
 			include(get_template_directory() . '/includes/featured-reviews.php');
 			get_template_directory() . '/includes/featured-reviews.php'; ?>
+		</div>
+		<?php
+}
 
-		</div><?php
+add_action('woocommerce_before_add_to_cart_form','uptop_product_ratings',20);
+function uptop_product_ratings(){
+	/* query to get all ratings and build average rating */
+	global $product;
+	
+	$prod_show = $product->id;
+	$args = array(
+		'post_type' => 'review',
+		'meta_query' => array(
+			array(
+				'key'     => 'product',
+				'value'   => $prod_show,
+			),
+		),
+		'orderby' => 'menu_order',
+		'order' => 'ASC'
+	);
+	$ratings = array();
+	$review_query = new WP_Query($args);
+	if ($review_query->have_posts()) {
+		$count = 0;
+		while ($review_query->have_posts() ) {
+			$review_query->the_post();
+			$rating = get_field('rating');
+			$ratings[] = $rating;
+			$count++;
+		}
+		wp_reset_postdata();
 
+	  $average_rating = round((calculate_average($ratings) * 2), 0) / 2;
+		// first print out the title /explanatory bit...
+
+	  echo '<div class="pdp-review-summary">';
+	  	echo '<div class="pdp-review-link"><h3>Reviews:</h3></div>';
+	  	echo '<div class="pdp-review-stars-container">';
+		  // Loop and print a whole star for each step.
+		  for ($i = 1; $i <= $average_rating; $i++) {
+		      echo '<img class="pdp-star-reviews" src="' . get_bloginfo("template_url") . '/images/one-star.svg" />';
+		  }
+		  // If average rating is not a whole number, we need to print an additional half star after the loop.
+		  if (strpos($average_rating, '.')){
+		      echo '<img class="pdp-review-stars" src="' . get_bloginfo("template_url") . '/images/half-star.svg" />';
+		  }
+
+		  // close product-review-stars
+		  echo '</div>';
+		  //close product-review-summary
+	  echo '</div>';
+  }	
 }
 
 if ( ! function_exists( 'woocommerce_single_variation' ) ) {
