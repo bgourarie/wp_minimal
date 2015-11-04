@@ -118,11 +118,6 @@ input[type="file"] > input[type="button"]::-moz-focus-inner {
 	margin-bottom: .5em;
 }
 
-.shop-now-main {
-	background-image: url(../images/photos/two-dreamy-options-man.jpg);
-	background-position: top;
-}
-
 .thanks-page {
 	background-image: url(../images/photos/woman-curled-on-pink-dream-bed.jpg);
 	background-position: center;
@@ -135,7 +130,12 @@ input[type="file"] > input[type="button"]::-moz-focus-inner {
 	clip-path: polygon(0% 0%, 100% 0%, 100% 480px, 53% 480px, 50% 100%, 47% 480px, 0 480px);
 }
 
-
+.shop-now-main {
+	background-image: url(../images/photos/two-dreamy-options-man-wide.jpg);
+	background-position: top;
+	margin-bottom: 0;
+	z-index: 1000;
+}
 
 /* begin carousel customization */
 
@@ -523,6 +523,10 @@ input[type="file"] > input[type="button"]::-moz-focus-inner {
 .light-grey-fill {
 	padding: 20px 0;
 	background-color: #f2f2f2;	
+}
+
+.go-under-jumbotron {
+	margin-top: -20px;
 }
 
 .home-middle1 {

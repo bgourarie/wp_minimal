@@ -9,7 +9,7 @@
 		</div>
 	</div>
 </div>
-<div class="light-grey-fill">
+<div class="light-grey-fill go-under-jumbotron">
 	<div class="container">
 		<div class="row vertical-align shop-badges">
 			<div class="col-xs-5 col-sm-3">
