@@ -1197,6 +1197,10 @@ body {
 	font-weight: 700;
 }
 
+.review-personal-img {
+	margin-bottom: 20px;
+}
+
 }
 
 /* Extra Small Devices, Phones */ 
@@ -1227,7 +1231,7 @@ body {
 }
 
 .shop-badge-text {
-	padding-top: 30px;
+	padding-top: 20px;
 }
 
 }
