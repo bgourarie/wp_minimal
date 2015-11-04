@@ -88,19 +88,20 @@ function uptop_product_ratings(){
 	  echo '<div class="pdp-review-summary">';
 	  	
 	  	echo '<div class="pdp-review-stars-container">';
-		  // Loop and print a whole star for each step.
-		  for ($i = 1; $i <= $average_rating; $i++) {
-		      echo '<img class="pdp-star-reviews" src="' . get_bloginfo("template_url") . '/images/one-star.svg" />';
-		  }
-		  // If average rating is not a whole number, we need to print an additional half star after the loop.
-		  if (strpos($average_rating, '.')){
-		      echo '<img class="pdp-review-stars" src="' . get_bloginfo("template_url") . '/images/half-star.svg" />';
-		  }
-
+			  // Loop and print a whole star for each step.
+			  for ($i = 1; $i <= $average_rating; $i++) {
+			      echo '<img class="pdp-star-reviews" src="' . get_bloginfo("template_url") . '/images/one-star.svg" />';
+			  }
+			  // If average rating is not a whole number, we need to print an additional half star after the loop.
+			  if (strpos($average_rating, '.')){
+			      echo '<img class="pdp-review-stars" src="' . get_bloginfo("template_url") . '/images/half-star.svg" />';
+			  }
+?>
+			  <a href="<?php bloginfo('url')?>/reviews/" class="pdp-review-link">Read Reviews</a>
+		  <?php
 		  // close product-review-stars
-		  echo '<a href="#" class="pdp-review-link">Read Reviews</a>';
-		  echo '</div>';
-		  //close product-review-summary
+			echo '</div>';
+	  //close product-review-summary
 	  echo '</div>';
   }	
 }
