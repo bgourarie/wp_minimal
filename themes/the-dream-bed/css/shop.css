@@ -94,6 +94,35 @@ input.button {
 	text-align: center;
 }
 
+.pdp-review-stars-container {
+	text-align: center;
+	font-size: 16px;
+	margin-bottom: 20px;
+}
+
+.pdp-review-stars-container img {
+	width: 20px;
+	height: auto;
+	vertical-align: -3px;
+	margin: auto 2px;
+}
+
+.pdp-review-stars-container a {
+	text-decoration: none;
+	color: #FF9E14;
+}
+
+.pdp-review-stars-container a:hover {
+	text-decoration: none;
+	color: #FFB64F;
+}
+
+.pdp-review-link {
+	text-transform: uppercase;
+	display: inline-block;
+	margin: 0 6px;
+}
+
 .tm-epo-variation-section .reset_variations,
 .tm-extra-product-options .tm-epo-field-label {
 	display: none !important;

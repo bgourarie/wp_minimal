@@ -86,7 +86,7 @@ function uptop_product_ratings(){
 		// first print out the title /explanatory bit...
 
 	  echo '<div class="pdp-review-summary">';
-	  	echo '<div class="pdp-review-link"><h3>Reviews:</h3></div>';
+	  	
 	  	echo '<div class="pdp-review-stars-container">';
 		  // Loop and print a whole star for each step.
 		  for ($i = 1; $i <= $average_rating; $i++) {
@@ -98,6 +98,7 @@ function uptop_product_ratings(){
 		  }
 
 		  // close product-review-stars
+		  echo '<a href="#" class="pdp-review-link">Read Reviews</a>';
 		  echo '</div>';
 		  //close product-review-summary
 	  echo '</div>';
