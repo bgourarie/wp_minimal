@@ -271,20 +271,13 @@ input[type="file"] > input[type="button"]::-moz-focus-inner {
 .btn-dream-link:active, .btn-dream-link.active {
 	background-color: rgba(255,255,255,.08);
 }
-/*
-.shop-badge-text {
-	padding-top:30px;
-	padding-bottom:30px;
-}
-*/
 
 .shop-badges {
-	text-align: center;
+	
 }
 
 .shop-badge-img {
-	width: 180px;
-	height: auto;
+	
 }
 
 .footer {

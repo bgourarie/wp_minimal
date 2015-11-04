@@ -12,7 +12,7 @@
 <div class="light-grey-fill go-under-jumbotron">
 	<div class="container">
 		<div class="row vertical-align shop-badges">
-			<div class="col-xs-5 col-sm-3">
+			<div class="col-xs-5 col-sm-2 col-sm-offset-1">
 				<img src="<?php bloginfo("template_url"); ?>/images/circle-orange-no-nightmare-guarantee.svg" class="center-block shop-badge-img" alt="180 night no nightmare guarantee">
 			</div>
 			<div class="col-xs-7 col-sm-3">
@@ -21,7 +21,7 @@
 				</div>
 			</div>
 			<div class="clearfix visible-xs-block"></div>
-			<div class="col-xs-5 col-sm-3">
+			<div class="col-xs-5 col-sm-2">
 				<img src="<?php bloginfo("template_url"); ?>/images/circle-orange-dream-team-delivery.svg" class="center-block shop-badge-img" alt="Dream team delivery: free shipping">
 			</div>	
 			<div class="col-xs-7 col-sm-3">
