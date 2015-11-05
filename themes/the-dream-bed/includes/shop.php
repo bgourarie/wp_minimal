@@ -16,7 +16,7 @@ function uptop_product_images() {
 	$cutout_img = get_field('product_cutout_image');
 	$product_shipping = get_field('product_shipping_promo');
 	$box_img = get_field('product_box_image'); ?>
-	
+		
     	<div class="container">
 	    	<div id="extra-images">
 	    		<div id="stacked-images">
@@ -120,12 +120,17 @@ if ( ! function_exists( 'woocommerce_single_variation_add_to_cart_button' ) ) {
 	function woocommerce_single_variation_add_to_cart_button() {
 		global $product;
 		?>
-		<div class="variations_button">
+		<div class="variations_button clearfix">
 			<?php //woocommerce_quantity_input( array( 'input_value' => isset( $_POST['quantity'] ) ? wc_stock_amount( $_POST['quantity'] ) : 1 ) ); ?>
 			<button type="submit" class="single_add_to_cart_button button alt"><?php echo esc_html( $product->single_add_to_cart_text() ); ?></button>
 			<input type="hidden" name="add-to-cart" value="<?php echo absint( $product->id ); ?>" />
 			<input type="hidden" name="product_id" value="<?php echo absint( $product->id ); ?>" />
 			<input type="hidden" name="variation_id" class="variation_id" value="" />
+		</div>
+		<div class="pdp-under-cart-badges">
+			<img src="<?php bloginfo("template_url"); ?>/images/circle-orange-dream-team-delivery.svg" alt="Dream team delivery: free shipping">
+			<img src="<?php bloginfo("template_url"); ?>/images/circle-orange-no-nightmare-guarantee.svg" alt="180 night no nightmare guarantee">
+			<img src="<?php bloginfo("template_url"); ?>/images/circle-orange-quality-craftsmanship.svg" alt="Best in Box: Quality Craftsmanship">
 		</div>
 		<?php
 	}
@@ -146,6 +151,7 @@ function uptop_price_text($text) {
 add_action('woocommerce_before_cart_table', 'before_cart_table_container');
 function before_cart_table_container() {
     echo '
+		
 		<div class="container">
 			<div class="row">
 				<div class="col-md-8">
