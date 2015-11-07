@@ -14,11 +14,9 @@
 ?>
 
 <?php get_header(); ?>
-<div id="content">
-				<div id="inner-content" class="wrap cf">
-					<main id="main" class="m-all t-3of3 d-7of7 cf" role="main" itemscope itemprop="mainContentOfPage" itemtype="http://schema.org/Blog">
-
+	<div id="content">
 					<?php
+					post_password_required();
 						$args = array(
 						    'numberposts' => -1, // Using -1 loads all posts
 						    'orderby' => 'title', // This ensures images are in the order set in the page media manager
@@ -38,6 +36,4 @@
 						<?php } ?>
 
 	</div>
-</div>
-
 <?php get_footer(); ?>
