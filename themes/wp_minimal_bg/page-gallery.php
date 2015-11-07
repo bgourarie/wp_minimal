@@ -12,8 +12,13 @@
  * For more info: http://codex.wordpress.org/Page_Templates
 */
 ?>
-
 <?php get_header(); ?>
+	<?php global $post;
+	if(post_password_required($post)){
+		echo get_the_password_form();
+	}
+	else{
+?>
 	<div id="content">
 					<?php
 						$args = array(
@@ -35,4 +40,6 @@
 						<?php } ?>
 
 	</div>
+
+	<?php } //close the else ?>
 <?php get_footer(); ?>
