@@ -16,7 +16,6 @@
 <?php get_header(); ?>
 	<div id="content">
 					<?php
-					post_password_required();
 						$args = array(
 						    'numberposts' => -1, // Using -1 loads all posts
 						    'orderby' => 'title', // This ensures images are in the order set in the page media manager
