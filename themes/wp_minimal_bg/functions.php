@@ -231,6 +231,18 @@ function bones_comments( $comment, $args, $depth ) {
 
 
 /*
+ remove hentry from pages
+*/
+
+function themeslug_remove_hentry( $classes ) {
+    if ( is_page() ) {
+        $classes = array_diff( $classes, array( 'hentry' ) );
+    }
+    return $classes;
+}
+add_filter( 'post_class','themeslug_remove_hentry' );
+
+/*
 This is a modification of a function found in the
 twentythirteen theme where we can declare some
 external fonts. If you're using Google Fonts, you
