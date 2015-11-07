@@ -42,10 +42,7 @@
 							   			<img class="gallery-image" data-src="<?php echo $image->guid; ?>"/>
 							    <?php    } ?>
 						  </div>
-						<?php } ?>
-
-	</div>
-
+						<?php }
 										/*
 										 * Link Pages is used in case you have posts that are set to break into
 										 * multiple pages. You can remove this if you don't plan on doing that.
@@ -99,8 +96,5 @@
 						<?php get_sidebar(); ?>
 
 				</div>
-
-			</div>
-
 
 <?php get_footer(); ?>
