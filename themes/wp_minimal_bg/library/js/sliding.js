@@ -7,7 +7,6 @@ jQuery(document).ready(function($) {
     	width: '100%'
     });
 	  p.init();
-  	scrollConverter.activate();
 
 
 });
