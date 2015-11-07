@@ -50,8 +50,8 @@ function project_euler_solutions() {
 			'query_var' => true,
 			'menu_position' => 8, /* this is what order you want it to appear in on the left hand side menu */ 
 			'menu_icon' => get_stylesheet_directory_uri() . '/library/images/project-euler-icon.png', /* the icon for the custom post type menu */
-			'rewrite'	=> array( 'slug' => 'project-euler', 'with_front' => false ), /* you can specify its url slug */
-			'has_archive' => 'project-euler', /* you can rename the slug here */
+			'rewrite'	=> array( 'slug' => 'project_euler', 'with_front' => false ), /* you can specify its url slug */
+			'has_archive' => 'project_euler', /* you can rename the slug here */
 			'capability_type' => 'post',
 			'hierarchical' => false,
 			/* the next one is important, it tells what's enabled in the post editor */
@@ -75,14 +75,14 @@ function project_euler_solutions() {
 	*/
 	
 	// now let's add custom categories (these act like categories)
-	register_taxonomy( 'custom_cat', 
-		array('custom_type'), /* if you change the name of register_post_type( 'custom_type', then you have to change this */
+	register_taxonomy( 'euler_cat', 
+		array('project_euler'), /* if you change the name of register_post_type( 'custom_type', then you have to change this */
 		array('hierarchical' => true,     /* if this is true, it acts like categories */
 			'labels' => array(
-				'name' => __( 'Custom Categories', 'bonestheme' ), /* name of the custom taxonomy */
-				'singular_name' => __( 'Custom Category', 'bonestheme' ), /* single taxonomy name */
-				'search_items' =>  __( 'Search Custom Categories', 'bonestheme' ), /* search title for taxomony */
-				'all_items' => __( 'All Custom Categories', 'bonestheme' ), /* all title for taxonomies */
+				'name' => __( 'Project Euler Categories', 'bonestheme' ), /* name of the custom taxonomy */
+				'singular_name' => __( 'Project Euler Category', 'bonestheme' ), /* single taxonomy name */
+				'search_items' =>  __( 'Search Project Euler Categories', 'bonestheme' ), /* search title for taxomony */
+				'all_items' => __( 'All Project EulerCategories', 'bonestheme' ), /* all title for taxonomies */
 				'parent_item' => __( 'Parent Custom Category', 'bonestheme' ), /* parent title for taxonomy */
 				'parent_item_colon' => __( 'Parent Custom Category:', 'bonestheme' ), /* parent taxonomy title */
 				'edit_item' => __( 'Edit Custom Category', 'bonestheme' ), /* edit custom taxonomy title */
@@ -99,13 +99,13 @@ function project_euler_solutions() {
 	
 	// now let's add custom tags (these act like categories)
 	register_taxonomy( 'custom_tag', 
-		array('custom_type'), /* if you change the name of register_post_type( 'custom_type', then you have to change this */
+		array('project_euler'), /* if you change the name of register_post_type( 'custom_type', then you have to change this */
 		array('hierarchical' => false,    /* if this is false, it acts like tags */
 			'labels' => array(
-				'name' => __( 'Custom Tags', 'bonestheme' ), /* name of the custom taxonomy */
-				'singular_name' => __( 'Custom Tag', 'bonestheme' ), /* single taxonomy name */
-				'search_items' =>  __( 'Search Custom Tags', 'bonestheme' ), /* search title for taxomony */
-				'all_items' => __( 'All Custom Tags', 'bonestheme' ), /* all title for taxonomies */
+				'name' => __( 'Euler Tags', 'bonestheme' ), /* name of the custom taxonomy */
+				'singular_name' => __( 'Euler Tag', 'bonestheme' ), /* single taxonomy name */
+				'search_items' =>  __( 'Search Euler Tags', 'bonestheme' ), /* search title for taxomony */
+				'all_items' => __( 'All Euler Tags', 'bonestheme' ), /* all title for taxonomies */
 				'parent_item' => __( 'Parent Custom Tag', 'bonestheme' ), /* parent title for taxonomy */
 				'parent_item_colon' => __( 'Parent Custom Tag:', 'bonestheme' ), /* parent taxonomy title */
 				'edit_item' => __( 'Edit Custom Tag', 'bonestheme' ), /* edit custom taxonomy title */
