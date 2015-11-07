@@ -14,7 +14,10 @@
 ?>
 
 <?php get_header(); ?>
-	<div id="content">
+<div id="content">
+				<div id="inner-content" class="wrap cf">
+					<main id="main" class="m-all t-3of3 d-7of7 cf" role="main" itemscope itemprop="mainContentOfPage" itemtype="http://schema.org/Blog">
+
 					<?php
 						$args = array(
 						    'numberposts' => -1, // Using -1 loads all posts
@@ -35,4 +38,6 @@
 						<?php } ?>
 
 	</div>
+</div>
+
 <?php get_footer(); ?>
