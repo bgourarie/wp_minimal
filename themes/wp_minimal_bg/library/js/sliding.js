@@ -7,9 +7,7 @@ jQuery(document).ready(function($) {
     	width: '100%'
     });
 	  p.init();
-	  $("#photo-gallery-slider").mousewheel(function(event, delta) {
-      this.scrollLeft -= (delta * 30);
-      event.preventDefault();
-   });
+  	scrollConverter.activate();
+
 
 });

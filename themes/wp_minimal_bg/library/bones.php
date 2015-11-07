@@ -156,10 +156,10 @@ function bones_scripts_and_styles() {
 			wp_register_script( 'sliding-bg', get_stylesheet_directory_uri() . '/library/js/sliding.js', array( 'jquery' ), '', true );
 			wp_register_style( 'page-gallery', get_stylesheet_directory_uri() . '/library/css/page-gallery.css', array(), '', 'all' );
 			wp_register_script( 'sliding-min', get_stylesheet_directory_uri() . '/library/js/libs/portfolio.pack.min.js', array(), '', false );
-			wp_register_script( 'horscroll-min', get_stylesheet_directory_uri() . '/library/js/libs/horwheel.min.js', array(), '', false );
+			wp_register_script( 'scroll-converter-min', get_stylesheet_directory_uri() . '/library/js/libs/scroll-converter.min.js', array(), '', false );
 			wp_enqueue_style( 'page-gallery' );
 			wp_enqueue_script( 'sliding-min' );
-			wp_enqueue_script( 'horscroll-min' );
+			wp_enqueue_script( 'scroll-converter-min' );
 			wp_enqueue_script('sliding-bg');
 		}
 
