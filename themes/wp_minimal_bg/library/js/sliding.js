@@ -7,6 +7,14 @@ jQuery(document).ready(function($) {
     	width: '100%'
     });
 	  p.init();
-
+	  $("#photo-gallery-slider").on("mousewheel", function(event, delta) {
+      if(delta){
+        this.scrollLeft -= (delta * 30);
+      }
+      else{
+        this.scrollLeft -= event.originalEvent.deltaY * (-3);
+      }
+      event.preventDefault();
+   });
 
 });
