@@ -275,6 +275,11 @@ input[type="file"] > input[type="button"]::-moz-focus-inner {
 .shop-badges img {
 	width: 100%;
 	max-width: 100%;
+	margin-top: 20px;
+}
+
+.shop-badges h3 {
+	font-size: 20px;
 }
 
 .footer {
@@ -1223,10 +1228,6 @@ body {
 
 .shop-badge-text {
 	padding-top: 20px;
-}
-
-.shop-badges h3 {
-	font-size: 18px;
 }
 
 
