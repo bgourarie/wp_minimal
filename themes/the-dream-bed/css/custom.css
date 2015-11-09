@@ -272,12 +272,9 @@ input[type="file"] > input[type="button"]::-moz-focus-inner {
 	background-color: rgba(255,255,255,.08);
 }
 
-.shop-badges {
-	
-}
-
-.shop-badge-img {
-	
+.shop-badges img {
+	width: 100%;
+	max-width: 100%;
 }
 
 .footer {
@@ -537,13 +534,14 @@ input[type="file"] > input[type="button"]::-moz-focus-inner {
 }
 
 .special-circles {
-	margin-top: 30px;
+	padding-top: 30px;
 }
 
 .special-circles img {
 	display: block;
 	width: 80%;
 	height: auto;
+	margin-bottom: 15px;
 }
 
 .special-circles p {
@@ -1227,6 +1225,15 @@ body {
 	padding-top: 20px;
 }
 
+.shop-badges h3 {
+	font-size: 18px;
+}
+
+
+.shop-badges img {
+	margin: 10px 0;
+}
+
 }
 
 /* Small Devices, Tablets */
@@ -1342,6 +1349,10 @@ body {
 	
 }
 
+.shop-badges img {
+	margin-top: 20px;
+}
+
 }
 
 /* Medium Devices, Desktops */
@@ -1422,6 +1433,14 @@ body {
 	margin: 0 40px 0;
 }
 
+.shop-badges img {
+	margin: 0;
+}
+
+.shop-badges h3 {
+	font-size: 20px;
+}
+
 }
 
 /* Large Devices, Wide Screens */
@@ -1450,4 +1469,12 @@ body {
 	background-image: url(../images/bg-callout-number@2x.png);
 	background-size: 36px 36px;
 }
+}
+
+/* firefox targets */
+
+@-moz-document url-prefix() { 
+  .shop-badges {
+     padding-top: 20px;
+  }
 }
