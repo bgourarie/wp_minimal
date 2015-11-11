@@ -30,7 +30,7 @@ global $wpdb?>
 						    'category_name' => 'euler_solutions'
 							);
 						$solutions = get_posts($args);
-							<?php if ($solutions) : foreach ($solutions as $post) : setup_postdata($post); ?>
+						if ($solutions) : foreach ($solutions as $post) : setup_postdata($post); ?>
 
 
 							<article id="post-<?php the_ID(); ?>" <?php post_class( 'cf' ); ?> role="article" itemscope itemtype="http://schema.org/BlogPosting">
@@ -78,7 +78,7 @@ global $wpdb?>
 
 							</article>
 
-							<?php endwhile; else : ?>
+							<?php endforeach; else : ?>
 
 									<article id="post-not-found" class="hentry cf">
 											<header class="article-header">

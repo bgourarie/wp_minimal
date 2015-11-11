@@ -27,6 +27,7 @@ http://thesassway.com/advanced/modular-css-naming-conventions
   max-height: 150px;
   box-sizing: border-box;
   font-family: 'garamond';
+  font-size: xx-large;
 }
 .ben-menu-left{
   max-width:40%;
@@ -41,6 +42,16 @@ http://thesassway.com/advanced/modular-css-naming-conventions
     transform-style: inherit !important;
     float: inherit !important;
 }
+.project-description{
+    padding-left: 3%;
+    margin: 2%;
+    max-width: 500px;
+}
+.project-header{
+    font-family: garamond;
+    font-size: larger;
+    margin: 1%;
+    }
 .navbar-default{
   background: none !important; 
   border: 0 !important;
