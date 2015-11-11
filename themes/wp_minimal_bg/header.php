@@ -43,14 +43,12 @@
 	<body <?php body_class(); ?> itemscope itemtype="http://schema.org/WebPage">
 
 	<nav class="navbar navbar-default">
-	  <div class="container-fluid ryan-menu">
-	    <div class="navbar-left ryan-menu-left">
+	  <div class="container-fluid ben-menu">
+	    <div class="navbar-left ben-menu-left">
 	      <a class="navbar-logo" href="#">
-	      	<img class="navbar-logo-png" src="<?php echo get_bloginfo('template_directory'); ?>/library/images/rcain-logo.jpg"/>
+					Ben Gourarie
 	      </a>
-	     
-	      
-	    </div> 
+	   	</div> 
 	    <button type="button" class="navbar-toggle collapsed move-button" data-toggle="collapse" data-target=".navbar-collapse" aria-expanded="false">
         <span class="sr-only">Toggle navigation</span>
         <span class="icon-bar"></span>
