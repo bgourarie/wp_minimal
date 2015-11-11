@@ -65,6 +65,7 @@ wp_reset_postdata();
 	<div class="row">
 		<div class="col-sm-4 col-sm-offset-1 review-header">
 			<h3>average rating:
+                <span class="average-stars">
                 <?php
                     $average_rating = round((calculate_average($ratings) * 2), 0) / 2;
                     // Loop and print a whole star for each step.
@@ -76,9 +77,9 @@ wp_reset_postdata();
                         echo '<img src="' . get_bloginfo("template_url") . '/images/half-star.svg" />';
                     }
                 ?>
-			<small>based on <?php echo $count; ?> reviews</small></h3>
+			<small>based on <?php echo $count; ?> reviews</small></span></h3>
 		</div>
-		<div class="col-sm-6 text-right">
+		<div class="col-sm-6 text-right review-sorting">
 		<form action="<?php bloginfo('url'); ?>/reviews" method="post">
 				<div>
 					<label for="show_product">Show Reviews For:</label>
@@ -155,8 +156,8 @@ if ($review_query->have_posts()) {
         }
 		
 
-		echo "<div class='row'>
-				<div class='col-sm-3 col-sm-offset-1 col-md-3 col-md-offset-1 review-personal-img'>
+		echo "<div class='row one-review'>
+				<div class='col-sm-3 col-sm-offset-1 col-md-3 col-md-offset-1 hidden-xs review-personal-img'>
 					<img src='$photo' class='img-responsive'>
 				</div>
 				<div class='col-sm-7 col-md-7 review-personal-text'>

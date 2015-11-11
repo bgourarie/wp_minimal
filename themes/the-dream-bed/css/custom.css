@@ -750,21 +750,16 @@ h2.bedcount {
 }
 
 .review-personal-text .iconset img {
-	height: 40px;
+	height: 30px;
 	width: auto;
 	vertical-align: middle;
 	margin-right: 10px;
-}
-
-.review-header small {
-	display: block;
 }
 
 .review-header img {
 	width: auto;
 	height: 24px;
 	vertical-align: middle;
-	margin-left: 4px;
 }
 
 .how-to-dream-page {
@@ -956,6 +951,7 @@ h2.bedcount {
   left: 100%;
   z-index: 3;
 }
+
 .btn-breadcrumb .btn:not(:last-child):before {
   content: " ";
   display: block;
@@ -1193,8 +1189,22 @@ body {
 	font-weight: 700;
 }
 
-.review-personal-img {
-	margin-bottom: 20px;
+.iconset {
+	border-bottom: 1px solid #ccc;
+	padding-bottom: 15px;
+}
+
+.review-header .average-stars {
+	display: block;
+}
+
+.review-header img {
+	margin-right: 5px;
+}
+
+.review-sorting div:last-child {
+	border-bottom: 1px solid #ccc;
+	padding-bottom: 10px;
 }
 
 }
@@ -1229,7 +1239,6 @@ body {
 .shop-badge-text {
 	padding-top: 20px;
 }
-
 
 .shop-badges img {
 	margin: 10px 0;
@@ -1354,6 +1363,29 @@ body {
 	margin-top: 20px;
 }
 
+.review-header .average-stars {
+	display: inline;
+}
+
+.review-header img {
+	margin-right: 0;
+	margin-left: 5px;
+	vertical-align: -3px;
+}
+
+.review-header small {
+	display: block;
+}
+
+.review-sorting {
+	border-bottom: none;
+}
+
+.review-sorting div:last-child {
+	border-bottom: none;
+	padding-bottom: 0;
+}
+
 }
 
 /* Medium Devices, Desktops */
@@ -1441,6 +1473,11 @@ body {
 .shop-badges h3 {
 	font-size: 20px;
 }
+
+.review-personal-text .iconset img {
+	height: 40px;
+}
+
 
 }
 
