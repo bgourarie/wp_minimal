@@ -123,6 +123,10 @@ function bones_scripts_and_styles() {
   global $wp_styles; // call global $wp_styles variable to add conditional wrapper around ie stylesheet the WordPress way
 
   if (!is_admin()) {
+  	
+		wp_enqueue_script( 'jquery' );
+		wp_enqueue_script( 'bones-js' );
+		wp_enqueue_script( 'sliding-bg' );
 
 		// modernizr (without media query polyfill)
 		wp_register_script( 'bones-modernizr', get_stylesheet_directory_uri() . '/library/js/libs/modernizr.custom.min.js', array(), '2.5.3', false );
@@ -176,9 +180,6 @@ function bones_scripts_and_styles() {
 		and your site will load faster.
 		*/
 
-		wp_enqueue_script( 'jquery' );
-		wp_enqueue_script( 'bones-js' );
-		wp_enqueue_script( 'sliding-bg' );
 
 	}
 }

@@ -18,7 +18,7 @@
 						)); ?>
 					</nav>
 
-					<p class="source-org copyright">&copy; <?php echo date('Y'); ?> <?php bloginfo( 'name' ); ?>.</p>
+					<p class="source-org copyright">This may resemble a copyright notice but in fact it's haiku.</p>
 
 				</div>
 
