@@ -4,11 +4,11 @@ Theme Name: minial_wp_bg
 Theme URI: http://ben.gourarie.net/;
 Author: Ben Gourarie
 Author URI: http://ben.gourarie.net/
-Description: a simple theme designed for Ryan Cain Photography. Focus on minimal posts and image galleries
+Description: a simple theme designed for ben Cain Photography. Focus on minimal posts and image galleries
 Version: 0.1
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Tags: photography, minimalist, gallery, images, benbenben, ryancain
+Tags: photography, minimalist, gallery, images, benbenben, bencain
 Text Domain: minial_wp_bg
 
 Here's where the magic happens. Here, you'll see we are calling in
@@ -26,8 +26,9 @@ http://thesassway.com/advanced/modular-css-naming-conventions
   min-height: 30px;
   max-height: 150px;
   box-sizing: border-box;
+  font-family: 'garamond';
 }
-.ryan-menu-left{
+.ben-menu-left{
   max-width:40%;
 }
 .override-gallery{
@@ -51,7 +52,7 @@ http://thesassway.com/advanced/modular-css-naming-conventions
   top:0px !important;
   right:0px !important;
 }
-.ryan-menu{
+.ben-menu{
   width: 100%;
   margin: auto 0px;
   text-align: center;
