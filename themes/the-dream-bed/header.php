@@ -34,19 +34,10 @@
 
 	<header id="masthead" class="site-header" role="banner">
 		<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
-			<div class="container-fluid">
+			<div class="container-fluid extole-header">
 				<div class="row">
-					<div class="col-sm-12 center-content text-center hidden-xs extole-header">
-						<span class="text">GIVE $50, GET $50 when you share Dream Bed with a friend!</span>
-						<a href="#">
-							<script type="extole/widget">{"zone":"db_banner"}</script>
-						</a>
-					</div>
-					<div class="col-xs-5 visible-xs"></div>
-					<div class="col-xs-4 visible-xs">
-						<a href="#">
-							<script type="extole/widget">{"zone":"db_banner"}</script>
-						</a>
+					<div class="col-sm-12">
+							Give $50, get $50 <span class="hidden-xs">when you share Dream Bed with a friend!</span> <script type="extole/widget">{"zone":"db_banner"}</script>
 					</div>
 				</div>
 			</div>
@@ -76,6 +67,7 @@
 					</ul>
 				</div>
 			</div>
+			
 		</nav><!-- #site-navigation -->
 		
 		<?php if(is_page(array('checkout', 'order-received'))) { ?>
