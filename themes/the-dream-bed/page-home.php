@@ -2,9 +2,15 @@
 
 <div id="home">
 
+<div class="jumbotron mobile-home-jumbo visible-xs">
+	<div class="main-text">
+		<h1>Free shipping and a no nightmare guarantee</h1>
+		<div><a href="<?php bloginfo('url'); ?>/shop/" class="btn btn-dream btn-lg" role="button">Shop Now</a></div>
+	</div>
+</div>
 
 <?php if (have_rows('reasons_to_dream')) { ?>
-	<div id="carousel-dream-home" class="carousel slide" data-ride="carousel">
+	<div id="carousel-dream-home" class="carousel slide hidden-xs" data-ride="carousel">
 		<ol class="carousel-indicators">
 	<?php $number = 0; ?>
 	<?php while (have_rows('reasons_to_dream')) {

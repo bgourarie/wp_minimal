@@ -622,6 +622,28 @@ input[type="file"] > input[type="button"]::-moz-focus-inner {
 	font-size: 20px;
 }
 
+.mobile-home-jumbo {
+	background-image: url(../images/photos/girl-on-pink-bed.jpg);
+	background-position: left;
+	-webkit-clip-path: none;
+	clip-path: none;
+	margin-bottom: 0;
+	padding: 0;
+}
+
+.mobile-home-jumbo .main-text {
+	position: absolute;
+	padding: 0;
+	text-align: center;
+	bottom: 10px;
+	padding: 15px 0;
+}
+
+.mobile-home-jumbo h1 {
+	text-transform: none;
+	margin-bottom: 15px;
+}
+
 .dream-it-forward-jumbo {
 	background-image: url(../images/photos/dream-it-fwd-mattress-delivery.jpg);
 	-webkit-clip-path: none;
@@ -1130,7 +1152,7 @@ body {
 }
 
 .jumbotron h1 {
-	font-size: 2.857em;
+	font-size: 1.857em;
 	/*margin-bottom: 15px;*/
 }
 
