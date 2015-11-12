@@ -1025,12 +1025,15 @@ h2.bedcount {
 .btn-breadcrumb .btn.btn-default:not(:last-child):after {
   border-left: 10px solid #fff;
 }
+
 .btn-breadcrumb .btn.btn-default:not(:last-child):before {
   border-left: 10px solid #ccc;
 }
+
 .btn-breadcrumb .btn.btn-default:hover:not(:last-child):after {
   border-left: 10px solid #ebebeb;
 }
+
 .btn-breadcrumb .btn.btn-default:hover:not(:last-child):before {
   border-left: 10px solid #adadad;
 }
@@ -1260,6 +1263,10 @@ body {
 	font-size: 1.857em;
 }
 
+.footer .footer-nav li:first-child, .footer .footer-nav li:nth-child(2), .footer .footer-nav li:nth-child(3) {
+	display: none;
+}
+
 }
 
 /* Extra Small Devices, Phones */ 
@@ -1353,6 +1360,10 @@ body {
 .footer {
 	padding-top: 30px;
 	padding-bottom: 30px;
+}
+
+.footer .footer-nav li:first-child, .footer .footer-nav li:nth-child(2), .footer .footer-nav li:nth-child(3) {
+	display: block;
 }
 
 .alternate {
