@@ -25,7 +25,7 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-sm-10 col-sm-offset-1 col-xs-12 text-center">
-				<h2>The Dream Bed is more than an affordable, well-designed, smartly packed parcel shipped to your door&hellip; it gives you the power to define a better sleep and a better world.</h2>
+				<p class="h2">The Dream Bed is more than an affordable, well-designed, smartly packed parcel shipped to your door&hellip; it gives you the power to define a better sleep and a better world.</h2>
 			</div>
 		</div>
 	</div>

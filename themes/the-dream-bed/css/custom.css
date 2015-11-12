@@ -747,6 +747,15 @@ h2.bedcount {
 	margin-bottom: 30px;
 }
 
+.design-page, .giving-page, .how-to-dream-page {
+	text-align: center;
+}
+
+.design-page img, .giving-page img, .how-to-dream-page img {
+	margin-left: auto;
+	margin-right: auto;
+}
+
 .team-page {
 	margin-bottom: 30px;
 }
@@ -816,7 +825,6 @@ h2.bedcount {
 }
 
 .how-to-dream-page {
-	padding-top: 30px;
 	padding-bottom: 30px; 
 }
 
@@ -937,7 +945,6 @@ h2.bedcount {
 	text-align: center;
 	font-size: 2.143em;	
 }
-
 
 .mattress-add-ons > div {
 	border: 1px solid #808284;
@@ -1147,6 +1154,15 @@ body {
 	padding-top: 82px;	
 }
 
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+	font-size: 1.857em;
+}
+
+.h2 {
+	font-size: 1em;
+	line-height: 1.429em;
+}
+
 .navbar-brand {
 	position: absolute;
 	left: 15px;
@@ -1318,7 +1334,6 @@ body {
 	padding-top: 15px;
 }
 
-
 .dream-it-fwd h3 {
 	font-size: 1.143em;
 }
@@ -1338,6 +1353,34 @@ body {
 
 body {
 	padding-top: 133px;	/* this is for the fixed navbar - take out if not using */
+}
+
+h1, .h1 {
+    font-size: 2.571em; /* 36px */
+}
+
+h2, .h2 {
+    font-size: 2.143em; /* 30px */
+}
+
+h3, .h3 {
+    font-size: 1.714em; /* 24px */
+}
+
+h4, .h4 {
+    font-size: 1.286em; /* 18px */
+}
+
+h5, .h5 {
+    font-size: 1em; /* 14px */
+}
+
+h6, .h6 {
+    font-size: 0.857em; /* 12px */
+}
+
+.design-page .h2 {
+	font-size: 2.143em;
 }
 
 .dream-it-fwd {
@@ -1480,6 +1523,10 @@ body {
 .review-sorting div:last-child {
 	border-bottom: none;
 	padding-bottom: 0;
+}
+
+.design-page, .giving-page, .how-to-dream-page {
+	text-align: left;
 }
 
 }
