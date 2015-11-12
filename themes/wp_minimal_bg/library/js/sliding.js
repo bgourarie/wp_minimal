@@ -12,7 +12,14 @@ jQuery(document).ready(function($) {
         this.scrollLeft -= (delta * 30);
       }
       else{
-        this.scrollLeft -= event.originalEvent.deltaY * (-3);
+        vertChange = event.originalEvent.deltaY;
+        horChange = event.originalEvent.deltaX;
+        if (Math.abs(vertChange)>Math.abs(horChange)){
+          this.scrollLeft -= vertChange * (-3);
+        }
+        else{
+          return;
+        }
       }
       event.preventDefault();
    });
