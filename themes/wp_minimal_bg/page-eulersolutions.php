@@ -20,32 +20,49 @@ global $wpdb?>
 
 				<div id="inner-content" class="wrap cf">
 
-						<main id="main" class="m-all t-3of3 d-7of7 cf" role="main" itemscope itemprop="mainContentOfPage" itemtype="http://schema.org/Blog">
-					<?php $args = array(
-						    'posts_per_page' => -1, // Using -1 loads all posts
-						    'orderby' => 'title', // This ensures images are in the order set in the page media manager
-						    'order'=> 'ASC',
-						    'post_status' => 'published',
-						    'post_type' => 'post',
-						    'category_name' => 'euler_solutions'
-							);
-						$solutions = get_posts($args);
-						if ($solutions) : foreach ($solutions as $post) : setup_postdata($post); ?>
+						<main id="main" class="m-all t-2of3 d-5of7 cf" role="main" itemscope itemprop="mainContentOfPage" itemtype="http://schema.org/Blog">
+							<div class="euler-intro">
+								<?php if(have_posts()) { the_post(); }
+								the_content(); ?>
+							</div>
+					<?php  $args = array(
+							'posts_per_page'   => -1,
+							'offset'           => 0,
+							'cat'    => 2,
+							'orderby'          => 'post_title',
+							'order'            => 'ASC',
+							'post_type'        => 'post',
+							'post_status'      => 'publish',
+							'suppress_filters' => true 
+						);
 
+						$solutions = get_posts( $args ); 
+						?>
 
+<div class="panel-group" id="accordion">
+					<?php	if ($solutions) : foreach ($solutions as $post) : setup_postdata($post); ?>
+
+						<div class="panel panel-default">
 							<article id="post-<?php the_ID(); ?>" <?php post_class( 'cf' ); ?> role="article" itemscope itemtype="http://schema.org/BlogPosting">
-
-								<header class="article-header">
-
-									<h1 class="page-title"><?php the_title(); ?></h1>
+    						<div class="panel-heading">
+								<header class="article-header solution-header">
+									<a data-toggle="collapse" data-parent="#accordion" href="#collapse-<?php the_ID();?>">
+									<h2 class="page-title panel-title">
+										
+											<?php the_title(); ?></h1>
+										
 
 								</header>
+								</a>
+  							</div>
 
-								<section class="entry-content cf" itemprop="articleBody">
+						    <div id="collapse-<?php the_ID();?>"  class="panel-collapse collapse">
+
+  							<section class="entry-content panel-body solution-content cf" itemprop="articleBody">
+									
 									<?php
 										// the content (pretty self explanatory huh)
 										the_content();
-
 										/*
 										 * Link Pages is used in case you have posts that are set to break into
 										 * multiple pages. You can remove this if you don't plan on doing that.
@@ -66,19 +83,12 @@ global $wpdb?>
 										) );
 									?>
 								</section>
-
-
-								<footer class="article-footer">
-
-                  <?php the_tags( '<p class="tags"><span class="tags-title">' . __( 'Tags:', 'bonestheme' ) . '</span> ', ', ', '</p>' ); ?>
-
-								</footer>
-
-								<?php comments_template(); ?>
-
+								</div>
 							</article>
 
-							<?php endforeach; else : ?>
+							<?php endforeach; ?>
+							</div><?php //end accordion div
+							else : ?>
 
 									<article id="post-not-found" class="hentry cf">
 											<header class="article-header">
@@ -95,8 +105,6 @@ global $wpdb?>
 							<?php endif; ?>
 
 						</main>
-
-						<?php get_sidebar(); ?>
 
 				</div>
 
