@@ -1185,12 +1185,6 @@ body {
 	padding: 30px;
 }
 
-.home-bed-options .btn {
-	width: 180px;
-	margin: 0 20px 1em;
-	vertical-align: 4px;
-}
-
 .home-bed-options h2 {
 	font-size: 1.857em;
 	color: #808284;	
@@ -1529,12 +1523,6 @@ body {
 	padding: 7px 12px;	
 }
 
-.home-bed-options .btn {
-	margin-bottom: 0;
-	width: 250px;
-	margin: 0 40px 0;
-}
-
 .shop-badges img {
 	margin: 0;
 }
@@ -1546,7 +1534,6 @@ body {
 .review-personal-text .iconset img {
 	height: 40px;
 }
-
 
 }
 
