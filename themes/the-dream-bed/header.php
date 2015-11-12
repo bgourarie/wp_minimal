@@ -67,7 +67,6 @@
 					</ul>
 				</div>
 			</div>
-			
 		</nav><!-- #site-navigation -->
 		
 		<?php if(is_page(array('checkout', 'order-received'))) { ?>

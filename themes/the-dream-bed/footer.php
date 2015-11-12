@@ -138,6 +138,8 @@
 
 </div><!-- #page -->
 
+<div class="call-us-now visible-xs"><a href="tel:<?php echo get_field('phone_number', 'options'); ?>" class="phone"><i class="fa fa-phone"></i> Call Us Now</a></div>
+
 <?php wp_footer(); ?>
 
 <script src="<?php bloginfo("template_url"); ?>/js/bootstrap.min.js"></script> 
