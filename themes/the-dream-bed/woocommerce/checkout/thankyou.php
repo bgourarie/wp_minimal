@@ -80,57 +80,6 @@ if ( $order ) : ?>
             <!-- end extole script -->
 		</div>
 
-<!-- START The Company Publisher Pixels Dream Bed Conversion -->
-<script type="text/javascript">
-var ebRand = Math.random()+'';
-ebRand = ebRand * 1000000;
-//<![CDATA[ 
-document.write('<scr'+'ipt src="HTTPS://bs.serving-sys.com/Serving/ActivityServer.bs?cn=as&amp;ActivityID=684549&amp;rnd=' + ebRand + '"></scr' + 'ipt>');
-//]]>
-</script>
-<noscript><img width="1" height="1" style="border:0" src="HTTPS://bs.serving-sys.com/Serving/ActivityServer.bs?cn=as&amp;ActivityID=684549&amp;ns=1" alt=""></noscript>
-<!-- Start Quantcast Tag -->
-<script type="text/javascript"> 
-var _qevents = _qevents || [];
-(function() {
-var elem = document.createElement('script');
-elem.src = (document.location.protocol == "https:" ? "https://secure" : "http://edge") + ".quantserve.com/quant.js";
-elem.async = true;
-elem.type = "text/javascript";
-var scpt = document.getElementsByTagName('script')[0];
-scpt.parentNode.insertBefore(elem, scpt);
-})();
-_qevents.push(
-{qacct:"p-8bpqtreGSGR2k",labels:"_fp.channel.Dream Bed,_fp.event.Dream Bed Purchase Confirmation,_fp.pcat.INSERT+PRODUCT+CATEGORY", event:"refresh", orderid:"INSERT+ORDER+ID",revenue:"INSERT+REVENUE"}
-);
-</script>
-<noscript><img src="//pixel.quantserve.com/pixel/p-8bpqtreGSGR2k.gif?labels=_fp.channel.Dream+Bed,_fp.event.Dream+Bed+Purchase+Confirmation,_fp.pcat.INSERT+PRODUCT+CATEGORY&orderid=INSERT+ORDER+ID&revenue=INSERT+REVENUE" style="display: none;" border="0" height="1" width="1" alt="Quantcast"></noscript>
-<!-- End Quantcast tag -->
-<img src="https://secure.fastclick.net/w/roitrack.cgi?aid=1000050420" width="1" height="1" border="0" alt=""> 
-<img src="http://pc1.yumenetworks.com/dynamic_rmpixel_8632.gif" width="1" height="1" border="0" alt="">
-<!-- Google Code for Dream Bed Sale Conversion Page -->
-<script type="text/javascript">
-/* <![CDATA[ */
-var google_conversion_id = 942855359;
-var google_conversion_language = "en";
-var google_conversion_format = "3";
-var google_conversion_color = "ffffff";
-var google_conversion_label = "OJYACPKNmWAQv6nLwQM";
-var google_conversion_value = 0.00;
-var google_conversion_currency = "USD";
-var google_remarketing_only = false;
-/* ]]> */
-</script>
-<script type="text/javascript" src="//www.googleadservices.com/pagead/conversion.js"></script>
-<noscript>
-<div style="display:inline;"><img height="1" width="1" style="border-style:none;" alt="" src="//www.googleadservices.com/pagead/conversion/942855359/?value=0.00&amp;currency_code=USD&amp;label=OJYACPKNmWAQv6nLwQM&amp;guid=ON&amp;script=0"/></div>
-</noscript>
-<!-- Conversion Pixel - MattressFirm_202810_Conversion - DO NOT MODIFY -->
-<img src="https://secure.adnxs.com/px?id=607486&t=2" width="1" height="1" alt="">
-<!-- End of Conversion Pixel -->
-<img src="https://ad.doubleclick.net/ddm/activity/src=5129006;type=invmedia;cat=jhno7y9p;ord=1?" width="1" height="1" alt="">
-<!-- END The Company Publisher Pixels Dream Bed Conversion -->		
-
 </div>	
 
 	<?php endif; ?>
@@ -180,10 +129,41 @@ _qevents.push(
 );
 </script>
 <noscript>
-<img src="//pixel.quantserve.com/pixel/p-8bpqtreGSGR2k.gif?labels=_fp.channel.Dream+Bed,_fp.event.Dream+Bed+Purchase+Confirmation,_fp.pcat.INSERT+PRODUCT+CATEGORY&orderid=INSERT+ORDER+ID&revenue=INSERT+REVENUE" style="display: none;" border="0" height="1" width="1" alt="Quantcast">
+<img src="//pixel.quantserve.com/pixel/p-8bpqtreGSGR2k.gif?labels=_fp.channel.Dream+Bed,_fp.event.Dream+Bed+Purchase+Confirmation,_fp.pcat.INSERT+PRODUCT+CATEGORY&orderid=INSERT+ORDER+ID&revenue=INSERT+REVENUE" style="display: none;" border="0" height="1" width="1" alt="Quantcast"/>
 </noscript>
 <!-- End Quantcast tag -->
 
-<img src="https://secure.fastclick.net/w/roitrack.cgi?aid=1000050420" width="1" height="1" border="0"> 
+<img src="https://secure.fastclick.net/w/roitrack.cgi?aid=1000050420" width=1 height=1 border=0> 
+
+<IMG SRC="http://pc1.yumenetworks.com/dynamic_rmpixel_8632.gif" BORDER=0 WIDTH=1 HEIGHT=1>
+
+<!-- Google Code for Dream Bed Sale Conversion Page -->
+<script type="text/javascript">
+/* <![CDATA[ */
+var google_conversion_id = 942855359;
+var google_conversion_language = "en";
+var google_conversion_format = "3";
+var google_conversion_color = "ffffff";
+var google_conversion_label = "OJYACPKNmWAQv6nLwQM";
+var google_conversion_value = 0.00;
+var google_conversion_currency = "USD";
+var google_remarketing_only = false;
+/* ]]> */
+</script>
+<script type="text/javascript" src="//www.googleadservices.com/pagead/conversion.js">
+</script>
+<noscript>
+<div style="display:inline;">
+<img height="1" width="1" style="border-style:none;" alt="" src="//www.googleadservices.com/pagead/conversion/942855359/?value=0.00&amp;currency_code=USD&amp;label=OJYACPKNmWAQv6nLwQM&amp;guid=ON&amp;script=0"/>
+</div>
+</noscript>
+
+<!-- Conversion Pixel - MattressFirm_202810_Conversion - DO NOT MODIFY -->
+<img src="https://secure.adnxs.com/px?id=607486&t=2" width="1" height="1" />
+<!-- End of Conversion Pixel -->
+
+<img src="https://ad.doubleclick.net/ddm/activity/src=5129006;type=invmedia;cat=jhno7y9p;ord=1?" width="1" height="1" />
+
+<script>(function(w,d,t,r,u){var f,n,i;w[u]=w[u]||[],f=function(){var o={ti:"5062657"};o.q=w[u],w[u]=new UET(o),w[u].push("pageLoad")},n=d.createElement(t),n.src=r,n.async=1,n.onload=n.onreadystatechange=function(){var s=this.readyState;s&&s!=="loaded"&&s!=="complete"||(f(),n.onload=n.onreadystatechange=null)},i=d.getElementsByTagName(t)[0],i.parentNode.insertBefore(n,i)})(window,document,"script","//bat.bing.com/bat.js","uetq");</script><noscript><img src="//bat.bing.com/action/0?ti=5062657&Ver=2" height="0" width="0" style="display:none; visibility: hidden;" /></noscript>
 
 <!-- END The Company Publisher Pixels Dream Bed Conversion -->
