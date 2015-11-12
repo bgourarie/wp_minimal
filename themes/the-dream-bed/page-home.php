@@ -111,12 +111,8 @@ jQuery(document).ready(function($){
 					<a href="<?php bloginfo('url'); ?>/shop/" class="btn btn-dream" role="button">Shop The Dream Bed</a>
 				</div>
 				<div class="center-block visible-xs">
-					<div class="container">
-						<div class="row">
-							<div class="col-xs-6"><a href="<?php bloginfo('url'); ?>/shop/mattress/dream-bed/" class="btn btn-dream btn-block" role="button">Shop Original Dream</a></div>
-							<div class="col-xs-6"><a href="<?php bloginfo('url'); ?>/shop/mattress/cool-gel-bed/" class="btn btn-dream btn-block" role="button">Shop Cool Dream</a></div>
-						</div>
-					</div>
+					<a href="<?php bloginfo('url'); ?>/shop/mattress/dream-bed/" class="btn btn-dream btn-block" role="button">Shop Original Dream</a>
+					<a href="<?php bloginfo('url'); ?>/shop/mattress/cool-gel-bed/" class="btn btn-dream btn-block" role="button">Shop Cool Dream</a>
 				</div>
 			</div>
 		</div>
