@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 
-<div class="jumbotron shop-now-main">
+<div class="jumbotron shop-now-main hidden-xs">
 	<div class="container">
 		<div class="row">
 			<div class="col-sm-8 col-sm-offset-2 col-xs-12">
@@ -9,7 +9,7 @@
 		</div>
 	</div>
 </div>
-<div class="light-grey-fill go-under-jumbotron">
+<div class="light-grey-fill go-under-jumbotron hidden-xs">
 	<div class="container">
 		<div class="row vertical-align shop-badges">
 			<div class="col-xs-5 col-sm-2 col-sm-offset-1">
