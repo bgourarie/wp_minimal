@@ -565,10 +565,6 @@ input[type="file"] > input[type="button"]::-moz-focus-inner {
 	background-color: #999;	
 }
 
-.home-bed-options {
-	padding-bottom: 30px;
-}
-
 .special-circles {
 	padding-top: 30px;
 }
@@ -1463,6 +1459,10 @@ h6, .h6 {
 	padding: 16px 26px;
 	font-size: 40px;
 	background: url(../images/bg-callout-number@2x.png) center no-repeat transparent;
+}
+
+.home-bed-options {
+	padding-bottom: 30px;
 }
 
 .home-bed-options h2 {
