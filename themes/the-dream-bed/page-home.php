@@ -6,6 +6,7 @@
 	<div class="main-text">
 		<h1>Free shipping and a no nightmare guarantee</h1>
 		<div><a href="<?php bloginfo('url'); ?>/shop/" class="btn btn-dream btn-lg" role="button">Shop Now</a></div>
+		<img class="pin" src="<?php bloginfo("template_url"); ?>/images/photos/feet-hanging-off-bed-detail.jpg" data-pin-description="The Dream Bed: Free shipping and a no nightmare guarantee." alt="">
 	</div>
 </div>
 
@@ -40,6 +41,7 @@
 									<h1><?php echo $title; ?></h1> 
 									<h2><?php echo $desc; ?></h2>
 									<p><a href="<?php echo $link; ?>" class="btn btn-dream btn-lg" role="button"><?php echo $btn_title; ?></a></p>
+									<img class="pin" src="<?php echo $img; ?>" data-pin-description="The Dream Bed: 180 night in home trial, free delivery, two options offering optimum support & comfort." alt="">
 								</div>
 							</div>
 						</div>
@@ -95,6 +97,7 @@ jQuery(document).ready(function($){
 					<h2>Free 2-day <br>
 						delivery!</h2>
 					<p><a href="<?php bloginfo('url'); ?>/shop" class="btn btn-dream" role="button">Shop Now</a></p>
+					<img class="pin" src="<?php bloginfo("template_url"); ?>/images/photos/blue-box-on-stoop.jpg" data-pin-description="The Dream Bed: Free two day delivery, right to your door!" alt="">
 				</div>
 			</div>
 			<div class="col-sm-6 alt-side-image home-middle2">
@@ -102,6 +105,7 @@ jQuery(document).ready(function($){
 					<h2>No nightmare<br>
 						180 night guarantee</h2>
 					<p><a href="<?php bloginfo('url'); ?>/design" class="btn btn-dream" role="button">See Design</a></p>
+					<img class="pin" src="<?php bloginfo("template_url"); ?>/images/photos/girl-on-pink-bed.jpg" data-pin-description="The Dream Bed: The mattress that's designed for optimal support, constant comfort, and an unobtrusive footprint." alt="">
 				</div>
 			</div>
 		</div>
@@ -112,7 +116,7 @@ jQuery(document).ready(function($){
 		<div class="row">
 			<div class="col-sm-12 center-block text-center home-bed-options">
 				<h2>The Dream Bed comes in two dreamy choices</h2>
-				<p><img src="<?php bloginfo("template_url"); ?>/images/photos/two-dreamy-options-man.jpg" alt="A gentleman demonstrates the difficulty of choosing between the two Dream Bed options." class="img-responsive center-block"></p>
+				<p><img src="<?php bloginfo("template_url"); ?>/images/photos/two-dreamy-options-man.jpg" alt="Two dreamy mattresses in foam, latex and memory foam." data-pin-description="The Dream Bed: Two dreamy mattresses in foam, latex and memory foam." class="img-responsive center-block"></p>
 				<div class="center-block hidden-xs"> 
 					<a href="<?php bloginfo('url'); ?>/shop/" class="btn btn-dream" role="button">Shop The Dream Bed</a>
 				</div>
@@ -130,11 +134,11 @@ jQuery(document).ready(function($){
 			<div class="col-sm-8 col-sm-offset-2 col-xs-12">
 				<h1>For every Dream Bed purchased a bed is donated to someone in need. #dreamitforward</h1>
 				<div><a href="<?php bloginfo('url'); ?>/giving/" class="btn btn-dream btn-lg" role="button">See How We Give</a></div>
+				<img class="pin" src="<?php bloginfo("template_url"); ?>/images/photos/dream-it-fwd-mattress-delivery.jpg" data-pin-description="The Dream Bed: For every Dream Bed purchased a bed is donated to someone in need. #dreamitforward" alt="">
 			</div>
 		</div>
 	</div>
 </div>
-
 <div class="container">
 	<div class="row">
 		<div class="same">
@@ -161,7 +165,6 @@ jQuery(document).ready(function($){
 		</div>
 	</div>
 </div>
-
+<img class="pin" src="<?php bloginfo("template_url"); ?>/images/photos/girl-crawling-in-box-with-dream-pillow.jpg" data-pin-description="The Dream Bed: Unbox a better tomorrow with our giving program." alt="">
 </div>
-
 <?php get_footer(); ?>
