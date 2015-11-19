@@ -83,8 +83,38 @@ input.button {
     margin-bottom: 1em;
 }
 
+#product-slider {
+	z-index: 100;
+}
+
 #product-slider .carousel-indicators {
 	bottom: 0;
+}
+
+.carousel-link .thumb {
+	width: calc(25% - 2px);
+	cursor: pointer;
+	float: left;
+	margin-right: 2px;
+}
+
+.carousel-link .thumb:last-child {
+	width: 25%;
+	margin-right: 0;
+}
+
+.woocommerce div.product div.images .carousel-link .thumb img {
+	width: 100%;
+	margin: 0;
+}
+.carousel-link .thumb:first-of-type img {
+	margin-left: 0;
+}
+.carousel-link .thumb:last-of-type img {
+	margin-right: 0;
+}
+.item img {
+	width: 100%;	
 }
 
 /* Product Options */

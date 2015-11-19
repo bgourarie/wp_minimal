@@ -21,14 +21,6 @@ if ( $attachment_ids ) {
 	?>
 	<div id="product-slider" class="carousel slide" data-ride="carousel">
 
-		<ol class="carousel-indicators">
-			<?php $slide = 0;
-			foreach ( $attachment_ids as $attachment_id ) { ?>
-				<li data-target="#product-slider" data-slide-to="<?php echo $slide; ?>" class="<?php echo ($slide == 0 ? 'active' : ''); ?>"></li>
-			<?php $slide++;
-			} ?>
-		</ol>
-
 		<div class="carousel-inner" role="listbox"><?php
 
 			foreach ( $attachment_ids as $attachment_id ) { ?>
@@ -64,6 +56,20 @@ if ( $attachment_ids ) {
 
 				</div><?php
 			} ?>
+			
+			<div class="clearfix">
+				<div class="carousel-link">
+              		
+              		<?php $slide = 0;
+					foreach ( $attachment_ids as $attachment_id ) { ?>
+						
+						<div data-target="#product-slider" data-slide-to="<?php echo $slide; ?>" class="thumb"><img src="http://placehold.it/350x250/00ffff/000&amp;text=Product+Thumb+<?php echo $slide; ?>"></div>
+						
+					<?php $slide++;
+					} ?>
+              		
+				</div>
+			</div>
 
 		</div>
 	</div>
@@ -74,7 +80,7 @@ if ( $attachment_ids ) {
 	jQuery(document).ready(function($){
 		var $slider = $("#product-slider");
 		$slider.carousel({
-			interval: 8000
+			interval: false
 		});
 		$slider.find('.item:first').addClass('active');
 
