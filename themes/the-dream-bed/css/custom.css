@@ -400,6 +400,7 @@ input[type="file"] > input[type="button"]::-moz-focus-inner {
 	font-size: 14px;
 	line-height: 20px;
 	border: 1px solid #FD9D2E;
+	font-weight: 400;
 }
 
 .page-header {
@@ -657,6 +658,7 @@ input[type="file"] > input[type="button"]::-moz-focus-inner {
 	text-align: center;
 	bottom: 10px;
 	padding: 15px 0;
+	width: 100%;
 }
 
 .mobile-home-jumbo h1 {
@@ -1155,6 +1157,119 @@ h2.bedcount {
 	
 }
 
+/* newsletter modal */
+
+.close {
+	font-size: 14px;
+	font-weight: 400;
+	color: #F36B21;
+	text-shadow: none;
+	filter: alpha(opacity=20);
+	opacity: .8;
+	text-transform: none;
+}
+
+.close:hover, .close:focus {
+	color: #F36B21;
+	opacity: 1;
+}
+
+.modal-header, .modal-footer {
+	border: none;
+}
+
+.modal-body {
+	text-align: center;
+}
+
+.modal-content {
+	background: url(../images/modal-bg.png) center #F8FAFA;
+	background-size: 900px;
+}
+
+.modal-content h1 {
+	font-weight: 700;
+	font-size: 30px;
+}
+
+.modal-content p {
+	font-size: 16px;
+}
+
+.modal-body .gfield_label {
+	display: none;
+}
+
+.modal-body .gform_wrapper .button, .modal-body .gform_button {
+	border-color: #FD9D2E;
+	background-color: #FDA641;
+	border-radius: 0;
+}
+
+.modal-body .gform_wrapper .signup .button, .modal-body .signup .gform_button {
+	width: 100%;
+}
+
+.modal-body .gform_button:hover, .modal-body .gform_button:focus, .modal-body .gform_button:active, .modal-body .gform_button.active, .modal-body .open .dropdown-toggle.gform_button {
+	border-color: #FDA641;
+	background-color: #FDA641;
+	color: #fff;
+}
+
+.modal-body .gform_wrapper .button:hover, .modal-body .gform_button:hover, .modal-body .gform_button:focus {
+	border-color: #FDA641;
+	background-color: #FDA641;
+	color: #fff;
+}
+
+.woocommerce #respond .modal-body input#submit, .woocommerce .modal-body a.button, .woocommerce .modal-body button.button, .woocommerce .modal-body input.button {
+	color: #fff;
+	padding: 6px 12px;
+	font-size: 14px;
+	line-height: 20px;
+	border: 1px solid #FD9D2E;
+	font-weight: 400;
+}
+
+.modal-body .ginput_container {
+	display:inline-block;
+	float: left;
+}
+
+.modal-body .gform_footer {
+	display:inline-block;
+	float: left;
+	margin-bottom: 0;
+}
+
+.modal-body .input#gform_submit_button_1.gform_button.button {
+	float: right;
+	border-radius: 0;
+}
+
+.ginput_container input, .ginput_container select, .ginput_container textarea {
+	border-radius: 0;
+}
+
+.modal {
+  text-align: center;
+  padding: 0!important;
+}
+
+.modal:before {
+  content: '';
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
+  margin-right: -4px;
+}
+
+.modal-dialog {
+  display: inline-block;
+  text-align: left;
+  vertical-align: middle;
+}
+
 /* Custom, iPhone Retina */ 
 @media only screen and (min-width : 320px) {
 
@@ -1328,6 +1443,18 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
 	display: none;
 }
 
+.signup {
+	width: 100%;
+}
+
+.modal-body .ginput_container {
+	width: 60%;
+}
+
+.modal-body .gform_footer {
+	width: 40%;
+}
+
 }
 
 /* Extra Small Devices, Phones */ 
@@ -1362,6 +1489,18 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
 
 .shop-badges img {
 	margin: 10px 0;
+}
+
+.signup {
+	width: 80%;
+}
+
+.modal-body .ginput_container {
+	width: 80%;
+}
+
+.modal-body .gform_footer {
+	width: 20%;
 }
 
 }

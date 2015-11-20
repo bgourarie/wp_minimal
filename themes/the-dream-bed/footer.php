@@ -11,6 +11,41 @@
 
 
 	</div><!-- #content -->
+
+<!-- newletter popup -->
+	
+<div class="modal fade" id="signup" tabindex="-1" role="dialog" aria-labelledby="signupLabel" aria-hidden="true">
+<div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">close</span></button>
+      </div>
+      <div class="modal-body">
+        <h1>When you buy The Dream Bed,<br>we give a bed to a person in need.</h1>
+        <p>Sign up to learn about giving updates, promotions and product launches.</p>
+		<div class="modal-form clearfix center-block text-center signup">
+			<?php gravity_form(1, false, false, false, '', true, 12); ?>
+		</div>
+      </div>
+      <div class="modal-footer"></div>
+    </div>
+  </div>
+</div>
+
+<script type="text/javascript">
+jQuery(document).ready(function($){
+	 if ($.cookie('pop') == null) {
+		 function show_modal(){
+			$('#signup').modal();
+ 		}
+ 		window.setTimeout(show_modal, 3000);  // show after 2 seconds
+		Cookies.set('pop', 'signup', { expires: 3 }); // don't do show again for 3 days
+	 }
+ });
+</script>
+
+<!-- /newletter popup -->
+	
 	<footer class="footer">
 		<div class="container">
 			<div class="row">
@@ -145,6 +180,5 @@
 <script src="<?php bloginfo("template_url"); ?>/js/bootstrap.min.js"></script> 
 <script src="<?php bloginfo("template_url"); ?>/js/ie10-viewport-bug-workaround.js"></script>
 <script src="//tags.extole.com/1301851859/core.js"></script>
-
 </body>
 </html>
