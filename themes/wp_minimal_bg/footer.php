@@ -1,6 +1,6 @@
 			<footer class="footer" role="contentinfo" itemscope itemtype="http://schema.org/WPFooter">
 
-				<div id="inner-footer" class="wrap cf">
+				<div id="inner-footer" class="wrap cf col-sm-3 col-sm-offset-6">
 
 					<nav role="navigation">
 						<?php wp_nav_menu(array(
@@ -18,7 +18,7 @@
 						)); ?>
 					</nav>
 
-					<p class="source-org copyright">This may resemble a copyright notice but in fact it's haiku.</p>
+					<p class="source-org copyright text-center">This may resemble <br> a copyright notice but <br> in fact it's haiku.</p>
 
 				</div>
 

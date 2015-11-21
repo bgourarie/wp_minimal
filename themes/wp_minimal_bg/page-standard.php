@@ -24,11 +24,12 @@
 							<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
 							<article id="post-<?php the_ID(); ?>" <?php post_class( 'cf' ); ?> role="article" itemscope itemtype="http://schema.org/BlogPosting">
-								<header class="article-header">
+								<header class="article-header col-sm-3 col-sm-offset-3">
 
 									<h1 class="page-title"><?php the_title(); ?></h1>
 
-								</header>
+								</header> 
+								<div class="clearfix"></div>
 								<section class="entry-content cf" itemprop="articleBody">
 									<?php
 										// the content (pretty self explanatory huh)
@@ -41,6 +42,7 @@
 
                   <?php the_tags( '<p class="tags"><span class="tags-title">' . __( 'Tags:', 'bonestheme' ) . '</span> ', ', ', '</p>' ); ?>
 
+                  <hr>
 								</footer>
 
 							</article>
