@@ -32,6 +32,15 @@ http://thesassway.com/advanced/modular-css-naming-conventions
 .ben-menu-left{
   max-width:40%;
 }
+.problem_content {
+    background-color: #fff;
+    font-size: 110%;
+    border-top: solid 1px #ddd;
+    border-bottom: solid 1px #aaa;
+    border-left: solid 1px #ddd;
+    border-right: solid 1px #aaa;
+    padding: 10px;
+}
 .override-gallery{
     margin: inherit !important;
     padding: inherit !important;
