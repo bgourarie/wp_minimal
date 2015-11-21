@@ -46,7 +46,7 @@
 	  <div class="container-fluid ben-menu">
 	    <div class="navbar-left ben-menu-left">
 	      <a class="navbar-logo" href="#">
-					Ben Gourarie
+	      	<img class="navbar-logo-png" src="<?php echo get_bloginfo('template_directory'); ?>/library/images/bg-logo.jpg"/>
 	      </a>
 	   	</div> 
 	    <button type="button" class="navbar-toggle collapsed move-button" data-toggle="collapse" data-target=".navbar-collapse" aria-expanded="false">
