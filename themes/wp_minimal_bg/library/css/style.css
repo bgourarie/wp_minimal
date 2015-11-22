@@ -41,15 +41,19 @@ http://thesassway.com/advanced/modular-css-naming-conventions
     border-right: solid 1px #aaa;
     padding: 10px;
 }
+.problem-solution{
+  padding: 1em;
+  font-style: italic;
+}
+.margin-navbar{
+  margin-top: 2%;
+}
 .override-gallery{
-    margin: inherit !important;
-    padding: inherit !important;
     list-style-type: inherit !important;
     position: inherit !important;
     -webkit-transform-style: inherit !important;
     -ms-transform-style: inherit !important;
     transform-style: inherit !important;
-    float: inherit !important;
 }
 .project-description{
     padding-left: 3%;
@@ -83,7 +87,8 @@ http://thesassway.com/advanced/modular-css-naming-conventions
   border: 0px;
   max-width: 100%;
   width: auto;
-  max-height: 110px
+  max-height: 110px;
+  margin-top: -5%;
 }
 /*********************
 IMPORTING PARTIALS

@@ -56,9 +56,9 @@
         <span class="icon-bar"></span>
       </button>
     <div class="collapse navbar-collapse" id="navbar-collapse">
-      <ul class="nav nav-pill navbar-nav navbar-right override-gallery">
+      <ul class="nav nav-pill navbar-nav navbar-right margin-navbar override-gallery">
         <?php
-        $pages = get_pages(array('sort_column'=>'menu_order','sort_order'=>'DESC')); 
+        $pages = get_pages(array('sort_column'=>'menu_order','sort_order'=>'ASC')); 
         $curr= get_the_title();
 
   			foreach ( $pages as $page ) :
