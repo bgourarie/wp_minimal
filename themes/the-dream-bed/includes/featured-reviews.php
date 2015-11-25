@@ -4,7 +4,6 @@ $prod_show = array(get_the_ID());
 $sort_by = "meta_value_num"; /* sort by rating */
 $sort_order = 'ASC'; /* sort ascending */
 $review_type = $prod_show == array(96) ? 'dreambed' : 'coolgelbed';
-$review_link = bloginfo('url')."/reviews/?show_product=".$review_type;
 
 $args = array(
 	'post_type' => 'review',
@@ -75,7 +74,7 @@ if ($review_query->have_posts()) { ?>
 		</div>
 
 		<div class="text-center">
-			<p><a href="<?php echo $review_link?>" class="btn btn-dream" type="button">Read More Reviews</a></p>
+			<p><a href="<?php echo bloginfo('url')."/reviews/?show_product=".$review_type;?>" class="btn btn-dream" type="button">Read More Reviews</a></p>
 		</div>
 	</div><?php
 
