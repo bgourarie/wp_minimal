@@ -149,11 +149,11 @@ if ($review_query->have_posts()) {
         // Set product icon based on value of 'product'
         $product_icon = ($product == "Original Dream") ? "original" : "cool";
 
-        // Set default photo for review if not present.
-        if ($photo == ''){
+        // Set default photo for review  (until we can fix hosting issues) if not present.
+       // if ($photo == ''){
             $photo = $turl . '/images/';
             $photo .= ($product == "Original Dream") ? 'standard-review-original-dream.png': 'standard-review-cool-dream.png';
-        }
+       // }
 		
 
 		echo "<div class='row one-review'>
