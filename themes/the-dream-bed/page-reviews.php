@@ -211,17 +211,24 @@ wp_reset_postdata();
 	</div>
 </div>
 
-<div class="row">
-		<div class="col-xs-12">
-			<h1 class="text-center">Share your dreams</h1>
-		</div>
+<div class="row none">
+	<div class="col-xs-12">
+		<h1 class="text-center"><a href="https://instagram.com/thedreambed/" target="_blank">Share your dreams</a></h1>
 	</div>
-	<div class="row">
+</div>
+
+<div class="row instagram-review-photos">
+	<?php the_widget('null_instagram_widget','username=thedreambed&number=4'); ?>
+</div>
+
+
+	
+	<!--<div class="row">
 		<div class="col-sm-3"> <img src="<?php bloginfo("template_url"); ?>/images/photos/instagram-submission-1.jpg" class="img-responsive" alt="Instagram submission to the Dream Bed contest"> </div>
 		<div class="col-sm-3"> <img src="<?php bloginfo("template_url"); ?>/images/photos/instagram-submission-2.jpg" class="img-responsive" alt="Instagram submission to the Dream Bed contest"> </div>
 		<div class="col-sm-3"> <img src="<?php bloginfo("template_url"); ?>/images/photos/instagram-submission-3.jpg" class="img-responsive" alt="Instagram submission to the Dream Bed contest"> </div>
 		<div class="col-sm-3"> <img src="<?php bloginfo("template_url"); ?>/images/photos/instagram-submission-4.jpg" class="img-responsive" alt="Instagram submission to the Dream Bed contest"> </div>
-	</div>
+	</div>-->
 
 </div>
 

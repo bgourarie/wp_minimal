@@ -808,6 +808,15 @@ h2.bedcount {
 .reviews-page .row {
 	margin-bottom: 30px;
 }
+
+.reviews-page h1 a:hover {
+	color: #FBA54C;
+	text-decoration: none;
+}
+
+.reviews-page .none {
+	margin-bottom: 0;
+}
 	
 .stars img {
 	height: 24px;
@@ -833,6 +842,20 @@ h2.bedcount {
 	width: auto;
 	height: 24px;
 	vertical-align: middle;
+}
+
+.instagram-review-photos ul {
+	padding-left: 0;
+	margin-left: 0;
+	list-style: none
+}
+
+.instagram-review-photos ul>li {
+	display: inline-block;
+}
+
+.instagram-review-photos ul>li img {
+	width: 100%;
 }
 
 .how-to-dream-page {
@@ -1455,6 +1478,10 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
 	width: 40%;
 }
 
+.instagram-review-photos ul>li {
+	padding-bottom: 15px;
+}
+
 }
 
 /* Extra Small Devices, Phones */ 
@@ -1501,6 +1528,14 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
 
 .modal-body .gform_footer {
 	width: 20%;
+}
+
+.instagram-review-photos ul>li:nth-child(even) {
+	padding-left: 7.5px;
+}
+
+.instagram-review-photos ul>li:nth-child(odd) {
+	padding-right: 7.5px;
 }
 
 }
@@ -1692,6 +1727,16 @@ h6, .h6 {
 
 .design-page, .giving-page, .how-to-dream-page {
 	text-align: left;
+}
+
+.instagram-review-photos ul>li:nth-child(even) {
+	padding-left: 15px;
+	padding-right: 15px;
+}
+
+.instagram-review-photos ul>li:nth-child(odd) {
+	padding-left: 15px;
+	padding-right: 15px;
 }
 
 }
