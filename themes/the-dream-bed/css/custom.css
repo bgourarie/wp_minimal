@@ -180,6 +180,7 @@ input[type="file"] > input[type="button"]::-moz-focus-inner {
 	text-align: center;
 	bottom: auto;
 	top: 0; /* use 200px if you want this vertically aligned */
+	/*background-color: rgba(124,124,124,.5);*/
 }
 
 .carousel-inner {
@@ -656,9 +657,10 @@ input[type="file"] > input[type="button"]::-moz-focus-inner {
 	position: absolute;
 	padding: 0;
 	text-align: center;
-	bottom: 10px;
+	bottom: 0;
 	padding: 15px 0;
 	width: 100%;
+	background-color: rgba(124,124,124,.5);
 }
 
 .mobile-home-jumbo h1 {
@@ -1114,7 +1116,6 @@ h2.bedcount {
 
 .thanks-text {
 	margin-bottom: 30px;
-	
 }
 
 .thanks-text a.email {
@@ -1482,6 +1483,16 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
 	padding-bottom: 15px;
 }
 
+.unboxing {
+	padding: 20px 0;
+	background-color: #fff;	
+}
+
+.unboxing h4 {
+	font-size: 1em;	
+	line-height: 1.429em;
+}
+
 }
 
 /* Extra Small Devices, Phones */ 
@@ -1737,6 +1748,16 @@ h6, .h6 {
 .instagram-review-photos ul>li:nth-child(odd) {
 	padding-left: 15px;
 	padding-right: 15px;
+}
+
+.unboxing {
+	padding: 20px 0;
+	background-color: #f2f2f2;	
+}
+
+.unboxing h4 {
+	font-size: 1.286em;
+	line-height: 1.429em;
 }
 
 }

@@ -59,10 +59,39 @@ jQuery(document).ready(function($){
 	$("#carousel-dream-home").carousel({
 		interval: 8000
 		})
+	$("#unboxing-video").on('hidden.bs.modal', function (e) {
+    $("#unboxing-video iframe").attr("src", $("#unboxing-video iframe").attr("src"));
+		});
 	});
+	
 </script>
 
+
 <?php } ?>
+<div class="unboxing">
+	<div class="container">
+		<div class="row">
+			<div class="col-xs-8 col-xs-offset-2 text-center">
+				<h4>Unboxing is easy! Watch Meredith, Chris and Hank set up their new Dream Bed.</h4>
+				<p><a href="#" class="btn btn-dream" role="button" data-toggle="modal" data-target="#unboxing-video">See the video</a></p>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="modal fade" id="unboxing-video" tabindex="-1" role="dialog" aria-labelledby="unboxingLabel" aria-hidden="true">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">close</span></button>
+			</div>
+			<div class="modal-body">
+				<iframe width="560" height="315" src="https://www.youtube.com/embed/9Xc2rw-n86A?rel=0" frameborder="0" allowfullscreen></iframe>
+			</div>
+			<div class="modal-footer"></div>
+		</div>
+	</div>
+</div>
 
 <div class="container hidden-xs">
 	<div class="special-circles">
