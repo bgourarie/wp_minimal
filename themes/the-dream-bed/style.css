@@ -467,3 +467,14 @@ object {
 .variations #size {
 	//display: none !important;
 }
+
+
+/*--------------------------------------------------------------
+## Jason Styles
+--------------------------------------------------------------*/
+
+@media (min-width:992px) {
+	body.single-product .col-sm-8 {width:59%;padding-left:5%}
+	body.single-product .col-sm-4 {width:40%;}
+}
+

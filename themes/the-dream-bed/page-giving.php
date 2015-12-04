@@ -10,6 +10,8 @@
 			<div class="col-sm-8">
 				<h2>When you purchase The Dream Bed, we give a bed to a child or a person in need.</h2>
 				<p>A good night's sleep is the foundation for everything we do. It affects our health, happiness, success and ability to dream big. That's why we want to share the gift of sleep with everyone everywhere.</p>
+				<p>Your Dream Bed purchase makes a difference in a simple yet powerful way. With every bed purchased, we give a child or family in need an opportunity for a comfortable and healthy sleep space. We spend a third of our lives sleeping. Why not sleep on dreamy layers of luxurious comfort and donate the same to others? Unbox a better tomorrow through our Get One, Give One component and we will deliver a better night’s sleep to those in need.</p>
+				<p>We collaborate with numerous giving partners to determine where we can impact the dreams of others through products and services because everyone deserves to dream. Dream big and make a positive social impact to improve lives and fulfill the Get One, Give One promise around the country. Better sleep means bigger dreams for everyone!</p>
 			</div>
 		</div>
 		
