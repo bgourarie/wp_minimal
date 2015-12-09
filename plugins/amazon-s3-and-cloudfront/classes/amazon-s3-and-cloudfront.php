@@ -130,6 +130,9 @@ class Amazon_S3_And_CloudFront extends AWS_Plugin_Base {
 		add_filter( 'delete_attachment', array( $this, 'delete_attachment' ), 20 );
 		add_filter( 'update_attached_file', array( $this, 'update_attached_file' ), 100, 2 );
 
+        // let's try adding in acf upload filter
+        
+        add_filter( 'acf/upload_prefilter', array( $this, 'wp_handle_upload_prefilter' ), 1 );
 		// include compatibility code for other plugins
 		$this->plugin_compat = new AS3CF_Plugin_Compatibility( $this );
 
