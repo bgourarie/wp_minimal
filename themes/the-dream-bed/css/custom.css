@@ -290,6 +290,12 @@ input[type="file"] > input[type="button"]::-moz-focus-inner {
 	background-color: rgba(255,255,255,.08);
 }
 
+.drop-shadow {
+	-webkit-box-shadow: 0 3px 4px 0 rgba(0, 0, 0, .14), 0 3px 3px -2px rgba(0, 0, 0, .2), 0 1px 8px 0 rgba(0, 0, 0, .12);
+    -moz-box-shadow: 0 3px 4px 0 rgba(0, 0, 0, .14), 0 3px 3px -2px rgba(0, 0, 0, .2), 0 1px 8px 0 rgba(0, 0, 0, .12);
+    box-shadow: 0 3px 4px 0 rgba(0, 0, 0, .14), 0 3px 3px -2px rgba(0, 0, 0, .2), 0 1px 8px 0 rgba(0, 0, 0, .12);
+}
+
 .shop-badges img {
 	width: 100%;
 	max-width: 100%;
@@ -1483,12 +1489,23 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
 	padding-bottom: 15px;
 }
 
-.unboxing {
+.ellen {
 	padding: 20px 0;
-	background-color: #fff;	
+	background-color: #52bfe3;
+	color: #fff;
 }
 
-.unboxing h4 {
+.as-seen-on {
+	width: 200px;
+	height: auto;
+}
+
+.unboxing {
+	padding: 20px 0;
+	background-color: #fff;
+}
+
+.unboxing h4, .ellen h4 {
 	font-size: 1em;	
 	line-height: 1.429em;
 }
@@ -1755,9 +1772,14 @@ h6, .h6 {
 	background-color: #f2f2f2;	
 }
 
-.unboxing h4 {
+.unboxing h4, .ellen h4 {
 	font-size: 1.286em;
 	line-height: 1.429em;
+}
+
+.as-seen-on {
+	width: 200px;
+	height: auto;
 }
 
 }
@@ -1844,6 +1866,11 @@ h6, .h6 {
 
 .review-personal-text .iconset img {
 	height: 40px;
+}
+
+.as-seen-on {
+	width: 100%;
+	height: auto;
 }
 
 }
