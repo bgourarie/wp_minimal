@@ -72,11 +72,11 @@ jQuery(document).ready(function($){
 	<div class="container">
 		<div class="row">
 			<div class="col-lg-2 col-lg-offset-3 col-md-3 col-md-offset-2 col-sm-4 col-sm-offset-1 text-center">
-				<a href="#"><img src="<?php bloginfo("template_url"); ?>/images/ellen-logo-as-seen-on.svg" class="drop-shadow as-seen-on" alt="as seen on ellen: The Ellen DeGeneres Show"></a>
+				<a href="http://www.ellentv.com/videos/0-8j3su5d1/" target="_blank"><img src="<?php bloginfo("template_url"); ?>/images/ellen-logo-as-seen-on.svg" class="drop-shadow as-seen-on" alt="as seen on ellen: The Ellen DeGeneres Show"></a>
 			</div>
 			<div class="col-lg-4 col-md-5 col-sm-6 text-center">
 				<h4 class="clearfix">The Dream Bed was recently featured on <span style="white-space: nowrap">The Ellen DeGeneres Show</span></h4>
-				<p><a href="#" class="btn btn-dream drop-shadow" role="button">Watch Now!</a></p>
+				<p><a href="http://www.ellentv.com/videos/0-8j3su5d1/" class="btn btn-dream drop-shadow" role="button" target="_blank">Watch Now!</a></p>
 			</div>
 		</div>
 	</div>
