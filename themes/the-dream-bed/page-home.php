@@ -124,24 +124,24 @@ jQuery(document).ready(function($){
 		<div class="divided">
 			<div class="row">
 				<div class="col-md-4 col-md-offset-2 text-center">
-					<h4 class="original">Original Dream</h4>
+					<h4 class="original"><a href="<?php bloginfo('url'); ?>/shop/mattress/dream-bed/">Original Dream</a></h4>
 					<p>Latex and memory foam create the perfect balance of firmness, contour, and bounce.</p>
 				</div>
 				<div class="col-md-4 text-center">
-					<h4 class="cool">Cool Dream</h4>
+					<h4 class="cool"><a href="<?php bloginfo('url'); ?>/shop/mattress/cool-gel-bed/">Cool Dream</a></h4>
 					<p>Latex and memory foam combined with a layer of cool gel help you sleep at the perfect temperature.</p>
 				</div>
 			</div>
 			<div class="row">
-				<div class="col-md-5 col-md-offset-1 text-center"><img src="<?php bloginfo("template_url"); ?>/images/original-dream-cutaway-home.jpg" alt="Original Dream Mattress Cutaway" data-pin-description="The Original Dream Bed: Latex and memory foam create the perfect balance of firmness, contour, and bounce." class="img-responsive center-block"></div>
-				<div class="col-md-5 text-center"><img src="<?php bloginfo("template_url"); ?>/images/cool-dream-cutaway-home.jpg" alt="Cool Dream Mattress Cutaway" data-pin-description="The Cool Dream Bed: Latex and memory foam combined with a layer of cool gel help you sleep at the perfect temperature." class="img-responsive center-block"></div>
+				<div class="col-md-5 col-md-offset-1 text-center"><a href="<?php bloginfo('url'); ?>/shop/mattress/dream-bed/"><img src="<?php bloginfo("template_url"); ?>/images/original-dream-cutaway-home.jpg" alt="Original Dream Mattress Cutaway" data-pin-description="The Original Dream Bed: Latex and memory foam create the perfect balance of firmness, contour, and bounce." class="img-responsive center-block"></a></div>
+				<div class="col-md-5 text-center"><a href="<?php bloginfo('url'); ?>/shop/mattress/cool-gel-bed/"><img src="<?php bloginfo("template_url"); ?>/images/cool-dream-cutaway-home.jpg" alt="Cool Dream Mattress Cutaway" data-pin-description="The Cool Dream Bed: Latex and memory foam combined with a layer of cool gel help you sleep at the perfect temperature." class="img-responsive center-block"></a></div>
 			</div>
 			<div class="row">
 				<div class="col-md-4 col-md-offset-2 text-center">
-					<p><a href="<?php bloginfo('url'); ?>/giving/" class="btn btn-dream drop-shadow" role="button">Shop Original Dream</a></p>
+					<p><a href="<?php bloginfo('url'); ?>/shop/mattress/dream-bed/" class="btn btn-dream drop-shadow" role="button">Shop Original Dream</a></p>
 				</div>
 				<div class="col-md-4 text-center">
-					<p><a href="<?php bloginfo('url'); ?>/giving/" class="btn btn-dream drop-shadow" role="button">Shop Cool Dream</a></p>
+					<p><a href="<?php bloginfo('url'); ?>/shop/mattress/cool-gel-bed/" class="btn btn-dream drop-shadow" role="button">Shop Cool Dream</a></p>
 				</div>
 			</div>
 		</div>
