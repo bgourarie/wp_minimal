@@ -62,6 +62,9 @@ jQuery(document).ready(function($){
 	$("#unboxing-video").on('hidden.bs.modal', function (e) {
     $("#unboxing-video iframe").attr("src", $("#unboxing-video iframe").attr("src"));
 		});
+	$("#la-video").on('hidden.bs.modal', function (e) {
+    $("#la-video iframe").attr("src", $("#la-video iframe").attr("src"));
+		});
 	});
 	
 </script>
@@ -81,89 +84,64 @@ jQuery(document).ready(function($){
 		</div>
 	</div>
 </div>
-<div class="unboxing">
+<div class="dark-grey-shapes why-choose">
 	<div class="container">
 		<div class="row">
-			<div class="col-xs-8 col-xs-offset-2 text-center">
-				<h4>Unboxing is easy! Watch Meredith, Chris and Hank set up their new Dream Bed.</h4>
-				<p><a href="#" class="btn btn-dream" role="button" data-toggle="modal" data-target="#unboxing-video">See the video</a></p>
-			</div>
+			<div class="col-sm-12 text-center"><h2>Why Choose The Dream Bed?</h2></div> 
 		</div>
-	</div>
-</div>
-<div class="modal fade" id="unboxing-video" tabindex="-1" role="dialog" aria-labelledby="unboxingLabel" aria-hidden="true">
-	<div class="modal-dialog" role="document">
-		<div class="modal-content">
-			<div class="modal-header">
-				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">close</span></button>
-			</div>
-			<div class="modal-body">
-				<iframe width="560" height="315" src="https://www.youtube.com/embed/9Xc2rw-n86A?rel=0" frameborder="0" allowfullscreen></iframe>
-			</div>
-			<div class="modal-footer"></div>
-		</div>
-	</div>
-</div>
-
-<div class="container hidden-xs">
-	<div class="special-circles">
 		<div class="row">
-			<div class="col-sm-3 col-xs-6 text-center">
-				<img src="<?php bloginfo("template_url"); ?>/images/circle-orange-no-nightmare-guarantee.svg" class="center-block" alt="180 night no nightmare guarantee">
-				<h3>180 Night Guarantee</h3>
-				<p>180 night in home trial. Really.</p>
+			<div class="col-xs-6 col-sm-3 text-center">
+				<img src="<?php bloginfo("template_url"); ?>/images/icon-moon.svg" class="center-block" alt="">
+				<h5>180 Night Guarantee</h5>
+				<p>You get 180 nights to try out your Dream Bed. If you don&#8217;t love it you can return it for a full refund.</p>
 			</div>
-			<div class="col-sm-3 col-xs-6 text-center">
-				<img src="<?php bloginfo("template_url"); ?>/images/circle-orange-dream-team-delivery.svg" class="center-block" alt="Dream team delivery: free shipping">
-				<h3>Free Delivery</h3>
-				<p>You are 48 hours away from a better night&#8217;s sleep.</p>
-			</div>
+			<div class="col-xs-6 col-sm-3 text-center">
+				<img src="<?php bloginfo("template_url"); ?>/images/icon-deliverybox.svg" class="center-block" alt="">
+				<h5>Free Delivery</h5>
+				<p>The Dream Bed ships nationwide, in a convenient box, for FREE! We deliver right to your door in two days. Returns are free too!</p>
+			</div> 
 			<div class="clearfix visible-xs-block"></div>
-			<div class="col-sm-3 col-xs-6 text-center">
-				<img src="<?php bloginfo("template_url"); ?>/images/circle-orange-quality-craftsmanship.svg" class="center-block" alt="Best in Box: Quality Craftsmanship">
-				<h3>Best In Box</h3>
-				<p>2 dreamy mattresses. Both offering optimum support &amp; comfort.</p>
-			</div>
-			<div class="col-sm-3 col-xs-6 text-center">
-				<img src="<?php bloginfo("template_url"); ?>/images/circle-orange-dream-it-forward.svg" class="center-block" alt="Dream it forward: buy a dream, give a dream">
-				<h3>Dream It Forward</h3>
-				<p>Purchase a dream bed and we will give a bed to a person in need.</p>   
-			</div>
-		</div>
-	</div>
-	<div class="row">
-		<div class="alternate">
-			<div class="col-sm-6 alt-side-image home-middle1">
-				<div class="inside">
-					<h2>Free 2-day <br>
-						delivery!</h2>
-					<p><a href="<?php bloginfo('url'); ?>/shop" class="btn btn-dream" role="button">Shop Now</a></p>
-					<img class="pin" src="<?php bloginfo("template_url"); ?>/images/photos/blue-box-on-stoop.jpg" data-pin-description="The Dream Bed: Free two day delivery, right to your door!" alt="">
-				</div>
-			</div>
-			<div class="col-sm-6 alt-side-image home-middle2">
-				<div class="inside">
-					<h2>No nightmare<br>
-						180 night guarantee</h2>
-					<p><a href="<?php bloginfo('url'); ?>/design" class="btn btn-dream" role="button">See Design</a></p>
-					<img class="pin" src="<?php bloginfo("template_url"); ?>/images/photos/girl-on-pink-bed.jpg" data-pin-description="The Dream Bed: The mattress that's designed for optimal support, constant comfort, and an unobtrusive footprint." alt="">
-				</div>
-			</div>
+			<div class="col-xs-6 col-sm-3 text-center">
+				<img src="<?php bloginfo("template_url"); ?>/images/ico-dreamboxes.svg" class="center-block" alt="">
+				<h5>Comfy Choices</h5>
+				<p>The Dream Bed offers two unique mattresses choices, Original Dream and Cool Dream. Both offer optimum support & comfort.</p>
+			</div> 
+			<div class="col-xs-6 col-sm-3 text-center">
+				<img src="<?php bloginfo("template_url"); ?>/images/icon-heartbed.svg" class="center-block" alt="">
+				<h5>We Give Back</h5>
+				<p>For every Dream Bed purchased, we give a bed to someone in need. We call this &#8220;Dream it Forward.&#8221;</p>
+			</div> 
 		</div>
 	</div>
 </div>
-<div class="light-grey-fill">
+<div class="home-bed-options">
 	<div class="container">
 		<div class="row">
-			<div class="col-sm-12 center-block text-center home-bed-options">
-				<h2>The Dream Bed comes in two dreamy choices</h2>
-				<p><img src="<?php bloginfo("template_url"); ?>/images/photos/two-dreamy-options-man.jpg" alt="Two dreamy mattresses in foam, latex and memory foam." data-pin-description="The Dream Bed: Two dreamy mattresses in foam, latex and memory foam." class="img-responsive center-block"></p>
-				<div class="center-block hidden-xs"> 
-					<a href="<?php bloginfo('url'); ?>/shop/" class="btn btn-dream" role="button">Shop The Dream Bed</a>
+			<div class="col-sm-12 center-block text-center">
+				<img src="<?php bloginfo("template_url"); ?>/images/photos/two-dreamy-options.jpg" alt="Two dreamy mattresses in foam, latex and memory foam." data-pin-description="The Dream Bed: Two dreamy mattresses in foam, latex and memory foam." class="img-responsive center-block">
+			</div>
+		</div>
+		<div class="divided">
+			<div class="row">
+				<div class="col-md-4 col-md-offset-2 text-center">
+					<h4 class="original">Original Dream</h4>
+					<p>Latex and memory foam create the perfect balance of firmness, contour, and bounce.</p>
 				</div>
-				<div class="center-block visible-xs">
-					<a href="<?php bloginfo('url'); ?>/shop/mattress/dream-bed/" class="btn btn-dream btn-block" role="button">Shop Original Dream</a>
-					<a href="<?php bloginfo('url'); ?>/shop/mattress/cool-gel-bed/" class="btn btn-dream btn-block" role="button">Shop Cool Dream</a>
+				<div class="col-md-4 text-center">
+					<h4 class="cool">Cool Dream</h4>
+					<p>Latex and memory foam combined with a layer of cool gel help you sleep at the perfect temperature.</p>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-5 col-md-offset-1 text-center"><img src="<?php bloginfo("template_url"); ?>/images/original-dream-cutaway-home.jpg" alt="Original Dream Mattress Cutaway" data-pin-description="The Original Dream Bed: Latex and memory foam create the perfect balance of firmness, contour, and bounce." class="img-responsive center-block"></div>
+				<div class="col-md-5 text-center"><img src="<?php bloginfo("template_url"); ?>/images/cool-dream-cutaway-home.jpg" alt="Cool Dream Mattress Cutaway" data-pin-description="The Cool Dream Bed: Latex and memory foam combined with a layer of cool gel help you sleep at the perfect temperature." class="img-responsive center-block"></div>
+			</div>
+			<div class="row">
+				<div class="col-md-4 col-md-offset-2 text-center">
+					<p><a href="<?php bloginfo('url'); ?>/giving/" class="btn btn-dream drop-shadow" role="button">Shop Original Dream</a></p>
+				</div>
+				<div class="col-md-4 text-center">
+					<p><a href="<?php bloginfo('url'); ?>/giving/" class="btn btn-dream drop-shadow" role="button">Shop Cool Dream</a></p>
 				</div>
 			</div>
 		</div>
@@ -172,40 +150,53 @@ jQuery(document).ready(function($){
 <div class="jumbotron dream-it-forward-jumbo">
 	<div class="container">
 		<div class="row">
-			<div class="col-sm-8 col-sm-offset-2 col-xs-12">
-				<h1>For every Dream Bed purchased a bed is donated to someone in need. #dreamitforward</h1>
-				<div><a href="<?php bloginfo('url'); ?>/giving/" class="btn btn-dream btn-lg" role="button">See How We Give</a></div>
-				<img class="pin" src="<?php bloginfo("template_url"); ?>/images/photos/dream-it-fwd-mattress-delivery.jpg" data-pin-description="The Dream Bed: For every Dream Bed purchased a bed is donated to someone in need. #dreamitforward" alt="">
+			<div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2 col-xs-12">
+				<a href="#" data-toggle="modal" data-target="#la-video"><img src="<?php bloginfo("template_url"); ?>/images/icon-videoplay.svg" class="center-block play-button" alt=""></a>
+				<h2>PATH and Dream Bed teamed up to donate 100 mattresses to housing programs in LA</h2>
+				<img class="pin" src="<?php bloginfo("template_url"); ?>/images/photos/dream-it-fwd-mattress-delivery-van.jpg" data-pin-description="The Dream Bed: For every Dream Bed purchased a bed is donated to someone in need. See how PATH and Dream Bed teamed up to donate 100 mattresses to housing programs in LA. #dreamitforward" alt="PATH and Dream Bed teamed up to donate 100 mattresses to housing programs in LA">
 			</div>
 		</div>
 	</div>
 </div>
-<div class="container">
+<div class="modal fade" id="la-video" tabindex="-1" role="dialog" aria-labelledby="laLabel" aria-hidden="true">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">close</span></button>
+			</div>
+			<div class="modal-body">
+				<iframe width="560" height="315" src="https://www.youtube.com/embed/3Htxl64UF3Q?rel=0" frameborder="0" allowfullscreen></iframe>
+			</div>
+			<div class="modal-footer"></div>
+		</div>
+	</div>
+</div>
+<div class="container featured-news">
 	<div class="row">
-		<div class="same">
-			<div class="col-sm-4 home-review-box">
-				<div class="inner">
-					<p class="fivestars"><img src="<?php bloginfo("template_url"); ?>/images/five-stars.svg" width="155" height="25" alt="5 stars reviews!"></p>
-					<h3>A better bed for everyone</h3>
-					<p class="mattress-action"><a href="<?php bloginfo('url'); ?>/reviews" class="btn btn-dream" role="button">Read The Reviews</a></p>
-				</div>
-			</div>
-			<div class="col-sm-4 home-unboxing-box">
-				<div class="inner">
-					<div><img src="<?php bloginfo("template_url"); ?>/images/dreamy-sleeper.svg" width="114" height="99" alt="happy dream bed dreams"></div>
-					<h3>Want to learn more?</h3>
-					<p class="mattress-action"><a href="<?php bloginfo('url'); ?>/faq" class="btn btn-dream" role="button">Get the Facts</a></p>
-				</div>
-			</div>
-			<div class="col-sm-4 home-donation-box">
-				<div class="inner">
-					<h3>Unbox a better tomorrow</h3>
-					<p class="mattress-action"><a href="<?php bloginfo('url'); ?>/giving" class="btn btn-dream" role="button">See How We Give</a></p>
-				</div>
-			</div>
-		</div>
+		<div class="col-sm-12 text-center"><h2>Featured In</h2></div> 
 	</div>
-</div>
-<img class="pin" src="<?php bloginfo("template_url"); ?>/images/photos/girl-crawling-in-box-with-dream-pillow.jpg" data-pin-description="The Dream Bed: Unbox a better tomorrow with our giving program." alt="">
+	<div class="row">
+		<div class="col-xs-6 col-sm-3 text-center">
+			<a href="#"><img src="<?php bloginfo("template_url"); ?>/images/logo-bloomberg.svg" class="center-block" alt=""></a>
+			<p>Lorem ipsum dolor sit amet, consec tetuer adip iscing elit. Donec odio. Quisque volut pat mattis eros. Nullam male suada.</p>
+			<p><a href="<?php bloginfo('url'); ?>/giving/" class="btn btn-link" role="button">Read More</a></p>
+		</div>
+		<div class="col-xs-6 col-sm-3 text-center">
+			<a href="#"><img src="<?php bloginfo("template_url"); ?>/images/logo-bloomberg.svg" class="center-block" alt=""></a>
+			<p>Lorem ipsum dolor sit amet, consec tetuer adip iscing elit. Donec odio. Quisque volut pat mattis eros. Nullam male suada.</p>
+			<p><a href="<?php bloginfo('url'); ?>/giving/" class="btn btn-link" role="button">Read More</a></p>
+		</div> 
+		<div class="clearfix visible-xs-block"></div>
+		<div class="col-xs-6 col-sm-3 text-center">
+			<a href="#"><img src="<?php bloginfo("template_url"); ?>/images/logo-bloomberg.svg" class="center-block" alt=""></a>
+			<p>Lorem ipsum dolor sit amet, consec tetuer adip iscing elit. Donec odio. Quisque volut pat mattis eros. Nullam male suada.</p>
+			<p><a href="<?php bloginfo('url'); ?>/giving/" class="btn btn-link" role="button">Read More</a></p>
+		</div> 
+		<div class="col-xs-6 col-sm-3 text-center">
+			<a href="#"><img src="<?php bloginfo("template_url"); ?>/images/logo-bloomberg.svg" class="center-block" alt=""></a>
+			<p>Lorem ipsum dolor sit amet, consec tetuer adip iscing elit. Donec odio. Quisque volut pat mattis eros. Nullam male suada.</p>
+			<p><a href="<?php bloginfo('url'); ?>/giving/" class="btn btn-link" role="button">Read More</a></p>
+		</div> 
+	</div>
 </div>
 <?php get_footer(); ?>
