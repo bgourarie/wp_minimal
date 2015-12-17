@@ -473,8 +473,11 @@ object {
 ## Jason Styles
 --------------------------------------------------------------*/
 
+/* not using this in new design, fixed with standard columns
+
 @media (min-width:992px) {
 	body.single-product .col-sm-8 {width:59%;padding-left:5%}
 	body.single-product .col-sm-4 {width:40%;}
 }
 
+*/

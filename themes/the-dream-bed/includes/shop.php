@@ -97,7 +97,7 @@ function uptop_product_ratings(){
 			      echo '<img class="pdp-review-stars" src="' . get_bloginfo("template_url") . '/images/half-star.svg" />';
 			  }
 ?>
-			  <a href="<?php bloginfo('url')?>/reviews/" class="pdp-review-link">Read Reviews</a>
+			  <!--<a href="<?php bloginfo('url')?>/reviews/" class="pdp-review-link">Read Reviews</a>-->
 		  <?php
 		  // close product-review-stars
 			echo '</div>';

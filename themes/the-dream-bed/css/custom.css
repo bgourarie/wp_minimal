@@ -588,6 +588,13 @@ input[type="file"] > input[type="button"]::-moz-focus-inner {
 	background-position: 0 -10px;
 }
 
+.light-grey-shapes {
+	padding-top: 20px;
+	padding-bottom: 20px;
+	background: url(../images/footer-bg.png) #dadcdd;
+	background-position: 0 -10px;
+}
+
 .light-grey-fill {
 	padding: 20px 0;
 	background-color: #f2f2f2;	

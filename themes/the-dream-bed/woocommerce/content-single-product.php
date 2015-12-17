@@ -29,10 +29,12 @@ if ( ! defined( 'ABSPATH' ) ) {
 	 }
 ?>
 
-<div class="">
+<div class="light-grey-shapes">
 	<div itemscope itemtype="<?php echo woocommerce_get_product_schema(); ?>" id="product-<?php the_ID(); ?>" <?php post_class(); ?>>
-		<div class="row">
-			<div class="col-sm-8">
+		
+		<div class="container">
+			<div class="row">
+			<div class="col-sm-6 col-md-7">
 			
 				<?php
 					/**
@@ -46,7 +48,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 			
 			</div>
 			
-			<div class="col-sm-4 mattress-overview">
+			<div class="col-sm-6 col-md-5 mattress-overview">
 				
 				<!--<div class="summary entry-summary">-->
 			
@@ -70,8 +72,10 @@ if ( ! defined( 'ABSPATH' ) ) {
 			</div>
 			
 		</div>
+		</div>
 		
-		<div class="row">
+		<div class="container">
+			<div class="row">
 		
 			<div class="col-sm-12">
 		
@@ -91,6 +95,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 			</div>
 		
 		</div><!-- #product-<?php the_ID(); ?> -->
+		</div>
 	</div>
 </div>
 

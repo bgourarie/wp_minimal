@@ -63,7 +63,7 @@ if ( $attachment_ids ) {
               		<?php $slide = 0;
 					foreach ( $attachment_ids as $attachment_id ) { ?>
 						
-						<div data-target="#product-slider" data-slide-to="<?php echo $slide; ?>" class="thumb"><img src="<?php echo wp_get_attachment_url($attachment_id);?>" text=Product+Thumb+<?php echo $slide; ?>"></div>
+						<div data-target="#product-slider" data-slide-to="<?php echo $slide; ?>" class="thumb"><img src="<?php echo wp_get_attachment_thumb_url($attachment_id);?>" text=Product+Thumb+<?php echo $slide; ?>"></div>
 						
 					<?php $slide++;
 					} ?>
