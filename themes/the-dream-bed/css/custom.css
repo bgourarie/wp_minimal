@@ -329,7 +329,7 @@ input[type="file"] > input[type="button"]::-moz-focus-inner {
 	font-size: 1em;
 	font-weight: 700;
 	margin-top: 0;
-	text-transform: lowercase;
+	color: #181919;
 }
 
 .footer .footer-nav {
@@ -338,29 +338,22 @@ input[type="file"] > input[type="button"]::-moz-focus-inner {
 }
 
 .footer .footer-social {
-	text-transform: uppercase;
-	list-style: none;
+	 padding-top: .8em;
 }
 
-.footer .footer-social-xs {
-	 text-align: center;
-	 padding: 20px 0;
-}
-
-.footer .footer-social-xs div {
-	 width: 20%;
-	 text-align: center;
+.footer .footer-social div {
+	 text-align: left;
 	 display: block;
 	 float: left;
 }
 
-.footer .footer-social-xs img {
+.footer .footer-social img {
 	width: 24px;
 }
 
 .footer .footer-social img {
 	vertical-align: text-bottom;
-	margin-right: 12px;
+	margin-right: 24px;
 }
 
 .footer .footer-contact {
@@ -606,15 +599,16 @@ input[type="file"] > input[type="button"]::-moz-focus-inner {
 }
 
 .home-bed-options h4 {
-	text-transform: uppercase;
+	text-transform: uppercase
+}
+
+.home-bed-options p {
+	margin-bottom: 0;
 }
 
 .home-bed-options .btn {
 	width: 218px;
-}
-
-.home-bed-options .btn1 {
-	margin-right: 50px;
+	margin-bottom: 30px;
 }
 
 .go-under-jumbotron {
@@ -763,6 +757,7 @@ input[type="file"] > input[type="button"]::-moz-focus-inner {
 .mobile-home-jumbo h1 {
 	text-transform: none;
 	margin-bottom: 15px;
+	margin-top: 0;
 }
 
 .dream-it-forward-jumbo {
@@ -1279,10 +1274,6 @@ h2.bedcount {
 	float: right;
 }
 
-.footer-refer {
-	
-}
-
 /* newsletter modal */
 
 .close {
@@ -1565,10 +1556,6 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
 	margin-bottom: 15px;
 }
 
-.footer .footer-nav li:first-child, .footer .footer-nav li:nth-child(2), .footer .footer-nav li:nth-child(3) {
-	display: none;
-}
-
 .signup {
 	width: 100%;
 }
@@ -1660,6 +1647,10 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
 
 .instagram-review-photos ul>li:nth-child(odd) {
 	padding-right: 7.5px;
+}
+
+.footer .row [class^="col-"] {
+	padding-bottom: 20px;
 }
 
 }
@@ -1953,6 +1944,10 @@ h6, .h6 {
 	padding: 7px 12px;	
 }
 
+.footer .row [class^="col-"] {
+	padding-bottom: 0;
+}
+
 .shop-badges img {
 	margin: 0;
 }
@@ -1981,7 +1976,21 @@ h6, .h6 {
 
 .divided {
 	background: url(../images/bg-line.svg) center no-repeat;
-	background-size: auto 99%;
+	background-size: auto 90%;
+}
+
+.home-bed-options .text-part {
+	width: 65.92827004219409%;
+}
+
+.home-bed-options .left {
+	margin-right: 2.2151898734177213;
+	margin-left: auto;
+}
+
+.home-bed-options .right {
+	margin-left: 2.2151898734177213;
+	margin-right: auto;
 }
 
 }

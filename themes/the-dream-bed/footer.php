@@ -50,21 +50,13 @@ jQuery(document).ready(function($){
 		<div class="container">
 			<div class="row">
 				<div class="col-md-2 col-xs-12"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><img src="<?php bloginfo("template_url"); ?>/images/logo-the-dream-bed.svg" width="116" height="35" alt="The Dream Bed" class="footer-logo"></a></div>
-				<div class="col-md-2 col-xs-12 col-sm-3">
+				<div class="col-md-2 col-xs-5">
 					<ul class="list-unstyled footer-nav">
 						<?php wp_nav_menu( array( 'theme_location' => 'footer-menu', 'container' => false ) ); ?>
+						<li><script type="extole/widget">{"zone":"db_global_footer"}</script></li>
 					</ul>
 				</div>
-				<div class="col-md-2 col-sm-3 hidden-xs">
-					<ul class="list-unstyled footer-social">
-						<li><a href="https://instagram.com/thedreambed/" target="_blank"><img src="<?php bloginfo("template_url"); ?>/images/ico-instagram.svg" width="15" height="15" alt="Instagram"> Instagram</a></li>
-						<li><a href="https://www.pinterest.com/thedreambed/" target="_blank"><img src="<?php bloginfo("template_url"); ?>/images/ico-pinterest.svg" width="15" height="15" alt=""> Pinterest</a></li>
-						<li><a href="https://twitter.com/thedreambed" target="_blank"><img src="<?php bloginfo("template_url"); ?>/images/ico-twitter.svg" width="15" height="15" alt="Twitter"> Twitter</a></li>
-						<li><a href="https://facebook.com/thedreambed/" target="_blank"><img src="<?php bloginfo("template_url"); ?>/images/ico-facebook.svg" width="15" height="15" alt="Facebook"> Facebook</a></li>
-						<li><a href="https://www.youtube.com/channel/UChw0QPCQZVobODpG1cjeiuQ" target="_blank"><img src="<?php bloginfo("template_url"); ?>/images/ico-youtube.svg" width="15" height="15" alt="YouTube"> YouTube</a></li>
-					</ul>
-				</div>
-				<div class="col-md-3 col-xs-12 col-sm-6">
+				<div class="col-md-4 col-xs-6">
 					<div class="footer-contact">
 						<h4>Customer Service</h4>
 						<ul class="list-unstyled">
@@ -74,23 +66,18 @@ jQuery(document).ready(function($){
 						</ul>
 					</div>
 				</div>
-				<div class="col-md-3 col-xs-12">
+				<div class="col-md-4 col-xs-12">
 					<div class="footer-newsletter clearfix">
 						<h4>Newsletter Signup</h4>
 						<?php gravity_form(1, false, false, false, '', true, 12); ?>
 					</div>
-					<div class="footer-refer clearfix">
-<script type="extole/widget">{"zone":"db_global_footer"}</script>
-					</div>				
-				</div>
-			</div>
-			<div class="visible-xs row">
-				<div class="col-xs-12 footer-social-xs">
-					<div><a href="https://instagram.com/thedreambed/" target="_blank"><img src="<?php bloginfo("template_url"); ?>/images/ico-instagram.svg" alt="Instagram"></a></div>
-					<div><a href="https://www.pinterest.com/thedreambed/" target="_blank"><img src="<?php bloginfo("template_url"); ?>/images/ico-pinterest.svg" alt=""></a></div>
-					<div><a href="https://twitter.com/thedreambed" target="_blank"><img src="<?php bloginfo("template_url"); ?>/images/ico-twitter.svg" alt="Twitter"></a></div>
-					<div><a href="https://facebook.com/thedreambed/" target="_blank"><img src="<?php bloginfo("template_url"); ?>/images/ico-facebook.svg" alt="Facebook"></a></div>
-					<div><a href="https://www.youtube.com/channel/UChw0QPCQZVobODpG1cjeiuQ" target="_blank"><img src="<?php bloginfo("template_url"); ?>/images/ico-youtube.svg" alt="YouTube"></a></div>
+					<div class="footer-social">
+						<div><a href="https://instagram.com/thedreambed/" target="_blank"><img src="<?php bloginfo("template_url"); ?>/images/ico-instagram.svg" alt="Instagram"></a></div>
+						<div><a href="https://www.pinterest.com/thedreambed/" target="_blank"><img src="<?php bloginfo("template_url"); ?>/images/ico-pinterest.svg" alt=""></a></div>
+						<div><a href="https://twitter.com/thedreambed" target="_blank"><img src="<?php bloginfo("template_url"); ?>/images/ico-twitter.svg" alt="Twitter"></a></div>
+						<div><a href="https://facebook.com/thedreambed/" target="_blank"><img src="<?php bloginfo("template_url"); ?>/images/ico-facebook.svg" alt="Facebook"></a></div>
+						<div><a href="https://www.youtube.com/channel/UChw0QPCQZVobODpG1cjeiuQ" target="_blank"><img src="<?php bloginfo("template_url"); ?>/images/ico-youtube.svg" alt="YouTube"></a></div>
+					</div>
 				</div>
 			</div>
 		</div>
