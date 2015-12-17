@@ -19,7 +19,7 @@ $args = array(
 	),
 	'orderby' => 'menu_order',
 	'order' => 'ASC',
-	'posts_per_page' => 3,
+	'posts_per_page' => 1,
 );
 $review_query = new WP_Query($args);
 if ($review_query->have_posts()) {
@@ -38,9 +38,7 @@ $review_query = new WP_Query($args);
 if ($review_query->have_posts()) { ?>
 
 	<div id="featured-product-reviews">
-		<h3>what our customers are saying</h3>
-
-		<div id="customers-saying" class="container">
+		<div class="container">
 			<div class="row"><?php
 				while ($review_query->have_posts() ) {
 					$review_query->the_post();
@@ -53,20 +51,15 @@ if ($review_query->have_posts()) { ?>
 					$product = get_the_title(get_field('product'));
 					$date_format = "n-d-Y";
 					$date = get_the_date($date_format);
+					$quote = get_field('pull_quote');
 					$turl = get_bloginfo('template_url'); ?>
 
-					<div class="col-xs-12 col-sm-6 col-md-4">
-						<div class="review">
-							<h3><?php echo $title ?></h3>
-							<p class="stars">
-								<img src="<?php echo $turl .'/images/' . $rating ?>-stars.svg">
-							</p>
-							<p class="the-review"><?php echo $content ?></p>
+					<div class="col-xs-12 col-md-8 col-md-offset-2 text-center">
+						
+							<h3>&#8220;<?php echo $quote ?>&#8221;</h3>
 							<p class="reviewer">
 								<?php echo $name . ', ' . $city .' ' . $state ?><br>
-								<?php echo $date ?>
 							</p>
-						</div>
 				  	</div><?php
 
 				} ?>
@@ -74,7 +67,7 @@ if ($review_query->have_posts()) { ?>
 		</div>
 
 		<div class="text-center">
-			<p><a href="<?php echo bloginfo('url')."/reviews/?show_product=".$review_type;?>" class="btn btn-dream" type="button">Read More Reviews</a></p>
+			<p><a href="<?php echo bloginfo('url')."/reviews/?show_product=".$review_type;?>" class="btn btn-dream drop-shadow" type="button">Read All Reviews</a></p>
 		</div>
 	</div><?php
 
