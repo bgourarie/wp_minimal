@@ -126,7 +126,7 @@ jQuery(document).ready(function($){
 				<div class="col-md-5 col-md-offset-1 text-center">
 					<div class="text-part left">
 						<h4 class="original"><a href="<?php bloginfo('url'); ?>/shop/mattress/dream-bed/">Original Dream</a></h4>
-						<p>Latex and memory foam together create the perfect balance of firmness, contour, and bounce.</p>
+						<p>Latex and memory foam combine to create the perfect balance of firmness, contour, and bounce.</p>
 					</div>
 					<a href="<?php bloginfo('url'); ?>/shop/mattress/dream-bed/"><img src="<?php bloginfo("template_url"); ?>/images/original-dream-cutaway-home.jpg" alt="Original Dream Mattress Cutaway" data-pin-description="The Original Dream Bed: Latex and memory foam create the perfect balance of firmness, contour, and bounce." class="img-responsive center-block"></a>
 					<div class="text-part left">
