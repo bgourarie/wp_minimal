@@ -17,36 +17,157 @@ function uptop_product_images() {
 	$product_shipping = get_field('product_shipping_promo');
 	$box_img = get_field('product_box_image'); ?>
 		
-    	<div class="container">
-	    	<div id="extra-images">
-	    		<div id="stacked-images">
-			    	<div class="row">
-				    	<div class="col-md-12 text-center stacked-image">
-							<img src="<?php echo $sleep_trial ?>" />
-						</div>
-					</div>
-					<div class="row">
-						<div class="col-sm-8 col-sm-offset-2">
-							<?php the_content(); ?>
-						</div>
-					</div>
-			    	<div class="row">
-				    	<div class="col-md-12 text-center stacked-image">
-							<img src="<?php echo $cutout_img ?>" />
-						</div>
-					</div>
-				</div>
-		    	<div id="side-by-side" class="row">
-			    	<div class="col-md-6 text-right">
-						<img src="<?php echo $product_shipping ?>" />
-					</div>
-					<div class="col-md-6 text-left">
-						<img src="<?php echo $box_img ?>" />
+		<div class="dark-grey two-product-features">
+			<div class="container">
+				<div class="row vertical-align">
+					<div class="col-xs-6">
+						<img src="<?php bloginfo("template_url"); ?>/images/icon-deliverybox.svg" alt="">
+						<p>The Dream Bed ships nationwide, in a convenient box, for FREE! Delivered right to your door in 2 days.</p>
+					</div> 
+					<div class="col-xs-6">
+						<img src="<?php bloginfo("template_url"); ?>/images/icon-moon.svg" alt="">
+						<p>You get 180 nights to try out your Dream Bed. If you don't love it you can return it for a full refund.</p>
 					</div>
 				</div>
 			</div>
 		</div>
+		
+		<div class="container-fluid ">
+			<div class="row">
+				<div class="col-xs-12 text-center no-padding">
+					<h2>Quality materials for a great night&#8217;s sleep</h2>
+					<img src="<?php echo $cutout_img ?>" class="img-responsive" />
+				</div>
+			</div>
+		</div>
+		
+		<div class="tbd-carousel">
+			product carousel goes here
+		</div>
+		
+    	<div class="container bed-setup">
+    		<div class="row">
+				<div class="col-sm-12 text-center">
+					<h2>Set up anywhere</h2>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-sm-4 text-center">
+					<img src="<?php bloginfo("template_url"); ?>/images/icon-boxspring.svg" alt="" class="center-block setup-img">
+					<h4>Box Spring</h4>
+					<p>The Dream Bed works on most box springs. Make sure there is no more than 3" between each slat.</p>
+				</div>
+				<div class="col-sm-4 text-center">
+					<img src="<?php bloginfo("template_url"); ?>/images/icon-adjustable.svg" alt="" class="center-block setup-img">
+					<h4>Adjustable Frame</h4>
+					<p>Our bed is flexible, so you can you use it with any adjustable bed base.</p>
 
+				</div>
+				<div class="col-sm-4 text-center">
+					<img src="<?php bloginfo("template_url"); ?>/images/icon-flat-surface.svg" alt="" class="center-block setup-img">
+					<h4>Any Flat Surface</h4>
+					<p>Platform bed, bunky board, the floor? Any and all flat surfaces will work with The Dream Bed.</p>
+				</div>
+			</div>
+		</div>
+		
+		
+		<div class="compare-beds">	
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-12 text-center">
+						<h2>Compare The Dream Bed</h2>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-sm-12">
+						<div class="table-responsive">
+							<table class="table table-bordered table-hover">
+								<tbody>
+									<tr class="nobox">
+										<th scope="col" class="col-xs-2">&nbsp;</th>
+										<th scope="col" class="original col-xs-2">Original Dream Bed</th>
+										<th scope="col" class="cool col-xs-2">Cool Dream Bed</th>
+										<th scope="col" class="col-xs-2">Casper</th>
+										<th scope="col" class="col-xs-2">Leesa</th>
+									</tr>
+									<tr>
+										<th scope="row">Layers</th>
+										<td>&nbsp;</td>
+										<td>&nbsp;</td>
+										<td>&nbsp;</td>
+										<td>&nbsp;</td>
+									</tr>
+									<tr>
+										<th scope="row">Total Height</th>
+										<td>&nbsp;</td>
+										<td>&nbsp;</td>
+										<td>&nbsp;</td>
+										<td>&nbsp;</td>
+									</tr>
+									<tr>
+										<th scope="row">Weight</th>
+										<td>&nbsp;</td>
+										<td>&nbsp;</td>
+										<td>&nbsp;</td>
+										<td>&nbsp;</td>
+									</tr>
+									<tr>
+										<th scope="row">Cover Material</th>
+										<td>&nbsp;</td>
+										<td>&nbsp;</td>
+										<td>&nbsp;</td>
+										<td>&nbsp;</td>
+									</tr>
+									<tr>
+										<th scope="row">Price Range</th>
+										<td>&nbsp;</td>
+										<td>&nbsp;</td>
+										<td>&nbsp;</td>
+										<td>&nbsp;</td>
+									</tr>
+									<tr>
+										<th scope="row">Trial Period</th>
+										<td>&nbsp;</td>
+										<td>&nbsp;</td>
+										<td>&nbsp;</td>
+										<td>&nbsp;</td>
+									</tr>
+									<tr>
+										<th scope="row">Giving Programs</th>
+										<td>&nbsp;</td>
+										<td>&nbsp;</td>
+										<td>&nbsp;</td>
+										<td>&nbsp;</td>
+									</tr>
+									<tr>
+										<th scope="row">Warranty</th>
+										<td>&nbsp;</td>
+										<td>&nbsp;</td>
+										<td>&nbsp;</td>
+										<td>&nbsp;</td>
+									</tr>
+									<tr>
+										<th scope="row">Shipping</th>
+										<td>&nbsp;</td>
+										<td>&nbsp;</td>
+										<td>&nbsp;</td>
+										<td>&nbsp;</td>
+									</tr>
+									<tr>
+										<th scope="row">Returns</th>
+										<td>&nbsp;</td>
+										<td>&nbsp;</td>
+										<td>&nbsp;</td>
+										<td>&nbsp;</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
 			<?php // passing post id to featured reviews
 			include(get_template_directory() . '/includes/featured-reviews.php');
 			get_template_directory() . '/includes/featured-reviews.php'; ?>

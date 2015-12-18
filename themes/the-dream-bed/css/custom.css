@@ -141,6 +141,11 @@ input[type="file"] > input[type="button"]::-moz-focus-inner {
 	z-index: 1000;
 }
 
+.no-padding {
+	padding-right: 0;
+	padding-left: 0;
+}
+
 /* pinterest images */
 
 .pin {
@@ -330,6 +335,7 @@ input[type="file"] > input[type="button"]::-moz-focus-inner {
 	font-weight: 700;
 	margin-top: 0;
 	color: #181919;
+	margin-bottom: 3px;
 }
 
 .footer .footer-nav {
@@ -698,7 +704,10 @@ input[type="file"] > input[type="button"]::-moz-focus-inner {
 	color: #6a6a6b;
 }
 
-
+.dark-grey {
+	background-color: #6a6a6b;
+	color: #fff;
+}
 
 .jump-on-bed {
 	height: 534px;
@@ -1245,6 +1254,10 @@ h2.bedcount {
 
 .footer-newsletter .gfield_label {
 	display: none;
+}
+
+.footer-newsletter .gform_wrapper {
+	margin-top: -10px;
 }
 
 .footer-newsletter .gform_wrapper .button, .footer-newsletter .gform_button {
