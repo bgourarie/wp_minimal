@@ -41,8 +41,70 @@ function uptop_product_images() {
 			</div>
 		</div>
 		
-		<div class="tbd-carousel">
-			product carousel goes here
+		<div id="pdp-carousel">
+				
+	<?php
+		$product_slide = get_field('product_slide');
+		if($product_slide) {
+			if(count($product_slide) == 1) {
+				/* single image/hero text */
+				echo '<div class="jumbotron" style="background-image: url(' . $product_slide[0][product_slide_image] . ');"><div class="container"><div class="row"><div class="col-xs-12">';
+				//echo '<img src="' . $product_slide[0][product_slide_image][url] . '" />';
+				//echo '<h1>' . $product_slide[0][product_slide_text] . '</h1>';
+				//echo '<p>' . $product_slide[0][product_slide_link] . '</p>';
+				echo '</div></div></div></div>';
+				
+			} else {
+				/* multiple / product_slidehow */
+				echo '
+				
+<div id="carousel-pdp-page" class="carousel slide" data-ride="carousel">				
+	<ol class="carousel-indicators">
+		<!-- placeholder need to figure out how to gen these automatically -->
+		<li data-target="#carousel-pdp-page" data-slide-to="0"></li>
+		<li data-target="#carousel-pdp-page" data-slide-to="1"></li>
+	</ol>
+	<div class="carousel-inner" role="listbox">
+				';
+				
+				foreach($product_slide as $slide) {
+					$image = $slide['product_slide_image'];
+					?>
+						<div class="item">
+							<div style="background-image:url(<?php echo $image; ?>);" class="slider-size">
+						
+							</div>
+						</div>
+					<?php
+				}
+				
+				echo '
+	</div>
+	<a class="left carousel-control" href="#carousel-pdp-page" role="button" data-slide="prev">
+		<i class="fa fa-chevron-circle-left"></i>
+		<span class="sr-only">Previous</span>
+	</a>
+	<a class="right carousel-control" href="#carousel-pdp-page" role="button" data-slide="next">
+		<i class="fa fa-chevron-circle-right"></i>
+		<span class="sr-only">Next</span>
+	</a>
+</div>			
+<script>
+jQuery(document).ready(function($){
+	$("#carousel-pdp-page .carousel-indicators li:first").addClass("active");
+	$("#carousel-pdp-page .carousel-inner .item:first").addClass("active");
+	$("#carousel-pdp-page").carousel({
+		interval: 0
+		})
+	});
+	
+</script>
+				
+				';
+			}
+		}
+		
+	?>
 		</div>
 		
     	<div class="container bed-setup">
