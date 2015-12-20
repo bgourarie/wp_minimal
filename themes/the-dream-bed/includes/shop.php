@@ -233,6 +233,17 @@ jQuery(document).ready(function($){
 			<?php // passing post id to featured reviews
 			include(get_template_directory() . '/includes/featured-reviews.php');
 			get_template_directory() . '/includes/featured-reviews.php'; ?>
+		
+		<div class="container pdp-giving">
+			<div class="row vertical-align">
+				<div class="col-md-8 col-sm-6">
+					<img src="<?php bloginfo("template_url"); ?>/images/photos/giving-mattress.jpg" alt="" data-pin-description="The Dream Bed: For every Dream Bed sold, we will give a bed to a person in need. #dreamitforward" class="center-block">
+				</div>
+				<div class="col-md-4 col-sm-6 text-center">
+					<h4>For every Dream Bed sold, we will give a bed to a person in need.<br><br>
+					<a href="<?php bloginfo('url'); ?>/giving/" class="btn btn-dream drop-shadow" role="button">See How We Give</a></h4>
+				</div>
+			</div>
 		</div>
 		<?php
 }
