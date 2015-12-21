@@ -91,7 +91,7 @@ jQuery(document).ready(function($){
 				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">close</span></button>
 			</div>
 			<div class="modal-body">
-				<iframe width="575" height="324" src="//widgets.ellentube.com/videos/0_8j3su5d1/" frameborder="0" allowfullscreen></iframe>
+				<iframe width="575" height="324" src="http://widgets.ellentube.com/videos/0_8j3su5d1/" frameborder="0" allowfullscreen></iframe>
 			</div>
 			<div class="modal-footer"></div>
 		</div>
@@ -185,32 +185,5 @@ jQuery(document).ready(function($){
 		</div>
 	</div>
 </div>
-<div class="container featured-news">
-	<div class="row">
-		<div class="col-sm-12 text-center"><h2>Featured In</h2></div> 
-	</div>
-	<div class="row">
-		<div class="col-xs-6 col-sm-3 text-center">
-			<a href="#"><img src="<?php bloginfo("template_url"); ?>/images/logo-bloomberg.svg" class="center-block" alt=""></a>
-			<p>Lorem ipsum dolor sit amet, consec tetuer adip iscing elit. Donec odio. Quisque volut pat mattis eros. Nullam male suada.</p>
-			<p><a href="<?php bloginfo('url'); ?>/giving/" class="btn btn-link" role="button">Read More</a></p>
-		</div>
-		<div class="col-xs-6 col-sm-3 text-center">
-			<a href="#"><img src="<?php bloginfo("template_url"); ?>/images/logo-bloomberg.svg" class="center-block" alt=""></a>
-			<p>Lorem ipsum dolor sit amet, consec tetuer adip iscing elit. Donec odio. Quisque volut pat mattis eros. Nullam male suada.</p>
-			<p><a href="<?php bloginfo('url'); ?>/giving/" class="btn btn-link" role="button">Read More</a></p>
-		</div> 
-		<div class="clearfix visible-xs-block"></div>
-		<div class="col-xs-6 col-sm-3 text-center">
-			<a href="#"><img src="<?php bloginfo("template_url"); ?>/images/logo-bloomberg.svg" class="center-block" alt=""></a>
-			<p>Lorem ipsum dolor sit amet, consec tetuer adip iscing elit. Donec odio. Quisque volut pat mattis eros. Nullam male suada.</p>
-			<p><a href="<?php bloginfo('url'); ?>/giving/" class="btn btn-link" role="button">Read More</a></p>
-		</div> 
-		<div class="col-xs-6 col-sm-3 text-center">
-			<a href="#"><img src="<?php bloginfo("template_url"); ?>/images/logo-bloomberg.svg" class="center-block" alt=""></a>
-			<p>Lorem ipsum dolor sit amet, consec tetuer adip iscing elit. Donec odio. Quisque volut pat mattis eros. Nullam male suada.</p>
-			<p><a href="<?php bloginfo('url'); ?>/giving/" class="btn btn-link" role="button">Read More</a></p>
-		</div> 
-	</div>
-</div>
+
 <?php get_footer(); ?>
