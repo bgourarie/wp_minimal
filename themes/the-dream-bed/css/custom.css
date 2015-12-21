@@ -266,7 +266,6 @@ input[type="file"] > input[type="button"]::-moz-focus-inner {
 	margin: 0;
 }
 
-
 /* end carousel customization */
 
 /* customized non-round buttons */
@@ -1201,6 +1200,28 @@ h2.bedcount {
 	position: relative;
 	top: 40px;
 	z-index: 1000;
+}
+
+.comparison-table .table {
+	border-bottom: 1px solid #ddd
+}
+
+.comparison-table td {
+	border-top: 1px solid #ddd;
+	border-left: 1px solid #ddd;
+}
+
+.comparison-table td:last-child {
+	border-right: 1px solid #ddd;
+}
+
+.comparison-table th {
+	border-top: 1px solid #ddd;
+	border-left: 1px solid #ddd;
+}
+
+.comparison-table .nobox th {
+	border: none;
 }
 
 .btn-breadcrumb .btn:not(:last-child):after {

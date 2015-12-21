@@ -143,8 +143,8 @@ jQuery(document).ready(function($){
 				</div>
 				<div class="row">
 					<div class="col-sm-12">
-						<div class="table-responsive">
-							<table class="table table-bordered table-hover">
+						<div class="table-responsive comparison-table">
+							<table class="table table-hover">
 								<tbody>
 									<tr class="nobox">
 										<th scope="col" class="col-xs-2">&nbsp;</th>
@@ -155,73 +155,66 @@ jQuery(document).ready(function($){
 									</tr>
 									<tr>
 										<th scope="row">Layers</th>
-										<td>&nbsp;</td>
-										<td>&nbsp;</td>
-										<td>&nbsp;</td>
-										<td>&nbsp;</td>
+										<td>1.5&quot; Latex, 1.5&quot; Memory Foam, 7&quot; support foam</td>
+										<td>0.125&quot; Cool Gel, 3&quot; Memory Foam, 7.5&quot; support foam</td>
+										<td>1.5&quot; Latex, 1.5&quot; Memory Foam, 7&quot; support foam</td>
+										<td>2&quot; Cooling Foam, 2&quot; Memory Foam, 6&quot; support foam</td>
 									</tr>
 									<tr>
 										<th scope="row">Total Height</th>
-										<td>&nbsp;</td>
-										<td>&nbsp;</td>
-										<td>&nbsp;</td>
-										<td>&nbsp;</td>
-									</tr>
-									<tr>
-										<th scope="row">Weight</th>
-										<td>&nbsp;</td>
-										<td>&nbsp;</td>
-										<td>&nbsp;</td>
-										<td>&nbsp;</td>
+										<td>10&quot; </td>
+										<td>10.5&quot; </td>
+										<td>10&quot; </td>
+										<td>10&quot; </td>
 									</tr>
 									<tr>
 										<th scope="row">Cover Material</th>
-										<td>&nbsp;</td>
-										<td>&nbsp;</td>
-										<td>&nbsp;</td>
-										<td>&nbsp;</td>
+										<td>NEED INFO HERE</td>
+										<td>NEED INFO HERE</td>
+										<td>Polyester/Polypropylene</td>
+										<td>Polyester/lycra blend</td>
 									</tr>
 									<tr>
 										<th scope="row">Price Range</th>
-										<td>&nbsp;</td>
-										<td>&nbsp;</td>
-										<td>&nbsp;</td>
-										<td>&nbsp;</td>
+										<td>$699 - $999</td>
+										<td>$899 - $1199</td>
+										<td>$500 - $950</td>
+										<td>$525 - $990</td>
 									</tr>
 									<tr>
 										<th scope="row">Trial Period</th>
-										<td>&nbsp;</td>
-										<td>&nbsp;</td>
-										<td>&nbsp;</td>
-										<td>&nbsp;</td>
+										<td>180 days</td>
+										<td>180 days</td>
+										<td>100 days</td>
+										<td>100 days</td>
 									</tr>
 									<tr>
 										<th scope="row">Giving Programs</th>
-										<td>&nbsp;</td>
-										<td>&nbsp;</td>
-										<td>&nbsp;</td>
-										<td>&nbsp;</td>
+										<td>Donates a bed for every bed sold</td>
+										<td>Donates a bed for every bed sold</td>
+										<td>None</td>
+										<td>None</td>
 									</tr>
 									<tr>
 										<th scope="row">Warranty</th>
-										<td>&nbsp;</td>
-										<td>&nbsp;</td>
-										<td>&nbsp;</td>
-										<td>&nbsp;</td>
+										<td>10 Year Full Warranty</td>
+										<td>10 Year Full Warranty</td>
+										<td>10 Year Limited Warranty</td>
+										<td>10 Year Limited Warranty</td>
 									</tr>
 									<tr>
 										<th scope="row">Shipping</th>
-										<td>&nbsp;</td>
-										<td>&nbsp;</td>
-										<td>&nbsp;</td>
-										<td>&nbsp;</td>
+										<td>Free shipping, on average &lt; 48 hours</td>
+										<td>Free shipping, on average &lt; 48 hours</td>
+										<td>Free shipping, 2-5 days</td>
+										<td>Free shipping, 1-5 days</td>
 									</tr>
 									<tr>
 										<th scope="row">Returns</th>
-										<td>&nbsp;</td>
-										<td>&nbsp;</td>
-										<td>&nbsp;</td>
-										<td>&nbsp;</td>
+										<td>Free returns and exchanges, no questions asked!</td>
+										<td>Free returns and exchanges, no questions asked!</td>
+										<td>Free returns, full money refund</td>
+										<td>Free returns, full money refund (except AK &amp; HI)</td>
 									</tr>
 								</tbody>
 							</table>
