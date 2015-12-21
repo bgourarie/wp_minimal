@@ -91,9 +91,7 @@ jQuery(document).ready(function($){
 				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">close</span></button>
 			</div>
 			<div class="modal-body">
-				<div class="embed-responsive embed-responsive-16by9">
-    				<iframe class="embed-responsive-item" src="//widgets.ellentube.com/videos/0_8j3su5d1/" frameborder="0" allowfullscreen></iframe>
-				</div>
+				<iframe width="575" height="324" src="//widgets.ellentube.com/videos/0_8j3su5d1/" frameborder="0" allowfullscreen></iframe>
 			</div>
 			<div class="modal-footer"></div>
 		</div>
