@@ -4,72 +4,24 @@
 
 <div class="jumbotron mobile-home-jumbo visible-xs">
 	<div class="main-text">
-		<h1>Sleep you dream about</h1>
-		<div><a href="<?php bloginfo('url'); ?>/shop/" class="btn btn-dream btn-lg" role="button">Shop Now</a></div>
-		<img class="pin" src="<?php bloginfo("template_url"); ?>/images/photos/feet-hanging-off-bed-detail.jpg" data-pin-description="The Dream Bed: Free shipping and a no nightmare guarantee." alt="">
+		<h1><?php echo get_field('header_text'); ?></h1>
+		<div><a href="<?php echo get_field('button_link') ?>" class="btn btn-dream btn-lg" role="button"><?php echo get_field('button_text') ?></a></div>
 	</div>
 </div>
 
-<?php if (have_rows('reasons_to_dream')) { ?>
-	<div id="carousel-dream-home" class="carousel slide hidden-xs" data-ride="carousel">
-		<ol class="carousel-indicators">
-	<?php $number = 0; ?>
-	<?php while (have_rows('reasons_to_dream')) {
-		the_row();
-		
-	?>
-		<li data-target="#carousel-dream-home" data-slide-to="<?php echo $number++; ?>"></li>
-	<?php } ?>
-
-
-		</ol>
-		<div class="carousel-inner" role="listbox">
-	<?php while (have_rows('reasons_to_dream')) {
-		the_row();
-		$title = get_sub_field('reason_title');
-		$desc = get_sub_field('reason_description');
-		$btn_title = get_sub_field('reason_button_title');
-		$link = get_sub_field('reason_link');
-		$img = get_sub_field('reason_image');
-	?>
-			<div class="item">
-				<div style="background-image:url(<?php echo $img; ?>);" class="slider-size">
-					<div class="carousel-caption">
-						<div class="container">
-							<div class="row">
-								<div class="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 col-xs-12">
-									<h1><?php echo $title; ?></h1> 
-									<h2><?php echo $desc; ?></h2>
-									<p><a href="<?php echo $link; ?>" class="btn btn-dream btn-lg" role="button"><?php echo $btn_title; ?></a></p>
-									<img class="pin" src="<?php echo $img; ?>" data-pin-description="The Dream Bed: 180 night in home trial, free delivery, two options offering optimum support & comfort." alt="">
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
+<div class="jumbotron home-jumbo hidden-xs" style="background-image: url('<?php echo get_field('hero_image'); ?>')">
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-8 col-sm-offset-2 col-xs-12">
+				<h1><?php echo get_field('header_text'); ?></h1>
+				<div class="cta"><a href="<?php echo get_field('button_link') ?>" class="btn btn-dream btn-lg" role="button"><?php echo get_field('button_text') ?></a></div>
+				<img class="pin" src="<?php echo get_field('hero_image'); ?>" data-pin-description="The Dream Bed: Free shipping and a no nightmare guarantee." alt="">
 			</div>
-	<?php } ?>
+		</div>
 	</div>
 </div>
 
-<script>
-jQuery(document).ready(function($){
-	$("#carousel-dream-home .carousel-indicators li:first").addClass("active");
-	$("#carousel-dream-home .carousel-inner .item:first").addClass("active");
-	$("#carousel-dream-home").carousel({
-		interval: 8000
-		})
-	$("#unboxing-video").on('hidden.bs.modal', function (e) {
-    $("#unboxing-video iframe").attr("src", $("#unboxing-video iframe").attr("src"));
-		});
-	$("#la-video").on('hidden.bs.modal', function (e) {
-    $("#la-video iframe").attr("src", $("#la-video iframe").attr("src"));
-		});
-	});
-	
-</script>
 
-<?php } ?>
 <div class="ellen">
 	<div class="container">
 		<div class="row">

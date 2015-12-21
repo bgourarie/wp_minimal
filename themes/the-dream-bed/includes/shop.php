@@ -144,7 +144,7 @@ jQuery(document).ready(function($){
 				<div class="row">
 					<div class="col-sm-12">
 						<div class="table-responsive comparison-table">
-							<table class="table table-hover">
+							<table class="table table-hover table-bordered">
 								<tbody>
 									<tr class="nobox">
 										<th scope="col" class="col-xs-2">&nbsp;</th>
