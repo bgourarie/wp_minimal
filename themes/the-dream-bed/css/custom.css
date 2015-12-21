@@ -143,7 +143,6 @@ input[type="file"] > input[type="button"]::-moz-focus-inner {
 .shop-now-main {
 	background-image: url(../images/photos/two-dreamy-options-man-wide.jpg);
 	background-position: top;
-	margin-bottom: 0;
 	z-index: 1000;
 }
 
