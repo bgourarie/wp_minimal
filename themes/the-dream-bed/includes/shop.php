@@ -6,7 +6,6 @@
 
 // removed
 remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_price', 10 );
-remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_excerpt', 20 );
 remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_meta', 40 );
 
 add_action('woocommerce_after_single_product', 'uptop_product_images', 20);
@@ -31,7 +30,6 @@ function uptop_product_images() {
 				</div>
 			</div>
 		</div>
-		
 		<div class="container-fluid ">
 			<div class="row">
 				<div class="col-xs-12 text-center no-padding">

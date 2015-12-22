@@ -64,6 +64,10 @@ input.button {
     padding-top: 32px;
 }
 
+.mattress-overview div p {
+	text-align: center;
+}
+
 /* Product Slider Image */
 
 .woocommerce #content div.product div.images,
