@@ -169,8 +169,8 @@ jQuery(document).ready(function($){
 									</tr>
 									<tr>
 										<th scope="row">Cover Material</th>
-										<td>NEED INFO HERE</td>
-										<td>NEED INFO HERE</td>
+										<td>Woven Cover</td>
+										<td>Woven Cover</td>
 										<td>Polyester/Polypropylene</td>
 										<td>Polyester/lycra blend</td>
 									</tr>
