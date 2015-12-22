@@ -1,5 +1,16 @@
 <?php get_header(); ?>
 
+<!-- Activity name for this tag: C1531_PHX_DreamBed_Homepage -->
+<!-- URL of the webpage where the tag will be placed: www.dreambed.com -->
+<script type='text/javascript'>
+var axel = Math.random()+"";
+var a = axel * 10000000000000;
+document.write('<img src="http://pubads.g.doubleclick.net/activity;xsp=90768;ord='+ a +'?" width=1 height=1 border=0/>');
+</script>
+<noscript>
+<img src="http://pubads.g.doubleclick.net/activity;xsp=90768;ord=1?" width=1 height=1 border=0/>
+</noscript>
+
 <div id="home">
 
 <div class="jumbotron mobile-home-jumbo visible-xs">
