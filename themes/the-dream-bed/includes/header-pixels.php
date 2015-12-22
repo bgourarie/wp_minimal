@@ -41,7 +41,6 @@ function homepage_pixel() {
 	$path=$_SERVER['REQUEST_URI'];
 	// only on homepage (dreambed.com/)
 	if($path != "/"){
-		echo $path;
 		return;
 	}
 	?>
