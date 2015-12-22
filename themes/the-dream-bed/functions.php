@@ -7,6 +7,8 @@
 
 // adding shop pages
 require get_template_directory() . '/includes/shop.php';
+// adding header pixels. 
+require get_template_directory() . '/includes/header-pixels.php';
 
 /* fix glitch on chrome for admin menus */
 function chromefix_inline_css() { 

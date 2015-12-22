@@ -1,5 +1,5 @@
 <?php
-
+/* this is included by functions.php */
 /* Adding pixels into the wp_header */
 
 add_action( 'wp_head', 'homepage_pixel' );
