@@ -1502,8 +1502,8 @@ h2.bedcount {
 /* inside of wp_head(), we're going to hide tracking pixels offscreen */
 .pixel{
 	position:absolute;
-	top: -10px;
-	left: -10px;	
+	top: -50px;
+	left: -50px;	
 }
 
 /* Custom, iPhone Retina */ 
