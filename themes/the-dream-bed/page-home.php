@@ -32,31 +32,16 @@ document.write('<img src="http://pubads.g.doubleclick.net/activity;xsp=90768;ord
 	</div>
 </div>
 
-
 <div class="ellen">
 	<div class="container">
 		<div class="row">
 			<div class="col-lg-2 col-lg-offset-3 col-md-3 col-md-offset-2 col-sm-4 col-sm-offset-1 text-center">
-				<a href="#" data-toggle="modal" data-target="#ellen-video"><img src="<?php bloginfo("template_url"); ?>/images/ellen-logo-as-seen-on.svg" class="drop-shadow as-seen-on" alt="as seen on ellen: The Ellen DeGeneres Show"></a>
+				<a href="http://www.ellentv.com/videos/0-8j3su5d1/" target="_blank"><img src="<?php bloginfo("template_url"); ?>/images/ellen-logo-as-seen-on.svg" class="drop-shadow as-seen-on" alt="as seen on ellen: The Ellen DeGeneres Show"></a>
 			</div>
 			<div class="col-lg-4 col-md-5 col-sm-6 text-center">
 				<h4 class="clearfix">The Dream Bed was recently featured on <span style="white-space: nowrap">The Ellen DeGeneres Show</span></h4>
-				<p><a href="#" data-toggle="modal" data-target="#ellen-video" class="btn btn-dream drop-shadow" role="button">Watch Now!</a></p>
+				<p><a href="http://www.ellentv.com/videos/0-8j3su5d1/" target="_blank" class="btn btn-dream drop-shadow" role="button">Watch Now!</a></p>
 			</div>
-		</div>
-	</div>
-</div>
-
-<div class="modal fade" id="ellen-video" tabindex="-1" role="dialog" aria-labelledby="laLabel" aria-hidden="true">
-	<div class="modal-dialog" role="document">
-		<div class="modal-content">
-			<div class="modal-header">
-				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">close</span></button>
-			</div>
-			<div class="modal-body">
-				<iframe width="575" height="324" src="http://widgets.ellentube.com/videos/0_8j3su5d1/" frameborder="0" allowfullscreen></iframe>
-			</div>
-			<div class="modal-footer"></div>
 		</div>
 	</div>
 </div>
