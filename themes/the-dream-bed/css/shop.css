@@ -64,8 +64,9 @@ input.button {
     padding-top: 32px;
 }
 
-.mattress-overview div p {
+.mattress-overview .short-description {
 	text-align: center;
+	padding-bottom: 10px;
 }
 
 /* Product Slider Image */
@@ -134,7 +135,7 @@ input.button {
 .pdp-review-stars-container {
 	text-align: center;
 	font-size: 16px;
-	margin-bottom: 20px;
+	margin-bottom: 8px;
 	white-space: nowrap;
 }
 

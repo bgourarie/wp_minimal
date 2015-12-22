@@ -239,7 +239,7 @@ jQuery(document).ready(function($){
 		<?php
 }
 
-add_action('woocommerce_before_add_to_cart_form','uptop_product_ratings',20);
+add_action('woocommerce_single_product_summary','uptop_product_ratings',10);
 function uptop_product_ratings(){
 	/* query to get all ratings and build average rating */
 	global $product;

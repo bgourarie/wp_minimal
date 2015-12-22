@@ -1154,6 +1154,7 @@ h2.bedcount {
 .mattress-overview h1 {
 	text-align: center;
 	font-size: 2.143em;	
+	margin-bottom: 4px;
 }
 
 .mattress-add-ons > div {
