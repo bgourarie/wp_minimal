@@ -21,19 +21,48 @@
 	</div>
 </div>
 
+<script>
+jQuery(document).ready(function($){
+	$("#ellen-video").on('hidden.bs.modal', function (e) {
+    $("#ellen-video iframe").attr("src", $("#ellen-video iframe").attr("src"));
+		});
+	$("#la-video").on('hidden.bs.modal', function (e) {
+    $("#la-video iframe").attr("src", $("#la-video iframe").attr("src"));
+		});
+	});
+	
+</script>
+
 <div class="ellen">
 	<div class="container">
 		<div class="row">
 			<div class="col-lg-2 col-lg-offset-3 col-md-3 col-md-offset-2 col-sm-4 col-sm-offset-1 text-center">
-				<a href="http://www.ellentv.com/videos/0-8j3su5d1/" target="_blank"><img src="<?php bloginfo("template_url"); ?>/images/ellen-logo-as-seen-on.svg" class="drop-shadow as-seen-on" alt="as seen on ellen: The Ellen DeGeneres Show"></a>
+				<a href="#" data-toggle="modal" data-target="#ellen-video"><img src="<?php bloginfo("template_url"); ?>/images/ellen-logo-as-seen-on.svg" class="drop-shadow as-seen-on" alt="as seen on ellen: The Ellen DeGeneres Show"></a>
 			</div>
 			<div class="col-lg-4 col-md-5 col-sm-6 text-center">
 				<h4 class="clearfix">The Dream Bed was recently featured on <span style="white-space: nowrap">The Ellen DeGeneres Show</span></h4>
-				<p><a href="http://www.ellentv.com/videos/0-8j3su5d1/" target="_blank" class="btn btn-dream drop-shadow" role="button">Watch Now!</a></p>
+				<p><a href="#" data-toggle="modal" data-target="#ellen-video" class="btn btn-dream drop-shadow" role="button">Watch Now!</a></p>
 			</div>
 		</div>
 	</div>
 </div>
+<div class="modal fade" id="ellen-video" tabindex="-2" role="dialog" aria-labelledby="ellenLabel" aria-hidden="true">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">close</span>
+				</button>
+			</div>
+			<div class="modal-body">
+				<iframe width="560" height="315" src="https://www.youtube.com/embed/8nnD0NpYHzw?rel=0" frameborder="0" allowfullscreen></iframe>
+			</div>
+			<div class="modal-footer">
+			</div>
+		</div>
+	</div>
+</div>
+
 
 <div class="dark-grey-shapes why-choose">
 	<div class="container">
