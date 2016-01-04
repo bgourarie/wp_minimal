@@ -39,76 +39,75 @@ function uptop_product_images() {
 			</div>
 		</div>
 		
-		<div id="pdp-carousel">
+	<div id="pdp-carousel">
 				
 	<?php
 		$product_slide = get_field('product_slide');
 		if($product_slide) {
 			if(count($product_slide) == 1) {
-				/* single image/hero text */
-				echo '<div class="jumbotron" style="background-image: url(' . $product_slide[0][product_slide_image] . ');">';
-				
-				if($product_slide[0][product_slide_text] != "") {
-				
-				echo '<div class="carousel-caption"><h3>' . $product_slide[0][product_slide_text] . '  <a href="' . $product_slide[0][product_slide_link] . '" rel="button" class="btn btn-dream">' . $product_slide[0][product_slide_link_label] . '</a></h3></div>';
-				
-				}
-				
-				echo '</div>';
-				
+				/* single image/hero text */ ?>
+				<div class="jumbotron" style="background-image: url('<?php echo $product_slide[0][product_slide_image]; ?>');">
+					<?php if($product_slide[0][product_slide_text] != "") {
+					?>	
+					<div class="carousel-caption">
+						<h3>
+						 <?php echo $product_slide[0][product_slide_text]; 
+						 if($product_slide[0][product_slide_link_label] != "") { ?>
+						 	<a href=" <?php echo $product_slide[0][product_slide_link]; ?>" rel="button" class="btn btn-dream">	
+						 		<?php echo  $product_slide[0][product_slide_link_label]; ?>
+						 	</a>
+			 				<?php } ?>
+						</h3>
+					</div>
+					<?php } ?>
+				</div>
+				<?php				
 			} else {
 				/* multiple / product_slidehow */
-				echo '
-				
-<div id="carousel-pdp-page" class="carousel slide" data-ride="carousel">				
-	<ol class="carousel-indicators">
-		<!-- placeholder need to figure out how to gen these automatically -->
-		<li data-target="#carousel-pdp-page" data-slide-to="0"></li>
-		<li data-target="#carousel-pdp-page" data-slide-to="1"></li>
-	</ol>
-	<div class="carousel-inner" role="listbox">
-				';
-				
-				foreach($product_slide as $slide) {
-					$image = $slide['product_slide_image'];
-					$headline = $slide['product_slide_text'];
-					$link = $slide['product_slide_link'];
-					$linktext = $slide['product_slide_link_label'];
-					?>
-						<div class="item">
-							<div style="background-image:url(<?php echo $image; ?>);" class="slider-size">
-								<div class="carousel-caption">
-									<h3><?php echo $headline; ?> <a href="<?php echo $link; ?>" rel="button" class="btn btn-dream"><?php echo $linktext; ?></a></h3>
+				?>			
+				<div id="carousel-pdp-page" class="carousel slide" data-ride="carousel">				
+					<ol class="carousel-indicators">
+						<?php
+						for($i=0;$i<count($product_slide); $i++) { ?>
+							<li data-target="#carousel-pdp-page" data-slide-to="<?php echo $i;?>"></li>
+						<?php } ?>
+					</ol>
+					<div class="carousel-inner" role="listbox">	
+						<?php	
+						foreach($product_slide as $slide) {
+							$image = $slide['product_slide_image'];
+							$headline = $slide['product_slide_text'];
+							$link = $slide['product_slide_link'];
+							$linktext = $slide['product_slide_link_label'];
+							?>
+								<div class="item">
+									<div style="background-image:url(<?php echo $image; ?>);" class="slider-size">
+										<div class="carousel-caption">
+											<h3><?php echo $headline; ?> <a href="<?php echo $link; ?>" rel="button" class="btn btn-dream"><?php echo $linktext; ?></a></h3>
+										</div>
+									</div>
 								</div>
-							</div>
-						</div>
-					<?php
-				}
-				
-				echo '
-	</div>
-	<a class="left carousel-control" href="#carousel-pdp-page" role="button" data-slide="prev">
-		<i class="fa fa-chevron-circle-left"></i>
-		<span class="sr-only">Previous</span>
-	</a>
-	<a class="right carousel-control" href="#carousel-pdp-page" role="button" data-slide="next">
-		<i class="fa fa-chevron-circle-right"></i>
-		<span class="sr-only">Next</span>
-	</a>
-</div>			
-<script>
-jQuery(document).ready(function($){
-	$("#carousel-pdp-page .carousel-indicators li:first").addClass("active");
-	$("#carousel-pdp-page .carousel-inner .item:first").addClass("active");
-	$("#carousel-pdp-page").carousel({
-		interval: 0
-		})
-	});
-	
-</script>
-				
-				';
-			}
+						<?php } ?>									
+					</div>
+						<a class="left carousel-control" href="#carousel-pdp-page" role="button" data-slide="prev">
+							<i class="fa fa-chevron-circle-left"></i>
+							<span class="sr-only">Previous</span>
+						</a>
+						<a class="right carousel-control" href="#carousel-pdp-page" role="button" data-slide="next">
+							<i class="fa fa-chevron-circle-right"></i>
+							<span class="sr-only">Next</span>
+						</a>
+					</div>			
+					<script>
+					jQuery(document).ready(function($){
+						$("#carousel-pdp-page .carousel-indicators li:first").addClass("active");
+						$("#carousel-pdp-page .carousel-inner .item:first").addClass("active");
+						$("#carousel-pdp-page").carousel({
+							interval: 0
+							})
+						});						
+					</script>
+ 			<?php }
 		}
 		
 	?>
