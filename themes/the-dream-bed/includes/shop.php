@@ -46,11 +46,15 @@ function uptop_product_images() {
 		if($product_slide) {
 			if(count($product_slide) == 1) {
 				/* single image/hero text */
-				echo '<div class="jumbotron" style="background-image: url(' . $product_slide[0][product_slide_image] . ');"><div class="container"><div class="row"><div class="col-xs-12">';
-				//echo '<img src="' . $product_slide[0][product_slide_image][url] . '" />';
-				//echo '<h1>' . $product_slide[0][product_slide_text] . '</h1>';
-				//echo '<p>' . $product_slide[0][product_slide_link] . '</p>';
-				echo '</div></div></div></div>';
+				echo '<div class="jumbotron" style="background-image: url(' . $product_slide[0][product_slide_image] . ');">';
+				
+				if($product_slide[0][product_slide_text] != "") {
+				
+				echo '<div class="carousel-caption"><h3>' . $product_slide[0][product_slide_text] . '  <a href="' . $product_slide[0][product_slide_link] . '" rel="button" class="btn btn-dream">' . $product_slide[0][product_slide_link_label] . '</a></h3></div>';
+				
+				}
+				
+				echo '</div>';
 				
 			} else {
 				/* multiple / product_slidehow */
@@ -67,10 +71,15 @@ function uptop_product_images() {
 				
 				foreach($product_slide as $slide) {
 					$image = $slide['product_slide_image'];
+					$headline = $slide['product_slide_text'];
+					$link = $slide['product_slide_link'];
+					$linktext = $slide['product_slide_link_label'];
 					?>
 						<div class="item">
 							<div style="background-image:url(<?php echo $image; ?>);" class="slider-size">
-						
+								<div class="carousel-caption">
+									<h3><?php echo $headline; ?> <a href="<?php echo $link; ?>" rel="button" class="btn btn-dream"><?php echo $linktext; ?></a></h3>
+								</div>
 							</div>
 						</div>
 					<?php

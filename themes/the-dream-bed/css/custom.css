@@ -253,12 +253,21 @@ input[type="file"] > input[type="button"]::-moz-focus-inner {
 #pdp-carousel .carousel-caption {
 	right: 0;
 	left: 0;
-	text-align: left;
+	text-align: center;
 	bottom: auto;
 	top: 0; 
-	background: rgba(89,89,89,.8);
+	background: rgba(89,89,89,.9);
 	padding: 15px;
 	color: #fff;
+}
+
+#pdp-carousel h3 {
+	margin: 0;
+}
+
+#pdp-carousel .btn-dream {
+	padding: 6px 16px;
+	margin-left: 10px;
 }
 
 #pdp-carousel .carousel-indicators {
