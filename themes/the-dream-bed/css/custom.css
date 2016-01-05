@@ -109,7 +109,6 @@ input[type="file"] > input[type="button"]::-moz-focus-inner {
 .home-jumbo {
 	padding-bottom: 40px;
 	margin-bottom: 0;
-	background-position: bottom;
 	background-repeat: no-repeat;
 }
 
@@ -1782,6 +1781,10 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
 	padding-bottom: 20px;
 }
 
+.home-jumbo {
+	background-position: bottom;
+}
+
 }
 
 /* Small Devices, Tablets */
@@ -1999,6 +2002,10 @@ h6, .h6 {
 	height: auto;
 }
 
+.home-jumbo {
+	background-position: 0 60%;
+}
+
 }
 
 /* Medium Devices, Desktops */
@@ -2030,7 +2037,6 @@ h6, .h6 {
 .jumbotron {
 	height: 500px;
 	min-height: 500px;
-	background-position: 0 60%;
 }
 
 .page-header {
@@ -2116,6 +2122,10 @@ h6, .h6 {
 .home-bed-options .right {
 	margin-left: 2.2151898734177213;
 	margin-right: auto;
+}
+
+.home-jumbo {
+	background-position: 0 60%;
 }
 
 }
