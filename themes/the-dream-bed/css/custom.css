@@ -263,6 +263,7 @@ input[type="file"] > input[type="button"]::-moz-focus-inner {
 
 #pdp-carousel h3 {
 	margin: 0;
+	line-height: 1.3em;
 }
 
 #pdp-carousel .btn-dream {
