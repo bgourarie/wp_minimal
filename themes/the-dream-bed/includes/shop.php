@@ -47,18 +47,18 @@ function uptop_product_images() {
 			if(count($product_slide) == 1) {
 				/* single image/hero text */ ?>
 				<div class="jumbotron" style="background-image: url('<?php echo $product_slide[0][product_slide_image]; ?>');">
-					<?php if($product_slide[0][product_slide_text] != "") {
+					<?php if($product_slide[0][product_slide_text]) {
 					?>	
-					<div class="carousel-caption">
-						<h3>
-						 <?php echo $product_slide[0][product_slide_text]; 
-						 if($product_slide[0][product_slide_link_label] != "") { ?>
-						 	<a href=" <?php echo $product_slide[0][product_slide_link]; ?>" rel="button" class="btn btn-dream">	
-						 		<?php echo  $product_slide[0][product_slide_link_label]; ?>
-						 	</a>
-			 				<?php } ?>
-						</h3>
-					</div>
+						<div class="carousel-caption">
+							<h3>
+								<?php echo $product_slide[0][product_slide_text]; 
+								if($product_slide[0][product_slide_link_label]) { ?>
+								 	<a href=" <?php echo $product_slide[0][product_slide_link]; ?>" rel="button" class="btn btn-dream">	
+							 		<?php echo  $product_slide[0][product_slide_link_label]; ?>
+							 		</a>
+				 				<?php } ?>
+							</h3>
+						</div>
 					<?php } ?>
 				</div>
 				<?php				
@@ -79,16 +79,28 @@ function uptop_product_images() {
 							$headline = $slide['product_slide_text'];
 							$link = $slide['product_slide_link'];
 							$linktext = $slide['product_slide_link_label'];
+							if($image){
 							?>
 								<div class="item">
 									<div style="background-image:url(<?php echo $image; ?>);" class="slider-size">
-										<div class="carousel-caption">
-											<h3><?php echo $headline; ?> <a href="<?php echo $link; ?>" rel="button" class="btn btn-dream"><?php echo $linktext; ?></a></h3>
-										</div>
+										<?php if($headline) { ?>
+											<div class="carousel-caption">
+												<h3>
+													<?php 
+													echo $headline; 
+													if($linktext) { ?>
+														<a href="<?php echo $link; ?>" rel="button" class="btn btn-dream">
+															<?php echo $linktext; ?>
+														</a>
+													<?php } ?>
+												</h3>
+											</div>
+										<?php } ?>
 									</div>
 								</div>
 						<?php } ?>									
-					</div>
+					<?php } ?>
+				</div>
 						<a class="left carousel-control" href="#carousel-pdp-page" role="button" data-slide="prev">
 							<i class="fa fa-chevron-circle-left"></i>
 							<span class="sr-only">Previous</span>
