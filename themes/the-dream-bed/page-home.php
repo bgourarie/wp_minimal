@@ -151,5 +151,44 @@ jQuery(document).ready(function($){
 		</div>
 	</div>
 </div>
-
+<div class="container featured-news">
+	<div class="row">
+		<div class="col-sm-12 text-center"><h2>Featured In</h2></div> 
+	</div>
+	<div class="row">
+		<div class="col-xs-6 col-sm-4 text-center">
+			<a href="http://www.azcentral.com/story/sponsor-story/dream-bed/2015/12/09/dream-bed-buy-bed-give-bed-concept-catching-on/77056796/" target="_blank"><img src="<?php bloginfo("template_url"); ?>/images/external/featured-azcentral-logo.png" class="center-block" alt="Arizona Republic"></a>
+			<p>Buy-a-bed/give-a-bed concept catching on for Dream Bed</p>
+			<p><a href="http://www.azcentral.com/story/sponsor-story/dream-bed/2015/12/09/dream-bed-buy-bed-give-bed-concept-catching-on/77056796/" target="_blank" class="btn btn-link" role="button">Read More</a></p>
+		</div>
+		<div class="col-xs-6 col-sm-4 text-center">
+			<a href="http://www.indystar.com/story/sponsor-story/dream-bed/2015/12/09/dream-bed-la-chicago-charities-get-free-dream-beds/77055956/" target="_blank"><img src="<?php bloginfo("template_url"); ?>/images/external/featured-indy-star-logo.png" class="center-block" alt="Indianapolis Star"></a>
+			<p>Big City Dreams: LA, Chicago charities get free Dream Beds</p>
+			<p><a href="http://www.indystar.com/story/sponsor-story/dream-bed/2015/12/09/dream-bed-la-chicago-charities-get-free-dream-beds/77055956/" target="_blank" class="btn btn-link" role="button">Read More</a></p>
+		</div> 
+		<div class="clearfix visible-xs-block"></div>
+		<div class="col-xs-6 col-sm-4 text-center">
+			<a href="http://www.greenbaypressgazette.com/story/sponsor-story/dream-bed/2015/12/09/dream-bed-5-tips-good-night-sleep/77055588/" target="_blank"><img src="<?php bloginfo("template_url"); ?>/images/external/featured-greenbaypressgazette-logo.png" class="center-block" alt="Green Bay Press Gazette"></a>
+			<p>Mattress brands like The Dream Bed offer unique memory foam products that are easy to ship, set up and offer the right balance of support and comfort</p>
+			<p><a href="http://www.greenbaypressgazette.com/story/sponsor-story/dream-bed/2015/12/09/dream-bed-5-tips-good-night-sleep/77055588/" target="_blank" class="btn btn-link" role="button">Read More</a></p>
+		</div>
+		<div class="clearfix hidden-xs"></div>
+		<div class="col-xs-6 col-sm-4 text-center">
+			<a href="http://www.tennessean.com/story/sponsor-story/dream-bed/2015/12/09/dream-bed-how-temperature-affects-sleep/77055158/" target="_blank"><img src="<?php bloginfo("template_url"); ?>/images/external/featured-tennessean-logo.png" class="center-block" alt="Tennessean"></a>
+			<p>Cool Dreams: How temperature affects sleep</p>
+			<p><a href="http://www.tennessean.com/story/sponsor-story/dream-bed/2015/12/09/dream-bed-how-temperature-affects-sleep/77055158/" target="_blank" class="btn btn-link" role="button">Read More</a></p>
+		</div>
+		<div class="clearfix visible-xs-block"></div>
+		<div class="col-xs-6 col-sm-4 text-center">
+			<a href="http://www.freep.com/story/sponsor-story/dream-bed/2015/12/09/dream-bed-4-big-tips-for-small-rooms-and-homes/77054598/" target="_blank"><img src="<?php bloginfo("template_url"); ?>/images/external/featured-detroit-free-press-logo.png" class="center-block" alt="Detroit Free Press"></a>
+			<p>Bed-in-a-box companies like The Dream Bed have designs that require only a flat surface and no box spring whatsoever</p>
+			<p><a href="http://www.freep.com/story/sponsor-story/dream-bed/2015/12/09/dream-bed-4-big-tips-for-small-rooms-and-homes/77054598/" target="_blank" class="btn btn-link" role="button">Read More</a></p>
+		</div> 
+		<div class="col-xs-6 col-sm-4 text-center">
+			<a href="http://www.cincinnati.com/story/sponsor-story/dream-bed/2015/12/09/dream-bed-millennials-sleep-why-plugged-generation-must-power-down/77053698/" target="_blank"><img src="<?php bloginfo("template_url"); ?>/images/external/featured-cincinnati-logo.png" class="center-block" alt="Cincinnati.com"></a>
+			<p>Millennials &amp; sleep: Why this plugged-in generation must learn to power down</p>
+			<p><a href="http://www.cincinnati.com/story/sponsor-story/dream-bed/2015/12/09/dream-bed-millennials-sleep-why-plugged-generation-must-power-down/77053698/" target="_blank" class="btn btn-link" role="button">Read More</a></p>
+		</div>
+	</div>
+</div>
 <?php get_footer(); ?>
