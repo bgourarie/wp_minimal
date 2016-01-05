@@ -295,9 +295,9 @@ return array(
 	'cdn.ftp.domain' => array(
 	),
 	'cdn.ftp.ssl' => 'auto',
-	'cdn.s3.key' => 'AKIAIWGWGZ3KXAGE5NFQ',
-	'cdn.s3.secret' => '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',
-	'cdn.s3.bucket' => 'dreambed-dev-site',
+	'cdn.s3.key' =>  $_SERVER['KEY'],
+	'cdn.s3.secret' =>  $_SERVER['TOKEN'],
+	'cdn.s3.bucket' =>  $_SERVER['BUCKET'],
 	'cdn.s3.cname' => array(
 	),
 	'cdn.s3.ssl' => 'auto',
