@@ -82,7 +82,7 @@ jQuery(document).ready(function($){
 			</div> 
 			<div class="clearfix visible-xs-block"></div>
 			<div class="col-xs-6 col-sm-3 text-center">
-				<img src="<?php bloginfo("template_url"); ?>/images/ico-dreamboxes.svg" class="center-block" alt="">
+				<img src="<?php bloginfo("template_url"); ?>/images/icon-dreamboxes.svg" class="center-block" alt="">
 				<h5>Comfy Choices</h5>
 				<p>The Dream Bed offers two unique mattresses choices, Original Dream and Cool Dream. Both offer optimum support & comfort.</p>
 			</div> 
