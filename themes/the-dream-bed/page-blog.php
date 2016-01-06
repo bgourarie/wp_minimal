@@ -1,24 +1,6 @@
 <?php get_header(); 
+	get_blog_header();
 
-// then we start with site title and search box:
-$blogpage = get_page_by_title('Blog');
-
-?>
-<div class="blog-header">
-	<a href="<?php get_page_link($blogpage->ID);?>">
-		<div class="blog-title">
-			<?php echo get_field('blog_title');?>
-		</div>
-	</a>
-	<div class="blog-search">
-		<?php get_search_form( true ); ?>
-	</div>
-	<div class="blog-categories">
-		little colorful line will go here
-	</div>
-</div>
-
-<?php 
 	// get the posts, but for this, restrict to posts with the "featured" meta value -- that's the featured post. 
 	$posts = get_posts(array('meta_key'=>'featured','meta_value'=>1));
 	foreach($posts as $feature){

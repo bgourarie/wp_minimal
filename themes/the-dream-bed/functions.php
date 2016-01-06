@@ -7,6 +7,8 @@
 
 // adding shop pages
 require get_template_directory() . '/includes/shop.php';
+// add blog post inclusions
+require get_template_directory() . '/includes/blog-posts.php';
 // adding header pixels. 
 require get_template_directory() . '/includes/header-pixels.php';
 
