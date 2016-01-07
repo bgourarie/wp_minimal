@@ -54,6 +54,8 @@ function get_related_posts($post_id){
 function get_blog_header(){
 	//we start with site title and search box:
 	$blogpage = get_page_by_title('Blog');
+	$categories = get_field('blog_categories','options');
+
 	?>
 	<div class="blog-header">
 		<a href="<?php get_page_link($blogpage->ID);?>">
@@ -65,7 +67,9 @@ function get_blog_header(){
 			<?php get_search_form( true ); ?>
 		</div>
 		<div class="blog-categories">
-			little colorful line will go here
+			<?php foreach($categories as $cat){
+				var_dump($cat);
+			}?>
 		</div>
 	</div>
 	<?php 

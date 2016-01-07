@@ -25,7 +25,7 @@ if ( have_posts() ) : ?>
 while ( have_posts() ) : the_post(); ?>
 <div class="blog-cat-posts">
 	<div class="blog-cat-post-image">
-		<?php echo get_the_post_thumbnail("medium");?>
+		<?php echo get_the_post_thumbnail($post->ID,"medium");?>
 	</div>
 	<div class="blog-cat-post-title">
 		<a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>">
