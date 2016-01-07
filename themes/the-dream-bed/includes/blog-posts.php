@@ -68,7 +68,7 @@ function get_blog_header(){
 		</div>
 		<div class="blog-categories">
 			<?php foreach($categories as $cat){ ?>
-				<a href="<?php get_category_link( $cat ); ?>">
+				<a href="<?php echo get_category_link( $cat ); ?>">
 					<div class="<?php echo get_cat_name($cat);?>">
 						<?php echo get_cat_name($cat);?>
 					</div>
