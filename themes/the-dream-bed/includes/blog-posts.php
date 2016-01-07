@@ -58,7 +58,7 @@ function get_blog_header(){
 	<div class="blog-header">
 		<a href="<?php get_page_link($blogpage->ID);?>">
 			<div class="blog-title">
-				<?php echo get_field('blog_title');?>
+				<?php echo get_field('blog_title','options');?>
 			</div>
 		</a>
 		<div class="blog-search">
