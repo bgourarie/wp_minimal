@@ -67,9 +67,13 @@ function get_blog_header(){
 			<?php get_search_form( true ); ?>
 		</div>
 		<div class="blog-categories">
-			<?php foreach($categories as $cat){
-				var_dump($cat);
-			}?>
+			<?php foreach($categories as $cat){ ?>
+				<a href="<?php get_category_link( $cat ); ?>">
+					<div class="<?php echo get_cat_name($cat);?>">
+						<?php echo get_cat_name($cat);?>
+					</div>
+				</a>
+			<?php } ?>
 		</div>
 	</div>
 	<?php 
