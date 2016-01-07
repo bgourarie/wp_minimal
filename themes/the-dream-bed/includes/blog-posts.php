@@ -54,7 +54,7 @@ function get_related_posts($post_id){
 /*
 	Returns the formatted category button for blog posts and pages.
 */
-function get_cat_button($cat_id) { ?>
+function get_category_button($cat_id) { ?>
 	<a href="<?php echo get_category_link($cat_id); ?>"  class="<?php echo esc_html($cat_id);?>">
 		<?php echo get_cat_name($cat_id);?>
 	</a>
