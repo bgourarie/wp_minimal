@@ -35,6 +35,10 @@ while ( have_posts() ) : the_post(); ?>
 	<div class="blog-cat-post-excerpt">
 	<?php the_excerpt(); ?>
 	</div>
+		<?php	$categories = get_the_category();
+			if ( ! empty( $categories ) ) { 
+				get_category_button( $categories[0]->ID);
+			}  ?>
 </div>
 <?php endwhile; 
 

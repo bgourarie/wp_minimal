@@ -21,12 +21,10 @@ get_blog_header();?>
 
 			<?php //the_post_navigation(); ?>
 			<?php // category button:			?>
-			<?php	$categories = get_the_category();?>
-			<?php 
-			if ( ! empty( $categories ) ) { ?>
-				<a href="<?php echo get_category_link( $categories[0]->ID); ?>"  class="<?php echo esc_html( $categories[0]->name );?>">
-				</a>
-			<?php 	}  ?>
+			<?php	$categories = get_the_category();
+			if ( ! empty( $categories ) ) { 
+				get_category_button( $categories[0]->ID);
+			}  ?>
 
 
 			<div class="blog-post-title">

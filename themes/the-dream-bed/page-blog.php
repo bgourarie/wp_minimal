@@ -2,7 +2,7 @@
 	get_blog_header();
 
 	// get the posts, but for this, restrict to posts with the "featured" meta value -- that's the featured post. 
-	$posts = get_posts(array('meta_key'=>'featured','meta_value'=>1));
+	$posts = get_posts(array('meta_key'=>'featured','meta_value'=>1, 'posts_per_page'=>1));
 	foreach($posts as $feature){
 		setup_postdata($feature);
 		$categories = get_the_category();
@@ -20,10 +20,9 @@
 			<?php echo get_the_excerpt($featured_id);?>
 		</div>
 	</a>
-	<?php if ( ! empty( $categories ) ) { ?>
-		<a href="<?php echo get_category_link( $categories[0]->ID); ?>"  class="<?php echo esc_html( $categories[0]->name );?>">
-		</a>
-	<?php 	}  ?>
+	<?php if ( ! empty( $categories ) ) { 
+		get_category_button( $categories[0]->ID);
+		}  ?>
 </div>
 <?php wp_reset_postdata();
 
@@ -68,10 +67,9 @@
 					<?php echo get_the_excerpt($post->ID); ?>
 				</div>
 			</a>
-			<?php if ( ! empty( $categories ) ) {?>
-				<a href="<?php echo get_category_link( $categories[0]->ID); ?>"  class="<?php echo esc_html( $categories[0]->name );?>">
-				</a>
-			<?php 	}  ?>
+			<?php if ( ! empty( $categories ) ) {
+				get_category_button( $categories[0]->ID);
+			 	}  ?>
 		</div>
 	<?php wp_reset_postdata($post);
 	}
