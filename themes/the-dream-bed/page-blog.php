@@ -9,7 +9,7 @@
 		$featured_id = $feature->ID;
 ?>
 <div class="blog-featured">
-	<a href="<?php echo get_permalink(); ?>" title="<?php echo get_the_title($featured_id); ?>">
+	<a href="<?php echo get_permalink($featured_id); ?>" title="<?php echo get_the_title($featured_id); ?>">
 		<div class="blog-featured-hero">
 		 <?php echo get_the_post_thumbnail( $featured_id, "large" ); ?> 
 		</div>
@@ -62,7 +62,7 @@
 					}
 				?>
 				<div class="blog-other-title">
-					<?php echo get_the_title( $post->ID );?> >
+					<?php echo get_the_title( $post->ID );?> 
 				</div>
 				<div class="blog-other-excerpt">
 					<?php echo get_the_excerpt($post->ID); ?>
