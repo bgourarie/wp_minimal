@@ -21,7 +21,7 @@
 		</div>
 	</a>
 	<?php if ( ! empty( $categories ) ) { 
-		get_category_button( $categories[0]->ID);
+		get_category_button( $categories[0]->cat_ID);
 		}  ?>
 </div>
 <?php wp_reset_postdata();
@@ -68,7 +68,7 @@
 				</div>
 			</a>
 			<?php if ( ! empty( $categories ) ) {
-				get_category_button( $categories[0]->ID);
+				get_category_button( $categories[0]->cat_ID);
 			 	}  ?>
 		</div>
 	<?php wp_reset_postdata($post);

@@ -23,7 +23,7 @@ get_blog_header();?>
 			<?php // category button:			?>
 			<?php	$categories = get_the_category();
 			if ( ! empty( $categories ) ) { 
-				get_category_button( $categories[0]->ID);
+				get_category_button( $categories[0]->cat_ID);
 			}  ?>
 
 

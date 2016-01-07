@@ -40,10 +40,9 @@ function get_related_posts($post_id){
 							<?php echo get_the_excerpt($post->ID); ?>
 						</div>
 					</a>
-					<?php if ( ! empty( $categories ) ) {?>
-						<a href="<?php echo get_category_link( $categories[0]->ID); ?>"  class="<?php echo esc_html( $categories[0]->name );?>">
-						</a>
-					<?php 	}  ?>
+					<?php if ( ! empty( $categories ) ) {
+						get_category_button($categoires[0]->cat_ID);
+					}  ?>
 				</div>
 				<?php wp_reset_postdata($post);
 			} ?>

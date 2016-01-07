@@ -15,7 +15,7 @@ get_blog_header();
 if ( have_posts() ) : ?>
 
 <header class="archive-header">
-<h1 class="archive-title"> <?php single_cat_title( '', false ); ?></h1>
+<h1 class="archive-title"> <?php single_cat_title( '', true ); ?></h1>
 
 </header>
 
@@ -37,7 +37,7 @@ while ( have_posts() ) : the_post(); ?>
 	</div>
 		<?php	$categories = get_the_category();
 			if ( ! empty( $categories ) ) { 
-				get_category_button( $categories[0]->ID);
+				get_category_button( $categories[0]->cat_ID);
 			}  ?>
 </div>
 <?php endwhile; 
