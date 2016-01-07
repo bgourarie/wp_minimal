@@ -5,7 +5,7 @@
 	$posts = get_posts(array('meta_key'=>'featured','meta_value'=>1, 'posts_per_page'=>1));
 	foreach($posts as $feature){
 		setup_postdata($feature);
-		$categories = get_the_category();
+		$categories = get_the_category($feature);
 		$featured_id = $feature->ID;
 ?>
 <div class="blog-featured">
