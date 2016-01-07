@@ -38,9 +38,9 @@
 
 $args = array(
 	'post_type' => 'product',
-//	'category_name' => 'mattress',
-	'orderby' => 'name',
-	'order' => 'DESC'
+	// 'category_name' => 'mattress',
+	'orderby' => 'menu_order title',
+	'order' => 'ASC'
 );
 
 $product_query = new WP_Query($args);
@@ -55,10 +55,11 @@ if ($product_query->have_posts()) {
 		$img_url_array = wp_get_attachment_image_src($img_id, 'full', true);
 		$img_url = $img_url_array[0];
 		$short_description = $post->post_excerpt;
+		$line = get_field('product_line');
 
 		echo '<div class="col-sm-6 text-center"><div class="product">
 				<div class="product-text">
-					<h3><a href="'. $link .'">' . $title . ' Bed</a></h3>
+					<h3 class="  ' . $line .'"><a href="'. $link .'">' . $title . '</a></h3>
 					<p>' . $short_description .'</p>
 					
 				</div>

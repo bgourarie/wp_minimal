@@ -901,6 +901,14 @@ h2.bedcount {
 	text-decoration: none;
 }
 
+.products h3.original a {
+	color: #FF6B00;
+}
+
+.products h3.cool a {
+	color: #61B4E4;
+}
+
 .products .product-img {
 	width: 100%;
 	max-width: 100%;
@@ -911,14 +919,6 @@ h2.bedcount {
 .products .product-text {
 	width: 75%;
 	margin: 0 auto;
-}
-
-.products div div:last-child .product h3 {
-	color: #61B4E4; /* as long as cool dream is the last product, this'll make it blue */
-}
-
-.products div div:last-child .product h3 a {
-	color: #61B4E4;
 }
 
 .products .or-text {

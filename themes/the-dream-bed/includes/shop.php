@@ -11,34 +11,42 @@ remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_singl
 add_action('woocommerce_after_single_product', 'uptop_product_images', 20);
 function uptop_product_images() {
 
-	$sleep_trial = get_field('product_sleep_trial');
 	$cutout_img = get_field('product_cutout_image');
-	$product_shipping = get_field('product_shipping_promo');
-	$box_img = get_field('product_box_image'); ?>
+	$shipping_text = get_field('product_shipping_text');
+	$trial_text = get_field('product_trial_text');
+	
+	?>
 		
 		<div class="dark-grey two-product-features">
 			<div class="container">
 				<div class="row vertical-align">
 					<div class="col-xs-6">
 						<img src="<?php bloginfo("template_url"); ?>/images/icon-deliverybox.svg" alt="">
-						<p>The Dream Bed ships nationwide, in a convenient box, for FREE! Delivered right to your door in 2 days.</p>
+						<p><?php echo $shipping_text ?></p>
 					</div> 
 					<div class="col-xs-6">
 						<img src="<?php bloginfo("template_url"); ?>/images/icon-moon.svg" alt="">
-						<p>You get 180 nights to try out your Dream Bed. If you don't love it you can return it for a full refund.</p>
+						<p><?php echo $trial_text ?></p>
 					</div>
 				</div>
 			</div>
 		</div>
-		<div class="container-fluid ">
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-8 col-sm-offset-2 text-center">
+					<h2>Quality materials for a great night&#8217;s sleep</h2>
+					<?php the_content(); ?>
+				</div>
+			</div>
+		</div>
+		<div class="container-fluid">
 			<div class="row">
 				<div class="col-xs-12 text-center no-padding">
-					<h2>Quality materials for a great night&#8217;s sleep</h2>
 					<img src="<?php echo $cutout_img ?>" class="img-responsive" />
 				</div>
 			</div>
 		</div>
-		
+	
 	<div id="pdp-carousel">
 				
 	<?php
@@ -124,8 +132,16 @@ function uptop_product_images() {
 		
 	?>
 		</div>
-		
-    	<div class="container bed-setup">
+
+<?php
+global $post;
+$terms = wp_get_post_terms( $post->ID, 'product_cat' );
+foreach ( $terms as $term ) $categories[] = $term->slug;
+
+	if ( in_array( 'mattress', $categories ) ) { 
+	/* show if this is a mattress - bed setup and comparison chart */ ?>
+				
+		<div class="container bed-setup">
     		<div class="row">
 				<div class="col-sm-12 text-center">
 					<h2>Set up anywhere</h2>
@@ -150,7 +166,6 @@ function uptop_product_images() {
 				</div>
 			</div>
 		</div>
-		
 		
 		<div class="compare-beds">	
 			<div class="container">
@@ -241,6 +256,20 @@ function uptop_product_images() {
 				</div>
 			</div>
 		</div>
+				
+<?php				
+	} else {
+	/* show if this is a NOT mattress */ ?>				
+				
+		<!-- comparison chart tbd -->
+				
+<?php } ?>	
+
+		
+    	
+		
+		
+		
 			<?php // passing post id to featured reviews
 			include(get_template_directory() . '/includes/featured-reviews.php');
 			get_template_directory() . '/includes/featured-reviews.php'; ?>

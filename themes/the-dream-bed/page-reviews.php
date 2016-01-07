@@ -221,15 +221,6 @@ wp_reset_postdata();
 	<?php the_widget('null_instagram_widget','username=thedreambed&number=4'); ?>
 </div>
 
-
-	
-	<!--<div class="row">
-		<div class="col-sm-3"> <img src="<?php bloginfo("template_url"); ?>/images/photos/instagram-submission-1.jpg" class="img-responsive" alt="Instagram submission to the Dream Bed contest"> </div>
-		<div class="col-sm-3"> <img src="<?php bloginfo("template_url"); ?>/images/photos/instagram-submission-2.jpg" class="img-responsive" alt="Instagram submission to the Dream Bed contest"> </div>
-		<div class="col-sm-3"> <img src="<?php bloginfo("template_url"); ?>/images/photos/instagram-submission-3.jpg" class="img-responsive" alt="Instagram submission to the Dream Bed contest"> </div>
-		<div class="col-sm-3"> <img src="<?php bloginfo("template_url"); ?>/images/photos/instagram-submission-4.jpg" class="img-responsive" alt="Instagram submission to the Dream Bed contest"> </div>
-	</div>-->
-
 </div>
 
 
