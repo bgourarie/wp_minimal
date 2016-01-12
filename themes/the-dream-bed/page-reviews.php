@@ -5,7 +5,11 @@
 <?php
 
 /* defaults */
-$prod_show = array(96, 26); /* show both beds */
+$original_bed = get_original_bed_id();
+$cool_bed= get_cool_bed_id();
+$original_pillow = get_original_pillow_id();
+$cool_pillow = get_cool_pillow_id();
+$prod_show = array($original_bed, $cool_bed, $original_pillow, $cool_pillow); /* show all products */
 $sort_by = "meta_value_num"; /* sort by rating */
 $sort_order = 'ASC'; /* sort ascending */
 
@@ -13,16 +17,16 @@ $sort_order = 'ASC'; /* sort ascending */
 if(isset($_REQUEST['show_product'])) {
 	switch(htmlspecialchars($_REQUEST["show_product"])){
 		case 'dreambed':
-			$prod_show = array(get_original_bed_id());
+			$prod_show = array($original_bed);
 			break;
 		case 'coolgelbed':
-			$prod_show = array(get_cool_bed_id());
+			$prod_show = array($cool_bed);
 			break;
 		case 'originaldreampillow':
-			$prod_show =  array(get_original_pillow_id());
+			$prod_show =  array($original_pillow);
 			break;
 		case 'coolgelpillow' :
-			$prod_show = array(get_cool_pillow_id());
+			$prod_show = array($cool_pillow);
 			break;
 		default:
 			break;
@@ -162,24 +166,29 @@ if ($review_query->have_posts()) {
 // need to set everything based on $product id. 
     // Set product icon based on value of 'product'
     switch ($product){
-    	case get_original_bed_id():
+    	case $original_bed:
     		$product_icon = "original";
     		$prod_photo = 'standard-review-original-dream.png';
     		break;
-    	case get_cool_bed_id():
+    	case $cool_bed:
     		$product_icon = "cool";
     		$prod_photo = 'standard-review-cool-dream.png';
     		break;
-    	case get_original_pillow_id():
+    	case $original_pillow:
     		$product_icon = "original";
+    		$style = 'none';
+    		$size = 'none';
     		$prod_photo = 'standard-review-original-pillow.png';
-    		$size = 'one-size';
     		break;
-    	case get_cool_pillow_id():
+    	case $cool_pillow:
     		$product_icon = "cool";
+    		$style = 'none';
+    		$size = 'none';
     		$prod_photo = 'standard-review-cool-pillow.png';
-    		$size = 'one-size';
     		break;
+    	default:
+    		$prod_photo = 'error';
+
     }
     $photo = $turl . '/images/';
     $photo .= $prod_photo;
@@ -200,8 +209,14 @@ if ($review_query->have_posts()) {
 					</p>
 					<p class='iconset'>
 						<img src='$turl/images/ico-$product_icon.svg'>
-						<img src='$turl/images/ico-$size.svg'>
-						<img src='$turl/images/ico-$style.svg'>
+						";
+						if($size != 'none')
+							echo "
+							<img src='$turl/images/ico-$size.svg'>";
+						if($style != 'none')
+							echo "
+						<img src='$turl/images/ico-$style.svg'>";
+						echo "
 					</p>
 			  	</div>
 			  </div>";
