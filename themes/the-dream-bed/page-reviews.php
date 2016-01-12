@@ -13,15 +13,18 @@ $sort_order = 'ASC'; /* sort ascending */
 if(isset($_REQUEST['show_product'])) {
 	switch(htmlspecialchars($_REQUEST["show_product"])){
 		case 'dreambed':
-			$prod_show = array(96);
+			$prod_show = array(get_original_bed_id());
 			break;
 		case 'coolgelbed':
-			$prod_show = array(26);
+			$prod_show = array(get_cool_bed_id());
+			break;
 		case 'originaldreampillow':
-			$prod_show =  array(15);
+			$prod_show =  array(get_original_pillow_id());
 			break;
 		case 'coolgelpillow' :
-			$prod_show = array(16);
+			$prod_show = array(get_cool_pillow_id());
+			break;
+		default:
 			break;
 	}
 }
@@ -82,21 +85,6 @@ wp_reset_postdata();
 	</div>
 
 	<div class="row">
-		<form action="<?php bloginfo('url'); ?>/reviews" method="post">
-			<div>
-				<label for="show_product"> </label>
-				<select name="show_product" onchange="this.form.submit()">
-					<option <?php if(isset($_REQUEST['sort']) && (htmlspecialchars($_REQUEST["sort"]) == "newest")) { echo "selected"; } ?>  value="newest">Newest</option>
-					<option <?php if(isset($_REQUEST['sort']) && (htmlspecialchars($_REQUEST["sort"]) == "oldest")) { echo "selected"; } ?>  value="oldest">Oldest</option>
-					<option <?php if(isset($_REQUEST['sort']) && (htmlspecialchars($_REQUEST["sort"]) == "highest")) { echo "selected"; } ?>  value="highest">Highest Rating</option>
-					<option <?php if(isset($_REQUEST['sort']) && (htmlspecialchars($_REQUEST["sort"]) == "lowest")) { echo "selected"; } ?>  value="lowest">Lowest Rating</option>
-				</select>
-			</div>
-
-		</form>
-	</div>
-
-	<div class="row">
 		<div class="col-sm-4 col-sm-offset-1 review-header">
 			<h3>average rating:
                 <span class="average-stars">
@@ -116,8 +104,8 @@ wp_reset_postdata();
 		<div class="col-sm-6 text-right review-sorting">
 		<form action="<?php bloginfo('url'); ?>/reviews" method="post">
 				<div>
-					<label for="sort_by">Sort By:</label>
-					<select name="sort_by" onchange="this.form.submit()">
+					<label for="sort">Sort By:</label>
+					<select name="sort" onchange="this.form.submit()">
 						<option <?php if(isset($_REQUEST['sort']) && (htmlspecialchars($_REQUEST["sort"]) == "newest")) { echo "selected"; } ?>  value="newest">Newest</option>
 						<option <?php if(isset($_REQUEST['sort']) && (htmlspecialchars($_REQUEST["sort"]) == "oldest")) { echo "selected"; } ?>  value="oldest">Oldest</option>
 						<option <?php if(isset($_REQUEST['sort']) && (htmlspecialchars($_REQUEST["sort"]) == "highest")) { echo "selected"; } ?>  value="highest">Highest Rating</option>
