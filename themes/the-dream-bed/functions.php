@@ -299,16 +299,16 @@ add_action( 'wp_enqueue_scripts', 'the_dream_bed_scripts' );
 * Some helper methods:
 */
 function get_original_bed_id(){
-	return get_option('original_bed','options');
+	return get_field('original_bed','options');
 }
 function get_cool_bed_id(){
-	return get_option('cool_bed','options');
+	return get_field('cool_bed','options');
 }
 function get_original_pillow_id(){
-	return get_option('original_pillow','options');
+	return get_field('original_pillow','options');
 }
 function get_cool_pillow_id(){
-	return get_option('cool_pillow','options');
+	return get_field('cool_pillow','options');
 }
 
 /* this makes excerpts shorter */
