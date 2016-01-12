@@ -25,7 +25,7 @@ if(isset($_REQUEST['show_product'])) {
 		case 'originaldreampillow':
 			$prod_show =  array($original_pillow);
 			break;
-		case 'coolgelpillow' :
+		case 'cooldreampillow' :
 			$prod_show = array($cool_pillow);
 			break;
 		default:
@@ -78,14 +78,10 @@ wp_reset_postdata();
 <div class="container reviews-page">
 
 	<div class="row">
-		<form action="<?php bloginfo('url'); ?>/reviews" method="post">	
-			<select name="show_product" onchange="this.form.submit()">
-				<option <?php if(isset($_REQUEST['show_product']) && (htmlspecialchars($_REQUEST["show_product"]) == "dreambed")) { echo "selected"; } ?> value="dreambed">Dream Bed</option>
-				<option <?php if(isset($_REQUEST['show_product']) && (htmlspecialchars($_REQUEST["show_product"]) == "coolgelbed")) { echo "selected"; } ?> value="coolgelbed">Cool Gel Bed</option>
-				<option <?php if(isset($_REQUEST['show_product']) && (htmlspecialchars($_REQUEST["show_product"]) == "originaldreampillow")) { echo "selected"; } ?> value="originaldreampillow">Original Dream Pillow</option>
-				<option <?php if(isset($_REQUEST['show_product']) && (htmlspecialchars($_REQUEST["show_product"]) == "cooldreampillow")) { echo "selected"; } ?> value="cooldreampillow">Cool Dream Pillow</option>
-			</select>
-		</form>
+			<a href="<?php echo bloginfo('url').'/reviews/?show_product=dreambed?>';?>"> Dream Bed </a> 
+			<a href="<?php echo bloginfo('url').'/reviews/?show_product=coolgelbed?>';?>"> Cool Dream Bed </a> 
+			<a href="<?php echo bloginfo('url').'/reviews/?show_product=originaldreampillow?>';?>"> Original Dream Pillow </a> 
+			<a href="<?php echo bloginfo('url').'/reviews/?show_product=cooldreampillow?>';?>"> Cool Dream Pillow </a> 
 	</div>
 
 	<div class="row">
