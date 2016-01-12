@@ -9,7 +9,7 @@
 /* also excludes blog categories */
 $blog_exclusions = get_field('blog_categories','options');
 $blog_exclusions[] = 1; // also add the uncategorized thing...
-$faq_exclusions = get_field('faq_product_categories');
+$faq_exclusions = get_field('faq_product_categories','options');
 $cat_args = array(
 	'post_type' => 'faq',
 	'hide_empty' => 0,
@@ -35,34 +35,36 @@ foreach($categories as $category) {
 		$children = get_categories($subcats);
 		if($children){
 			foreach($children as $prod_cat){
-				args = array(
-					'post_type' => 'faq',
-					'category_name' => ''. $prod_cat->slug .'',
-					'orderby' => 'menu_order',
-					'order' => 'ASC'
-				);
-				$faq_prod_query = new WP_Query($args);
+				if($prod_cat->category_parent == $category){
+					$args = array(
+						'post_type' => 'faq',
+						'category_name' => ''. $prod_cat->slug .'',
+						'orderby' => 'menu_order',
+						'order' => 'ASC'
+					);
+					$faq_prod_query = new WP_Query($args);
 
-				if($faq_query->have_posts()){
-					echo '<div class="faq_subcategory">';
-						echo $prod_cat->category_nicename;
-					echo '</div>';
+					if($faq_prod_query->have_posts()){
+						echo '<div class="faq_subcategory">';
+							echo 'Category title: ' .$prod_cat->category_nicename;
+						echo '</div>';
 
-					echo '<div role="tabpanel" class="tab-pane fade" id="' . $prod_cat->slug . '">';
-					while ($faq_query->have_posts() ) {
-						$faq_query->the_post();
-						echo '<h3>' . get_the_title() . '</h3>
-								<p>' . get_the_content() .'</p>
-							';
+						echo '<div role="tabpanel" class="tab-pane fade" id="' . $prod_cat->slug . '">';
+						while ($faq_prod_query->have_posts() ) {
+							$faq_prod_query->the_post();
+							echo '<h3>' . get_the_title() . '</h3>
+									<p>' . get_the_content() .'</p>
+								';
+						}
+						echo '</div>';
 					}
-					echo '</div>';
-				} else {
-					// no posts found
+					else {
+								// no posts found
+					}
+					wp_reset_postdata();
 				}
-				wp_reset_postdata();
-			}
 		}
-		}else{
+	}else{
 			$args = array(
 				'post_type' => 'faq',
 				'category_name' => ''. $category->slug .'',
