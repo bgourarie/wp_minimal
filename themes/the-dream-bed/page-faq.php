@@ -7,12 +7,13 @@
 <?php
 /* find all categories in 'faq' custom post type - excludes built-in category #1 'uncategorized' */
 /* also excludes blog categories */
-$exclusions = get_field('blog_categories','options');
-$exclusions[] = 1; // also add the uncategorized thing...
+$blog_exclusions = get_field('blog_categories','options');
+$blog_exclusions[] = 1; // also add the uncategorized thing...
+$faq_exclusions = get_field('faq_product_categories');
 $cat_args = array(
 	'post_type' => 'faq',
 	'hide_empty' => 0,
-	'exclude' => $exclusions,	
+	'exclude' => array_merge($faq_exclusions,$blog_exclusions),	
 	'orderby' => 'menu_order',
 	'order' => 'ASC'
 ); 
@@ -30,29 +31,62 @@ foreach($categories as $category) {
 	echo '</ul>';
 	echo '<div class="tab-content" id="dreamfaqcont">';
 	foreach($categories as $category) {
-$args = array(
-	'post_type' => 'faq',
-	'category_name' => ''. $category->slug .'',
-	'orderby' => 'menu_order',
-	'order' => 'ASC'
-);
+		$subcats = array('child_of'=>$category->ID);
+		$children = get_categories($subcats);
+		if($children){
+			foreach($children as $prod_cat){
+				args = array(
+					'post_type' => 'faq',
+					'category_name' => ''. $prod_cat->slug .'',
+					'orderby' => 'menu_order',
+					'order' => 'ASC'
+				);
+				$faq_prod_query = new WP_Query($args);
 
-$faq_query = new WP_Query($args);
-if ($faq_query->have_posts()) {
-	echo '<div role="tabpanel" class="tab-pane fade" id="' . $category->slug . '">';
-	while ($faq_query->have_posts() ) {
-		$faq_query->the_post();
-		echo '<h3>' . get_the_title() . '</h3>
-				<p>' . get_the_content() .'</p>
-			';
+				if($faq_query->have_posts()){
+					echo '<div class="faq_subcategory">';
+						echo $prod_cat->category_nicename;
+					echo '</div>';
+
+					echo '<div role="tabpanel" class="tab-pane fade" id="' . $prod_cat->slug . '">';
+					while ($faq_query->have_posts() ) {
+						$faq_query->the_post();
+						echo '<h3>' . get_the_title() . '</h3>
+								<p>' . get_the_content() .'</p>
+							';
+					}
+					echo '</div>';
+				} else {
+					// no posts found
+				}
+				wp_reset_postdata();
+			}
+		}
+		}else{
+			$args = array(
+				'post_type' => 'faq',
+				'category_name' => ''. $category->slug .'',
+				'orderby' => 'menu_order',
+				'order' => 'ASC'
+			);
+
+			$faq_query = new WP_Query($args);
+			if ($faq_query->have_posts()) {
+				echo '<div role="tabpanel" class="tab-pane fade" id="' . $category->slug . '">';
+				while ($faq_query->have_posts() ) {
+					$faq_query->the_post();
+					echo '<h3>' . get_the_title() . '</h3>
+							<p>' . get_the_content() .'</p>
+						';
+				}
+				echo '</div>';
+			} else {
+			// no posts found
+			}
+			wp_reset_postdata();
+			/* end question loop */
+		}
 	}
-	echo '</div>';
-} else {
-// no posts found
-}
-wp_reset_postdata();
-/* end question loop */
-}
 ?>
 
 <script>
