@@ -311,3 +311,7 @@ function get_cool_pillow_id(){
 	return get_option('cool_pillow','options');
 }
 
+/* this makes excerpts shorter */
+
+add_filter( 'excerpt_length', 'td_excerptLength' );
+function td_excerptLength( $length ) { return 40; };
