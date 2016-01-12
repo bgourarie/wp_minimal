@@ -6,10 +6,13 @@
 
 <?php
 /* find all categories in 'faq' custom post type - excludes built-in category #1 'uncategorized' */
+/* also excludes blog categories */
+$exclusions = get_field('blog_categories','options');
+$exclusions[] = 1; // also add the uncategorized thing...
 $cat_args = array(
 	'post_type' => 'faq',
 	'hide_empty' => 0,
-	'exclude' => 1,
+	'exclude' => $exclusions,	
 	'orderby' => 'menu_order',
 	'order' => 'ASC'
 ); 
