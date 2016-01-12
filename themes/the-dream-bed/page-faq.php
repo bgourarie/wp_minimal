@@ -34,6 +34,8 @@ foreach($categories as $category) {
 		$subcats = array('child_of'=>$category->ID);
 		$children = get_categories($subcats);
 		if($children){
+		echo '<div role="tabpanel" class="tab-pane fade" id="' . $category->slug . '">';
+
 			foreach($children as $prod_cat){
 				if($prod_cat->category_parent == $category->term_id){
 					$args = array(
@@ -44,11 +46,11 @@ foreach($categories as $category) {
 					);
 					$faq_prod_query = new WP_Query($args);
 					if($faq_prod_query->have_posts()){
-						echo '<div role="tabpanel" class="tab-pane fade" id="' . $prod_cat->slug . '">';
-					
+						
 						echo '<div class="faq_subcategory">';
+							
 							echo $prod_cat->name;
-						echo '</div>';
+					
 
 						while ($faq_prod_query->have_posts() ) {
 							$faq_prod_query->the_post();
@@ -56,7 +58,7 @@ foreach($categories as $category) {
 									<p>' . get_the_content() .'</p>
 								';
 						}
-						echo '</div>';
+					 echo '</div>';	
 					}
 					else {
 								// no posts found
@@ -64,6 +66,7 @@ foreach($categories as $category) {
 					wp_reset_postdata();
 				}
 		}
+		echo '</div>';
 	}else{
 			$args = array(
 				'post_type' => 'faq',
