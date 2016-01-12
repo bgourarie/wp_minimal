@@ -32,7 +32,7 @@ if(isset($_REQUEST['show_product'])) {
 if(isset($_REQUEST['sort'])) {
 	if (htmlspecialchars($_REQUEST["sort_by"]) == "newest") {
 		$sort_by = "date";
-		$sort_order = "ASC";
+		$sort_order = "DESC";
 	} elseif (htmlspecialchars($_REQUEST["sort"]) == "highest") {
 		$sort_by = "meta_value_num"; /* sort by rating */
 		$sort_order = "DESC"; 
@@ -41,7 +41,7 @@ if(isset($_REQUEST['sort'])) {
 		$sort_order = "ASC"; 
 	} elseif (htmlspecialchars($_REQUEST["sort"]) == "oldest") {
 		$sort_by = "date"; /* sort by rating */
-		$sort_order = "DESC"; 
+		$sort_order = "ASC"; 
 	}
 }
 
@@ -85,6 +85,11 @@ wp_reset_postdata();
 	</div>
 
 	<div class="row">
+		<?php if(!$ratings){ // if we have no ratings, we must have had no posts... 
+			?> 
+		<?php } 
+		else{
+		?>
 		<div class="col-sm-4 col-sm-offset-1 review-header">
 			<h3>average rating:
                 <span class="average-stars">
@@ -101,6 +106,7 @@ wp_reset_postdata();
                 ?>
 			<small>based on <?php echo $count; ?> reviews</small></span></h3>
 		</div>
+		<?php } ?>
 		<div class="col-sm-6 text-right review-sorting">
 		<form action="<?php bloginfo('url'); ?>/reviews" method="post">
 				<div>
@@ -117,7 +123,6 @@ wp_reset_postdata();
 	
 
 <?php
-
 /* main query for reviews listed below */
 $args = array(
 	'post_type' => 'review',
@@ -148,22 +153,36 @@ if ($review_query->have_posts()) {
 		$photo = get_field('photo');
 		$city = get_field('city');
 		$state = get_field('state');
-		$product = get_the_title(get_field('product'));
+		$product = get_field('product');
 		$size = get_field('size');
 		$style = get_field('sleep_style');
 		$date_format = "n-d-Y";
 		$date = get_the_date($date_format);
 		$turl = get_bloginfo('template_url');
-
-        // Set product icon based on value of 'product'
-        $product_icon = ($product == "Original Dream") ? "original" : "cool";
-
-        // Set default photo for review  (until we can fix hosting issues) if not present.
-        if ($photo == ''){
-            $photo = $turl . '/images/';
-            $photo .= ($product == "Original Dream") ? 'standard-review-original-dream.png': 'standard-review-cool-dream.png';
-        }
-		
+// need to set everything based on $product id. 
+    // Set product icon based on value of 'product'
+    switch ($product){
+    	case get_original_bed_id():
+    		$product_icon = "original";
+    		$prod_photo = 'standard-review-original-dream.png';
+    		break;
+    	case get_cool_bed_id():
+    		$product_icon = "cool";
+    		$prod_photo = 'standard-review-cool-dream.png';
+    		break;
+    	case get_original_pillow_id():
+    		$product_icon = "original";
+    		$prod_photo = 'standard-review-original-pillow.png';
+    		$size = 'one-size';
+    		break;
+    	case get_cool_pillow_id():
+    		$product_icon = "cool";
+    		$prod_photo = 'standard-review-cool-pillow.png';
+    		$size = 'one-size';
+    		break;
+    }
+    $photo = $turl . '/images/';
+    $photo .= $prod_photo;
 
 		echo "<div class='row one-review'>
 				<div class='col-sm-3 col-sm-offset-1 col-md-3 col-md-offset-1 hidden-xs review-personal-img'>
@@ -189,7 +208,12 @@ if ($review_query->have_posts()) {
 	}
 	echo '<!-- end reviews -->';
 } else {
-// no reviews found
+
+	?>
+			<div class="reviews-empty">
+				No reviews found. Try again?
+			</div>
+<?php // no reviews found
 }
 wp_reset_postdata();
 ?>
