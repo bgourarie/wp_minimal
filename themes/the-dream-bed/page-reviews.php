@@ -11,28 +11,37 @@ $sort_order = 'ASC'; /* sort ascending */
 
 /* review sorting */
 if(isset($_REQUEST['show_product'])) {
-	if (htmlspecialchars($_REQUEST["show_product"]) == "dreambed")  {
-		$prod_show = array(96);
-	} elseif (htmlspecialchars($_REQUEST["show_product"]) == "coolgelbed") {
-		$prod_show = array(26);
+	switch(htmlspecialchars($_REQUEST["show_product"])){
+		case 'dreambed':
+			$prod_show = array(96);
+			break;
+		case 'coolgelbed':
+			$prod_show = array(26);
+		case 'originaldreampillow':
+			$prod_show =  array(15);
+			break;
+		case 'coolgelpillow' :
+			$prod_show = array(16);
+			break;
 	}
 }
 
-if(isset($_REQUEST['sort_by'])) {
-	if (htmlspecialchars($_REQUEST["sort_by"]) == "date") {
+if(isset($_REQUEST['sort'])) {
+	if (htmlspecialchars($_REQUEST["sort_by"]) == "newest") {
 		$sort_by = "date";
-	} elseif (htmlspecialchars($_REQUEST["sort_by"]) == "rating") {
+		$sort_order = "ASC";
+	} elseif (htmlspecialchars($_REQUEST["sort"]) == "highest") {
 		$sort_by = "meta_value_num"; /* sort by rating */
+		$sort_order = "DESC"; 
+	} elseif (htmlspecialchars($_REQUEST["sort"]) == "lowest") {
+		$sort_by = "meta_value_num"; /* sort by rating */
+		$sort_order = "ASC"; 
+	} elseif (htmlspecialchars($_REQUEST["sort"]) == "oldest") {
+		$sort_by = "date"; /* sort by rating */
+		$sort_order = "DESC"; 
 	}
 }
 
-if(isset($_REQUEST['sort_order'])) {
-	if (htmlspecialchars($_REQUEST["sort_order"]) == "ASC") {
-		$sort_order = "ASC";
-	} elseif (htmlspecialchars($_REQUEST["sort_order"]) == "DESC") {
-		$sort_order = "DESC";
-	}
-}
 
 /* query to get all ratings and build average rating */
 $args = array(
@@ -61,6 +70,31 @@ wp_reset_postdata();
 
 <div class="container reviews-page">
 
+	<div class="row">
+		<form action="<?php bloginfo('url'); ?>/reviews" method="post">	
+			<select name="show_product" onchange="this.form.submit()">
+				<option <?php if(isset($_REQUEST['show_product']) && (htmlspecialchars($_REQUEST["show_product"]) == "dreambed")) { echo "selected"; } ?> value="dreambed">Dream Bed</option>
+				<option <?php if(isset($_REQUEST['show_product']) && (htmlspecialchars($_REQUEST["show_product"]) == "coolgelbed")) { echo "selected"; } ?> value="coolgelbed">Cool Gel Bed</option>
+				<option <?php if(isset($_REQUEST['show_product']) && (htmlspecialchars($_REQUEST["show_product"]) == "originaldreampillow")) { echo "selected"; } ?> value="originaldreampillow">Original Dream Pillow</option>
+				<option <?php if(isset($_REQUEST['show_product']) && (htmlspecialchars($_REQUEST["show_product"]) == "cooldreampillow")) { echo "selected"; } ?> value="cooldreampillow">Cool Dream Pillow</option>
+			</select>
+		</form>
+	</div>
+
+	<div class="row">
+		<form action="<?php bloginfo('url'); ?>/reviews" method="post">
+			<div>
+				<label for="show_product"> </label>
+				<select name="show_product" onchange="this.form.submit()">
+					<option <?php if(isset($_REQUEST['sort']) && (htmlspecialchars($_REQUEST["sort"]) == "newest")) { echo "selected"; } ?>  value="newest">Newest</option>
+					<option <?php if(isset($_REQUEST['sort']) && (htmlspecialchars($_REQUEST["sort"]) == "oldest")) { echo "selected"; } ?>  value="oldest">Oldest</option>
+					<option <?php if(isset($_REQUEST['sort']) && (htmlspecialchars($_REQUEST["sort"]) == "highest")) { echo "selected"; } ?>  value="highest">Highest Rating</option>
+					<option <?php if(isset($_REQUEST['sort']) && (htmlspecialchars($_REQUEST["sort"]) == "lowest")) { echo "selected"; } ?>  value="lowest">Lowest Rating</option>
+				</select>
+			</div>
+
+		</form>
+	</div>
 
 	<div class="row">
 		<div class="col-sm-4 col-sm-offset-1 review-header">
@@ -82,25 +116,12 @@ wp_reset_postdata();
 		<div class="col-sm-6 text-right review-sorting">
 		<form action="<?php bloginfo('url'); ?>/reviews" method="post">
 				<div>
-					<label for="show_product">Show Reviews For:</label>
-					<select name="show_product" onchange="this.form.submit()">
-						<option value="">All Beds</option>
-						<option <?php if(isset($_REQUEST['show_product']) && (htmlspecialchars($_REQUEST["show_product"]) == "dreambed")) { echo "selected"; } ?> value="dreambed">Dream Bed</option>
-						<option <?php if(isset($_REQUEST['show_product']) && (htmlspecialchars($_REQUEST["show_product"]) == "coolgelbed")) { echo "selected"; } ?> value="coolgelbed">Cool Gel Bed</option>
-					</select>
-				</div>
-				<div>
 					<label for="sort_by">Sort By:</label>
 					<select name="sort_by" onchange="this.form.submit()">
-						<option <?php if(isset($_REQUEST['sort_by']) && (htmlspecialchars($_REQUEST["sort_by"]) == "rating")) { echo "selected"; } ?>  value="rating">Rating</option>
-						<option <?php if(isset($_REQUEST['sort_by']) && (htmlspecialchars($_REQUEST["sort_by"]) == "date")) { echo "selected"; } ?>  value="date">Date</option>
-					</select>
-				</div>
-				<div>
-					<label for="sort_order">Sort Order:</label>
-					<select name="sort_order" onchange="this.form.submit()">
-						<option <?php if(isset($_REQUEST['sort_order']) && (htmlspecialchars($_REQUEST["sort_order"]) == "DESC")) { echo "selected"; } ?>  value="DESC">Highest to Lowest</option>
-						<option <?php if(isset($_REQUEST['sort_order']) && (htmlspecialchars($_REQUEST["sort_order"]) == "ASC")) { echo "selected"; } ?>  value="ASC">Lowest to Highest</option>
+						<option <?php if(isset($_REQUEST['sort']) && (htmlspecialchars($_REQUEST["sort"]) == "newest")) { echo "selected"; } ?>  value="newest">Newest</option>
+						<option <?php if(isset($_REQUEST['sort']) && (htmlspecialchars($_REQUEST["sort"]) == "oldest")) { echo "selected"; } ?>  value="oldest">Oldest</option>
+						<option <?php if(isset($_REQUEST['sort']) && (htmlspecialchars($_REQUEST["sort"]) == "highest")) { echo "selected"; } ?>  value="highest">Highest Rating</option>
+						<option <?php if(isset($_REQUEST['sort']) && (htmlspecialchars($_REQUEST["sort"]) == "lowest")) { echo "selected"; } ?>  value="lowest">Lowest Rating</option>
 					</select>
 				</div>
 			</form></div>

@@ -47,7 +47,7 @@ foreach($categories as $category) {
 						echo '<div role="tabpanel" class="tab-pane fade" id="' . $prod_cat->slug . '">';
 					
 						echo '<div class="faq_subcategory">';
-							echo $prod_cat->category_name;
+							echo $prod_cat->name;
 						echo '</div>';
 
 						while ($faq_prod_query->have_posts() ) {
