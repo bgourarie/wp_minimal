@@ -35,7 +35,7 @@ foreach($categories as $category) {
 		$children = get_categories($subcats);
 		if($children){
 			foreach($children as $prod_cat){
-				if($prod_cat->category_parent == $category){
+				if($prod_cat->category_parent == $category->term_id){
 					$args = array(
 						'post_type' => 'faq',
 						'category_name' => ''. $prod_cat->slug .'',
@@ -43,13 +43,13 @@ foreach($categories as $category) {
 						'order' => 'ASC'
 					);
 					$faq_prod_query = new WP_Query($args);
-
 					if($faq_prod_query->have_posts()){
+						echo '<div role="tabpanel" class="tab-pane fade" id="' . $prod_cat->slug . '">';
+					
 						echo '<div class="faq_subcategory">';
-							echo 'Category title: ' .$prod_cat->category_nicename;
+							echo $prod_cat->category_name;
 						echo '</div>';
 
-						echo '<div role="tabpanel" class="tab-pane fade" id="' . $prod_cat->slug . '">';
 						while ($faq_prod_query->have_posts() ) {
 							$faq_prod_query->the_post();
 							echo '<h3>' . get_the_title() . '</h3>
