@@ -1,9 +1,24 @@
-<li<?php if (! has_post_thumbnail() ) { echo ' class="no-img"'; } ?>>
-   <?php if ( has_post_thumbnail() ) { the_post_thumbnail(array(150,150));
-   }?>
-   <h3><a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a></h3>
-   <p class="entry-meta">
-       <?php the_time("F d, Y"); ?>
-   </p>
-   <?php the_excerpt(); ?>
-</li>
+<?php 
+$categories = get_the_category();	
+?>
+<div class="col-md-3 col-xs-6 text-center blog-other-teaser">
+		<a href="<?php echo get_permalink($post->ID); ?>" title="<?php get_the_title($post->ID); ?>">
+			<?php //see https://developer.wordpress.org/reference/functions/get_the_post_thumbnail/#comment-314 
+				if(has_post_thumbnail($post->ID)){
+					echo get_the_post_thumbnail($post->ID,'blog-thumbnail');
+				}else{
+					echo '<img src="'. get_template_directory_uri() .'/images/blog-default-image.jpg" alt="">';
+				}
+			?></a>
+			<h4 class="blog-other-title">
+				<a href="<?php echo get_permalink($post->ID); ?>" title="<?php get_the_title($post->ID); ?>"><?php echo get_the_title( $post->ID );?></a>
+			</h4>
+			<p class="blog-other-excerpt">		
+				<?php echo wp_trim_words(get_the_content($post->ID), 20, '...' ); ?>
+			</p>
+		
+		<?php if ( ! empty( $categories ) ) {
+			get_category_button( $categories[0]->cat_ID);
+		 	}  ?>
+	</div>
+</div>
