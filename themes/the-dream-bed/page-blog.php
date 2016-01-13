@@ -17,7 +17,7 @@
 			<div class="blog-featured-hero" style="background-image: url('')"><a href="<?php echo get_permalink($featured_id); ?>" title="<?php echo get_the_title($featured_id); ?>"><?php echo get_the_post_thumbnail( $featured_id, "large" ); ?></a></div>
 		</div>
 		<div class="col-xs-10 col-xs-offset-1 blog-featured-text">
-			<h3 class="blog-feature-title"><?php  echo get_the_title($featured_id); ?></h3>
+			<h3 class="blog-feature-title"><a href="<?php echo get_permalink($featured_id); ?>" title="<?php echo get_the_title($featured_id); ?>"><?php  echo get_the_title($featured_id); ?></a></h3>
 			<p class="blog-feature-excerpt"><?php echo wp_trim_words(get_the_content($featured_id), 40, ' ...' ); ?></p>
 			<p class="buttonize">
 				<?php if ( ! empty( $categories ) ) { 
@@ -57,6 +57,7 @@
 		'post_status'      => 'publish',
 		'suppress_filters' => true 
 	);
+	$urlstart = get_template_directory_uri();
 	$posts = get_posts($args);
 	foreach($posts as $post){
 		setup_postdata($post);
@@ -68,14 +69,14 @@
 					if(has_post_thumbnail($post->ID)){
 						echo get_the_post_thumbnail($post->ID,'blog-thumbnail');
 					}else{
-						// put in a default/placeholder blog image?
+						echo '<img src="'. $urlstart .'/images/blog-default-image.jpg" alt="">';
 					}
 				?></a>
 				<h4 class="blog-other-title">
 					<a href="<?php echo get_permalink($post->ID); ?>" title="<?php get_the_title($post->ID); ?>"><?php echo get_the_title( $post->ID );?></a>
 				</h4>
 				<p class="blog-other-excerpt">		
-					<?php echo wp_trim_words(get_the_content($post->ID), 20, ' ...' ); ?>
+					<?php echo wp_trim_words(get_the_content($post->ID), 20, '...' ); ?>
 				</p>
 			
 			<?php if ( ! empty( $categories ) ) {
@@ -86,6 +87,7 @@
 	}
 	?>
 		</div>
+		<! -- this div-row should only show if there's more posts to show -->
 		<div class="row">
 			<div class="col-sm-12 text-center">
 				<a class="btn btn-default" href="#load-more" role="button">
