@@ -101,7 +101,7 @@
 		<! -- this div-row should only show if there's more posts to show -->
 		<div class="row">
 			<div class="col-sm-12 text-center">
-							<?php echo do_shortcode('[ajax_load_more repeater="repeater2" posts_per_page="4" scroll="false" pause="true" transition="fade"  images_loaded="true" button_label="Load More"]'); ?>							
+							<?php echo do_shortcode('[ajax_load_more post_type="post" post_not_in="'.$featured_id.'" offset="4" posts_per_page="4" pause="true" scroll="false" transition="none" images_loaded="true" button_label="Load More" container_type="div"]'); ?>							
 		</div>
 	</div>
 </div>
