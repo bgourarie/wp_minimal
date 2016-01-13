@@ -50,7 +50,7 @@
 	<?php
 	// get all posts in reverse chronological order, 16 per page. Exclude the featured one. 
 	$args = array(
-		'posts_per_page'   => 16,
+		'posts_per_page'   => 4,
 		'offset'           => 0,
 		'orderby'          => 'date',
 		'order'            => 'DESC',
@@ -61,9 +61,18 @@
 	);
 	$urlstart = get_template_directory_uri();
 	$posts = get_posts($args);
+	$i=0;
 	foreach($posts as $post){
 		setup_postdata($post);
-		$categories = get_the_category();	?>
+		$categories = get_the_category();	
+		// add clearfix every 4 or 2 posts...
+		if($i%4 == 0){
+			echo '<div class="clearfix hidden-xs"></div>';
+		}elseif($i%2 == 0 ){
+			echo '<div class="clearfix visible-xs"></div>';
+		}
+		$i+=1;
+		?>
 
 		<div class="col-md-3 col-xs-6 text-center blog-other-teaser">
 			<a href="<?php echo get_permalink($post->ID); ?>" title="<?php get_the_title($post->ID); ?>">
@@ -92,10 +101,7 @@
 		<! -- this div-row should only show if there's more posts to show -->
 		<div class="row">
 			<div class="col-sm-12 text-center">
-				<a class="btn btn-default" href="#load-more" role="button">
-					Load More
-				</a>
-				
+							<?php echo do_shortcode('[ajax_load_more repeater="repeater2" posts_per_page="4" scroll="false" pause="true" transition="fade"  images_loaded="true" button_label="Load More"]'); ?>							
 		</div>
 	</div>
 </div>
