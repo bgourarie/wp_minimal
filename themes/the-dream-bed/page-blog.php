@@ -5,6 +5,8 @@
 
 	// get the posts, but for this, restrict to posts with the "featured" meta value -- that's the featured post. 
 	$posts = get_posts(array('meta_key'=>'featured','meta_value'=>1, 'posts_per_page'=>1));
+	$count_posts = wp_count_posts();
+	$published_posts = $count_posts->publish;
 	foreach($posts as $feature){
 		setup_postdata($feature);
 		$categories = get_the_category($feature);
@@ -101,21 +103,13 @@
 	?>
 		</div>
 		<?php 
-		$args = array(
-			'posts_per_page'   => 4,
-			'offset'           => 0,
-			'orderby'          => 'date',
-			'order'            => 'DESC',
-			'exclude'          => $featured_id,
-			'post_type'        => 'post',
-			'post_status'      => 'publish',
-			'suppress_filters' => true 
-		);
-		$more_posts = get_posts($args);
-		if($more_posts){ ?> 
+		if($published_posts > sizeof($exclude_ids)){ 
+			$skip_posts = implode(",",$exclude_ids);
+			$destroy = ceil(($published_posts - sizeof($exclude_ids)) / 4); 
+			?> 
 		<div class="row">
 			<div class="col-sm-12 text-center">
-				<?php echo do_shortcode('[ajax_load_more post_type="post" post_not_in="'.implode(",",$exclude_ids).'" posts_per_page="4" pause="true" scroll="false" transition="none" images_loaded="true" button_label="Load More" container_type="div"]'); ?>							
+				<?php echo do_shortcode('[ajax_load_more post_type="post" destroy_after="'.$destroy.'" post_not_in="'.$skip_posts.'" posts_per_page="4" pause="true" scroll="false" transition="none" images_loaded="true" button_label="Load More" container_type="div"]'); ?>							
 		</div>
 	</div>
 	<?php 
