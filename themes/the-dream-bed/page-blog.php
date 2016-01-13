@@ -62,6 +62,7 @@
 	$urlstart = get_template_directory_uri();
 	$posts = get_posts($args);
 	$i=0;
+	$exclude_ids = array($featured_id);
 	foreach($posts as $post){
 		setup_postdata($post);
 		$categories = get_the_category();	
@@ -72,6 +73,7 @@
 			echo '<div class="clearfix visible-xs"></div>';
 		}
 		$i+=1;
+		$exclude_ids[]=$post->ID;
 		?>
 
 		<div class="col-md-3 col-xs-6 text-center blog-other-teaser">
@@ -98,12 +100,26 @@
 	}
 	?>
 		</div>
-		<! -- this div-row should only show if there's more posts to show -->
+		<?php 
+		$args = array(
+			'posts_per_page'   => 4,
+			'offset'           => 0,
+			'orderby'          => 'date',
+			'order'            => 'DESC',
+			'exclude'          => $featured_id,
+			'post_type'        => 'post',
+			'post_status'      => 'publish',
+			'suppress_filters' => true 
+		);
+		$more_posts = get_posts($args);
+		if($more_posts){ ?> 
 		<div class="row">
 			<div class="col-sm-12 text-center">
-							<?php echo do_shortcode('[ajax_load_more post_type="post" post_not_in="'.$featured_id.'" offset="4" posts_per_page="4" pause="true" scroll="false" transition="none" images_loaded="true" button_label="Load More" container_type="div"]'); ?>							
+				<?php echo do_shortcode('[ajax_load_more post_type="post" post_not_in="'.implode(",",$exclude_ids).'" posts_per_page="4" pause="true" scroll="false" transition="none" images_loaded="true" button_label="Load More" container_type="div"]'); ?>							
 		</div>
 	</div>
+	<?php 
+	}	?>
 </div>
 
 <?php get_footer(); ?>
