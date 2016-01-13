@@ -54,7 +54,7 @@ function get_related_posts($post_id){
 	Returns the formatted category button for blog posts and pages.
 */
 function get_category_button($cat_id) { ?>
-	<a href="<?php echo get_category_link($cat_id); ?>"  class="<?php echo esc_html($cat_id);?>">
+	<a href="<?php echo get_category_link($cat_id); ?>" class="blogcat-<?php echo get_cat_name($cat_id);?> btn btn-small" role="button">
 		<?php echo get_cat_name($cat_id);?>
 	</a>
 <?php }
@@ -65,24 +65,38 @@ function get_blog_header(){
 	$categories = get_field('blog_categories','options');
 
 	?>
-	<div class="blog-header">
-		<a href="<?php echo get_page_link($blogpage->ID);?>">
-			<div class="blog-title">
-				<?php echo get_field('blog_title','options');?>
+	
+	<div class="light-grey-shapes inner-shadow"><!-- ends after blog-featured -->
+	
+		<div class="container blog-header">
+		<div class="row">
+			<div class="col-sm-6 text-left">
+			
+				<p class="blog-title">
+					<a href="<?php echo get_page_link($blogpage->ID);?>"><?php echo get_field('blog_title','options');?></a>
+				</p>
+			
 			</div>
-		</a>
-		<div class="blog-search">
-			<?php get_search_form( true ); ?>
+			
+			<div class="col-sm-6 text-right">
+				<div class="blog-search">
+					<?php get_search_form( true ); ?>
+				</div>
+				
+				<div class="blog-categories">
+					<?php foreach($categories as $cat){ ?>
+						<span><a href="<?php echo get_category_link( $cat ); ?>" class="blogcat blogcat-<?php echo get_cat_name($cat);?>"><?php echo get_cat_name($cat);?></a></span>						
+					<?php } ?>
+				</div>
+				
+			</div>
+			
 		</div>
-		<div class="blog-categories">
-			<?php foreach($categories as $cat){ ?>
-				<a href="<?php echo get_category_link( $cat ); ?>">
-					<div class="<?php echo get_cat_name($cat);?>">
-						<?php echo get_cat_name($cat);?>
-					</div>
-				</a>
-			<?php } ?>
-		</div>
+			
 	</div>
+	
+	
+	
+	
 	<?php 
 }

@@ -1,3 +1,5 @@
+
+
 <?php get_header(); 
 	get_blog_header();
 
@@ -8,31 +10,42 @@
 		$categories = get_the_category($feature);
 		$featured_id = $feature->ID;
 ?>
-<div class="blog-featured">
-	<a href="<?php echo get_permalink($featured_id); ?>" title="<?php echo get_the_title($featured_id); ?>">
-		<div class="blog-featured-hero">
-		 <?php echo get_the_post_thumbnail( $featured_id, "large" ); ?> 
+
+<div class="container blog-featured">
+	<div class="row">
+		<div class="col-md-10 col-sm-8 col-xs-12">
+			<div class="blog-featured-hero" style="background-image: url('')"><a href="<?php echo get_permalink($featured_id); ?>" title="<?php echo get_the_title($featured_id); ?>"><?php echo get_the_post_thumbnail( $featured_id, "large" ); ?></a></div>
 		</div>
-		<div class="blog-feature-title">
-			<?php  echo get_the_title($featured_id); ?> 
+		<div class="col-xs-10 col-xs-offset-1 blog-featured-text">
+			<h3 class="blog-feature-title"><a href="<?php echo get_permalink($featured_id); ?>" title="<?php echo get_the_title($featured_id); ?>"><?php  echo get_the_title($featured_id); ?></a></h3>
+			<p class="blog-feature-excerpt"><?php echo wp_trim_words(get_the_content($featured_id), 40, ' ...' ); ?></p>
+			<p class="buttonize">
+				<?php if ( ! empty( $categories ) ) { 
+					get_category_button( $categories[0]->cat_ID);
+					}  ?>
+			</p>		
 		</div>
-		<div class="blog-feature-excerpt">
-			<?php echo get_the_excerpt($featured_id);?>
-		</div>
-	</a>
-	<?php if ( ! empty( $categories ) ) { 
-		get_category_button( $categories[0]->cat_ID);
-		}  ?>
+	</div>
+	
 </div>
+<div class="container-fluid what-else">
+	<div class="row">
+		<div class="col-sm-12 text-center">
+			<h2 class="blog-other-header">See what else is new...</h2>
+		</div>
+	</div>
+
+</div><!-- /light-grey-shapes -->
+
+
 <?php wp_reset_postdata();
 
 } 
 ?>
 
 <div class="blog-other-posts">
-	<div class="blog-other-header">
-		See what else is new...
-	</div>
+	<div class="container">
+		<div class="row">
 
 	<?php
 	// get all posts in reverse chronological order, 16 per page. Exclude the featured one. 
@@ -46,27 +59,28 @@
 		'post_status'      => 'publish',
 		'suppress_filters' => true 
 	);
+	$urlstart = get_template_directory_uri();
 	$posts = get_posts($args);
 	foreach($posts as $post){
 		setup_postdata($post);
 		$categories = get_the_category();	?>
 
-		<div class="blog-other-teaser">
+		<div class="col-md-3 col-xs-6 text-center blog-other-teaser">
 			<a href="<?php echo get_permalink($post->ID); ?>" title="<?php get_the_title($post->ID); ?>">
 				<?php //see https://developer.wordpress.org/reference/functions/get_the_post_thumbnail/#comment-314 
 					if(has_post_thumbnail($post->ID)){
-						echo get_the_post_thumbnail($post->ID,'medium');
+						echo get_the_post_thumbnail($post->ID,'blog-thumbnail');
 					}else{
-						// put in a default/placeholder blog image?
+						echo '<img src="'. $urlstart .'/images/blog-default-image.jpg" alt="">';
 					}
-				?>
-				<div class="blog-other-title">
-					<?php echo get_the_title( $post->ID );?> 
-				</div>
-				<div class="blog-other-excerpt">
-					<?php echo get_the_excerpt($post->ID); ?>
-				</div>
-			</a>
+				?></a>
+				<h4 class="blog-other-title">
+					<a href="<?php echo get_permalink($post->ID); ?>" title="<?php get_the_title($post->ID); ?>"><?php echo get_the_title( $post->ID );?></a>
+				</h4>
+				<p class="blog-other-excerpt">		
+					<?php echo wp_trim_words(get_the_content($post->ID), 20, '...' ); ?>
+				</p>
+			
 			<?php if ( ! empty( $categories ) ) {
 				get_category_button( $categories[0]->cat_ID);
 			 	}  ?>
@@ -74,9 +88,16 @@
 	<?php wp_reset_postdata($post);
 	}
 	?>
-	<a href="load-more">
-		Load More
-	</a>
+		</div>
+		<! -- this div-row should only show if there's more posts to show -->
+		<div class="row">
+			<div class="col-sm-12 text-center">
+				<a class="btn btn-default" href="#load-more" role="button">
+					Load More
+				</a>
+				
+		</div>
+	</div>
 </div>
 
 <?php get_footer(); ?>
