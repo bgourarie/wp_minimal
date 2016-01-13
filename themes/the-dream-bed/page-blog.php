@@ -25,8 +25,15 @@
 					}  ?>
 			</p>		
 		</div>
-	</div>	
+	</div>
+	
 </div>
+<div class="container-fluid what-else">
+	<div class="row">
+		<div class="col-sm-12 text-center">
+			<h2 class="blog-other-header">See what else is new...</h2>
+		</div>
+	</div>
 
 </div><!-- /light-grey-shapes -->
 
@@ -38,11 +45,6 @@
 
 <div class="blog-other-posts">
 	<div class="container">
-		<div class="row">
-			<div class="col-sm-12 text-center">
-				<h2 class="blog-other-header">See what else is new...</h2>
-			</div>
-		</div>
 		<div class="row">
 
 	<?php
@@ -63,7 +65,7 @@
 		setup_postdata($post);
 		$categories = get_the_category();	?>
 
-		<div class="col-sm-4 col-lg-3 col-xs-6 text-center blog-other-teaser">
+		<div class="col-md-3 col-xs-6 text-center blog-other-teaser">
 			<a href="<?php echo get_permalink($post->ID); ?>" title="<?php get_the_title($post->ID); ?>">
 				<?php //see https://developer.wordpress.org/reference/functions/get_the_post_thumbnail/#comment-314 
 					if(has_post_thumbnail($post->ID)){
