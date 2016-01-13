@@ -15,7 +15,8 @@ $sort_order = 'ASC'; /* sort ascending */
 
 /* review sorting */
 if(isset($_REQUEST['show_product'])) {
-	switch(htmlspecialchars($_REQUEST["show_product"])){
+	$req_var = htmlspecialchars($_REQUEST["show_product"]);
+	switch($req_var){
 		case 'dreambed':
 			$prod_show = array($original_bed);
 			break;
@@ -78,10 +79,10 @@ wp_reset_postdata();
 <div class="container reviews-page">
 
 	<div class="row">
-			<a href="<?php echo bloginfo('url').'/reviews/?show_product=dreambed?>';?>"> Dream Bed </a> 
-			<a href="<?php echo bloginfo('url').'/reviews/?show_product=coolgelbed?>';?>"> Cool Dream Bed </a> 
-			<a href="<?php echo bloginfo('url').'/reviews/?show_product=originaldreampillow?>';?>"> Original Dream Pillow </a> 
-			<a href="<?php echo bloginfo('url').'/reviews/?show_product=cooldreampillow?>';?>"> Cool Dream Pillow </a> 
+			<a href="<?php echo bloginfo('url').'/reviews/?show_product=dreambed';?>"> Dream Bed </a> 
+			<a href="<?php echo bloginfo('url').'/reviews/?show_product=coolgelbed';?>"> Cool Dream Bed </a> 
+			<a href="<?php echo bloginfo('url').'/reviews/?show_product=originaldreampillow';?>"> Original Dream Pillow </a> 
+			<a href="<?php echo bloginfo('url').'/reviews/?show_product=cooldreampillow';?>"> Cool Dream Pillow </a> 
 	</div>
 
 	<div class="row">
