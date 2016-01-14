@@ -36,7 +36,7 @@
 <div id="page" class="hfeed site">
 
 	<header id="masthead" class="site-header" role="banner">
-		<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+		<nav class="navbar yamm navbar-default navbar-fixed-top" role="navigation">
 			<div class="container-fluid extole-header">
 				<div class="row">
 					<div class="col-sm-12">
@@ -52,6 +52,34 @@
 				<div class="navbar-collapse collapse">
 					<?php if(!is_page(array('checkout', 'order-received'))) { ?>
 					<ul class="nav navbar-nav navbar-left">
+						<li class="dropdown yamm-fw">
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown">Shop <i class="fa fa-angle-down"></i></a>
+							<ul class="dropdown-menu">
+								<li>
+									<div class="yamm-content">
+										<div class="row"> 
+											<div class="col-sm-3 col-xs-6 text-center">
+												<a href="<?php bloginfo('url'); ?>/shop/mattress/dream-bed/"><img src="<?php bloginfo("template_url"); ?>/images/menu-original-bed.png" alt="Shop Original Dream Bed" class="img-responsive"></a>
+												<p><a href="<?php bloginfo('url'); ?>/shop/mattress/dream-bed/">Original Dream Bed</a></p>
+											</div>
+											<div class="col-sm-3 col-xs-6 text-center">
+												<a href="<?php bloginfo('url'); ?>/shop/mattress/cool-gel-bed/"><img src="<?php bloginfo("template_url"); ?>/images//menu-cool-bed.png" alt="Shop Cool Dream Bed" class="img-responsive"></a>
+												<p><a href="<?php bloginfo('url'); ?>/shop/mattress/cool-gel-bed/">Cool Dream Bed</a></p>
+											</div>
+											<div class="clearfix visible-xs"></div>
+											<div class="col-sm-3 col-xs-6 text-center">
+												<a href="<?php bloginfo('url'); ?>/shop/pillows/original-dream-pillow/"><img src="<?php bloginfo("template_url"); ?>/images/menu-original-pillow.png" alt="Shop Cool Dream Pillow" class="img-responsive"></a>
+												<p><a href="<?php bloginfo('url'); ?>/shop/pillows/original-dream-pillow/">Original Dream Pillow</a></p>
+											</div>
+											<div class="col-sm-3 col-xs-6 text-center">
+												<a href="<?php bloginfo('url'); ?>/shop/pillows/cool-dream-pillow/"><img src="<?php bloginfo("template_url"); ?>/images//menu-cool-pillow.png" alt="Shop Cool Dream Pillow" class="img-responsive"></a>
+												<p><a href="<?php bloginfo('url'); ?>/shop/pillows/cool-dream-pillow/">Cool Dream Pillow</a></p>
+											</div>
+										</div>
+									</div>
+								</li>
+							 </ul>
+						</li>
 						<?php wp_nav_menu( array( 'theme_location' => 'header-menu', 'container' => '' ) ); ?>
 					</ul>
 					<?php } ?>
