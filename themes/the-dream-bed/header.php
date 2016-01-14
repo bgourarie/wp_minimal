@@ -56,7 +56,6 @@
 					</ul>
 					<?php } ?>
 					<ul class="nav navbar-nav navbar-right">
-						<li><a href="tel:<?php echo get_field('phone_number', 'options'); ?>" class="phone"><?php echo get_field('phone_number', 'options'); ?></a></li>
 					<?php if(!is_page(array('checkout', 'order-received'))) { ?>
 						<?php wp_nav_menu( array( 'theme_location' => 'header-right', 'container' => '' ) ); ?>
 					<?php } ?>	
@@ -65,8 +64,9 @@
 						global $woocommerce;
 						$qty = $woocommerce->cart->get_cart_contents_count();
 						$cart_url = $woocommerce->cart->get_cart_url();
-						echo '<li><a href="'. $cart_url .'">Cart <span class="qty badge">'. $qty .'</span></a></li>';
+						echo '<li><a href="'. $cart_url .'">Cart ('. $qty .')</a></li>';
 						?>
+						<li><a href="tel:<?php echo get_field('phone_number', 'options'); ?>" class="phone"><?php echo get_field('phone_number', 'options'); ?></a></li>
 					</ul>
 				</div>
 			</div>
