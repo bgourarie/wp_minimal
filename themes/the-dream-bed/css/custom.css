@@ -1703,13 +1703,19 @@ h2.bedcount {
 	display: inline-block;
 }
 
-button.alm-load-more-btn{	
-   font-family: 'FFDINWebPro', sans-serif;
-   font-weight: 400;
-   background: #fff;
-   color:#808080;
-   border: 1px solid #D7D7D8;
-   }
+button.alm-load-more-btn {	
+	font-family: 'FFDINWebPro', sans-serif;
+	font-weight: 400;
+	background: #fff;
+	color:#808080;
+	border: 1px solid #D7D7D8;
+}
+
+button.alm-load-more-btn:hover{
+	background: #F4F5F5;
+	color: #808080;
+	text-decoration: none;
+}
 
 /* Custom, iPhone Retina */ 
 @media only screen and (min-width : 320px) {
