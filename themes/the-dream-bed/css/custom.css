@@ -1882,6 +1882,15 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
 	line-height: 1.429em;
 }
 
+.featured-news h2 {
+	margin-top: 0;
+	margin-bottom: 0;
+}
+
+.featured-news p {
+	display: none;
+}
+
 }
 
 /* Extra Small Devices, Phones */ 
@@ -2171,6 +2180,15 @@ h6, .h6 {
 	background-position: 0 60%;
 }
 
+.featured-news p:last-child {
+	display: block;
+}
+
+.blog-featured-text {
+	width: 40%;
+	right: 0;
+}
+
 .blog-featured-text {
 	width: 50%;
 	right: 0;
@@ -2306,9 +2324,13 @@ h6, .h6 {
 	background-position: 0 60%;
 }
 
-.blog-featured-text {
-	width: 40%;
-	right: 0;
+.featured-news h2 {
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+
+.featured-news p {
+	display: block;
 }
 
 .share-posts-box {
