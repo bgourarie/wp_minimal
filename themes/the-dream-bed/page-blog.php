@@ -104,12 +104,12 @@
 		</div>
 		<?php 
 		if($published_posts > sizeof($exclude_ids)){ 
-			$skip_posts = implode(",",$exclude_ids);
+			$skip_posts = implode(", ",$exclude_ids);
 			$destroy = ceil(($published_posts - sizeof($exclude_ids)) / 4); 
 			?> 
 		<div class="row">
 			<div class="col-sm-12 text-center">
-				<?php echo do_shortcode('[ajax_load_more post_type="post" destroy_after="'.$destroy.'" post_not_in="'.$skip_posts.'" posts_per_page="4" pause="true" scroll="false" transition="none" images_loaded="true" button_label="Load More" container_type="div"]'); ?>							
+		<?php echo do_shortcode('[ajax_load_more post_type="post" exclude="'.$skip_posts.'" posts_per_page="4" pause="true" scroll="false" transition="none" images_loaded="true" destroy_after="'.$destroy.'" button_label="Load More" container_type="div"]'); ?>
 		</div>
 	</div>
 	<?php 
