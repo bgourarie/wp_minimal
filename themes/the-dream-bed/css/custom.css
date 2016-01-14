@@ -1628,7 +1628,7 @@ h2.bedcount {
 	margin-top: 30px;
 }
 
-.blog-other-posts {
+.blog-other-posts, .blog-post-container {
 	padding-bottom: 30px;
 	padding-top: 30px;
 	background-color: #fff;
@@ -1651,6 +1651,24 @@ h2.bedcount {
 
 .blog-other-teaser h4 {
 	margin-bottom: .2em;
+}
+
+.blog-post-hero img {
+	width: 100%;
+	height: auto;
+	display: block;
+}
+
+.share-posts {
+	text-align: left;
+}
+
+
+.share-posts-box {
+	background-color: #f1f2f2;
+	padding: 5px;
+	text-align: left;
+	display: inline-block;
 }
 
 /* Custom, iPhone Retina */ 
@@ -1921,6 +1939,10 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
 
 .home-jumbo {
 	background-position: bottom;
+}
+
+.share-posts-box {
+	margin-left: 0;
 }
 
 }
@@ -2282,6 +2304,15 @@ h6, .h6 {
 .blog-featured-text {
 	width: 40%;
 	right: 0;
+}
+
+.share-posts-box {
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.share-posts {
+	text-align: center;
 }
 
 }
