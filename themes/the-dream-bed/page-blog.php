@@ -4,8 +4,8 @@
 	get_blog_header();
 
 	// get the posts, but for this, restrict to posts with the "featured" meta value -- that's the featured post. 
-	$posts = get_posts(array('meta_key'=>'featured','meta_value'=>1, 'post_type'=>'blog-post', 'posts_per_page'=>1));
-	$count_posts = wp_count_posts('blog-post');
+	$posts = get_posts(array('meta_key'=>'featured','meta_value'=>1, 'posts_per_page'=>1));
+	$count_posts = wp_count_posts();
 	$published_posts = $count_posts->publish;
 	foreach($posts as $feature){
 		setup_postdata($feature);
@@ -57,7 +57,7 @@
 		'orderby'          => 'date',
 		'order'            => 'DESC',
 		'exclude'          => $featured_id,
-		'post_type'        => 'blog-post',
+		'post_type'        => 'post',
 		'post_status'      => 'publish',
 		'suppress_filters' => true 
 	);
@@ -109,7 +109,7 @@
 			?> 
 		<div class="row">
 			<div class="col-sm-12 text-center">
-		<?php echo do_shortcode('[ajax_load_more post_type="blog-post" exclude="'.$skip_posts.'" posts_per_page="4" pause="true" scroll="false" transition="none" images_loaded="true" destroy_after="'.$destroy.'" button_label="Load More" container_type="div"]'); ?>
+		<?php echo do_shortcode('[ajax_load_more post_type="post" exclude="'.$skip_posts.'" posts_per_page="4" pause="true" scroll="false" transition="none" images_loaded="true" destroy_after="'.$destroy.'" button_label="Load More" container_type="div"]'); ?>
 		</div>
 	</div>
 	<?php 

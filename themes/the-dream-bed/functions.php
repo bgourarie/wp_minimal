@@ -106,6 +106,16 @@ function woocommerce_delete_tax_rates() {
 	echo '<div class="updated"><p>' . __( 'Tax rates successfully deleted', 'woocommerce' ) . '</p></div>';
 }
 
+// suppress categories for 'Post' posts (blog posts)
+function suppress_post_categories($args, $post_id){
+	if(get_post_type($post_id)=='post'){
+		$blog_cat = get_category_by_slug('blog');
+		$args['descendants_and_self'] = $blog_cat->term_id;
+		$args['popular_cats'] = get_field('blog_categories','options');
+	}
+	return $args;
+}
+add_filter('wp_terms_checklist_args','suppress_post_categories');
 
 /* add options page for global settings */
 if(function_exists('acf_add_options_page')) {
@@ -116,7 +126,7 @@ if(function_exists('acf_add_options_page')) {
 add_filter('user_can_richedit', 'disable_wysiwyg_for_non_post');
 function disable_wyswyg_for_non_post($default) {
   global $post;
-  if ('blog-post' == get_post_type($post))
+  if ('post' == get_post_type($post))
     return true;
   return false;
 }
