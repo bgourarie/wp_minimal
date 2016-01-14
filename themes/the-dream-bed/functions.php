@@ -113,7 +113,7 @@ if(function_exists('acf_add_options_page')) {
 }
 
 /* remove visual editor */
-add_filter('user_can_richedit', create_function ('$a' , 'return false;') , 50);
+//add_filter('user_can_richedit', create_function ('$a' , 'return false;') , 50);
 
 /* remove pods shortcode button from editor */
 function remove_pods_shortcode_button () {
