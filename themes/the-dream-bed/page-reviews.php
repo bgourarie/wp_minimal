@@ -52,6 +52,10 @@ if(isset($_REQUEST['sort'])) {
 
 
 /* query to get all ratings and build average rating */
+
+// adding in pagination check
+$paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
+$reviews_per_page = 5;
 $args = array(
 	'post_type' => 'review',
 	'meta_query' => array(
@@ -61,7 +65,9 @@ $args = array(
 		),
 	),
 	'orderby' => 'menu_order',
-	'order' => 'ASC'
+	'order' => 'ASC',
+	'paged' => $paged,
+	'posts_per_page' => $reviews_per_page
 );
 $review_query = new WP_Query($args);
 if ($review_query->have_posts()) {
@@ -219,6 +225,9 @@ if ($review_query->have_posts()) {
 			  </div>";
 	}
 	echo '<!-- end reviews -->';
+	$page_args = array( 'prev_text' => '', 'next_text' => '');
+	// output the page numbers onto the screen. 
+	the_posts_pagination($page_args);
 } else {
 
 	?>
