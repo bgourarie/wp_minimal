@@ -16,7 +16,7 @@ get_blog_header();
 	<?php
 	// get all posts for current category
 	$cat = get_category( get_query_var( 'cat' ) );
-	$published_posts = $cat->count
+	$published_posts = $cat->count;
 	$args = array(
 		'posts_per_page'   => 4,
 		'offset'           => 0,
