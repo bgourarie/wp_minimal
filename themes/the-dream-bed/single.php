@@ -67,7 +67,7 @@ get_blog_header();?>
 						<div class="share-posts">
 							<h4>Share this article</h4>
 							<div class="share-posts-box">
-								goes here
+								<?php echo do_shortcode('[ssba]'); ?>
 							</div>
 						</div>
 					
