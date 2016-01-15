@@ -106,7 +106,7 @@ foreach($posts as $feature){
 			?> 
 			<div class="row">
 				<div class="col-sm-12 text-center">
-					<?php echo do_shortcode('[ajax_load_more post_type="post" exclude="'.$skip_posts.'" posts_per_page="4" pause="true" scroll="false" transition="none" images_loaded="true" destroy_after="'.$destroy.'" button_label="Load More" css_classes="col-md-3 col-xs-6 text-center blog-other-teaser" container_type="div"]'); ?>
+					<?php echo do_shortcode('[ajax_load_more post_type="post" exclude="'.$skip_posts.'" posts_per_page="4" pause="true" scroll="false" transition="none" images_loaded="true" destroy_after="'.$destroy.'" button_label="Load More" container_type="div"]'); ?>
 				</div>
 			</div>
 		<?php }	?>
