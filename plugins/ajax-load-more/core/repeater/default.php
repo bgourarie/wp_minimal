@@ -1,11 +1,6 @@
 <?php 
 $categories = get_the_category();	
-if($loadMoreCount%4 == 0 && $loadMoreCount > 0){
-	echo '<div class="clearfix hidden-xs"></div>';
-}if($loadMoreCount%2 == 0 && $loadMoreCount > 0){
-	echo '<div class="clearfix visible-xs"></div>';
-}
-$loadMoreCount+= 1; 
+
 ?>
 
 <div class="col-md-3 col-xs-6 text-center blog-other-teaser">
@@ -28,3 +23,12 @@ $loadMoreCount+= 1;
 			get_category_button( $categories[0]->cat_ID);
 		 	}  ?>
 </div>
+<?php
+$loadMoreCount+= 1; 
+if( $loadMoreCount % 4 == 0){
+	echo '<div class="clearfix hidden-xs"></div>';
+}if( $loadMoreCount % 2 == 0){
+	echo '<div class="clearfix visible-xs"></div>';
+}
+
+?>

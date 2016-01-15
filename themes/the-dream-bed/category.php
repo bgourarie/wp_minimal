@@ -34,13 +34,6 @@ get_blog_header();
 	foreach($posts as $post){
 		setup_postdata($post);
 		$categories = get_the_category();	
-		// add clearfix every 4 or 2 posts...
-		if($i%4 == 0 & $i>0){
-			echo '<div class="clearfix hidden-xs"></div>';
-		}if($i%2 == 0 & $i>0 ){
-			echo '<div class="clearfix visible-xs"></div>';
-		}
-		$i+=1;
 		$exclude_ids[]= $post->ID;
 		?>
 
@@ -64,7 +57,14 @@ get_blog_header();
 				get_category_button( $categories[0]->cat_ID);
 			 	}  ?>
 			</div>
-		<?php wp_reset_postdata($post);
+		<?php // add clearfix every 4 or 2 posts...
+		$i+=1;
+		if($i%4 == 0 ){
+			echo '<div class="clearfix hidden-xs"></div>';
+		}if($i%2 == 0){
+			echo '<div class="clearfix visible-xs"></div>';
+		}
+		wp_reset_postdata($post);
 		}
 		?>
 			</div>
