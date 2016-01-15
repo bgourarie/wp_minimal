@@ -1748,10 +1748,11 @@ button.alm-load-more-btn:hover{
 .alm-btn-wrap:before, .alm-btn-wrap:after {
 	content: " ";
 	display: table;
+	clear: both;
 }
 
-.alm-btn-wrap:after {
-    clear: both;
+.alm-btn-wrap:before {
+    
 }
 
 .alm-btn-wrap {
