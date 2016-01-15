@@ -116,4 +116,10 @@
 	}	?>
 </div>
 
+<script type="text/javascript">
+jQuery(document).ready(function($){
+	 $('.blog-other-teaser').responsiveEqualHeightGrid();
+ });
+</script>
+
 <?php get_footer(); ?>

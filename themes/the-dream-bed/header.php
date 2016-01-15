@@ -30,6 +30,10 @@
 
 <script src="<?php bloginfo("template_url"); ?>/js/js.cookie.js"></script>
 
+<?php if(is_page('blog')) { ?>
+<script src="<?php bloginfo("template_url"); ?>/js/grids.min.js"></script>
+<?php } ?>
+
 </head>
 
 <body <?php body_class(); ?>>
