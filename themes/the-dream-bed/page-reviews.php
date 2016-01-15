@@ -79,19 +79,17 @@ wp_reset_postdata();
 ?>
 
 <div class="container reviews-page">
-
-<div class="row">
-	<form action="<?php bloginfo('url'); ?>/reviews" method="post">
+<form action="<?php bloginfo('url'); ?>/reviews" method="post">
+	<div class="row">
 		<div>
 			<select name="show_product" onchange="this.form.submit()">
-				<option <?phpif(isset($_REQUEST['show_product']) && (htmlspecialchars($_REQUEST["show_product"])) == "dreambed"){ echo "selected"; } ?> value='dreambed'> Dream Bed </option>
-				<option <?phpif(isset($_REQUEST['show_product']) && (htmlspecialchars($_REQUEST["show_product"])) == "coolgelbed"){ echo "selected"; } ?> value='coolgelbed'> Cool Dream Bed </option>
-				<option <?phpif(isset($_REQUEST['show_product']) && (htmlspecialchars($_REQUEST["show_product"])) == "originaldreampillow"){ echo "selected"; } ?> value='originaldreampillow'> Original Dream Pillow </option>
-				<option <?phpif(isset($_REQUEST['show_product']) && (htmlspecialchars($_REQUEST["show_product"])) == "cooldreampillow"){ echo "selected"; } ?> value='cooldreampillow'> Cool Dream Pillow </option>
-			</select>
-		</div>
-	</form>
-</div>
+					<option <?php if(isset($_REQUEST['show_product']) && (htmlspecialchars($_REQUEST["show_product"])) == "dreambed"){ echo "selected"; } ?> value='dreambed'> Dream Bed </option>
+					<option <?php if(isset($_REQUEST['show_product']) && (htmlspecialchars($_REQUEST["show_product"])) == "coolgelbed"){ echo "selected"; } ?> value='coolgelbed'> Cool Dream Bed </option>
+					<option <?php if(isset($_REQUEST['show_product']) && (htmlspecialchars($_REQUEST["show_product"])) == "originaldreampillow"){ echo "selected"; } ?> value='originaldreampillow'> Original Dream Pillow </option>
+					<option <?php if(isset($_REQUEST['show_product']) && (htmlspecialchars($_REQUEST["show_product"])) == "cooldreampillow"){ echo "selected"; } ?> value='cooldreampillow'> Cool Dream Pillow </option>
+				</select>
+			</div>
+	</div>
 	<div class="row">
 		<?php if(!$ratings){ // if we have no ratings, we must have had no posts... 
 			?> 
@@ -112,23 +110,23 @@ wp_reset_postdata();
                         echo '<img src="' . get_bloginfo("template_url") . '/images/half-star.svg" />';
                     }
                 ?>
-			<small>based on <?php echo $count; ?> reviews</small></span></h3>
-		</div>
+				<small>based on <?php echo $count; ?> reviews</small></span></h3>
+			</div>
 		<?php } ?>
 		<div class="col-sm-6 text-right review-sorting">
-		<form action="<?php bloginfo('url'); ?>/reviews" method="post">
-				<div>
-					<label for="sort">Sort By:</label>
-					<select name="sort" onchange="this.form.submit()">
-						<option <?php if(isset($_REQUEST['sort']) && (htmlspecialchars($_REQUEST["sort"]) == "newest")) { echo "selected"; } ?>  value="newest">Newest</option>
-						<option <?php if(isset($_REQUEST['sort']) && (htmlspecialchars($_REQUEST["sort"]) == "oldest")) { echo "selected"; } ?>  value="oldest">Oldest</option>
-						<option <?php if(isset($_REQUEST['sort']) && (htmlspecialchars($_REQUEST["sort"]) == "highest")) { echo "selected"; } ?>  value="highest">Highest Rating</option>
-						<option <?php if(isset($_REQUEST['sort']) && (htmlspecialchars($_REQUEST["sort"]) == "lowest")) { echo "selected"; } ?>  value="lowest">Lowest Rating</option>
-					</select>
-				</div>
-			</form></div>
+			<div>
+				<label for="sort">Sort By:</label>
+				<select name="sort" onchange="this.form.submit()">
+					<option <?php if(isset($_REQUEST['sort']) && (htmlspecialchars($_REQUEST["sort"]) == "newest")) { echo "selected"; } ?>  value="newest">Newest</option>
+					<option <?php if(isset($_REQUEST['sort']) && (htmlspecialchars($_REQUEST["sort"]) == "oldest")) { echo "selected"; } ?>  value="oldest">Oldest</option>
+					<option <?php if(isset($_REQUEST['sort']) && (htmlspecialchars($_REQUEST["sort"]) == "highest")) { echo "selected"; } ?>  value="highest">Highest Rating</option>
+					<option <?php if(isset($_REQUEST['sort']) && (htmlspecialchars($_REQUEST["sort"]) == "lowest")) { echo "selected"; } ?>  value="lowest">Lowest Rating</option>
+				</select>
+			</div>
+		</div>
 	</div>
-	
+</form>	
+		
 
 <?php
 /* main query for reviews listed below */
