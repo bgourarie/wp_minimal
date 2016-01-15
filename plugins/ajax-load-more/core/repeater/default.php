@@ -1,11 +1,11 @@
 <?php 
 $categories = get_the_category();	
-$loadMoreCount+= 1; 
-if($loadMoreCount % 4 == 0){
-	echo '<div class="clearfix visible-xs"></div>';
-} elseif($loadMoreCount % 2 == 0) {
+if($loadMoreCount%4 == 0){
 	echo '<div class="clearfix hidden-xs"></div>';
+}elseif($loadMoreCount%2 == 0 ){
+	echo '<div class="clearfix visible-xs"></div>';
 }
+$loadMoreCount+= 1; 
 ?>
 
 <div class="col-md-3 col-xs-6 text-center blog-other-teaser">
