@@ -54,8 +54,6 @@ if(isset($_REQUEST['sort'])) {
 /* query to get all ratings and build average rating */
 
 // adding in pagination check
-$paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
-$reviews_per_page = 5;
 $args = array(
 	'post_type' => 'review',
 	'meta_query' => array(
@@ -66,8 +64,6 @@ $args = array(
 	),
 	'orderby' => 'menu_order',
 	'order' => 'ASC',
-	'paged' => $paged,
-	'posts_per_page' => $reviews_per_page
 );
 $review_query = new WP_Query($args);
 if ($review_query->have_posts()) {
@@ -131,7 +127,11 @@ wp_reset_postdata();
 
 <?php
 /* main query for reviews listed below */
+$paged = ( get_query_var( 'paged' ) ) ? absint(get_query_var( 'paged' )) : 1;
+$reviews_per_page = 5;
 $args = array(
+	'posts_per_page' => $reviews_per_page,
+	'paged' => $paged,
 	'post_type' => 'review',
 /* review posts can be ordered by 'menu_order' (manual ordering), date, or meta key for a field such as 'rating' or 'product' */
 /* default should probably be menu_order (manual ordering) or by meta_key => rating, order => DESC so bad reviews aren't first */
@@ -227,7 +227,12 @@ if ($review_query->have_posts()) {
 	echo '<!-- end reviews -->';
 	$page_args = array( 'prev_text' => '', 'next_text' => '');
 	// output the page numbers onto the screen. 
-	the_posts_pagination($page_args);
+	echo paginate_links( array(
+	'format' => '?paged=%#%',
+	'current' => max( 1, get_query_var('paged') ),
+	'total' => $count,
+	) );
+
 } else {
 
 	?>
