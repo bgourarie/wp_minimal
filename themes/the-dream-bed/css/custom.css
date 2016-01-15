@@ -1743,6 +1743,21 @@ button.alm-load-more-btn:hover{
 	text-decoration: none;
 }
 
+/* make the button like a clear */
+
+.alm-btn-wrap:before, .alm-btn-wrap:after {
+	content: " ";
+	display: table;
+}
+
+.alm-btn-wrap:after {
+    clear: both;
+}
+
+.alm-btn-wrap {
+    *zoom: 1;
+}
+
 /* Custom, iPhone Retina */ 
 @media only screen and (min-width : 320px) {
 
