@@ -80,13 +80,18 @@ wp_reset_postdata();
 
 <div class="container reviews-page">
 
-	<div class="row">
-			<a href="<?php echo bloginfo('url').'/reviews/?show_product=dreambed';?>"> Dream Bed </a> 
-			<a href="<?php echo bloginfo('url').'/reviews/?show_product=coolgelbed';?>"> Cool Dream Bed </a> 
-			<a href="<?php echo bloginfo('url').'/reviews/?show_product=originaldreampillow';?>"> Original Dream Pillow </a> 
-			<a href="<?php echo bloginfo('url').'/reviews/?show_product=cooldreampillow';?>"> Cool Dream Pillow </a> 
-	</div>
-
+<div class="row">
+	<form action="<?php bloginfo('url'); ?>/reviews" method="post">
+		<div>
+			<select name="show_product" onchange="this.form.submit()">
+				<option <?phpif(isset($_REQUEST['show_product']) && (htmlspecialchars($_REQUEST["show_product"]) == "dreambed"){ echo "selected"; } ?> value='dreambed'> Dream Bed </option>
+				<option <?phpif(isset($_REQUEST['show_product']) && (htmlspecialchars($_REQUEST["show_product"]) == "coolgelbed"){ echo "selected"; } ?> value='coolgelbed'> Cool Dream Bed </option>
+				<option <?phpif(isset($_REQUEST['show_product']) && (htmlspecialchars($_REQUEST["show_product"]) == "originaldreampillow"){ echo "selected"; } ?> value='originaldreampillow'> Original Dream Pillow </option>
+				<option <?phpif(isset($_REQUEST['show_product']) && (htmlspecialchars($_REQUEST["show_product"]) == "cooldreampillow"){ echo "selected"; } ?> value='cooldreampillow'> Cool Dream Pillow </option>
+			</select>
+		</div>
+	</form>
+</div>
 	<div class="row">
 		<?php if(!$ratings){ // if we have no ratings, we must have had no posts... 
 			?> 
