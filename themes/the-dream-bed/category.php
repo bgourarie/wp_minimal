@@ -35,9 +35,9 @@ get_blog_header();
 		setup_postdata($post);
 		$categories = get_the_category();	
 		// add clearfix every 4 or 2 posts...
-		if($i%4 == 0){
+		if($i%4 == 0 & $i>0){
 			echo '<div class="clearfix hidden-xs"></div>';
-		}elseif($i%2 == 0 ){
+		}if($i%2 == 0 & $i>0 ){
 			echo '<div class="clearfix visible-xs"></div>';
 		}
 		$i+=1;
@@ -75,7 +75,7 @@ get_blog_header();
 				?> 
 			<div class="row">
 				<div class="col-sm-12 text-center">
-			<?php echo do_shortcode('[ajax_load_more post_type="post" category="'.$cat->slug.'" exclude="'.$skip_posts.'" posts_per_page="4" pause="true" scroll="false" transition="none" images_loaded="true" destroy_after="'.$destroy.'" button_label="Load More" container_type="div"]'); ?>
+			<?php echo do_shortcode('[ajax_load_more post_type="post" category="'.$cat->slug.'" exclude="'.$skip_posts.'" posts_per_page="4" pause="true" scroll="false" transition="none" images_loaded="true" destroy_after="'.$destroy.'" button_label="Load More" container_type="div" css_classes="col-md-3 col-xs-6 text-center blog-other-teaser"]'); ?>
 			</div>
 		</div>
 		<?php 
