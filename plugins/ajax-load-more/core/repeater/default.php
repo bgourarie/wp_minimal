@@ -1,6 +1,13 @@
 <?php 
 $categories = get_the_category();	
+$loadMoreCount+= 1; 
+if($loadMoreCount % 4 == 0){
+	echo '<div class="clearfix visible-xs"></div>';
+} elseif($loadMoreCount % 2 == 0) {
+	echo '<div class="clearfix hidden-xs"></div>';
+}
 ?>
+
 <div class="col-md-3 col-xs-6 text-center blog-other-teaser">
 		<a href="<?php echo get_permalink($post->ID); ?>" title="<?php get_the_title($post->ID); ?>">
 			<?php //see https://developer.wordpress.org/reference/functions/get_the_post_thumbnail/#comment-314 

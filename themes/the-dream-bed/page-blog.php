@@ -64,6 +64,7 @@
 	$urlstart = get_template_directory_uri();
 	$posts = get_posts($args);
 	$i=0;
+	$loadMoreCount= 0;
 	$exclude_ids = array($featured_id);
 	foreach($posts as $post){
 		setup_postdata($post);
@@ -115,11 +116,5 @@
 	<?php 
 	}	?>
 </div>
-
-<script type="text/javascript">
-jQuery(document).ready(function($){
-	 $('.blog-other-teaser').responsiveEqualHeightGrid();
- });
-</script>
 
 <?php get_footer(); ?>
