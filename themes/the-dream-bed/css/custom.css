@@ -1598,6 +1598,14 @@ h2.bedcount {
 	left: -50px;	
 }
 
+/* also hide the tracking pixels in the footer */
+
+#tracking-pixels {
+	position:absolute;
+	top: -100px;
+	left: -100px;
+}
+
 /* blog stuff */
 
 .blog-header {
@@ -1607,7 +1615,6 @@ h2.bedcount {
 
 .blog-title {
 	font-size: 1.143em;
-	font-weight: 700;
 	text-transform: uppercase;
 }
 
@@ -1720,7 +1727,6 @@ h2.bedcount {
 .share-posts {
 	text-align: left;
 }
-
 
 .share-posts-box {
 	background-color: #f1f2f2;
