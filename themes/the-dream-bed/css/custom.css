@@ -691,12 +691,38 @@ input[type="file"] > input[type="button"]::-moz-focus-inner {
 }
 
 .home-unboxing-box {
-	background-image: none; 
 	background-color: #F1F2F2;
+	padding-top: 30px;
+	padding-bottom: 30px;
 }
 
-.home-unboxing-box .inside {
-	color: #808284;
+.home-unboxing-box h4 {
+	text-transform: uppercase;
+	margin-bottom: 4px;
+}
+
+.home-unboxing-box p {
+	margin-bottom: 4px;
+}
+
+.home-unboxing-box-content {
+    display: table;
+    height: 100%; 
+    width: 100%;
+}
+
+.home-unboxing-box-content div:first-child {
+	display: table-cell;
+	vertical-align: middle;
+	padding: 10px;
+	width: 25%;
+}
+
+.home-unboxing-box-content div:last-child {
+	display: table-cell;
+	vertical-align: middle;
+	padding: 10px 10px 10px 30px;
+	width: 75%;
 }
 
 .home-donation-box {

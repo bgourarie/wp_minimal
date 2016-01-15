@@ -29,6 +29,9 @@ jQuery(document).ready(function($){
 	$("#la-video").on('hidden.bs.modal', function (e) {
     $("#la-video iframe").attr("src", $("#la-video iframe").attr("src"));
 		});
+	$("#unboxing-video").on('hidden.bs.modal', function (e) {
+    $("#unboxing-video iframe").attr("src", $("#unboxing-video iframe").attr("src"));
+		});
 	});
 	
 </script>
@@ -62,8 +65,6 @@ jQuery(document).ready(function($){
 		</div>
 	</div>
 </div>
-
-
 <div class="dark-grey-shapes why-choose">
 	<div class="container">
 		<div class="row">
@@ -124,6 +125,37 @@ jQuery(document).ready(function($){
 					</div>
 				</div>
 			</div>
+		</div>
+	</div>
+</div>
+<div class="home-unboxing-box">
+	<div class="container">
+		<div class="row">
+			<div class="col-xs-10 col-xs-offset-1 col-md-4 col-md-offset-4">
+				<div class="home-unboxing-box-content">
+					<div>
+						<a href="#" data-toggle="modal" data-target="#unboxing-video"><img src="<?php bloginfo("template_url"); ?>/images/icon-unboxingbox.svg" class="img-responsive" alt=""></a>
+					</div>
+					<div>
+						<h4>Unboxing is Easy!</h4>
+						<p>Watch Meredith, Chris, and Hank set up their new Dream Bed.</p>
+						<p><a href="#" class="btn btn-dream drop-shadow" role="button" data-toggle="modal" data-target="#unboxing-video">See the Video</a></p>
+					</div>
+				</div>	
+			</div>
+		</div>
+	</div>
+</div>
+<div class="modal fade" id="unboxing-video" tabindex="-1" role="dialog" aria-labelledby="unboxingLabel" aria-hidden="true">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">close</span></button>
+			</div>
+			<div class="modal-body">
+				<iframe width="560" height="315" src="https://www.youtube.com/embed/9Xc2rw-n86A?rel=0" frameborder="0" allowfullscreen></iframe>
+			</div>
+			<div class="modal-footer"></div>
 		</div>
 	</div>
 </div>
