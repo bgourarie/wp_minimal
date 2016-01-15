@@ -60,9 +60,9 @@ get_blog_header();
 		<?php // add clearfix every 4 or 2 posts...
 		$i+=1;
 		if($i%4 == 0 ){
-			echo '<div class="clearfix hidden-xs"></div>';
+			echo '<div class="clearfix visible-md-block visible-lg-block"></div>';
 		}if($i%2 == 0){
-			echo '<div class="clearfix visible-xs"></div>';
+			echo '<div class="clearfix visible-xs-block visible-sm-block"></div>';
 		}
 		wp_reset_postdata($post);
 		}
@@ -73,11 +73,10 @@ get_blog_header();
 				$skip_posts = implode(", ",$exclude_ids);
 				$destroy = ceil(($published_posts - sizeof($exclude_ids)) / 4); 
 				?> 
-			<div class="row">
-				<div class="col-sm-12 text-center">
+			
 			<?php echo do_shortcode('[ajax_load_more post_type="post" category="'.$cat->slug.'" exclude="'.$skip_posts.'" posts_per_page="4" pause="true" scroll="false" transition="none" images_loaded="true" destroy_after="'.$destroy.'" button_label="Load More" container_type="div"]'); ?>
-			</div>
-		</div>
+			
+			
 		<?php 
 		}	?>
 	</div>
