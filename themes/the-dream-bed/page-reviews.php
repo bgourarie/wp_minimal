@@ -230,7 +230,9 @@ if ($review_query->have_posts()) {
 	echo paginate_links( array(
 	'format' => '?paged=%#%',
 	'current' => max( 1, get_query_var('paged') ),
-	'total' => $count,
+	'total' => absint(ceil($count/$reviews_per_page)),
+	'prev_next' => false,
+	'show_all' => true,
 	) );
 
 } else {
