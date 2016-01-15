@@ -27,5 +27,4 @@ $loadMoreCount+= 1;
 		<?php if ( ! empty( $categories ) ) {
 			get_category_button( $categories[0]->cat_ID);
 		 	}  ?>
-	</div>
 </div>
