@@ -155,7 +155,7 @@ if ($review_query->have_posts()) {
 		$review_query->the_post();
 		$title = get_the_title();
 		$content = get_the_content();
-		$rating = get_field('rating');
+		$rating = ltrim(get_field('rating'),'0'); // trim any leading zeroes...
 		$name = get_field('name');
 		$photo = get_field('photo');
 		$city = get_field('city');
