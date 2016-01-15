@@ -84,10 +84,10 @@ wp_reset_postdata();
 	<form action="<?php bloginfo('url'); ?>/reviews" method="post">
 		<div>
 			<select name="show_product" onchange="this.form.submit()">
-				<option <?phpif(isset($_REQUEST['show_product']) && (htmlspecialchars($_REQUEST["show_product"]) == "dreambed"){ echo "selected"; } ?> value='dreambed'> Dream Bed </option>
-				<option <?phpif(isset($_REQUEST['show_product']) && (htmlspecialchars($_REQUEST["show_product"]) == "coolgelbed"){ echo "selected"; } ?> value='coolgelbed'> Cool Dream Bed </option>
-				<option <?phpif(isset($_REQUEST['show_product']) && (htmlspecialchars($_REQUEST["show_product"]) == "originaldreampillow"){ echo "selected"; } ?> value='originaldreampillow'> Original Dream Pillow </option>
-				<option <?phpif(isset($_REQUEST['show_product']) && (htmlspecialchars($_REQUEST["show_product"]) == "cooldreampillow"){ echo "selected"; } ?> value='cooldreampillow'> Cool Dream Pillow </option>
+				<option <?phpif(isset($_REQUEST['show_product']) && (htmlspecialchars($_REQUEST["show_product"])) == "dreambed"){ echo "selected"; } ?> value='dreambed'> Dream Bed </option>
+				<option <?phpif(isset($_REQUEST['show_product']) && (htmlspecialchars($_REQUEST["show_product"])) == "coolgelbed"){ echo "selected"; } ?> value='coolgelbed'> Cool Dream Bed </option>
+				<option <?phpif(isset($_REQUEST['show_product']) && (htmlspecialchars($_REQUEST["show_product"])) == "originaldreampillow"){ echo "selected"; } ?> value='originaldreampillow'> Original Dream Pillow </option>
+				<option <?phpif(isset($_REQUEST['show_product']) && (htmlspecialchars($_REQUEST["show_product"])) == "cooldreampillow"){ echo "selected"; } ?> value='cooldreampillow'> Cool Dream Pillow </option>
 			</select>
 		</div>
 	</form>
