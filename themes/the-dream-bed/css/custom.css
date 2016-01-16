@@ -1035,6 +1035,11 @@ h2.bedcount {
 	margin-right: auto;
 }
 
+.giving-map {
+	padding-top: 30px;
+	padding-bottom: 30px;
+}
+
 .team-page {
 	margin-bottom: 30px;
 }
@@ -1051,6 +1056,17 @@ h2.bedcount {
 .how-we-dream > div {
 	padding-left: 30px;
 	padding-right: 30px;
+}
+
+.how-we-dream img {
+	height: 119px;
+	width: auto;
+	margin-bottom: 20px;
+}
+
+.how-we-dream h4 {
+	text-transform: uppercase;
+	margin-bottom: 4px;
 }
 
 .design-page .img-responsive {
