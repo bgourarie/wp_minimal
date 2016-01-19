@@ -28,6 +28,9 @@ foreach($categories as $category) {
 
 /* loop through questions that match each category */
 	};
+/* Show the search form */
+	get_search_form( true );
+	
 	echo '</ul>';
 	echo '<div class="tab-content" id="dreamfaqcont">';
 	foreach($categories as $category) {
