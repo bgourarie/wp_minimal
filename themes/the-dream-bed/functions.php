@@ -124,10 +124,15 @@ if(function_exists('acf_add_options_page')) {
 
 /* remove visual editor for non- Posts */
 add_filter('user_can_richedit', 'disable_wysiwyg_for_non_post');
-function disable_wyswyg_for_non_post($default) {
+function disable_wysiwyg_for_non_post($default) {
   global $post;
-  if ('post' == get_post_type($post))
-    return true;
+  /*$current_user = wp_get_current_user();
+  if(in_array( 'author', $current_user->roles)){
+  	return true;
+  }*/
+  if ('post' == get_post_type($post)){
+      return true;
+  }
   return false;
 }
 //add_filter('user_can_richedit', create_function ('$a' , 'return false;') , 50);
