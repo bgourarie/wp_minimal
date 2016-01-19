@@ -1207,18 +1207,16 @@ h2.bedcount {
 }
 
 .faq_subcategory {
-	text-align: center;
-	padding: 20px;
-	font-size: 24px;
+	
 }
+
+/* not using justified nav anymore
 
 .nav-tabs.nav-justified>li>a {
 	-webkit-border-radius: 0;
 	-moz-border-radius: 0;
 	border-radius: 0;
 }
-
-/* not using justified nav anymore
 
 .nav-tabs.nav-justified>.active>a, .nav-tabs.nav-justified>.active>a:hover, .nav-tabs.nav-justified>.active>a:focus {
 	border-bottom-color: #DDDDDD;
