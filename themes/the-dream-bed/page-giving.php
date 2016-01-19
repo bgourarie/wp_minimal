@@ -59,7 +59,7 @@
 			</div>
 		</div>
 		<div class="row row-eq-height rowpadding">
-			<div class="col-xs-6"></div>
+			<div class="col-xs-6" style="background-image:url(<?php bloginfo("template_url"); ?>/images/photos/dream-giving-family.jpg); background-position: top;"></div>
 			<div class="col-xs-6 dark-grey-fill">
 				<h4>DREAM IT FORWARD IN MINNEAPOLIS</h4>
 				<p>In August 2015 the Dream Bed Team went to Minneapolis, Minnesota to give back to the community at Sharing and Caring Hands/Mary Jo Copeland Shelter and Simpson Housing Services.</p>
