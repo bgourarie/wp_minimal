@@ -17,19 +17,16 @@ get_header(); ?>
 			</header><!-- .page-header -->
 
 			<?php /* Start the Loop */ ?>
+			<ul>
 			<?php while ( have_posts() ) : the_post(); ?>
-
-				<?php
-				/**
-				 * Run the loop for the search to output the results.
-				 * If you want to overload this in a child theme then include a file
-				 * called content-search.php and that will be used instead.
-				 */
-				get_template_part( 'template-parts/content', 'search' );
-				?>
-
+				<li>
+				<h3>
+					<?php echo get_the_title(get_the_ID()); ?> 
+				</h3>
+					<?php echo wp_trim_words(get_the_content($post->ID), 20, '...' ); ?>
+				</li>
 			<?php endwhile; ?>
-
+			</ul>
 			<?php the_posts_navigation(); ?>
 
 		<?php else : ?>
