@@ -52,6 +52,13 @@ input[type="file"] > input[type="button"]::-moz-focus-inner {
 	background-color: transparent;
 }
 
+.row-eq-height {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
 /* yet another mega menu */
 
 .yamm .nav, .yamm .collapse, .yamm .dropup, .yamm .dropdown {
@@ -753,6 +760,18 @@ input[type="file"] > input[type="button"]::-moz-focus-inner {
 	background-color: #f2f2f2;	
 }
 
+.dark-grey-fill {
+	padding: 20px 0;
+	background-color: #6A6A6A;
+	color: #fff;
+}
+
+.orange-fill {
+	padding: 20px 0;
+	background-color: #F79D33;
+	color: #fff;
+}
+
 .inner-shadow {
 	-webkit-box-shadow: inset 0 20px 20px -20px rgba(0,0,0,0.6);
 	-moz-box-shadow: inset 0 20px 20px -20px rgba(0,0,0,0.6);
@@ -1022,8 +1041,12 @@ h2.bedcount {
 	width: 100%;
 }
 
-.design-page .row, .giving-page .row  {
+.rowspace {
 	margin-bottom: 30px;
+}
+
+.rowpadding > div {
+	padding: 30px;
 }
 
 .design-page, .giving-page, .how-to-dream-page {
@@ -1038,6 +1061,29 @@ h2.bedcount {
 .giving-map {
 	padding-top: 30px;
 	padding-bottom: 30px;
+}
+
+.giving-samples .row > div {
+	background-size: cover;
+	background-position: center;
+}
+
+.giving-samples .play-button {
+	width: 100px;
+	height: auto;
+	position: absolute;
+	top: calc(50% - 50px);
+	left: calc(50% - 50px);
+}
+
+.partners {
+	padding-top: 30px;
+}
+
+.partners img {
+	width: 230px;
+	max-width: 25%;
+	height: auto;
 }
 
 .team-page {
@@ -1061,6 +1107,7 @@ h2.bedcount {
 .how-we-dream img {
 	height: 119px;
 	width: auto;
+	max-width: 100%;
 	margin-bottom: 20px;
 }
 
