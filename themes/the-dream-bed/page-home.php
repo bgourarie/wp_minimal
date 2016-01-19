@@ -55,7 +55,7 @@ jQuery(document).ready(function($){
 				</button>
 			</div>
 			<div class="modal-body">
-				<iframe width="560" height="315" src="https://www.youtube.com/embed/8nnD0NpYHzw?rel=0" frameborder="0" allowfullscreen></iframe>
+				<iframe allowFullScreen allowTransparency="true" class="vzaar-video-player" frameborder="0" height="432" id="vzvd-6170249" mozallowfullscreen name="vzvd-6170249" src="//view.vzaar.com/6170249/player" title="vzaar video player" type="text/html" webkitAllowFullScreen width="768"></iframe>
 			</div>
 			<div class="modal-footer">
 			</div>
