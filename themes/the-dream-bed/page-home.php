@@ -43,7 +43,7 @@ jQuery(document).ready(function($){
 				<a href="#" data-toggle="modal" data-target="#ellen-video"><img src="<?php bloginfo("template_url"); ?>/images/ellen-logo-as-seen-on.svg" class="drop-shadow as-seen-on" alt="as seen on ellen: The Ellen DeGeneres Show"></a>
 			</div>
 			<div class="col-lg-4 col-md-5 col-sm-6 text-center">
-				<h4 class="clearfix">The Dream Bed was recently featured on <span style="white-space: nowrap">The Ellen DeGeneres Show</span></h4>
+				<h4 class="clearfix">Look who is dreaming with us!</h4>
 				<p><a href="#" data-toggle="modal" data-target="#ellen-video" class="btn btn-dream drop-shadow" role="button">Watch Now!</a></p>
 			</div>
 		</div>
@@ -58,7 +58,7 @@ jQuery(document).ready(function($){
 				</button>
 			</div>
 			<div class="modal-body">
-				<iframe width="560" height="315" src="https://www.youtube.com/embed/8nnD0NpYHzw?rel=0" frameborder="0" allowfullscreen></iframe>
+				<iframe allowFullScreen allowTransparency="true" class="vzaar-video-player" frameborder="0" height="432" id="vzvd-6170249" mozallowfullscreen name="vzvd-6170249" src="//view.vzaar.com/6170249/player" title="vzaar video player" type="text/html" webkitAllowFullScreen width="768"></iframe>
 			</div>
 			<div class="modal-footer">
 			</div>
