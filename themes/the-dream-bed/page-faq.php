@@ -29,16 +29,16 @@ foreach($categories as $category) {
 /* loop through questions that match each category */
 	};
 /* Show the search form */
-	get_search_form( true );
-	
+	echo '<li>';
+		get_search_form( true );
+	echo '</li>';
 	echo '</ul>';
 	echo '<div class="tab-content" id="dreamfaqcont">';
 	foreach($categories as $category) {
 		$subcats = array('child_of'=>$category->ID);
 		$children = get_categories($subcats);
-		if($children){
-		echo '<div role="tabpanel" class="tab-pane fade" id="' . $category->slug . '">';
-
+		if($subcats){
+			echo '<div role="tabpanel" class="tab-pane fade" id="' . $category->slug . '">';
 			foreach($children as $prod_cat){
 				if($prod_cat->category_parent == $category->term_id){
 					$args = array(
@@ -48,13 +48,9 @@ foreach($categories as $category) {
 						'order' => 'ASC'
 					);
 					$faq_prod_query = new WP_Query($args);
-					if($faq_prod_query->have_posts()){
-						
-						echo '<div class="faq_subcategory">';
-							
-							echo $prod_cat->name;
-					
-
+					if($faq_prod_query->have_posts()){			
+						echo '<div class="faq_subcategory">';		
+						echo $prod_cat->name;
 						while ($faq_prod_query->have_posts() ) {
 							$faq_prod_query->the_post();
 							echo '<h3>' . get_the_title() . '</h3>
@@ -68,9 +64,9 @@ foreach($categories as $category) {
 					}
 					wp_reset_postdata();
 				}
-		}
-		echo '</div>';
-	}else{
+			}
+			echo '</div>';
+		}else{
 			$args = array(
 				'post_type' => 'faq',
 				'category_name' => ''. $category->slug .'',
