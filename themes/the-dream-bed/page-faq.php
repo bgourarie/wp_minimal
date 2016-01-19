@@ -35,9 +35,9 @@ foreach($categories as $category) {
 	echo '</ul>';
 	echo '<div class="tab-content" id="dreamfaqcont">';
 	foreach($categories as $category) {
-		$subcats = array('child_of'=>$category->ID);
+		$subcats = array('child_of'=>$category->term_id);
 		$children = get_categories($subcats);
-		if($subcats){
+		if($children){
 			echo '<div role="tabpanel" class="tab-pane fade" id="' . $category->slug . '">';
 			foreach($children as $prod_cat){
 				if($prod_cat->category_parent == $category->term_id){
