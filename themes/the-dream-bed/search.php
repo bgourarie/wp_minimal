@@ -21,13 +21,15 @@ get_header(); ?>
 			<?php while ( have_posts() ) : the_post(); ?>
 				<li>
 				<h3>
-					<?php echo get_the_title(get_the_ID()); ?> 
+					<a href="<?php echo get_permalink($post->ID); ?>" title="<?php get_the_title($post->ID); ?>">
+						<?php echo get_the_title(get_the_ID()); ?> 
+					</a>
 				</h3>
 					<?php echo wp_trim_words(get_the_content($post->ID), 20, '...' ); ?>
 				</li>
 			<?php endwhile; ?>
 			</ul>
-			<?php the_posts_navigation(); ?>
+			<?php the_posts_navigation(array('prev_text'=>"Older Results",'next_text'=>"Newer Results")); ?>
 
 		<?php else : ?>
 
