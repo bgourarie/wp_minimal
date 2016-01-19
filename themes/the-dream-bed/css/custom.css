@@ -1203,7 +1203,13 @@ h2.bedcount {
 }
 
 .nav-tabs {
-	text-transform: uppercase;
+	
+}
+
+.faq_subcategory {
+	text-align: center;
+	padding: 20px;
+	font-size: 24px;
 }
 
 .nav-tabs.nav-justified>li>a {
@@ -1211,6 +1217,8 @@ h2.bedcount {
 	-moz-border-radius: 0;
 	border-radius: 0;
 }
+
+/* not using justified nav anymore
 
 .nav-tabs.nav-justified>.active>a, .nav-tabs.nav-justified>.active>a:hover, .nav-tabs.nav-justified>.active>a:focus {
 	border-bottom-color: #DDDDDD;
@@ -1233,9 +1241,9 @@ h2.bedcount {
 	border-right: 1px solid #DDDDDD;
 }
 
+*/
+
 .tab-pane {
-	border: 1px solid #DDDDDD;
-	padding: 15px;
 	margin-top: 15px;
 	margin-bottom: 15px;
 }

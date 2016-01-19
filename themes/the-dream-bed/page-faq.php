@@ -20,7 +20,7 @@ $cat_args = array(
 $categories = get_categories($cat_args);
 
 /* list each category */
-echo '<ul class="nav nav-tabs nav-justified" id="dreamfaqcat" role="tablist">';
+echo '<ul class="nav nav-tabs" id="dreamfaqcat" role="tablist">';
 foreach($categories as $category) {
 	echo '<li role="presentation">';
 	echo '<a href="#' . $category->slug . '" aria-controls="' . $category->slug . '" role="tab" data-toggle="tab">' . $category->name . '</a>';
