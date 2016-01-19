@@ -10,7 +10,7 @@ require get_template_directory() . '/includes/shop.php';
 // add blog post inclusions
 require get_template_directory() . '/includes/blog-posts.php';
 // adding header pixels. 
-require get_template_directory() . '/includes/header-pixels.php';
+require get_template_directory() . '/includes/trackers-and-pixels.php';
 
 /* fix glitch on chrome for admin menus */
 function chromefix_inline_css() { 
@@ -338,79 +338,3 @@ function get_cool_pillow_id(){
 
 add_filter( 'excerpt_length', 'td_excerptLength' );
 function td_excerptLength( $length ) { return 40; };
-
-
-/**
- * Add GA Ecommerce Tracking Code to the Confirmation Page
- */
-function wc_jc_checkout_analytics( $order_id ) {
-	$order = new WC_Order( $order_id );
-	if( current_user_can( 'edit_posts' ) ) {
-	?>
-		<!-- Google Analytics Ecommerce Tracking Code disabled for Admin and Editors-->	
-	<?php 
-	}else{
-	?>
-		<!-- Google Analytics Ecommerce Tracking Code -->
-		<script>
-			(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-			m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-			})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-			ga('create', 'UA-67306588-1', 'auto');
-
-			ga('require', 'ecommerce');
-
-			ga('ecommerce:addTransaction', {		
-				'id': '<?php echo $order_id; ?>',          // Transaction ID. Required.				
-				'affiliation': 'Dream Bed',   					// Affiliation or store name.			
-				'revenue': '<?php echo $order->get_total(); ?>',        	// Grand Total.				
-				'shipping': '<?php echo $order-> get_total_shipping(); ?>',     // Shipping.			
-				'tax': '<?php echo $order-> get_total_tax(); ?>'             	// Tax.
-			});
-
-			<?php    
-			$order_items = $order->get_items();	
-
-			//loop through line items
-        	foreach( $order_items as $item ) {
-		
-				//check if it's a variation or a simple product
-				if($item['variation_id'] > 0){
-					$variation = new WC_Product_Variation($item['variation_id']);
-				?>
-					ga('ecommerce:addItem', {
-						'id': '<?php echo $order_id; ?>',        // Transaction ID. Required.
-						'name': '<?php echo str_replace("'","",$item['name']); ?>',    	// Product name. Required.
-						'sku': '<?php echo str_replace("'","",$variation->get_sku()); ?>',       // SKU/code.
-						'category': '<?php echo str_replace("'","",strip_tags($variation->get_categories())); ?>',  // Category or variation.
-						'price': '<?php echo $variation->get_price(); ?>',     // Unit price.
-						'quantity': '<?php echo $item['qty']; ?>'  // Quantity.						
-					});
-				<?php
-				}else{
-					$product = new WC_Product($item['product_id']);
-				?>
-					ga('ecommerce:addItem', {
-						'id': '<?php echo $order_id; ?>',        // Transaction ID. Required.
-						'name': '<?php echo str_replace("'","",$item['name']); ?>',    	// Product name. Required.
-						'sku': '<?php echo str_replace("'","",$product->get_sku()); ?>',       // SKU/code.
-						'category': '<?php echo str_replace("'","",strip_tags($product->get_categories())); ?>',  // Category or variation.
-						'price': '<?php echo $product->get_price(); ?>',     // Unit price.
-						'quantity': '<?php echo $item['qty']; ?>'  // Quantity.						
-					});
-				<?php
-				}
-        	}
-			?>
-
-			ga('ecommerce:send');
-			</script>
-			<!-- End Google Analytics Ecommerce Tracking Code -->
-	<?php	
-	}
-}
-add_action( 'woocommerce_thankyou', 'wc_jc_checkout_analytics' );
-
-
