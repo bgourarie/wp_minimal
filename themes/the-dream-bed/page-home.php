@@ -40,7 +40,7 @@ jQuery(document).ready(function($){
 				<a href="#" data-toggle="modal" data-target="#ellen-video"><img src="<?php bloginfo("template_url"); ?>/images/ellen-logo-as-seen-on.svg" class="drop-shadow as-seen-on" alt="as seen on ellen: The Ellen DeGeneres Show"></a>
 			</div>
 			<div class="col-lg-4 col-md-5 col-sm-6 text-center">
-				<h4 class="clearfix">The Dream Bed was recently featured on <span style="white-space: nowrap">The Ellen DeGeneres Show</span></h4>
+				<h4 class="clearfix">Look who is dreaming with us!</h4>
 				<p><a href="#" data-toggle="modal" data-target="#ellen-video" class="btn btn-dream drop-shadow" role="button">Watch Now!</a></p>
 			</div>
 		</div>
