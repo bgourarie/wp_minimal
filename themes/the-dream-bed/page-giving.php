@@ -47,20 +47,20 @@
 		</div>
 	</div>
 	
-	<div class="container-fluid giving-samples">
+	<div class="container giving-samples">
 		<div class="row row-eq-height rowpadding">
-			<div class="col-xs-6" style="background-image:url(<?php bloginfo("template_url"); ?>/images/photos/dream-it-fwd-mattress-delivery-van.jpg)">
+			<div class="col-xs-6 col-lg-4 col-lg-offset-2" style="background-image:url(<?php bloginfo("template_url"); ?>/images/photos/dream-it-fwd-mattress-delivery-van.jpg)">
 				<a href="#" data-toggle="modal" data-target="#la-video"><img src="<?php bloginfo("template_url"); ?>/images/icon-videoplay.svg" class="center-block play-button" alt=""></a>
 			</div>
-			<div class="col-xs-6 light-grey-fill">
+			<div class="col-xs-6 col-lg-4 light-grey-fill">
 				<h4>100 BEDS DONATED IN LA</h4>
 				<p>In August 2015 the Dream Bed Team went to Minneapolis, Minnesota to give back to the community at Sharing and Caring Hands/Mary Jo Copeland Shelter and Simpson Housing Services.</p>
 				<p>Our team was able to donate over 50 mattress sets, cleaned housing areas and common spaces, and helped make sandwiches for  residents afterward.</p>
 			</div>
 		</div>
 		<div class="row row-eq-height rowpadding">
-			<div class="col-xs-6" style="background-image:url(<?php bloginfo("template_url"); ?>/images/photos/dream-giving-family.jpg); background-position: top;"></div>
-			<div class="col-xs-6 dark-grey-fill">
+			<div class="col-xs-6 col-lg-4 col-lg-offset-2" style="background-image:url(<?php bloginfo("template_url"); ?>/images/photos/dream-giving-family.jpg); background-position: top;"></div>
+			<div class="col-xs-6 col-lg-4 dark-grey-fill">
 				<h4>DREAM IT FORWARD IN MINNEAPOLIS</h4>
 				<p>In August 2015 the Dream Bed Team went to Minneapolis, Minnesota to give back to the community at Sharing and Caring Hands/Mary Jo Copeland Shelter and Simpson Housing Services.</p>
 				<p>Our team was able to donate over 50 mattress sets, cleaned housing areas and common spaces, and helped make sandwiches for residents afterward.</p>
@@ -70,7 +70,7 @@
 	
 	<div class="container">
 		<div class="row rowpadding">
-			<div class="col-sm-12 text-center partners">
+			<div class="col-sm-12 col-lg-8 col-lg-offset-2 text-center partners">
 				<h2>Charitable Partners</h2>
 				<p>Special thanks to our partners who help us give back.</p>
 				<a href="http://www.sharingandcaringhands.org"><img src="<?php bloginfo("template_url"); ?>/images/logo-sharing-and-caring.png" alt="Sharing and Caring Hands"></a>
