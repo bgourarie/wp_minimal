@@ -1221,6 +1221,14 @@ h2.bedcount {
 	border-bottom: 1px solid #ddd;
 }
 
+.a-question h3 {
+	margin-bottom: 0;
+}
+
+.a-question p {
+	margin-top: 15px;
+}
+
 /* not using justified nav anymore
 
 .nav-tabs.nav-justified>li>a {
