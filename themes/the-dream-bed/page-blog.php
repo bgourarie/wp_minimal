@@ -11,7 +11,7 @@ foreach($posts as $feature){
 	$categories = get_the_category($feature);
 	$featured_id = $feature->ID;
 	?>
-
+	<div class="clearfix"></div>
 	<div class="container blog-featured">
 		<div class="row">
 			<div class="col-md-10 col-sm-8 col-xs-12">
