@@ -50,11 +50,13 @@ foreach($categories as $category) {
 					if($faq_prod_query->have_posts()){			
 						echo '<div class="faq_subcategory">';		
 						echo '<h2>' . $prod_cat->name . '</h2>';
+						$i=1;
 						while ($faq_prod_query->have_posts() ) {
 							$faq_prod_query->the_post();
-							echo '<div class="a-question"><h3>' . get_the_title() . '</h3>
-									<p>' . get_the_content() .'</p></div>
+							echo '<div class="a-question"><h3><a href="#question'.$i.'" aria-expanded="true" aria-controls="question'.$i.'">'. get_the_title() . '</a></h3>
+									<p id="question'.$i.'" class="collapse">' . get_the_content() .'</p></div>
 								';
+								$i+=1;
 						}
 					 echo '</div>';	
 					}
@@ -76,11 +78,13 @@ foreach($categories as $category) {
 			$faq_query = new WP_Query($args);
 			if ($faq_query->have_posts()) {
 				echo '<div role="tabpanel" class="tab-pane fade" id="' . $category->slug . '">';
+				$i = 1;
 				while ($faq_query->have_posts() ) {
 					$faq_query->the_post();
-					echo '<div class="a-question"><h3>' . get_the_title() . '</h3>
-							<p>' . get_the_content() .'</p></div>
-						';
+					echo '<div class="a-question"><h3><a href="#question'.$i.'" aria-expanded="true" aria-controls="question'.$i.'">'. get_the_title() . '</a></h3>
+									<p id="question'.$i.'" class="collapse">' . get_the_content() .'</p></div>
+								';
+					$i+=1;
 				}
 				echo '</div>';
 			} else {
