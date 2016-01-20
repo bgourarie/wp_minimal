@@ -313,6 +313,11 @@ add_action( 'after_setup_theme', 'the_dream_bed_setup' );
  */
 function the_dream_bed_scripts() {
 	wp_enqueue_style( 'the-dream-bed-style', get_stylesheet_uri() );
+	wp_enqueue_script(
+		'bootstrap-select',
+		get_stylesheet_directory_uri() . '/js/bootstrap-select.min.js',
+		array( 'jquery' )
+	);
 }
 add_action( 'wp_enqueue_scripts', 'the_dream_bed_scripts' );
 
