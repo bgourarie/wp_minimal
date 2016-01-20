@@ -231,16 +231,6 @@ if ($review_query->have_posts()) {
 			  </div>";
 	}
 	echo '<!-- end reviews -->';
-	$page_args = array( 'prev_text' => '', 'next_text' => '');
-	// output the page numbers onto the screen. 
-	echo paginate_links( array(
-	'format' => '?paged=%#%',
-	'current' => max( 1, get_query_var('paged') ),
-	'total' => absint(ceil($count/$reviews_per_page)),
-	'prev_next' => false,
-	'show_all' => true,
-	) );
-
 } else {
 
 	?>
@@ -256,7 +246,17 @@ wp_reset_postdata();
 
 <div class="row">
 	<div class="col-sm-12 col-md-offset-2 col-md-4 review-pagination">
-		<p>pagination goes here if needed</p>
+		<p>	<?php 
+			$page_args = array( 'prev_text' => '', 'next_text' => '');
+			// output the page numbers onto the screen. 
+			echo paginate_links( array(
+				'format' => '?paged=%#%',
+				'current' => max( 1, get_query_var('paged') ),
+				'total' => absint(ceil($count/$reviews_per_page)),
+				'prev_next' => false,
+				'show_all' => true,
+			) ); ?>
+	 	</p>
 	</div>
 	<div class="col-sm-12 col-md-4 review-add-button">
 		<p><a class="btn btn-dream drop-shadow" role="button" data-toggle="collapse" href="#new-review-form" aria-expanded="false" aria-controls="new-review-form">Write a review</a></p>
