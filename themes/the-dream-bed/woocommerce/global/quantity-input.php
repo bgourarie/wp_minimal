@@ -31,7 +31,7 @@ else $step = 1;
 
 ?>
 <div class="quantity_select">
-	<select name="<?php echo esc_attr( $input_name ); ?>" title="<?php _ex( 'Qty', 'Product quantity input tooltip', 'woocommerce' ) ?>" class="qty">
+	<select name="<?php echo esc_attr( $input_name ); ?>" title="<?php _ex( 'Qty', 'Product quantity input tooltip', 'woocommerce' ) ?>" class="qty selectpicker" data-width="80px">
 	<?php
 	for ( $count = $min; $count <= $max; $count = $count+$step ) {
 		if ( $count == $input_value )

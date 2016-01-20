@@ -1408,6 +1408,7 @@ h2.bedcount {
   right: 12px;
   margin-top: -2px;
   vertical-align: middle;
+  color: #E58E2A;
 }
 .bootstrap-select.btn-group[class*="col-"] .dropdown-toggle {
   width: 100%;
@@ -1487,6 +1488,7 @@ h2.bedcount {
   position: static;
   top: auto;
   margin-top: -1px;
+  color: #E58E2A;
 }
 .bootstrap-select.btn-group.show-tick .dropdown-menu li.selected a span.check-mark {
   position: absolute;
