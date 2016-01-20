@@ -80,25 +80,40 @@ wp_reset_postdata();
 
 <div class="container reviews-page">
 <form action="<?php bloginfo('url'); ?>/reviews" method="post">
-	<div class="row">
-		<div>
-			<select name="show_product" onchange="this.form.submit()">
+	<div class="row reviewtop">
+		
+		<div class="col-md-2 col-md-push-6">
+			<div class="form-group">
+				<label for="show_product">Product:</label>
+				<select name="show_product" onchange="this.form.submit()" class="selectpicker form-control">
 					<option <?php if(isset($_REQUEST['show_product']) && (htmlspecialchars($_REQUEST["show_product"])) == "dreambed"){ echo "selected"; } ?> value='dreambed'> Dream Bed </option>
 					<option <?php if(isset($_REQUEST['show_product']) && (htmlspecialchars($_REQUEST["show_product"])) == "coolgelbed"){ echo "selected"; } ?> value='coolgelbed'> Cool Dream Bed </option>
 					<option <?php if(isset($_REQUEST['show_product']) && (htmlspecialchars($_REQUEST["show_product"])) == "originaldreampillow"){ echo "selected"; } ?> value='originaldreampillow'> Original Dream Pillow </option>
 					<option <?php if(isset($_REQUEST['show_product']) && (htmlspecialchars($_REQUEST["show_product"])) == "cooldreampillow"){ echo "selected"; } ?> value='cooldreampillow'> Cool Dream Pillow </option>
 				</select>
 			</div>
-	</div>
-	<div class="row">
+		</div>
+		
+		<div class="col-md-2 col-md-push-6">
+			<div class="form-group">
+				<label for="sort">Sort:</label>
+				<select name="sort" onchange="this.form.submit()" class="selectpicker form-control">
+					<option <?php if(isset($_REQUEST['sort']) && (htmlspecialchars($_REQUEST["sort"]) == "newest")) { echo "selected"; } ?>  value="newest">Newest</option>
+					<option <?php if(isset($_REQUEST['sort']) && (htmlspecialchars($_REQUEST["sort"]) == "oldest")) { echo "selected"; } ?>  value="oldest">Oldest</option>
+					<option <?php if(isset($_REQUEST['sort']) && (htmlspecialchars($_REQUEST["sort"]) == "highest")) { echo "selected"; } ?>  value="highest">Highest Rating</option>
+					<option <?php if(isset($_REQUEST['sort']) && (htmlspecialchars($_REQUEST["sort"]) == "lowest")) { echo "selected"; } ?>  value="lowest">Lowest Rating</option>
+				</select>
+			</div>
+		</div>
+		
 		<?php if(!$ratings){ // if we have no ratings, we must have had no posts... 
 			?> 
 		<?php } 
 		else{
 		?>
-		<div class="col-sm-4 col-sm-offset-1 review-header">
-			<h3>average rating:
-                <span class="average-stars">
+		<div class="col-md-4 col-md-pull-2 review-header">
+			<h4>Average Rating  <small>(Based on <?php echo $count; ?> reviews)</small></span></h4>
+                <div class="average-stars">
                 <?php
                     $average_rating = round((calculate_average($ratings) * 2), 0) / 2;
                     // Loop and print a whole star for each step.
@@ -110,20 +125,12 @@ wp_reset_postdata();
                         echo '<img src="' . get_bloginfo("template_url") . '/images/half-star.svg" />';
                     }
                 ?>
-				<small>based on <?php echo $count; ?> reviews</small></span></h3>
-			</div>
-		<?php } ?>
-		<div class="col-sm-6 text-right review-sorting">
-			<div>
-				<label for="sort">Sort By:</label>
-				<select name="sort" onchange="this.form.submit()">
-					<option <?php if(isset($_REQUEST['sort']) && (htmlspecialchars($_REQUEST["sort"]) == "newest")) { echo "selected"; } ?>  value="newest">Newest</option>
-					<option <?php if(isset($_REQUEST['sort']) && (htmlspecialchars($_REQUEST["sort"]) == "oldest")) { echo "selected"; } ?>  value="oldest">Oldest</option>
-					<option <?php if(isset($_REQUEST['sort']) && (htmlspecialchars($_REQUEST["sort"]) == "highest")) { echo "selected"; } ?>  value="highest">Highest Rating</option>
-					<option <?php if(isset($_REQUEST['sort']) && (htmlspecialchars($_REQUEST["sort"]) == "lowest")) { echo "selected"; } ?>  value="lowest">Lowest Rating</option>
-				</select>
+				
 			</div>
 		</div>
+		<?php } ?>
+		
+		
 	</div>
 </form>	
 		
@@ -200,21 +207,17 @@ if ($review_query->have_posts()) {
     $photo .= $prod_photo;
 
 		echo "<div class='row one-review'>
-				<div class='col-sm-3 col-sm-offset-1 col-md-3 col-md-offset-1 hidden-xs review-personal-img'>
-					<img src='$photo' class='img-responsive'>
-				</div>
-				<div class='col-sm-7 col-md-7 review-personal-text'>
+				<div class='col-sm-8 col-sm-offset-2 review-personal-text'>
 					<p class='stars'>
 						<img src='$turl/images/$rating-stars.svg'>
 					</p>
-					<h3>$title</h3>
-=					<p class='the-review'>$content</p>
+					<h4>$title</h4>
+					<p class='the-review'>$content</p>
 					<p class='reviewer'>
 						$name, $city $state <br>
 						$date
 					</p>
 					<p class='iconset'>
-						<img src='$turl/images/ico-$product_icon.svg'>
 						";
 						if($size != 'none')
 							echo "
@@ -241,8 +244,10 @@ if ($review_query->have_posts()) {
 } else {
 
 	?>
-			<div class="reviews-empty">
-				No reviews found. Try again?
+			<div class="row">
+				<div class="reviews-empty col-md-8 col-md-offset-2 text-center">
+					Sorry, we don't have any reviews yet. Would you like to <a data-toggle="collapse" href="#new-review-form" aria-expanded="false" aria-controls="new-review-form" style="text-decoration: underline;">write the first one</a>?
+				</div>
 			</div>
 <?php // no reviews found
 }
@@ -250,10 +255,10 @@ wp_reset_postdata();
 ?>
 
 <div class="row">
-	<div class="col-xs-12">
+	<div class="col-sm-12 col-md-offset-2 col-md-8">
 		<p class="text-center"><a class="btn btn-dream" role="button" data-toggle="collapse" href="#new-review-form" aria-expanded="false" aria-controls="new-review-form">Write a review</a></p>
 	</div>
-	<div class="col-xs-12">
+	<div class="col-sm-12 col-md-offset-2 col-md-8">
 		<div class="collapse" id="new-review-form">
 			<?php
 			/* generate the review form for users to submit reviews directly to the custom post type for review */
