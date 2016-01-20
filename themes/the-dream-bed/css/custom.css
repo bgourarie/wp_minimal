@@ -1200,7 +1200,7 @@ h2.bedcount {
 
 a.page-numbers, span.page-numbers {
 	display: inline-block;
-	padding: 4px; 
+	padding: 1px 7px; 
 	border: 1px solid #D9D9DA;
 	margin-right: 5px;
 }
