@@ -1206,8 +1206,19 @@ h2.bedcount {
 	
 }
 
-.faq_subcategory {
-	
+.faq_subcategory h2 {
+	text-align: center;
+}
+
+.a-question {
+	border-left: 1px solid #ddd;
+	border-right: 1px solid #ddd;
+	border-top: 1px solid #ddd;
+	padding: 20px;
+}
+
+.a-question:last-child {
+	border-bottom: 1px solid #ddd;
 }
 
 /* not using justified nav anymore
@@ -1270,6 +1281,22 @@ h2.bedcount {
 
 .faq-footer .phone {
 	color: #808284;
+}
+
+.stylish-input-group .input-group-addon {
+    background: white !important; 
+    border-left: none;
+}
+
+.stylish-input-group .form-control {
+	border-right: none; 
+	box-shadow:0 0 0; 
+	border-color:#ccc;
+}
+
+.stylish-input-group button {
+    border:0;
+    background:transparent;
 }
 
 /* buttons for shop radios */
@@ -1741,6 +1768,8 @@ h2.bedcount {
 
 .blog-featured {
 	position: relative;
+	min-height: 200px;
+	display: block;
 }
 
 .blog-featured-text {
@@ -2101,6 +2130,15 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
 	margin-left: 0;
 }
 
+.dreamsearchform {
+	display: block;
+	margin-bottom: 20px;
+}
+
+.stylish-input-group {
+   width: 100%;
+}
+
 }
 
 /* Small Devices, Tablets */
@@ -2341,6 +2379,24 @@ h6, .h6 {
 	top: 50%;
 	transform: translateY(-50%);
 	margin-top: 0;
+}
+
+.dreamsearchform {
+	margin-bottom: 0;
+	display: inline-block;
+}
+
+.faqpage .dreamsearchform {
+	float: right;
+	margin-bottom: 0;
+}
+
+.dreamsearchform .stylish-input-group {
+   width: 200px;
+}
+
+.blog-search {
+	display: block;
 }
 
 }
