@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 
-<div class="container">
+<div class="container faqpage">
 	<div class="row">
 		<div class="col-sm-12">
 
@@ -18,7 +18,8 @@ $cat_args = array(
 	'order' => 'ASC'
 ); 
 $categories = get_categories($cat_args);
-
+/* Show the search form */
+	get_search_form( true );
 /* list each category */
 echo '<ul class="nav nav-tabs" id="dreamfaqcat" role="tablist">';
 foreach($categories as $category) {
@@ -28,10 +29,8 @@ foreach($categories as $category) {
 
 /* loop through questions that match each category */
 	};
-/* Show the search form */
-	echo '<li>';
-		get_search_form( true );
-	echo '</li>';
+
+	
 	echo '</ul>';
 	echo '<div class="tab-content" id="dreamfaqcont">';
 	foreach($categories as $category) {
@@ -50,11 +49,11 @@ foreach($categories as $category) {
 					$faq_prod_query = new WP_Query($args);
 					if($faq_prod_query->have_posts()){			
 						echo '<div class="faq_subcategory">';		
-						echo $prod_cat->name;
+						echo '<h2>' . $prod_cat->name . '</h2>';
 						while ($faq_prod_query->have_posts() ) {
 							$faq_prod_query->the_post();
-							echo '<h3>' . get_the_title() . '</h3>
-									<p>' . get_the_content() .'</p>
+							echo '<div class="a-question"><h3>' . get_the_title() . '</h3>
+									<p>' . get_the_content() .'</p></div>
 								';
 						}
 					 echo '</div>';	
@@ -79,8 +78,8 @@ foreach($categories as $category) {
 				echo '<div role="tabpanel" class="tab-pane fade" id="' . $category->slug . '">';
 				while ($faq_query->have_posts() ) {
 					$faq_query->the_post();
-					echo '<h3>' . get_the_title() . '</h3>
-							<p>' . get_the_content() .'</p>
+					echo '<div class="a-question"><h3>' . get_the_title() . '</h3>
+							<p>' . get_the_content() .'</p></div>
 						';
 				}
 				echo '</div>';
