@@ -204,11 +204,11 @@ if ($review_query->have_posts()) {
 					<img src='$photo' class='img-responsive'>
 				</div>
 				<div class='col-sm-7 col-md-7 review-personal-text'>
-					<h3>$title</h3>
 					<p class='stars'>
 						<img src='$turl/images/$rating-stars.svg'>
 					</p>
-					<p class='the-review'>$content</p>
+					<h3>$title</h3>
+=					<p class='the-review'>$content</p>
 					<p class='reviewer'>
 						$name, $city $state <br>
 						$date
