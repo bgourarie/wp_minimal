@@ -1198,6 +1198,27 @@ h2.bedcount {
 	vertical-align: middle;
 }
 
+a.page-numbers, span.page-numbers {
+	display: inline-block;
+	padding: 4px; 
+	border: 1px solid #D9D9DA;
+	margin-right: 5px;
+}
+
+span.current {
+	background-color: #818386;
+	color: #fff;
+}
+
+a.page-numbers  {
+	color: #818386;
+}
+
+a.page-numbers:hover, a.page-numbers:active  {
+	color: #818386;
+	background-color: #DDDDDD;
+}
+
 .instagram-review-photos ul {
 	padding-left: 0;
 	margin-left: 0;
