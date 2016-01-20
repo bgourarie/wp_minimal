@@ -255,8 +255,11 @@ wp_reset_postdata();
 ?>
 
 <div class="row">
-	<div class="col-sm-12 col-md-offset-2 col-md-8">
-		<p class="text-center"><a class="btn btn-dream" role="button" data-toggle="collapse" href="#new-review-form" aria-expanded="false" aria-controls="new-review-form">Write a review</a></p>
+	<div class="col-sm-12 col-md-offset-2 col-md-4 review-pagination">
+		<p>pagination goes here if needed</p>
+	</div>
+	<div class="col-sm-12 col-md-4 review-add-button">
+		<p><a class="btn btn-dream drop-shadow" role="button" data-toggle="collapse" href="#new-review-form" aria-expanded="false" aria-controls="new-review-form">Write a review</a></p>
 	</div>
 	<div class="col-sm-12 col-md-offset-2 col-md-8">
 		<div class="collapse" id="new-review-form">
@@ -277,12 +280,6 @@ wp_reset_postdata();
 			
 			?>
 			</div>
-	</div>
-</div>
-
-<div class="row none">
-	<div class="col-xs-12">
-		<h1 class="text-center"><a href="https://instagram.com/thedreambed/" target="_blank">Share your dreams</a></h1>
 	</div>
 </div>
 

@@ -1164,7 +1164,7 @@ h2.bedcount {
 }
 
 .review-personal-text .iconset img {
-	height: 30px;
+	height: 40px;
 	width: auto;
 	vertical-align: middle;
 	margin-right: 10px;
@@ -2444,6 +2444,15 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
    width: 100%;
 }
 
+.review-pagination {
+	text-align: center;
+	padding-bottom: 15px;
+}
+
+.review-add-button {
+	text-align: center;
+}
+
 }
 
 /* Small Devices, Tablets */
@@ -2761,8 +2770,13 @@ h6, .h6 {
 	font-size: 20px;
 }
 
-.review-personal-text .iconset img {
-	height: 40px;
+.review-pagination {
+	text-align: left;
+	padding-bottom: 0;
+}
+
+.review-add-button {
+	text-align: right;
 }
 
 .as-seen-on {
