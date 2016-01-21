@@ -1233,7 +1233,7 @@ a.page-numbers:hover, a.page-numbers:active  {
 	width: 100%;
 }
 
-.how-to-dream-page {
+.how-to-dream-page, .search-page {
 	padding-bottom: 30px; 
 }
 
