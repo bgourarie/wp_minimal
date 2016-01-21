@@ -8,15 +8,6 @@
 remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_price', 10 );
 remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_meta', 40 );
 
-add_action('woocommerce_single_product_summary','add_price_for_pillows',10);
-function add_price_for_pillows(){
-	global $product;
-	if($product->get_type() == 'simple' ){
-		echo $product->get_price_html();
-	} 
-}
-
-
 add_action('woocommerce_after_single_product', 'uptop_product_images', 20);
 function uptop_product_images() {
 
