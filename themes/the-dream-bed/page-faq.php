@@ -52,7 +52,7 @@ foreach($categories as $category) {
 						echo '<h2>' . $prod_cat->name . '</h2>';
 						while ($faq_prod_query->have_posts() ) {
 							$faq_prod_query->the_post();
-							echo '<div class="a-question"><h3><a href="'.$post->ID.'" aria-expanded="true" aria-controls="question'.$post->ID.'" data-toggle="collapse">'. get_the_title() . '</a></h3>
+							echo '<div class="a-question"><h3><a href="'.$post->ID.'" aria-expanded="true" aria-controls="'.$post->ID.'" data-toggle="collapse">'. get_the_title() . '</a></h3>
 									<p id="'.$post->ID.'" class="collapse">' . get_the_content() .'</p></div>
 								';
 								$i+=1;
