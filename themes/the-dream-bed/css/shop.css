@@ -386,6 +386,12 @@ button.single_add_to_cart_button {
     font-size: 20px;
 }
 
+.product-pricer {
+	text-align: center;
+	font-size: 20px;
+	padding-bottom: 10px;
+}
+
 /* Reviews */
 
 

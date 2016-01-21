@@ -46,12 +46,17 @@ if ( ! $product->is_purchasable() ) {
 
 	 	<input type="hidden" name="add-to-cart" value="<?php echo esc_attr( $product->id ); ?>" />
 	 	
+	 	<div class="product-pricer">
+	 	
 	 	<?php /* adding in price for simple products */
 	 		echo $product->get_price_html();
 	 	 ?>
+	 	 
+	 	 + FREE SHIPPING
+		
+		</div>
 
-
-	 	<button type="submit" class="single_add_to_cart_button button alt"><?php echo esc_html( $product->single_add_to_cart_text() ); ?></button>
+	 	<button type="submit" class="btn btn-dream drop-shadow btn-block"><?php echo esc_html( $product->single_add_to_cart_text() ); ?></button>
 
 		<?php do_action( 'woocommerce_after_add_to_cart_button' ); ?>
 	</form>
