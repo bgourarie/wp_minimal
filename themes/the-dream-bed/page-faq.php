@@ -52,8 +52,8 @@ foreach($categories as $category) {
 						echo '<h2>' . $prod_cat->name . '</h2>';
 						while ($faq_prod_query->have_posts() ) {
 							$faq_prod_query->the_post();
-							echo '<div class="a-question"><h3><a href="'.$post->ID.'" aria-expanded="true" aria-controls="'.$post->ID.'" data-toggle="collapse">'. get_the_title() . '</a></h3>
-									<p id="'.$post->ID.'" class="collapse">' . get_the_content() .'</p></div>
+							echo '<div class="a-question"><h3><a href="#q'.$post->ID.'" aria-expanded="true" aria-controls="q'.$post->ID.'" data-toggle="collapse">'. get_the_title() . '</a></h3>
+									<p id="q'.$post->ID.'" class="collapse">' . get_the_content() .'</p></div>
 								';
 								$i+=1;
 						}
@@ -79,8 +79,8 @@ foreach($categories as $category) {
 				echo '<div role="tabpanel" class="tab-pane fade" id="' . $category->slug . '">';
 				while ($faq_query->have_posts() ) {
 					$faq_query->the_post();
-					echo '<div class="a-question"><h3><a href="#'.$post->ID.'" aria-expanded="true" aria-controls="'.$post->ID.'" data-toggle="collapse">'. get_the_title() . '</a></h3>
-									<p id="'.$post->ID.'" class="collapse">' . get_the_content() .'</p></div>
+					echo '<div class="a-question"><h3><a href="#q'.$post->ID.'" aria-expanded="true" aria-controls="q'.$post->ID.'" data-toggle="collapse">'. get_the_title() . '</a></h3>
+									<p id="q'.$post->ID.'" class="collapse">' . get_the_content() .'</p></div>
 								';
 					$i+=1;
 				}
