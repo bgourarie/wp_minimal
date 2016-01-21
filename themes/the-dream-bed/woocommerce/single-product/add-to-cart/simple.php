@@ -28,7 +28,9 @@ if ( ! $product->is_purchasable() ) {
 ?>
 
 <?php if ( $product->is_in_stock() ) : ?>
-
+	
+	<p class="cart-instructions"><img src="<?php bloginfo("template_url"); ?>/images/ico-check.svg" alt=""> Available and ready to ship!</p>
+	
 	<?php do_action( 'woocommerce_before_add_to_cart_form' ); ?>
 
 	<form class="cart" method="post" enctype='multipart/form-data'>
