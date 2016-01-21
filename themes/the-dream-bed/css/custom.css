@@ -1273,6 +1273,20 @@ a.page-numbers:hover, a.page-numbers:active  {
 	margin-top: 15px;
 }
 
+.search-result {
+	border: 1px solid #ddd;
+	padding: 20px;
+	margin-bottom: 20px;
+}
+
+.search-result h3 {
+	margin-top: 0;
+}
+
+.search-result p:last-child {
+	margin-bottom: 0;
+}
+
 /* not using justified nav anymore
 
 .nav-tabs.nav-justified>li>a {
