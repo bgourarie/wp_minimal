@@ -2588,6 +2588,20 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
 	top: 206px;
 }
 
+.faq-header {
+	margin-bottom: -93px
+}
+
+.mattress-bg img {
+	margin: 0 auto 100px auto;
+	width: 70%;
+	height: auto;
+}
+
+.mattress-bg h1 {
+	top: 20px;
+}
+
 }
 
 /* Extra Small Devices, Phones */ 
