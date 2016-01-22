@@ -2220,7 +2220,6 @@ div.bg-Health a {
 
 #jumpnav {
 	position: absolute;
-	top: 184px;
 	width: 100%;
 	z-index: 1;
 }
@@ -2560,6 +2559,10 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
 	margin-bottom: 20px;
 }
 
+#jumpnav {
+	top: 206px;
+}
+
 }
 
 /* Extra Small Devices, Phones */ 
@@ -2639,6 +2642,10 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
 
 .review-add-button {
 	text-align: center;
+}
+
+#jumpnav {
+	top: 206px;
 }
 
 }
@@ -2882,6 +2889,10 @@ h6, .h6 {
 .faqpage .nav>li>a {
 	padding: 20px;
 	font-size: 12px;
+}
+
+#jumpnav {
+	top: 184px;
 }
 
 }
