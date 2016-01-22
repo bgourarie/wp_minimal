@@ -1,5 +1,16 @@
 <?php get_header(); ?>
 
+<div class="light-grey-shapes faq-header">
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-12 text-center mattress-bg">
+				<img src="<?php bloginfo("template_url"); ?>/images/dream-mattress-background-transparent.png" alt="Cool Dream Mattress" data-pin-description="The Dream Bed: Latex and memory foam create the perfect balance of firmness, contour, and bounce. Find out how.">
+				<h1>Questions?</h1>
+			</div>
+		</div>
+	</div>
+</div>
+
 <div class="container faqpage">
 	<div class="row">
 		<div class="col-sm-12">

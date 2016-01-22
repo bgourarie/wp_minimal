@@ -1297,6 +1297,25 @@ a.page-numbers:hover, a.page-numbers:active  {
 
 */
 
+.faq-header {
+	padding-top: 30px;
+	border-bottom: 1px solid #ddd;
+}
+
+.mattress-bg img {
+	margin: 0 auto 80px auto;
+}
+
+.mattress-bg h1 {
+	position: absolute;
+	width: 100%;
+	text-align: center;
+	text-shadow: 1px 1px 4px rgba(100, 100, 100, 1);
+	color: #fff;
+	font-size: 50px;
+	margin: 0;
+}
+
 .faqpage .nav>li>a {
 	padding: 10px;
 	font-size: 12px;
@@ -2654,6 +2673,20 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
 	top: 206px;
 }
 
+.faq-header {
+	margin-bottom: -93px
+}
+
+.mattress-bg img {
+	margin: 0 auto 100px auto;
+	width: 70%;
+	height: auto;
+}
+
+.mattress-bg h1 {
+	top: 20px;
+}
+
 }
 
 /* Small Devices, Tablets */
@@ -2881,11 +2914,15 @@ h6, .h6 {
 
 .faqpage .dreamsearchform {
 	float: right;
-	margin-bottom: 0;
+	margin-top: 0
 }
 
 .dreamsearchform .stylish-input-group {
    width: 325px;
+}
+
+.faqpage .dreamsearchform .stylish-input-group {
+   width: 205px;
 }
 
 .blog-search {
@@ -2893,8 +2930,20 @@ h6, .h6 {
 }
 
 .faqpage .nav>li>a {
-	padding: 20px;
+	padding: 10px;
 	font-size: 12px;
+}
+
+.faq-header {
+	margin-bottom: -39px
+}
+
+.mattress-bg img {
+	margin: 0 auto 80px auto;
+}
+
+.mattress-bg h1 {
+	top: 17px;
 }
 
 #jumpnav {
@@ -3043,6 +3092,27 @@ h6, .h6 {
 
 .share-posts {
 	text-align: center;
+}
+
+.faqpage .dreamsearchform {
+	float: right;
+	margin-top: 10px;
+}
+
+.faqpage .dreamsearchform .stylish-input-group {
+   width: 325px;
+}
+
+.faq-header {
+	margin-bottom: -62px
+}
+
+.mattress-bg img {
+	margin: 0 auto 80px auto;
+}
+
+.mattress-bg h1 {
+	top: 25px;
 }
 
 .faqpage .nav>li>a {
