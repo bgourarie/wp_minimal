@@ -2116,9 +2116,10 @@ a.page-numbers:hover, a.page-numbers:active  {
 
 .navtable:hover {
 	height: 20px;
-	transition-property: height;
-	transition-duration: .1s;
-	transition-timing-function: linear;
+	-webkit-transition: height 100ms ease-in-out;
+	-moz-transition: height 100ms ease-in-out;
+	-o-transition: height 100ms ease-in-out;
+	transition: height 100ms ease-in-out;
 	cursor: pointer;
 }
 
@@ -2158,6 +2159,10 @@ td.bg-Health, td.bg-Health a.btn {
 	display: none;
 }
 
+.navcolors .row div a:hover {
+	text-decoration: none;
+}
+
 .navcolors .row div.bg-Sleep, .navcolors .row div.bg-Giving, .navcolors .row div.bg-Health {
 	display: block;
 }
@@ -2165,30 +2170,51 @@ td.bg-Health, td.bg-Health a.btn {
 div.bg-Sleep {
 	background-color: #76C6ED;
 	color: #fff;
+	-webkit-transition: background-color 500ms ease-in-out;
+	-moz-transition: background-color 500ms ease-in-out;
+	-o-transition: background-color 500ms ease-in-out;
+	transition: background-color 500ms ease-in-out;
+}
+
+div.bg-Sleep:hover {
+	background-color: #5792AE;
 }
 
 div.bg-Sleep a {
-	background-color: #76C6ED;
 	color: #fff;
 }
 
 div.bg-Giving {
 	background-color: #F79D33;
 	color: #fff;
+	-webkit-transition: background-color 500ms ease-in-out;
+	-moz-transition: background-color 500ms ease-in-out;
+	-o-transition: background-color 500ms ease-in-out;
+	transition: background-color 500ms ease-in-out;
+}
+
+div.bg-Giving:hover {
+	background-color: #B77633;
 }
 
 div.bg-Giving a {
-	background-color: #F79D33;
 	color: #fff;
 }
 
 div.bg-Health {
 	background-color: #88C45B;
 	color: #fff;
+	-webkit-transition: background-color 500ms ease-in-out;
+	-moz-transition: background-color 500ms ease-in-out;
+	-o-transition: background-color 500ms ease-in-out;
+	transition: background-color 500ms ease-in-out;
+}
+
+div.bg-Health:hover {
+	background-color: #5C843F;
 }
 
 div.bg-Health a {
-	background-color: #88C45B;
 	color: #fff;
 }
 
