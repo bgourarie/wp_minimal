@@ -55,7 +55,7 @@ get_blog_header();?>
 						<?php 
 						// need to write this, put it into incldues and ensure it gets include..d... ?
 			
-							get_related_posts(get_the_ID());
+							echo get_related_posts($post->ID);
 						?>
 			
 			
