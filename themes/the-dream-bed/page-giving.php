@@ -69,16 +69,17 @@
 			<div class="col-xs-6 col-lg-4 col-lg-offset-2" style="background-image:url(<?php bloginfo("template_url"); ?>/images/photos/dream-bed-give-2.jpg)"></div>
 			<div class="col-xs-6 col-lg-4 light-grey-fill">
 				<h4>DREAM IT FORWARD CHICAGO</h4>
-				<p>In November 2015, the Dream Bed Team went to Minneapolis, Minnesota to give back to the community and A Safe Haven to plant over 1,200 tulips for their Tulips for Troops event and donated 67 mattresses.</p>
+				<p>In November 2015, the Dream Bed Team went to Chicago, Illinois, to give back to the community and <a href="http://www.asafehaven.org">A Safe Haven</a> to plant over 1,200 tulips for their Tulips for Troops event and donated 67 mattresses.</p>
 			</div>
 		</div>
 	</div>
 	
 	<div class="container">
 		<div class="row rowpadding">
-			<div class="col-sm-12 col-lg-8 col-lg-offset-2 text-center partners">
+			<div class="col-sm-12 text-center partners">
 				<h2>Charitable Partners</h2>
 				<p>Special thanks to our partners who help us give back.</p>
+				<a href="http://www.asafehaven.org"><img src="<?php bloginfo("template_url"); ?>/images/logo-a-safe-haven.jpg" alt="A Safe Haven"></a>
 				<a href="http://www.sharingandcaringhands.org"><img src="<?php bloginfo("template_url"); ?>/images/logo-sharing-and-caring.png" alt="Sharing and Caring Hands"></a>
 				<a href="http://www.simpsonhousing.org"><img src="<?php bloginfo("template_url"); ?>/images/logo-simpson.png" alt="Simpson Housing Services">
 				<a href="http://http://www.path.org"><img src="<?php bloginfo("template_url"); ?>/images/logo-path.png" alt="PATH">
