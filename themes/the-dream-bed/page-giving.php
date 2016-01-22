@@ -69,7 +69,7 @@
 			<div class="col-xs-6 col-lg-4 col-lg-offset-2" style="background-image:url(<?php bloginfo("template_url"); ?>/images/photos/dream-bed-give-2.jpg)"></div>
 			<div class="col-xs-6 col-lg-4 light-grey-fill">
 				<h4>DREAM IT FORWARD CHICAGO</h4>
-				<p>In November 2015, the Dream Bed Team went to Chicago, Illinois, to give back to the community and <a href="http://www.asafehaven.org">A Safe Haven</a> to plant over 1,200 tulips for their Tulips for Troops event and donated 67 mattresses.</p>
+				<p>In November 2015, the Dream Bed Team went to Chicago, Illinois, to give back to the community. They helped <a href="http://www.asafehaven.org">A Safe Haven</a> to plant over 1,200 tulips for their Tulips for Troops event and donated 67 mattresses.</p>
 			</div>
 		</div>
 	</div>
