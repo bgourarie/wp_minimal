@@ -53,17 +53,23 @@
 				<a href="#" data-toggle="modal" data-target="#la-video"><img src="<?php bloginfo("template_url"); ?>/images/icon-videoplay.svg" class="center-block play-button" alt=""></a>
 			</div>
 			<div class="col-xs-6 col-lg-4 light-grey-fill">
-				<h4>100 BEDS DONATED IN LA</h4>
-				<p>In August 2015 the Dream Bed Team went to Minneapolis, Minnesota to give back to the community at Sharing and Caring Hands/Mary Jo Copeland Shelter and Simpson Housing Services.</p>
-				<p>Our team was able to donate over 50 mattress sets, cleaned housing areas and common spaces, and helped make sandwiches for  residents afterward.</p>
+				<h4>DREAM IT FORWARD LA</h4>
+				<p>Our Dream Bed Team partnered with <a href="http://http://www.path.org">PATH Services</a> in Los Angeles for a day of fun, volunteering and donating.</p>
+				<p>The Team donated 100 beds to an interim housing facility and had the opportunity to volunteer at a PATH daycare.</p>
 			</div>
 		</div>
 		<div class="row row-eq-height rowpadding">
-			<div class="col-xs-6 col-lg-4 col-lg-offset-2" style="background-image:url(<?php bloginfo("template_url"); ?>/images/photos/dream-giving-family.jpg); background-position: top;"></div>
+			<div class="col-xs-6 col-lg-4 col-lg-offset-2" style="background-image:url(<?php bloginfo("template_url"); ?>/images/photos/dream-bed-give.jpg); background-position: top;"></div>
 			<div class="col-xs-6 col-lg-4 dark-grey-fill">
-				<h4>DREAM IT FORWARD IN MINNEAPOLIS</h4>
-				<p>In August 2015 the Dream Bed Team went to Minneapolis, Minnesota to give back to the community at Sharing and Caring Hands/Mary Jo Copeland Shelter and Simpson Housing Services.</p>
-				<p>Our team was able to donate over 50 mattress sets, cleaned housing areas and common spaces, and helped make sandwiches for residents afterward.</p>
+				<h4>DREAM IT FORWARD MINNEAPOLIS</h4>
+				<p>In August 2015, the Dream Bed Team gave back in Minneapolis, Minnesota. After donating 100 beds to <a href="http://www.sharingandcaringhands.org" style="color: #fff;">Sharing and Caring Hands</a> and <a href="http://www.simpsonhousing.org" style="color: #fff;">Simpson Housing Services</a>, the Team cleaned and cooked for residents.</p>
+			</div>
+		</div>
+		<div class="row row-eq-height rowpadding">
+			<div class="col-xs-6 col-lg-4 col-lg-offset-2" style="background-image:url(<?php bloginfo("template_url"); ?>/images/photos/dream-bed-give-2.jpg)"></div>
+			<div class="col-xs-6 col-lg-4 light-grey-fill">
+				<h4>DREAM IT FORWARD CHICAGO</h4>
+				<p>In November 2015, the Dream Bed Team went to Minneapolis, Minnesota to give back to the community and A Safe Haven to plant over 1,200 tulips for their Tulips for Troops event and donated 67 mattresses.</p>
 			</div>
 		</div>
 	</div>
