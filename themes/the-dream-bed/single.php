@@ -53,17 +53,56 @@ get_blog_header();?>
 						//post_sharing_widget(get_the_ID()); ?>
 			
 						<?php 
-						// need to write this, put it into incldues and ensure it gets include..d... ?
-			
-							echo get_related_posts($post->ID);
-						?>
-			
-			
-					<?php endwhile; // End of the loop. ?>
-					
-					</div>
-					<div class="col-md-3 col-sm-12">
-					
+						$tags = wp_get_post_tags($post_id);
+						$tag_ids = array();
+						foreach($tags as $tag){
+							$tag_ids[] = $tag->term_id;
+						}
+						if ($tag_ids) {
+							$args=array(
+								//'tag__in' => $tag_ids,
+								'post__not_in' => array($post_id),
+								'posts_per_page'=>4,
+								'order_by'=>'rand',
+								'caller_get_posts'=>1
+							);
+							$posts = get_posts($args);
+							?>
+							<div class="blog-related-posts">
+								<div class="blog-related-posts-header">
+									You might also like...
+								</div>
+								<?php
+								foreach($posts as $post){
+									setup_postdata($post);
+									$categories = get_the_category();	?>
+									<div class="blog-related-teaser">
+										<a href="<?php echo get_permalink($post->ID); ?>" title="<?php get_the_title($post->ID); ?>">
+											<?php //see https://developer.wordpress.org/reference/functions/get_the_post_thumbnail/#comment-314 
+												if(has_post_thumbnail($post->ID)){
+													echo get_the_post_thumbnail($post->ID,'medium');
+												}else{
+													// put in a default/placeholder blog image?
+												}
+											?>
+											<div class="blog-related-title">
+												<?php echo get_the_title( $post->ID );?> >
+											</div>
+											<div class="blog-related-excerpt">
+												<?php echo get_the_excerpt($post->ID); ?>
+											</div>
+										</a>
+										<?php if ( ! empty( $categories ) ) {
+											get_category_button($categoires[0]->cat_ID);
+										}  ?>
+									</div>
+									<?php wp_reset_postdata($post);
+								} ?>
+							</div>
+					<?php }	?>			
+				<?php endwhile; // End of the loop. ?>
+			</div>
+			<div class="col-md-3 col-sm-12">			
 						<div class="share-posts">
 							<h4>Share this article</h4>
 							<div class="share-posts-box">
