@@ -2082,13 +2082,124 @@ a.page-numbers:hover, a.page-numbers:active  {
 	color: #4f4f4f;
 }
 
-.blog-categories span {
-	padding: 0 10px;
+/* blog nav */
+
+.blog-categories {
+	height: 20px;
+	padding: 0;
+	margin: 0;
 }
 
-.blog-categories span:last-child {
-	padding-right: 0;
+.navtable {
+	border: 0;
+	padding: 0;
+	margin: 0 0 0 auto;
+	height: 6px;
 }
+
+.navtable td {
+	width: 80px;
+	height: 8px;
+	text-align: center;
+	border: 0;
+	padding: 0;
+	margin: 0;
+	overflow: hidden;
+	font-size: 1px;
+}
+
+.navtable .btn {
+	padding: 0;
+	line-height: 1em;
+	font-size: 8px;
+}
+
+.navtable:hover {
+	height: 20px;
+	transition-property: height;
+	transition-duration: .1s;
+	transition-timing-function: linear;
+	cursor: pointer;
+}
+
+.navtable a {
+	width: 100%;
+	display: block;
+	height: 100%;
+	color: transparent;
+}
+
+td.bg-Sleep, td.bg-Sleep a.btn {
+	background-color: #76C6ED;
+	color: #76C6ED;
+}
+
+td.bg-Giving, td.bg-Giving a.btn {
+	background-color: #F79D33;
+	color: #F79D33;
+}
+
+td.bg-Health, td.bg-Health a.btn {
+	background-color: #88C45B;
+	color: #88C45B;
+}
+
+.navcolors {
+	font-size: 60px;
+	text-align: center;	
+}
+
+.navcolors a {
+	width: 100%;
+	display: block;
+}
+
+.navcolors .row div {
+	display: none;
+}
+
+.navcolors .row div.bg-Sleep, .navcolors .row div.bg-Giving, .navcolors .row div.bg-Health {
+	display: block;
+}
+
+div.bg-Sleep {
+	background-color: #76C6ED;
+	color: #fff;
+}
+
+div.bg-Sleep a {
+	background-color: #76C6ED;
+	color: #fff;
+}
+
+div.bg-Giving {
+	background-color: #F79D33;
+	color: #fff;
+}
+
+div.bg-Giving a {
+	background-color: #F79D33;
+	color: #fff;
+}
+
+div.bg-Health {
+	background-color: #88C45B;
+	color: #fff;
+}
+
+div.bg-Health a {
+	background-color: #88C45B;
+	color: #fff;
+}
+
+#jumpnav {
+	position: absolute;
+	top: 184px;
+	width: 100%;
+	z-index: 1;
+}
+
+/* end blog nav */
 
 .blogcat-Giving, .blogcat-giving {
 	color: #f99d1e;
@@ -2117,7 +2228,7 @@ a.page-numbers:hover, a.page-numbers:active  {
 	color: #fff;
 }
 
-.blogcat-Uncategorized {
+.blogcat-Uncategorized, .blogcat-Blog {
 	display: none;
 }
 
@@ -2735,7 +2846,7 @@ h6, .h6 {
 }
 
 .dreamsearchform .stylish-input-group {
-   width: 200px;
+   width: 325px;
 }
 
 .blog-search {

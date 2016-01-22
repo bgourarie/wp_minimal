@@ -84,9 +84,18 @@ function get_blog_header(){
 				</div>
 				
 				<div class="blog-categories">
-					<?php foreach($categories as $cat){ ?>
-						<span><a href="<?php echo get_category_link( $cat ); ?>" class="blogcat blogcat-<?php echo get_cat_name($cat);?>"><?php echo get_cat_name($cat);?></a></span>						
-					<?php } ?>
+					
+					<table class="navtable">
+						<tr>
+						
+						<?php foreach($categories as $cat){ ?>
+							<td class="bg-<?php echo get_cat_name($cat);?>"><a href="#jumpnav" class="toggle btn"><?php echo get_cat_name($cat);?></a></td>
+						<?php } ?>
+						
+						</tr>
+					</table>
+					
+					
 				</div>
 				
 			</div>
@@ -95,8 +104,33 @@ function get_blog_header(){
 			
 	</div>
 	
+
 	
-	
+	<div id="jumpnav" class="hidden">
+		<div class="container-fluid navcolors">
+			<div class="row">
+			<?php foreach($categories as $cat){ ?>
+				<div class="col-sm-4 bg-<?php echo get_cat_name($cat);?>"><a href="<?php echo get_category_link( $cat ); ?>"><?php echo get_cat_name($cat);?></a></div>
+			<?php } ?>
+			</div>
+		</div>
+	</div>
+
+<script>
+jQuery(document).ready(function($){
+
+$(function () {
+
+    $('.toggle').click(function (event) {
+        event.preventDefault();
+        var target = $(this).attr('href');
+        $(target).toggleClass('hidden show');
+    });
+
+});
+
+});
+</script>	
 	
 	<?php 
 }
