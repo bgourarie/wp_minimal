@@ -30,6 +30,12 @@ input[type="file"] > input[type="button"]::-moz-focus-inner {
     outline: none !important;
 }
 
+input[type=text] {   
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+}
+
 .navbar-default .navbar-nav>li>a.phone {
 	color: #FD9D2E;
 }
