@@ -8,7 +8,7 @@ function get_related_posts($post_id){
 	}
 	if ($tag_ids) {
 		$args=array(
-			'tag__in' => $tag_ids,
+			//'tag__in' => $tag_ids,
 			'post__not_in' => array($post_id),
 			'posts_per_page'=>4,
 			'order_by'=>'rand',
