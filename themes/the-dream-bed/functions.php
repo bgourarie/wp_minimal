@@ -107,8 +107,8 @@ function woocommerce_delete_tax_rates() {
 }
 
 // suppress categories for 'Post' posts (blog posts)
-function suppress_post_categories($args, $post_id){
-	if(get_post_type($post_id)=='post'){
+function suppress_post_categories($args){
+	if(get_post_type($post->id)=='post'){
 		$blog_cat = get_category_by_slug('blog');
 		$args['descendants_and_self'] = $blog_cat->term_id;
 		$args['popular_cats'] = get_field('blog_categories','options');
