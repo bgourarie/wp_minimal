@@ -49,10 +49,21 @@ get_blog_header();?>
 							// a container can be put around this if needed. (probably a good idea...)
 							echo get_the_content(); ?>
 						</div>
-						<?php // there's a way to write a widget.. i'll find it out. and destroy it. 
-						//post_sharing_widget(get_the_ID()); ?>
-			
-					<?php 
+
+			</div>
+			<div class="col-md-3 col-sm-12">			
+				<div class="share-posts">
+					<h4>Share this article</h4>
+					<div class="share-posts-box">
+						<?php echo do_shortcode('[ssba]'); ?>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="blog-related-posts">
+		<div class="container">
+			<?php 
 						$args=array(
 							'exclude' => $post_id,
 							'posts_per_page' =>4,
@@ -62,10 +73,12 @@ get_blog_header();?>
 						);
 						$posts = get_posts($args);
 						?>
-						<div class="blog-related-posts">
-							<div class="blog-related-posts-header">
-								You might also like...
+						<div class="row">
+							<div class="col-sm-12 text-center blog-related-posts-header">
+								<h2>You might also like...</h2>
 							</div>
+						</div>
+						<div class="row">
 							<?php
 							$i=0;
 							foreach($posts as $post){
@@ -81,19 +94,9 @@ get_blog_header();?>
 							} ?>
 						</div>
 				<?php endwhile; // End of the loop. ?>
-			</div>
-			<div class="col-md-3 col-sm-12">			
-						<div class="share-posts">
-							<h4>Share this article</h4>
-							<div class="share-posts-box">
-								<?php echo do_shortcode('[ssba]'); ?>
-							</div>
-						</div>
-					
-					</div>
-				</div>
-			</div>
 		</div>
+	</div>
+</div>
 
 
 

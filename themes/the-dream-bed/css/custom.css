@@ -2311,8 +2311,10 @@ div.bg-Health a {
 	margin-top: 30px;
 }
 
+.blog-related-posts-header h2 {
+	margin: 30px auto;
+}
 .blog-other-posts, .blog-post-container {
-	padding-bottom: 30px;
 	padding-top: 30px;
 	background-color: #fff;
 }
@@ -2334,6 +2336,12 @@ div.bg-Health a {
 
 .blog-other-teaser h4 {
 	margin-bottom: .2em;
+}
+
+.blog-related-posts {
+	background-color: #F2F5F5;
+	margin-top: 30px;
+	margin-bottom: 0;
 }
 
 .blog-post-hero img {
