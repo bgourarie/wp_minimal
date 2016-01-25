@@ -55,9 +55,10 @@ get_blog_header();?>
 					<?php 
 						$args=array(
 							'exclude' => $post_id,
-							'posts_per_page'=>4,
-							'order_by'=>'rand',
-							'caller_get_posts'=>1
+							'posts_per_page' =>4,
+							'order_by' =>'rand',
+							'category' => $categories[0]->cat_ID,
+							'caller_get_posts' => 1
 						);
 						$posts = get_posts($args);
 						?>
