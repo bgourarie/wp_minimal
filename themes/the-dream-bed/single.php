@@ -67,30 +67,12 @@ get_blog_header();?>
 								You might also like...
 							</div>
 							<?php
+							$i=0;
 							foreach($posts as $post){
 								setup_postdata($post);
-								$categories = get_the_category();	?>
-								<div class="blog-related-teaser">
-									<a href="<?php echo get_permalink($post->ID); ?>" title="<?php get_the_title($post->ID); ?>">
-										<?php //see https://developer.wordpress.org/reference/functions/get_the_post_thumbnail/#comment-314 
-											if(has_post_thumbnail($post->ID)){
-												echo get_the_post_thumbnail($post->ID,'medium');
-											}else{
-												// put in a default/placeholder blog image?
-											}
-										?>
-										<div class="blog-related-title">
-											<?php echo get_the_title( $post->ID );?> >
-										</div>
-										<div class="blog-related-excerpt">
-											<?php echo get_the_excerpt($post->ID); ?>
-										</div>
-									</a>
-									<?php if ( ! empty( $categories ) ) {
-										get_category_button($categoires[0]->cat_ID);
-									}  ?>
-								</div>
-								<?php wp_reset_postdata($post);
+								output_post_teaser($post,$i);
+								$i+=1;
+						 		wp_reset_postdata($post);
 							} ?>
 						</div>
 				<?php endwhile; // End of the loop. ?>

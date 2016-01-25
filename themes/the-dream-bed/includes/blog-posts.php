@@ -1,53 +1,36 @@
 <?php
 
-function get_related_posts($post_id){
-	$tags = wp_get_post_tags($post_id);
-	$tag_ids = array();
-	foreach($tags as $tag){
-		$tag_ids[] = $tag->term_id;
+function output_post_teaser($post, $i){
+	$categories = get_the_category();	
+	$urlstart = get_template_directory_uri();
+	?>
+	<div class="col-md-3 col-xs-6 text-center blog-other-teaser">
+		<a href="<?php echo get_permalink($post->ID); ?>" title="<?php get_the_title($post->ID); ?>">
+			<?php //see https://developer.wordpress.org/reference/functions/get_the_post_thumbnail/#comment-314 
+			if(has_post_thumbnail($post->ID)){
+				echo get_the_post_thumbnail($post->ID,'blog-thumbnail');
+			}else{
+				echo '<img src="'. $urlstart .'/images/blog-default-image.jpg" alt="">';
+			}
+			?>
+		</a>
+		<h4 class="blog-other-title">
+			<a href="<?php echo get_permalink($post->ID); ?>" title="<?php get_the_title($post->ID); ?>"><?php echo get_the_title( $post->ID );?></a>
+		</h4>
+		<p class="blog-other-excerpt">		
+			<?php echo wp_trim_words(get_the_content($post->ID), 20, '...' ); ?>
+		</p>				
+		<?php if ( ! empty( $categories ) ) {
+			get_category_button( $categories[0]->cat_ID);
+	 	}  ?>
+	</div>
+	<?php // add clearfix every 4 or 2 posts...
+	$i+=1;
+	if($i%4 == 0 ){
+		echo '<div class="clearfix visible-md-block visible-lg-block"></div>';
+	}if($i%2 == 0){
+		echo '<div class="clearfix visible-xs-block visible-sm-block"></div>';
 	}
-	if ($tag_ids) {
-		$args=array(
-			//'tag__in' => $tag_ids,
-			'post__not_in' => array($post_id),
-			'posts_per_page'=>4,
-			'order_by'=>'rand',
-			'caller_get_posts'=>1
-		);
-		$posts = get_posts($args);
-?>
-		<div class="blog-related-posts">
-			<div class="blog-related-posts-header">
-				You might also like...
-			</div>
-			<?php
-			foreach($posts as $post){
-				setup_postdata($post);
-				$categories = get_the_category();	?>
-				<div class="blog-related-teaser">
-					<a href="<?php echo get_permalink($post->ID); ?>" title="<?php get_the_title($post->ID); ?>">
-						<?php //see https://developer.wordpress.org/reference/functions/get_the_post_thumbnail/#comment-314 
-							if(has_post_thumbnail($post->ID)){
-								echo get_the_post_thumbnail($post->ID,'medium');
-							}else{
-								// put in a default/placeholder blog image?
-							}
-						?>
-						<div class="blog-related-title">
-							<?php echo get_the_title( $post->ID );?> >
-						</div>
-						<div class="blog-related-excerpt">
-							<?php echo get_the_excerpt($post->ID); ?>
-						</div>
-					</a>
-					<?php if ( ! empty( $categories ) ) {
-						get_category_button($categoires[0]->cat_ID);
-					}  ?>
-				</div>
-				<?php wp_reset_postdata($post);
-			} ?>
-		</div>
-	<?php }	
 }
 
 /*
