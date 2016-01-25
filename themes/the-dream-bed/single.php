@@ -54,8 +54,7 @@ get_blog_header();?>
 			
 					<?php 
 						$args=array(
-							//'tag__in' => $tag_ids,
-							'post__not_in' => array($post_id),
+							'exclude' => $post_id,
 							'posts_per_page'=>4,
 							'order_by'=>'rand',
 							'caller_get_posts'=>1
@@ -70,8 +69,13 @@ get_blog_header();?>
 							$i=0;
 							foreach($posts as $post){
 								setup_postdata($post);
-								output_post_teaser($post,$i);
+								output_post_teaser($post);
 								$i+=1;
+								if($i%4 == 0 ){
+									echo '<div class="clearfix visible-md-block visible-lg-block"></div>';
+								}if($i%2 == 0){
+									echo '<div class="clearfix visible-xs-block visible-sm-block"></div>';
+								}
 						 		wp_reset_postdata($post);
 							} ?>
 						</div>

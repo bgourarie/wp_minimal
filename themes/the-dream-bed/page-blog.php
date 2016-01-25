@@ -65,11 +65,15 @@ foreach($posts as $feature){
 			$exclude_ids = array($featured_id);
 			foreach($posts as $post){
 				setup_postdata($post);
-				$exclude_ids[]=$post->ID;
-				$i+=1;
 				output_post_teaser($post,$i);
 				$exclude_ids[]=$post->ID;
 				wp_reset_postdata($post);
+				$i+=1;
+				if($i%4 == 0 ){
+					echo '<div class="clearfix visible-md-block visible-lg-block"></div>';
+				}if($i%2 == 0){
+					echo '<div class="clearfix visible-xs-block visible-sm-block"></div>';
+				}
 			}	?>
 		</div>
 		<?php 

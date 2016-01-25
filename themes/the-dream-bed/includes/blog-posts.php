@@ -1,6 +1,6 @@
 <?php
 
-function output_post_teaser($post, $i){
+function output_post_teaser($post){
 	$categories = get_the_category();	
 	$urlstart = get_template_directory_uri();
 	?>
@@ -25,12 +25,6 @@ function output_post_teaser($post, $i){
 	 	}  ?>
 	</div>
 	<?php // add clearfix every 4 or 2 posts...
-	$i+=1;
-	if($i%4 == 0 ){
-		echo '<div class="clearfix visible-md-block visible-lg-block"></div>';
-	}if($i%2 == 0){
-		echo '<div class="clearfix visible-xs-block visible-sm-block"></div>';
-	}
 }
 
 /*

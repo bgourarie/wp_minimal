@@ -34,8 +34,13 @@ get_blog_header();
 	foreach($posts as $post){
 		setup_postdata($post);
 		$exclude_ids[]= $post->ID;
+		output_post_teaser($post);
 		$i+=1;
-		output_post_teaser($post,$i);
+		if($i%4 == 0 ){
+			echo '<div class="clearfix visible-md-block visible-lg-block"></div>';
+		}if($i%2 == 0){
+			echo '<div class="clearfix visible-xs-block visible-sm-block"></div>';
+		}
 		wp_reset_postdata($post);
 	}
 		?>
