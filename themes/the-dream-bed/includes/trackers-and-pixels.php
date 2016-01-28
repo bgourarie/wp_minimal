@@ -6,7 +6,7 @@ add_action( 'wp_head', 'homepage_pixel' );
 add_action( 'wp_head', 'azcentral_allpage_pixel' );
 add_action( 'wp_head', 'facebook_allpage_pixel' );
 add_action( 'wp_footer', 'footer_pixels' );
-add_action( 'thankyou_pixels', 'wc_jc_checkout_analytics', 10, 1);
+add_action( 'thankyou_pixels', 'wc_jc_checkout_analytics', 15, 1);
 add_action( 'thankyou_pixels', 'thankyou_page_pixels' , 10, 1);
 
 function footer_pixels(){
