@@ -86,6 +86,7 @@ if ( $order ) : ?>
 <div class="text-center">
 
 	<?php do_action( 'woocommerce_thankyou_' . $order->payment_method, $order->id ); ?>
+	<?php do_action( 'thankyou_pixels', $order->id ); ?>
 
 </div>
 

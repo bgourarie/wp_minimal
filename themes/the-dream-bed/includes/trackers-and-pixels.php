@@ -6,8 +6,8 @@ add_action( 'wp_head', 'homepage_pixel' );
 add_action( 'wp_head', 'azcentral_allpage_pixel' );
 add_action( 'wp_head', 'facebook_allpage_pixel' );
 add_action( 'wp_footer', 'footer_pixels' );
-add_action( 'woocommerce_thankyou_', 'wc_jc_checkout_analytics', 10, 2);
-add_action( 'woocommerce_thankyou_', 'thankyou_page_pixels' , 10, 2);
+add_action( 'thankyou_pixels', 'wc_jc_checkout_analytics', 10, 1);
+add_action( 'thankyou_pixels', 'thankyou_page_pixels' , 10, 1);
 
 function footer_pixels(){
 	?>
@@ -146,10 +146,10 @@ function homepage_pixel() {
  Thank you page pixels..
 */
 
-function thankyou_page_pixels(){ ?>
+function thankyou_page_pixels($order_id){ ?>
 
-
-<!-- START The Company Publisher Pixels Dream Bed Conversion -->
+<!-- thankyou pixel -->
+<!-- START The Company Publisher Pixels Dream Bed Conversion  -->
 <script type='text/javascript'>
 var ebRand = Math.random()+'';
 ebRand = ebRand * 1000000;
@@ -224,7 +224,7 @@ var google_remarketing_only = false;
 /**
  * Add GA Ecommerce Tracking Code to the Confirmation Page
  */
-function wc_jc_checkout_analytics( $payment_method, $order_id ) {
+function wc_jc_checkout_analytics( $order_id ) {
 	$order = new WC_Order( $order_id );
 	if( current_user_can( 'edit_posts' ) ) {
 	?>
@@ -289,6 +289,7 @@ function wc_jc_checkout_analytics( $payment_method, $order_id ) {
 			ga('ecommerce:send');
 			</script>
 			<!-- End Google Analytics Ecommerce Tracking Code -->
+			<!-- end thank you -->
 	<?php	
 	}
 }
