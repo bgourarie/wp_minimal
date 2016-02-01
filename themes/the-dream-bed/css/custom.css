@@ -2091,7 +2091,7 @@ a.page-numbers:hover, a.page-numbers:active  {
 
 .blog-header {
 	margin-top: 10px;
-	margin-bottom: 30px;
+	margin-bottom: 5px;
 }
 
 .blog-title {
@@ -2165,7 +2165,7 @@ td.bg-Giving, td.bg-Giving a.btn {
 	color: #F79D33;
 }
 
-td.bg-Health, td.bg-Health a.btn {
+td.bg-Health, td.bg-Health a.btn, td.bg-Lifestyle, td.bg-Lifestyle a.btn {
 	background-color: #88C45B;
 	color: #88C45B;
 }
@@ -2188,7 +2188,7 @@ td.bg-Health, td.bg-Health a.btn {
 	text-decoration: none;
 }
 
-.navcolors .row div.bg-Sleep, .navcolors .row div.bg-Giving, .navcolors .row div.bg-Health {
+.navcolors .row div.bg-Sleep, .navcolors .row div.bg-Giving, .navcolors .row div.bg-Health, .navcolors .row div.bg-Lifestyle {
 	display: block;
 }
 
@@ -2226,7 +2226,7 @@ div.bg-Giving a {
 	color: #fff;
 }
 
-div.bg-Health {
+div.bg-Health, div.bg-Lifestyle {
 	background-color: #88C45B;
 	color: #fff;
 	-webkit-transition: background-color 500ms ease-in-out;
@@ -2235,11 +2235,11 @@ div.bg-Health {
 	transition: background-color 500ms ease-in-out;
 }
 
-div.bg-Health:hover {
+div.bg-Health:hover, div.bg-Lifestyle:hover {
 	background-color: #5C843F;
 }
 
-div.bg-Health a {
+div.bg-Health a, div.bg-Lifestyle a {
 	color: #fff;
 }
 
@@ -2259,7 +2259,7 @@ div.bg-Health a {
 	color: #72c6ef;
 }
 
-.blogcat-Health, .blogcat-health {
+.blogcat-Health, .blogcat-health, .blogcat-Lifestyle, .blogcat-lifestyle {
 	color: #86c555;
 }
 
@@ -2273,7 +2273,7 @@ div.bg-Health a {
 	color: #fff;
 }
 
-.blogcatbg-Health, .blogcatbg-health {
+.blogcatbg-Health, .blogcatbg-health, .blogcatbg-Lifestyle, .blogcatbg-lifestyle {
 	background-color: #86c555;
 	color: #fff;
 }
