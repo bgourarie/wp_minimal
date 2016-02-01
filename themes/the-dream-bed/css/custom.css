@@ -2107,6 +2107,12 @@ a.page-numbers:hover, a.page-numbers:active  {
 	color: #4f4f4f;
 }
 
+.blog-post-content img {
+	max-width: 100%;
+	height: auto;
+	margin: 1.5em 0;
+}
+
 /* blog nav */
 
 .blog-categories {
