@@ -144,12 +144,6 @@ function remove_pods_shortcode_button () {
 
 add_action('admin_init', 'remove_pods_shortcode_button', 14);
 
-/* remove "add media" button from editor */
-function z_remove_media_controls() {
-	remove_action('media_buttons', 'media_buttons');
-}
-add_action('admin_head','z_remove_media_controls');
-
 /* remove ul from menu output */
 function remove_ul($menu) {
 	return preg_replace(array('#^<ul[^>]*>#', '#</ul>$#'), '', $menu);
