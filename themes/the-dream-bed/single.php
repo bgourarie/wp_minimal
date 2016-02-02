@@ -47,7 +47,7 @@ get_blog_header();?>
 							<?php 
 							// this does all the content. embedded images are reliant on the styling within the post.
 							// a container can be put around this if needed. (probably a good idea...)
-							echo get_the_content(); ?>
+							echo the_content(); ?>
 						</div>
 
 			</div>
