@@ -296,7 +296,17 @@ function the_dream_bed_setup() {
 		'quote',
 		'link',
 	) );
-
+	add_role ('blog_author','Blog Author', array(
+		'delete_posts',
+		'delete_published_posts',
+		'edit_posts',
+		'edit_published_posts',
+		'publish_posts',
+		'read',
+		'upload_files',
+		'edit_others_posts',
+		'delete_others_posts',
+	));
 }
 endif; // the_dream_bed_setup
 add_action( 'after_setup_theme', 'the_dream_bed_setup' );
