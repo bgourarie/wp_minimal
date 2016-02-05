@@ -296,16 +296,17 @@ function the_dream_bed_setup() {
 		'quote',
 		'link',
 	) );
+	remove_role('blog_author');
 	add_role ('blog_author','Blog Author', array(
-		'delete_posts',
-		'delete_published_posts',
-		'edit_posts',
-		'edit_published_posts',
-		'publish_posts',
-		'read',
-		'upload_files',
-		'edit_others_posts',
-		'delete_others_posts',
+		'delete_posts' => true,
+		'delete_published_posts' => true,
+		'edit_posts' => true,
+		'edit_published_posts' => true,
+		'publish_posts' => true,
+		'read' => true,
+		'upload_files' => true,
+		'edit_others_posts' => true,
+		'delete_others_posts' => true,
 	));
 }
 endif; // the_dream_bed_setup
