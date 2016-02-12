@@ -70,7 +70,7 @@ class WC_Gateway_Synchrony extends WC_Payment_Gateway {
 			'test_mode' => array(
 				'title' => __( 'Test Mode', 'woocommerce' ),
 				'type' => 'checkbox',
-				'default' => '1',
+				'default' => 1,
 				'description' => "Use the test mode for development, see docs for more info on test values."
 			),
 			'merchant_number' => array(
@@ -96,11 +96,11 @@ class WC_Gateway_Synchrony extends WC_Payment_Gateway {
 	*/
 	function return_handler(){
 		@ob_clean();
-		if($_REQUEST['ClientTransactionID']){
-			$order = new WC_Order($_REQUEST['ClientTransactionID']);
+		if($_POST['ClientTransactionID']){
+			$order = new WC_Order($_POST['ClientTransactionID']);
 			$valid = false;
 			$trans = array();
-			foreach($_REQUEST as $a => $b){
+			foreach($_POST as $a => $b){
 				$trans[$a] = $b;
 			}
 			if($order->order_total != $trans['TransactionAmount']
@@ -114,24 +114,25 @@ class WC_Gateway_Synchrony extends WC_Payment_Gateway {
 			if($valid){
 				$customer = $order->get_user();
 				// for now, let's store everythign in the order:
+				$str = "Data Received from Synchrony Financial: <br><ul>";
 				foreach($trans as $a => $b){
-					add_post_meta($order->id, $a, $b, true);
+					$str .= "<li>" . $a.":".$b. "</li>";
 				}
-
-				//$order->billing_first_name  = $trans['FirstName'];
-				//$order->billing_last_name  = $trans['LastName'];
-				// store the account number with the user (?? ) 
-				// and the auth code? 
+				$str .= "</ul>";
+				$order->add_order_note( $str );
+				$order->payment_complete();
 			}
 			else{
-				// cancel/reject order 
+				// cancel/reject order. Does nothing because user will have been returned to cart...
+				$err_str = print_r($_POST);
+				error_log("failed to record order for ".$err_str);
 			}
 		}
-		if($_REQUEST['type']){
+		if($_POST['type']){
 			global $woocommerce;
 			$cart_url = $woocommerce->cart->get_cart_url();
-			$order_id = $_REQUEST['order_id'];
-			$type = $_REQUEST['type'];
+			$order_id = $_POST['order_id'];
+			$type = $_POST['type'];
 			$order = new WC_order($order_id);
 			if($order_id){
 				switch ($type){
@@ -139,8 +140,8 @@ class WC_Gateway_Synchrony extends WC_Payment_Gateway {
 						// this should redirect to the custom page (so no break)
 					case 'clientSuccessfulPurchase':
 						// this will redirect to a custom page
-						echo 'Successful purchase!';
-						var_dump($order);
+						wc_add_notice('Your order will complete processing when Synchrony Financial submits authorization data.','success');
+						wp_redirect($order->get_checkout_order_received_url());
 						break;
 					case 'creditApplyNotification':
 			 			// not sure what to do here
@@ -148,6 +149,7 @@ class WC_Gateway_Synchrony extends WC_Payment_Gateway {
 						// this should go to the next option
 					case 'clientUnsuccessfulAppply':
 						// this redirects to cart page
+						wc_add_notice("Your Synchrony financial payment has failed, please proceed with a different method of payment. Alternatively, you may correct any errors and attempt payment again through Synchrony Financial.",'error');
 						wp_redirect($cart_url);
 						break;
 					
@@ -156,7 +158,7 @@ class WC_Gateway_Synchrony extends WC_Payment_Gateway {
 						echo "<hr><br><BR><BR>";
 						var_dump($order);
 				}
-				
+
 			}
 		}
 	}
@@ -181,10 +183,10 @@ class WC_Gateway_Synchrony extends WC_Payment_Gateway {
 	}
 
 	function get_url_for($str, $order_id){
-		$base_url = plugins_url().'/woocommerce-gateway-synchrony/wc-synchrony-redirect.php?order_id='.$order_id;
+		$base_url = str_replace('http:','https:',plugins_url()).'/woocommerce-gateway-synchrony/wc-synchrony-redirect.php?order_id='.$order_id;
 		switch ($str){
 			case 'purchaseNotification':
-				return str_replace(plugins_url().'/woocommerce-gateway-synchrony/wc-synchrony-success.php',"http:","https:");
+				return str_replace("http:","https:",plugins_url()).'/woocommerce-gateway-synchrony/wc-synchrony-success.php';
 			case 'creditApplyNotification':
 				return $base_url.'&type=creditApplyNotification';
 			case 'clientUnsuccessfulPurchase':
@@ -203,7 +205,7 @@ class WC_Gateway_Synchrony extends WC_Payment_Gateway {
 	*/
 	function payment_fields(){
 
-		if ( $this->test_mode != 0  ) {
+		if ( $this->test_mode == 'yes'  ) {
 			$description .= ' ' . sprintf( __( 'TEST MODE ENABLED. ', 'woocommerce' ) );
 		}
 		$description .= 'Please submit your order to continue to enter additional information for Synchrony Financial.';
@@ -224,7 +226,7 @@ class WC_Gateway_Synchrony extends WC_Payment_Gateway {
 	}
 
 	function build_info_for_synchrony( $order){
-		$test_flag = $this->test_mode != 0  ? 'Y' : 'N';
+		$test_flag = $this->test_mode == 'yes'  ? 'Y' : 'N';
 		return array(
 			//"PRODUCTCODE"					=> "",
 			//"GROUPCODE"						=> "",
@@ -232,7 +234,7 @@ class WC_Gateway_Synchrony extends WC_Payment_Gateway {
 			"merchantId"					=> $this->merchant_number,
 			"homeUrl"							=> "http://www.dreambed.com",
 			"imageUrl"						=> get_bloginfo("template_url")."/images/logo-the-dream-bed.svg",
-			"backgroundColor"			=> "6B6B6B",
+			"backgroundColor"			=> "F8BE42",
 			"billToFirstName" 		=> $order->billing_first_name ,
 			"billToMiddleInitial" => $order->billing_middle_name ,
 			"billToLastName" 			=> $order->billing_last_name ,

@@ -7,7 +7,7 @@
 
 if ( $_REQUEST && ( $_REQUEST['type'] ) && strlen($_REQUEST['order_id']) >= 5 ) {
 	?>
-	<form action='<?php print blog_url().'/wc-api/WC_Gateway_Synchrony'; ?>' method='post' name='frm'>
+	<form action='/wc-api/WC_Gateway_Synchrony' method='post' name='frm'>
 		<?php
 			foreach ( $_REQUEST as $a => $b ) {
 				echo "<input type='hidden' name='".htmlentities( $a )."' value='".htmlentities( $b )."'>";
