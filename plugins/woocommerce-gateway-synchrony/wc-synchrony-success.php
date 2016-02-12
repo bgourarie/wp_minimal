@@ -4,22 +4,40 @@
 *
 *
 */
+/** 
+* Send a POST requst using cURL 
+* @param string $url to request 
+* @param array $post values to send 
+* @param array $options for cURL 
+* @return string 
+*/ 
+function curl_post($url, array $post = NULL, array $options = array()) 
+{ 
+    $defaults = array( 
+        CURLOPT_POST => 1, 
+        CURLOPT_HEADER => 0, 
+        CURLOPT_URL => $url, 
+        CURLOPT_FRESH_CONNECT => 1, 
+        CURLOPT_RETURNTRANSFER => 1, 
+        CURLOPT_FORBID_REUSE => 1, 
+        CURLOPT_TIMEOUT => 4, 
+        CURLOPT_POSTFIELDS => http_build_query($post) 
+    ); 
 
+    $ch = curl_init(); 
+    curl_setopt_array($ch, ($options + $defaults)); 
+    if( ! $result = curl_exec($ch)) 
+    { 
+        trigger_error(curl_error($ch)); 
+    } 
+    curl_close($ch); 
+    return $result; 
+} 
+error_log("attempting to post to the api");
 if ( $_POST && ( $_POST['ClientTransactionID'] ) && $_POST['TransactionDescription'] == 'AUTHORIZATION' ) {
-	?>
-	<form action='<?php print blog_url().'/wc-api/WC_Gateway_Synchrony'; ?>' method='post' name='frm'>
-		<?php
-			foreach ( $_POST as $a => $b ) {
-				echo "<input type='hidden' name='".htmlentities( $a )."' value='".htmlentities( $b )."'>";
-			}
-			header( 'HTTP/1.1 307 Temporary Redirect' );
-		?>
-		<noscript><input type="submit" value="Click here if you are not redirected."/></noscript>
-	</form>
-	<script language="JavaScript">
-		document.frm.submit();
-	</script>
-	<?php
-} else {
-	echo 'Invalid response from Synchrony... Please contact the merchant to complete your order';
+	// set up the curl payload
+	$body = $_POST;
+	$url = $_SERVER['HTTP_HOST']."/wc-api/WC_Gateway_Synchrony";
+	curl_post($url, $body);
+	error_log('Posted to api?');
 }

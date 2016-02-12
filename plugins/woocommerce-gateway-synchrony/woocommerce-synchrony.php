@@ -95,6 +95,11 @@ class WC_Gateway_Synchrony extends WC_Payment_Gateway {
 	* Return handler 
 	*/
 	function return_handler(){
+		$err = '';
+		foreach($_POST as $a=>$b){
+			$err .= ",".$a." : ".$b." ";
+		}
+		error_log("return handling ".$err);
 		@ob_clean();
 		if($_POST['ClientTransactionID']){
 			$order = new WC_Order($_POST['ClientTransactionID']);
@@ -351,7 +356,7 @@ class WC_Gateway_Synchrony extends WC_Payment_Gateway {
 			$test_mode = $values['clientTestFlag'];
 			echo '<form action="'.$this->processing_url.'" method="post" name="theform">';
 		
-				echo '<p class="alert"> Please fill out some additional details for Synchrony Financial. No information will be stored by Dreambed.com.</p>';
+				echo '<p class="alert"> '.$this->description.'</p>';
 				echo '<p class="form-row form-row-wide">
 					<label for="billToSsn"> Social Security Number (Required if no Account number)</label>
 					<input id="billToSsn" name="billToSsn" class="input-text" type="text" maxlength="9" placeholder="xxx-xx-xxxx"/>
