@@ -201,7 +201,7 @@ class WC_Gateway_Synchrony extends WC_Payment_Gateway {
 		return array(
 			//"PRODUCTCODE"					=> "",
 			//"GROUPCODE"						=> "",
-			"shopperId"						=> $order->get_user_id(),
+			"shopperId"						=> ($order->get_user_id() == 0 ? "anon".$order->id : $order->get_user_id()),
 			"merchantId"					=> $this->merchant_number,
 			"homeUrl"							=> "http://www.dreambed.com",
 			"imageUrl"						=> get_bloginfo("template_url")."/images/logo-the-dream-bed.svg",
