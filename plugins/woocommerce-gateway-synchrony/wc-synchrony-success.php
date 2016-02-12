@@ -37,7 +37,7 @@ error_log("attempting to post to the api");
 if ( $_POST && ( $_POST['ClientTransactionID'] ) && $_POST['TransactionDescription'] == 'AUTHORIZATION' ) {
 	// set up the curl payload
 	$body = $_POST;
-	$url = $_SERVER['HTTP_HOST']."/wc-api/WC_Gateway_Synchrony";
-	curl_post($url, $body);
-	error_log('Posted to api?');
+	$url = "https://".$_SERVER['HTTP_HOST']."/wc-api/WC_Gateway_Synchrony";
+	$res = curl_post($url, $body);
+	error_log('Posted to api?'.$res);
 }

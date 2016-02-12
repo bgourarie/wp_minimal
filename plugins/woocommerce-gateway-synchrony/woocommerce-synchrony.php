@@ -91,15 +91,152 @@ class WC_Gateway_Synchrony extends WC_Payment_Gateway {
 			),
 		);
 	}
+
 	/*
+	* The form output on the checkout page
+	*/
+	function payment_fields(){
+		if ( $this->test_mode == 'yes'  ) {
+			$description .= ' ' . sprintf( __( 'TEST MODE ENABLED. ', 'woocommerce' ) );
+		}
+		$description .= 'Please submit your order to continue to enter additional information for Synchrony Financial.';
+		if ( $description ) {
+			echo wpautop( wptexturize( trim( $description ) ) );
+		}
+	}
+	/* validate fields on the checkout page */
+	function validate_fields(){
+		$fn = $_POST['billing_first_name'];
+		$ln = $_POST['billing_last_name'];
+		if(!ctype_alpha($fn) || !ctype_alpha($ln)){
+			wc_add_notice('Billing first and last name cannot contain numbers', 'error');
+		}
+	}
+
+	/**
+	* triggered on submitting from checkout page 
+	* Doesn't actually process payment yet, because we are 
+	* redirecting to synchrony's external site and handling their response instead
+	*/
+	function process_payment( $order_id ) {
+		global $woocommerce;
+		$order = new WC_Order( $order_id );
+		return array(
+				'result'   => 'success',
+				'redirect' => $order->get_checkout_payment_url( true )
+		);
+		
+		$response = wp_safe_remote_post( $this->processing_url, array(
+			'method'    => 'POST',
+			'body'      => http_build_query( $this->build_info_for_synchrony($order) ),
+			'timeout'   => 30,
+			'sslverify' => false,
+		) );
+		if (!isset($this->profile_id) || !isset($this->profile_key)) {
+			wc_add_notice( 'Gateway Configuration Error, Please contact the site admin!', 'error' );
+			return array(
+				'result'   => 'fail',
+				'redirect' => ''
+			);
+		} 
+		// redirect to the receipt page
+		return array(
+			'result' => 'success',
+			'redirect' => $this->get_return_url( $order )
+		);
+	}
+
+	/**
+	 * Receipt page
+	 *
+	 * @param  int $order_id
+	 */
+	public function receipt_page( $order_id ) {
+		$order = wc_get_order( $order_id );
+		// this is the form that submits to synchrony!
+		// GET THE TOKEN!
+		$this->setup_token();
+		// let's do this!
+		$values = $this->build_info_for_synchrony($order);
+		$test_mode = $values['clientTestFlag'];
+		echo '<form action="'.$this->processing_url.'" method="post" name="theform">';
+	
+			echo '<p class="alert"> '.$this->description.'</p>';
+			echo '<p class="form-row form-row-wide">
+				<label for="billToSsn"> Social Security Number (Required if no Account number)</label>
+				<input id="billToSsn" name="billToSsn" class="input-text" type="text" maxlength="9" placeholder="xxx-xx-xxxx"/>
+			</p>';
+			echo '<p class="form-row form-row-wide">
+				<label for="billToAccountNumber"> Account number  (Required if no Social Security Number) </label>
+				<input id="billToAccountNumber" name="billToAccountNumber" class="input-text" type="text" maxlength="16" placeholder="**** **** **** ****"/>
+			</p>';
+
+			foreach($values as $name => $value){
+				if($name != 'billToSsn' && $name != 'billToAccountNumber'){
+					echo "<!-- do not edit these values or the order may fail -->";
+					echo '<input type="hidden" name="'.$name.'" value="'.$value.'" />';
+				}
+			}
+
+			echo "<!-- do not edit these values or the order may fail -->";
+			echo '<input type="submit" value="SynchronySecureCheckout" />';
+			echo "</form>";
+			echo '<a class="button cancel" href="'.$order->get_cancel_order_url().'">Cancel Order & Restore Cart</a>';
+
+	}
+
+	function setup_token(){
+		$token = $this->get_user_token();
+		if( $token == $this->LOGIN_UNAUTH_FAIL
+				|| $token == $this->LOGIN_URL_FAIL){ 
+			wc_add_notice('Error connecting to the Synchrony Financial Gateway. Please contact site administrator. '.$token, 'error');
+		}
+		else{
+			$this->client_token = $token;
+		}	
+	}
+
+	function build_info_for_synchrony( $order){
+		$test_flag = $this->test_mode == 'yes'  ? 'Y' : 'N';
+		return array(
+			//"PRODUCTCODE"					=> "",
+			//"GROUPCODE"						=> "",
+			"shopperId"						=> $order->get_user_id(),
+			"merchantId"					=> $this->merchant_number,
+			"homeUrl"							=> "http://www.dreambed.com",
+			"imageUrl"						=> get_bloginfo("template_url")."/images/logo-the-dream-bed.svg",
+			"backgroundColor"			=> "F8BE42",
+			"billToFirstName" 		=> $order->billing_first_name ,
+			"billToMiddleInitial" => $order->billing_middle_name ,
+			"billToLastName" 			=> $order->billing_last_name ,
+			"billToAddress1" 			=> $order->billing_address_1 ,
+			"billToAddress2" 			=> $order->billing_address_2 ,
+			"billToCity" 					=> $order->billing_city ,
+			"billToState" 				=> $order->billing_state ,
+			"billToZipCode" 			=> $order->billing_postcode ,
+			"bllToHomePhone" 			=> $order->billing_phone ,
+			"billToSsn" 					=> "",
+			"billToAccountNumber"	=> "",
+			"transactionAmount"		=> $order->order_total,
+			"promoCode"						=>	"100", // what determines this?!
+			"clientTestFlag"			=> $test_flag,
+			"billToExpMM"					=> "12", // hardcode default
+			"billToExpYY"					=> "49", // hardcode default
+			"clientTransactionId"						=> $order->id,
+			"purchaseNotificationUrl"				=> $this->get_url_for('purchaseNotification',$order->id),
+			"creditApplyNotificationUrl"		=> $this->get_url_for('creditApplyNotification',$order->id),
+			"clientUnsuccessPurchaseUrl"		=> $this->get_url_for('clientUnsuccessfulPurchase',$order->id),
+			"clientSuccessfulPurchaseUrl"		=> $this->get_url_for('clientSuccessfulPurchase',$order->id),
+			"clientUnsuccessApplyUrl"				=> $this->get_url_for('clientUnsuccessfulAppply',$order->id),
+			"clientSuccessfulApplyUrl"			=> $this->get_url_for('clientSuccessfulApply',$order->id),
+			"clientToken"										=> trim($this->client_token),
+		);	
+	}	
+		/*
 	* Return handler 
 	*/
 	function return_handler(){
-		$err = '';
-		foreach($_POST as $a=>$b){
-			$err .= ",".$a." : ".$b." ";
-		}
-		error_log("return handling ".$err);
+		error_log("return handling ".implode(",",$_POST));
 		@ob_clean();
 		if($_POST['ClientTransactionID']){
 			$order = new WC_Order($_POST['ClientTransactionID']);
@@ -112,7 +249,6 @@ class WC_Gateway_Synchrony extends WC_Payment_Gateway {
 				|| $trans['Status'] != "Auth Approved"
 				|| $trans['TransactionDescription'] != "AUTHORIZATION"
 				|| ! $order->needs_payment() 
-		//	|| some auth token?
 				){
 				$valid = false;
 			}
@@ -129,7 +265,7 @@ class WC_Gateway_Synchrony extends WC_Payment_Gateway {
 			}
 			else{
 				// cancel/reject order. Does nothing because user will have been returned to cart...
-				$err_str = print_r($_POST);
+		
 				error_log("failed to record order for ".$err_str);
 			}
 		}
@@ -204,182 +340,6 @@ class WC_Gateway_Synchrony extends WC_Payment_Gateway {
 				return $base_url.'&type=clientSuccessfulApply';
 		}
 	}
-
-	/*
-	* The form output on the checkout page
-	*/
-	function payment_fields(){
-
-		if ( $this->test_mode == 'yes'  ) {
-			$description .= ' ' . sprintf( __( 'TEST MODE ENABLED. ', 'woocommerce' ) );
-		}
-		$description .= 'Please submit your order to continue to enter additional information for Synchrony Financial.';
-		if ( $description ) {
-			echo wpautop( wptexturize( trim( $description ) ) );
-		}
-	}
-
-	function setup_token(){
-		$token = $this->get_user_token();
-		if( $token == $this->LOGIN_UNAUTH_FAIL
-				|| $token == $this->LOGIN_URL_FAIL){ 
-			wc_add_notice('Error connecting to the Synchrony Financial Gateway. Please contact site administrator. '.$token, 'error');
-		}
-		else{
-			$this->client_token = $token;
-		}	
-	}
-
-	function build_info_for_synchrony( $order){
-		$test_flag = $this->test_mode == 'yes'  ? 'Y' : 'N';
-		return array(
-			//"PRODUCTCODE"					=> "",
-			//"GROUPCODE"						=> "",
-			"shopperId"						=> $order->get_user_id(),
-			"merchantId"					=> $this->merchant_number,
-			"homeUrl"							=> "http://www.dreambed.com",
-			"imageUrl"						=> get_bloginfo("template_url")."/images/logo-the-dream-bed.svg",
-			"backgroundColor"			=> "F8BE42",
-			"billToFirstName" 		=> $order->billing_first_name ,
-			"billToMiddleInitial" => $order->billing_middle_name ,
-			"billToLastName" 			=> $order->billing_last_name ,
-			"billToAddress1" 			=> $order->billing_address_1 ,
-			"billToAddress2" 			=> $order->billing_address_2 ,
-			"billToCity" 					=> $order->billing_city ,
-			"billToState" 				=> $order->billing_state ,
-			"billToZipCode" 			=> $order->billing_postcode ,
-			"bllToHomePhone" 			=> $order->billing_phone ,
-			"billToSsn" 					=> "",
-			"billToAccountNumber"	=> "",
-			"transactionAmount"		=> $order->order_total,
-			"promoCode"						=>	"100", // what determines this?!
-			"clientTestFlag"			=> $test_flag,
-			"billToExpMM"					=> "12", // hardcode default
-			"billToExpYY"					=> "49", // hardcode default
-			"clientTransactionId"						=> $order->id,
-			"purchaseNotificationUrl"				=> $this->get_url_for('purchaseNotification',$order->id),
-			"creditApplyNotificationUrl"		=> $this->get_url_for('creditApplyNotification',$order->id),
-			"clientUnsuccessPurchaseUrl"		=> $this->get_url_for('clientUnsuccessfulPurchase',$order->id),
-			"clientSuccessfulPurchaseUrl"		=> $this->get_url_for('clientSuccessfulPurchase',$order->id),
-			"clientUnsuccessApplyUrl"				=> $this->get_url_for('clientUnsuccessfulAppply',$order->id),
-			"clientSuccessfulApplyUrl"			=> $this->get_url_for('clientSuccessfulApply',$order->id),
-			"clientToken"										=> trim($this->client_token),
-		);	
-	}	
-
-		/*
-	billing_first_name and FN1 
-	billing_last_name and LN1 
-	billing_country and US 
-	billing_address_1 and 123 Fake st 
-	billing_address_2 and 0 and US 
-	billing_city and Seattle 
-	billing_state and WA
-	billing_postcode and 98101 
-	billing_email and bgourarie@uptopcorp.com 
-	billing_phone and 206515734 
-	shipping_first_name and FN1 
-	shipping_last_name and LN1 
-	shipping_country and US 
-	shipping_address_1 and 123 Fake st 
-	shipping_address_2 and 
-	shipping_city and Seattle 
-	shipping_state and WA 
-	shipping_postcode and 98101 
-	wc-authorize-net-cim-credit-card-account-number and 4007 0000 0002 7 
-	wc-authorize-net-cim-credit-card-expiry and 01 / 17 
-	wc-authorize-net-cim-credit-card-csc and 123 
-	payment_method and synchrony _wpnonce and 1ccd94667f 
-	_wp_http_referer and /checkout/?wc-ajax=update_order_review 
-	shipping_method and Array
-		*/
-	function validate_fields(){
-		$fn = $_POST['billing_first_name'];
-		$ln = $_POST['billing_last_name'];
-		if(!ctype_alpha($fn) || !ctype_alpha($ln)){
-			wc_add_notice('Billing first and last name cannot contain numbers', 'error');
-		}
-	}
-
-	function process_payment( $order_id ) {
-		global $woocommerce;
-		$order = new WC_Order( $order_id );
-		return array(
-				'result'   => 'success',
-				'redirect' => $order->get_checkout_payment_url( true )
-		);
-
-		// We want to redirect the user to a new page with the form, and submit via that... 
-		// shit. 
-
-		$response = wp_safe_remote_post( $this->processing_url, array(
-			'method'    => 'POST',
-			'body'      => http_build_query( $this->build_info_for_synchrony($order) ),
-			'timeout'   => 30,
-			'sslverify' => false,
-		) );
-		// The response we can discard. If this method returns "Success" then wc does stuff, otherwise it assumes we did things...
-
-
-		if (!isset($this->profile_id) || !isset($this->profile_key)) {
-			wc_add_notice( 'Gateway Configuration Error, Please contact the site admin!', 'error' );
-			return array(
-				'result'   => 'fail',
-				'redirect' => ''
-			);
-		} 
-
-		// the rest needs to be done in the callback url....
-
-		// Remove cart
-		$woocommerce->cart->empty_cart();
-
-		// Return thankyou redirect
-		return array(
-			'result' => 'success',
-			'redirect' => $this->get_return_url( $order )
-		);
-
-	}
-			/**
-		 * Receipt page
-		 *
-		 * @param  int $order_id
-		 */
-		public function receipt_page( $order_id ) {
-			$order = wc_get_order( $order_id );
-			// this is the form that submits to synchrony!
-			// GET THE TOKEN!
-			$this->setup_token();
-			// let's do this!
-			$values = $this->build_info_for_synchrony($order);
-			$test_mode = $values['clientTestFlag'];
-			echo '<form action="'.$this->processing_url.'" method="post" name="theform">';
-		
-				echo '<p class="alert"> '.$this->description.'</p>';
-				echo '<p class="form-row form-row-wide">
-					<label for="billToSsn"> Social Security Number (Required if no Account number)</label>
-					<input id="billToSsn" name="billToSsn" class="input-text" type="text" maxlength="9" placeholder="xxx-xx-xxxx"/>
-				</p>';
-				echo '<p class="form-row form-row-wide">
-					<label for="billToAccountNumber"> Account number  (Required if no Social Security Number) </label>
-					<input id="billToAccountNumber" name="billToAccountNumber" class="input-text" type="text" maxlength="16" placeholder="**** **** **** ****"/>
-				</p>';
-
-				foreach($values as $name => $value){
-					if($name != 'billToSsn' || $name != 'billToAccountNumber'){
-						echo '<input type="hidden" name="'.$name.'" value="'.$value.'" />';
-					}
-				}
-
-				echo "<!-- do not edit these values or the order may fail -->";
-				echo '<input type="submit" value="SynchronySecureCheckout" />';
-				echo "</form>";
-				// disable this because it would automatically submit stuff!
-				//echo '<script type="text/javascript">document.theform.submit();</script>';
-				echo '<a class="button cancel" href="'.$order->get_cancel_order_url().'">Cancel Order & Restore Cart</a>';
-
-		}
 
 // end payment gateway class:
 }
