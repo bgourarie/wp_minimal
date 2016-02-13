@@ -18,6 +18,8 @@ class WC_Gateway_Synchrony extends WC_Payment_Gateway {
 		// get the values we init-ed
 		$this->title = $this->get_option( 'title' );
 		$this->description  = $this->get_option( 'description' );
+		$this->synchrony_success  = $this->get_option( 'synchrony_success' );
+		$this->synchrony_error  = $this->get_option( 'synchrony_error' );
     $this->enabled  = $this->get_option( 'enabled' );
     $this->merchant_number = $this->get_option('merchant_number');
     $this->user_id = $this->get_option('user_id');
@@ -25,9 +27,6 @@ class WC_Gateway_Synchrony extends WC_Payment_Gateway {
     $this->login_url = $this->get_option('login_url');
     $this->processing_url = $this->get_option('processing_url');
     $this->test_mode = $this->get_option('test_mode');
-    $this->client_token = '';
-    $this->ssn = '';
-    $this->account_number = '';
 		add_action( 'woocommerce_update_options_payment_gateways_' . $this->id, array( $this, 'process_admin_options' ) );
 		add_action( 'woocommerce_receipt_' . $this->id, array( $this, 'receipt_page' ) );
 		add_action( 'woocommerce_api_wc_gateway_synchrony', array( $this, 'return_handler'));
@@ -63,9 +62,24 @@ class WC_Gateway_Synchrony extends WC_Payment_Gateway {
 				'desc_tip'      => true,
 			),
 			'description' => array(
-				'title' => __( 'Customer Message', 'woocommerce' ),
+				'title' => __( 'Customer Message for Synchrony Financial Form', 'woocommerce' ),
 				'type' => 'textarea',
 				'default' => ''
+			),
+			'checkout_description' => array(
+				'title' => __( 'Customer Message for Checkout page', 'woocommerce' ),
+				'type' => 'textarea',
+				'default' => 'Please submit your order to continue to enter additional information for Synchrony Financial.'
+			),
+			'synchrony_error' => array(
+				'title' => __( 'Synchrony Payment Failure Error Message', 'woocommerce' ),
+				'type' => 'textarea',
+				'default' => "Your Synchrony financial payment has failed, please proceed with a different method of payment. Alternatively, you may correct any errors and attempt payment again through Synchrony Financial."
+			),
+			'synchrony_success' => array(
+				'title' => __( 'Synchrony Payment Success Notification Message', 'woocommerce' ),
+				'type' => 'textarea',
+				'default' => "Your order will complete processing when Synchrony Financial submits authorization data."
 			),
 			'test_mode' => array(
 				'title' => __( 'Test Mode', 'woocommerce' ),
@@ -99,7 +113,7 @@ class WC_Gateway_Synchrony extends WC_Payment_Gateway {
 		if ( $this->test_mode == 'yes'  ) {
 			$description .= ' ' . sprintf( __( 'TEST MODE ENABLED. ', 'woocommerce' ) );
 		}
-		$description .= 'Please submit your order to continue to enter additional information for Synchrony Financial.';
+		$description .= $this->checkout_description;
 		if ( $description ) {
 			echo wpautop( wptexturize( trim( $description ) ) );
 		}
@@ -159,8 +173,8 @@ class WC_Gateway_Synchrony extends WC_Payment_Gateway {
 		// let's do this!
 		$values = $this->build_info_for_synchrony($order);
 		$test_mode = $values['clientTestFlag'];
+
 		echo '<form action="'.$this->processing_url.'" method="post" name="theform">';
-	
 			echo '<p class="alert"> '.$this->description.'</p>';
 			echo '<p class="form-row form-row-wide">
 				<label for="billToSsn"> Social Security Number (Required if no Account number)</label>
@@ -170,18 +184,15 @@ class WC_Gateway_Synchrony extends WC_Payment_Gateway {
 				<label for="billToAccountNumber"> Account number  (Required if no Social Security Number) </label>
 				<input id="billToAccountNumber" name="billToAccountNumber" class="input-text" type="text" maxlength="16" placeholder="**** **** **** ****"/>
 			</p>';
-
 			foreach($values as $name => $value){
 				if($name != 'billToSsn' && $name != 'billToAccountNumber'){
 					echo "<!-- do not edit these values or the order may fail -->";
 					echo '<input type="hidden" name="'.$name.'" value="'.$value.'" />';
 				}
 			}
-
-			echo "<!-- do not edit these values or the order may fail -->";
 			echo '<input type="submit" value="SynchronySecureCheckout" />';
-			echo "</form>";
-			echo '<a class="button cancel" href="'.$order->get_cancel_order_url().'">Cancel Order & Restore Cart</a>';
+		echo "</form>";
+		echo '<a class="button cancel" href="'.$order->get_cancel_order_url().'">Cancel Order & Restore Cart</a>';
 
 	}
 
@@ -281,7 +292,7 @@ class WC_Gateway_Synchrony extends WC_Payment_Gateway {
 						// this should redirect to the custom page (so no break)
 					case 'clientSuccessfulPurchase':
 						// this will redirect to a custom page
-						wc_add_notice('Your order will complete processing when Synchrony Financial submits authorization data.','success');
+						wc_add_notice($this->synchrony_success,'success');
 						wp_redirect($order->get_checkout_order_received_url());
 						break;
 					case 'creditApplyNotification':
@@ -290,7 +301,7 @@ class WC_Gateway_Synchrony extends WC_Payment_Gateway {
 						// this should go to the next option
 					case 'clientUnsuccessfulAppply':
 						// this redirects to cart page
-						wc_add_notice("Your Synchrony financial payment has failed, please proceed with a different method of payment. Alternatively, you may correct any errors and attempt payment again through Synchrony Financial.",'error');
+						wc_add_notice($this->synchrony_error,'error');
 						wp_redirect($cart_url);
 						break;
 					
