@@ -18,6 +18,7 @@ class WC_Gateway_Synchrony extends WC_Payment_Gateway {
 		// get the values we init-ed
 		$this->title = $this->get_option( 'title' );
 		$this->description  = $this->get_option( 'description' );
+		$this->checkout_description  = $this->get_option( 'checkout_description' );
 		$this->synchrony_success  = $this->get_option( 'synchrony_success' );
 		$this->synchrony_error  = $this->get_option( 'synchrony_error' );
     $this->enabled  = $this->get_option( 'enabled' );
@@ -25,6 +26,9 @@ class WC_Gateway_Synchrony extends WC_Payment_Gateway {
     $this->user_id = $this->get_option('user_id');
     $this->password = $this->get_option('password');
     $this->login_url = $this->get_option('login_url');
+    $this->bg_color = $this->get_option('bg_color');
+    $this->home_url = $this->get_option('home_url');
+    $this->logo_url = $this->get_option('logo_url');
     $this->processing_url = $this->get_option('processing_url');
     $this->test_mode = $this->get_option('test_mode');
 		add_action( 'woocommerce_update_options_payment_gateways_' . $this->id, array( $this, 'process_admin_options' ) );
@@ -103,21 +107,37 @@ class WC_Gateway_Synchrony extends WC_Payment_Gateway {
 				'default' => 'https://twww.secureb2c.com/process/shoppingCartProcessor.do',
 				'description' => 'This is the URL which Synchrony will trigger processing on when data is submitted',
 			),
+			'home_url' => array(
+				'title' => 'Homepage URL linking back to Synchrony endpoint',
+				'default' => "http://www.dreambed.com",
+				'description' => 'This is the URL which will show up on synchrony webpages which links back to your site',
+			),
+			'bg_color' => array(
+				'title' => 'Background color',
+				'default' => "F8BE42",
+				'description' => 'Background color for synchrony financial to use on their pages to match the look and feel of your site',
+			),
+			'logo_url' => array(
+				'title' => 'Path to Logo image file',
+				'default' => get_bloginfo("template_url")."/images/logo-the-dream-bed.svg",
+				'description' => 'Must be a publicly accessible file that will be displayed on the synchrony financial pages. ',
+			),
 		);
 	}
 
 	/*
-	* The form output on the checkout page
+	* The form output on the checkout page. overrides parent function, but doesn't actually output any fields since we do that elsewhere
 	*/
 	function payment_fields(){
 		if ( $this->test_mode == 'yes'  ) {
-			$description .= ' ' . sprintf( __( 'TEST MODE ENABLED. ', 'woocommerce' ) );
+			$description .= ' ' . sprintf( __( 'TEST MODE ENABLED.', 'woocommerce' ) );
 		}
 		$description .= $this->checkout_description;
 		if ( $description ) {
 			echo wpautop( wptexturize( trim( $description ) ) );
 		}
 	}
+
 	/* validate fields on the checkout page */
 	function validate_fields(){
 		$fn = $_POST['billing_first_name'];
@@ -129,8 +149,7 @@ class WC_Gateway_Synchrony extends WC_Payment_Gateway {
 
 	/**
 	* triggered on submitting from checkout page 
-	* Doesn't actually process payment yet, because we are 
-	* redirecting to synchrony's external site and handling their response instead
+	* Doesn't actually process payment yet, because we are 	* redirecting to synchrony's external site and handling their response instead
 	*/
 	function process_payment( $order_id ) {
 		global $woocommerce;
@@ -162,15 +181,13 @@ class WC_Gateway_Synchrony extends WC_Payment_Gateway {
 
 	/**
 	 * Receipt page
-	 *
+	 * This is our real payment form, which will send data on to synchrony financial
+	 * 
 	 * @param  int $order_id
 	 */
 	public function receipt_page( $order_id ) {
 		$order = wc_get_order( $order_id );
-		// this is the form that submits to synchrony!
-		// GET THE TOKEN!
 		$this->setup_token();
-		// let's do this!
 		$values = $this->build_info_for_synchrony($order);
 		$test_mode = $values['clientTestFlag'];
 
@@ -192,15 +209,19 @@ class WC_Gateway_Synchrony extends WC_Payment_Gateway {
 			}
 			echo '<input type="submit" value="SynchronySecureCheckout" />';
 		echo "</form>";
+
 		echo '<a class="button cancel" href="'.$order->get_cancel_order_url().'">Cancel Order & Restore Cart</a>';
 
 	}
 
 	function setup_token(){
+		global $woocommerce;
+		$cart_url = $woocommerce->cart->get_cart_url();
 		$token = $this->get_user_token();
 		if( $token == $this->LOGIN_UNAUTH_FAIL
 				|| $token == $this->LOGIN_URL_FAIL){ 
 			wc_add_notice('Error connecting to the Synchrony Financial Gateway. Please contact site administrator. '.$token, 'error');
+			wp_redirect($cart_url);
 		}
 		else{
 			$this->client_token = $token;
@@ -210,13 +231,11 @@ class WC_Gateway_Synchrony extends WC_Payment_Gateway {
 	function build_info_for_synchrony( $order){
 		$test_flag = $this->test_mode == 'yes'  ? 'Y' : 'N';
 		return array(
-			//"PRODUCTCODE"					=> "",
-			//"GROUPCODE"						=> "",
 			"shopperId"						=> ($order->get_user_id() == 0 ? "anon".$order->id : $order->get_user_id()),
 			"merchantId"					=> $this->merchant_number,
-			"homeUrl"							=> "http://www.dreambed.com",
-			"imageUrl"						=> get_bloginfo("template_url")."/images/logo-the-dream-bed.svg",
-			"backgroundColor"			=> "F8BE42",
+			"homeUrl"							=> $this->home_url,
+			"imageUrl"						=> $this->logo_url,
+			"backgroundColor"			=> $this->bg_color,
 			"billToFirstName" 		=> $order->billing_first_name ,
 			"billToMiddleInitial" => $order->billing_middle_name ,
 			"billToLastName" 			=> $order->billing_last_name ,
@@ -229,7 +248,7 @@ class WC_Gateway_Synchrony extends WC_Payment_Gateway {
 			"billToSsn" 					=> "",
 			"billToAccountNumber"	=> "",
 			"transactionAmount"		=> $order->order_total,
-			"promoCode"						=>	"100", // what determines this?!
+			"promoCode"						=> "100", // what determines this?!
 			"clientTestFlag"			=> $test_flag,
 			"billToExpMM"					=> "12", // hardcode default
 			"billToExpYY"					=> "49", // hardcode default
@@ -275,8 +294,6 @@ class WC_Gateway_Synchrony extends WC_Payment_Gateway {
 				$order->payment_complete();
 			}
 			else{
-				// cancel/reject order. Does nothing because user will have been returned to cart...
-		
 				error_log("failed to record order for ".$err_str);
 			}
 		}
@@ -304,11 +321,7 @@ class WC_Gateway_Synchrony extends WC_Payment_Gateway {
 						wc_add_notice($this->synchrony_error,'error');
 						wp_redirect($cart_url);
 						break;
-					
-					default:
-						// redirect to somewhere else?
-						echo "<hr><br><BR><BR>";
-						var_dump($order);
+					default:						
 				}
 
 			}
