@@ -267,36 +267,7 @@ class WC_Gateway_Synchrony extends WC_Payment_Gateway {
 	*/
 	function return_handler(){
 		error_log("return handling ".implode(",",$_POST));
-		@ob_clean();
-		if($_POST['ClientTransactionID']){
-			$order = new WC_Order($_POST['ClientTransactionID']);
-			$valid = false;
-			$trans = array();
-			foreach($_POST as $a => $b){
-				$trans[$a] = $b;
-			}
-			if($order->order_total != $trans['TransactionAmount']
-				|| $trans['Status'] != "Auth Approved"
-				|| $trans['TransactionDescription'] != "AUTHORIZATION"
-				|| ! $order->needs_payment() 
-				){
-				$valid = false;
-			}
-			if($valid){
-				$customer = $order->get_user();
-				// for now, let's store everythign in the order:
-				$str = "Data Received from Synchrony Financial: <br><ul>";
-				foreach($trans as $a => $b){
-					$str .= "<li>" . $a.":".$b. "</li>";
-				}
-				$str .= "</ul>";
-				$order->add_order_note( $str );
-				$order->payment_complete();
-			}
-			else{
-				error_log("failed to record order for ".$err_str);
-			}
-		}
+		@ob_clean(); //not sure this is necessary?
 		if($_POST['type']){
 			global $woocommerce;
 			$cart_url = $woocommerce->cart->get_cart_url();
