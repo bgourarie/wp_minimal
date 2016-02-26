@@ -203,8 +203,8 @@ class WC_Gateway_Synchrony extends WC_Payment_Gateway {
 			</p>';
 			foreach($values as $name => $value){
 				if($test_mode && $name == 'promoCode'){
-					echo '<label for"promoCode"> Promo Code for transaction: </label>'
-					echo '<input id="promoCode" name="promoCode" class="input-text" type="text" maxlength="3" placeholder="***"/>'
+					echo '<label for"promoCode"> Promo Code for transaction: </label>';
+					echo '<input id="promoCode" name="promoCode" class="input-text" type="text" maxlength="3" placeholder="***"/>';
 				}
 				elseif($name != 'billToSsn' && $name != 'billToAccountNumber'){
 					echo "<!-- do not edit these values or the order may fail -->";
