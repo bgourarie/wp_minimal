@@ -21,6 +21,8 @@ if($_POST['ClientTransactionID']){
     if($valid){
         $customer = $order->get_user();       
         $order->add_order_note( $str );
+        update_post_meta($order->id,'synchrony_auth_code',$_POST['AuthCode']);
+        update_post_meta($order->id,'synchrony_account_number',$_POST['AccountNumber']);
         $order->payment_complete();
     }
     else{
