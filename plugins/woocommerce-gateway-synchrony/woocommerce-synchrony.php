@@ -313,9 +313,15 @@ class WC_Gateway_Synchrony extends WC_Payment_Gateway {
 				echo "</form>";
 			echo "</div>";
 			echo '<div class="col-md-5 woocommerce-info">';
-				foreach($values as $name => $value){
-					echo $name . ": ". $value. " <br>";
-				}
+				echo $values["billToFirstName"]." "; 		
+				echo $values["billToMiddleInitial"]." "; 
+				echo $values["billToLastName"]."<br>"; 			
+				echo $values["billToAddress1"]."<br>"; 			
+				echo $values["billToAddress2"]."<br>"; 			
+				echo $values["billToCity"].", "; 					
+				echo $values["billToState"]." "; 				
+				echo $values["billToZipCode"]."<br>"; 			
+				echo $values["bllToHomePhone"]."<br>"; 			
 			echo '</div>';
 		echo "</div>";
 	}
