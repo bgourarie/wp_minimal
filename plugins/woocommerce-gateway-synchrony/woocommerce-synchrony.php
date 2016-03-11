@@ -38,17 +38,17 @@ class WC_Gateway_Synchrony extends WC_Payment_Gateway {
 	}
 	function absorb_and_assimilate_promo_codes(){
 		$promoCodeArray = array();
-		for($i = 1; $i < 8 , $i ++){
+		for($i = 1; $i < 9 ; $i ++){
 			$promoCodeArray[$i] = array(
-				'time' => $this->get_option['time'.$i];
-				'option_text' => $this->get_option['option_text'.$i];
-				'minimum_spend' => $this->get_option['minimum_spend'.$i];
-				'tckt_term' => $this->get_option['tckt_term'.$i];
-				'start_date' => $this->get_option['start_date'.$i];
-				'end_date' => $this->get_option['end_date'.$i];
-				'promo_ID' => $this->get_option['promo_ID'.$i];
-				'discount' => $this->get_option['discount'.$i];
-				'disclosure_url' => $this->get_option['disclosure_url'.$i];
+				'time' 						=> $this->get_option['time'.$i],
+				'option_text' 		=> $this->get_option['option_text'.$i],
+				'minimum_spend' 	=> $this->get_option['minimum_spend'.$i],
+				'tckt_term' 			=> $this->get_option['tckt_term'.$i],
+				'start_date'			=> $this->get_option['start_date'.$i],
+				'end_date' 				=> $this->get_option['end_date'.$i],
+				'promo_ID' 				=> $this->get_option['promo_ID'.$i],
+				'discount' 				=> $this->get_option['discount'.$i],
+				'disclosure_url'	=> $this->get_option['disclosure_url'.$i],
 			);	
 		}
 		return $promoCodeArray;
@@ -57,19 +57,19 @@ class WC_Gateway_Synchrony extends WC_Payment_Gateway {
 	function init_form_fields(){
 
 		$promoCodeArray = array();
-		for($i=1; $i<8; $i++){
+		for($i=1; $i < 9; $i++){
 			$promoCodeArray['time'.$i] = array(
-					'title' => __("Time ".$i,'woocommerce');
+					'title' => __("Time ".$i,'woocommerce'),
 					'type'  => 'text',
 					'description' => __(" Enter the Time length for promo code ".$i, 'woocommerce'),
 				);
 			$promoCodeArray['option_text'.$i] = array(
-					'title' => __("Option Text  ".$i,'woocommerce');
+					'title' => __("Option Text  ".$i,'woocommerce'),
 					'type'  => 'text',
 					'description' => __(" The Option text which will be visible to customers for promo code ".$i, 'woocommerce'),
 				);
 			$promoCodeArray['minimum_spend'.$i] = array(
-					'title' => __("Minimum spend for Promo Code  ".$i,'woocommerce');
+					'title' => __("Minimum spend for Promo Code  ".$i,'woocommerce'),
 					'type'  => 'text',
 					'description' => __(" Enter the minimum spend for promo code ".$i, 'woocommerce'),
 				);
@@ -192,7 +192,7 @@ class WC_Gateway_Synchrony extends WC_Payment_Gateway {
 				),
 			),
 //	fields for promo code management
-			$promoCodeArray,
+			$promoCodeArray
 		);
 	}
 
@@ -262,10 +262,11 @@ class WC_Gateway_Synchrony extends WC_Payment_Gateway {
 					.$promo['tckt_term'].'" '. ( $i == 1 ? 'selected >' : '>')
 					.( $this->test_mode == 'yes' ? "Promo Code = ".$promo['tckt_term'] : "" ) 
 					.$promo['option_text']
-					.'a href="'.$promo['disclosure_url'].'"> See Full details here </a> <br>
+					.'a href="http://'.$promo['disclosure_url'].'"> See Full details here </a> <br>
 					';
 			}
 		}
+		return $output;
 	}
 
 	/**
