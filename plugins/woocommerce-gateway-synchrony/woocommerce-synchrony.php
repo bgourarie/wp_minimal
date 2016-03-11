@@ -40,15 +40,15 @@ class WC_Gateway_Synchrony extends WC_Payment_Gateway {
 		$promoCodeArray = array();
 		for($i = 1; $i < 9 ; $i ++){
 			$promoCodeArray[$i] = array(
-				'time' 						=> $this->get_option['time'.$i],
-				'option_text' 		=> $this->get_option['option_text'.$i],
-				'minimum_spend' 	=> $this->get_option['minimum_spend'.$i],
-				'tckt_term' 			=> $this->get_option['tckt_term'.$i],
-				'start_date'			=> $this->get_option['start_date'.$i],
-				'end_date' 				=> $this->get_option['end_date'.$i],
-				'promo_ID' 				=> $this->get_option['promo_ID'.$i],
-				'discount' 				=> $this->get_option['discount'.$i],
-				'disclosure_url'	=> $this->get_option['disclosure_url'.$i],
+				'time' 						=> $this->get_option('time'.$i),
+				'option_text' 		=> $this->get_option('option_text'.$i),
+				'minimum_spend' 	=> $this->get_option('minimum_spend'.$i),
+				'tckt_term' 			=> $this->get_option('tckt_term'.$i),
+				'start_date'			=> $this->get_option('start_date'.$i),
+				'end_date' 				=> $this->get_option('end_date'.$i),
+				'promo_ID' 				=> $this->get_option('promo_ID'.$i),
+				'discount' 				=> $this->get_option('discount'.$i),
+				'disclosure_url'	=> $this->get_option('disclosure_url'.$i),
 			);	
 		}
 		return $promoCodeArray;
@@ -254,15 +254,15 @@ class WC_Gateway_Synchrony extends WC_Payment_Gateway {
 		$output = "";
 		foreach($this->promoCodes as $promo){
 			if(
-				$total < $promo['minimum_spend'] 
+				$total >= $promo['minimum_spend'] 
 				&& strtotime($promo['start_date']) < time()
 				&& strtotime($promo['end_date']) >= time()
 			){
 				$output .= '<input type="radio" name="promoCode" value="'
 					.$promo['tckt_term'].'" '. ( $i == 1 ? 'selected >' : '>')
-					.( $this->test_mode == 'yes' ? "Promo Code = ".$promo['tckt_term'] : "" ) 
+					.( $this->test_mode == 'yes' ? "<em>Promo Code = ".$promo['tckt_term']." </em>  <b> ": "<b>" ) 
 					.$promo['option_text']
-					.'a href="http://'.$promo['disclosure_url'].'"> See Full details here </a> <br>
+					.'</b> <a href="http://'.$promo['disclosure_url'].'"> See Full details here </a> <br>
 					';
 			}
 		}
