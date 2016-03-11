@@ -285,9 +285,9 @@ class WC_Gateway_Synchrony extends WC_Payment_Gateway {
 		$this->setup_token();
 		$values = $this->build_info_for_synchrony($order);
 		$test_mode = $values['clientTestFlag'];
-
+		echo '<p class="woocommerce-info"> '.$this->description.'</p>';
+		echo '<div class="col-md-7">'
 		echo '<form action="'.$this->processing_url.'" method="post" name="theform">';
-			echo '<p class="woocommerce-info"> '.$this->description.'</p>';
 			echo '<p class="form-row form-row-wide">
 				<label for="billToSsn"> Social Security Number (Required if no Account number)</label>
 				<input id="billToSsn" name="billToSsn" class="input-text" type="text" maxlength="9" placeholder="xxx-xx-xxxx"/>
@@ -308,7 +308,7 @@ class WC_Gateway_Synchrony extends WC_Payment_Gateway {
 			}
 			echo '<button type="submit" class="button alt" value="SynchronySecureCheckout">Secure Checkout</button> <button class="button cancel" href="'.$order->get_cancel_order_url().'">Cancel Order & Restore Cart</button>';
 		echo "</form>";
-
+		echo "</div>";
 	}
 
 	function setup_token(){
