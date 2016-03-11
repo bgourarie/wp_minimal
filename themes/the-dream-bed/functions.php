@@ -9,11 +9,11 @@
 require get_template_directory() . '/includes/shop.php';
 // add blog post inclusions
 require get_template_directory() . '/includes/blog-posts.php';
-// adding header pixels. 
+// adding header pixels.
 require get_template_directory() . '/includes/trackers-and-pixels.php';
 
 /* fix glitch on chrome for admin menus */
-function chromefix_inline_css() { 
+function chromefix_inline_css() {
 	wp_add_inline_style('wp-admin', '@media screen and (-webkit-min-device-pixel-ratio:0) { #adminmenu { transform: translateZ(0); } }' );
 }
 add_action('admin_enqueue_scripts', 'chromefix_inline_css');
@@ -38,7 +38,7 @@ function woocommerce_support() {
 /* hide decimal places on PDP pages but not on checkout */
 // Show trailing zeros on prices, default is to hide it.
 add_filter( 'woocommerce_price_trim_zeros', 'wc_hide_trailing_zeros', 10, 1 );
-function wc_hide_trailing_zeros( $trim ) {     
+function wc_hide_trailing_zeros( $trim ) {
     // show trailing zeroes only on checkout
     return !is_checkout();
 }
@@ -99,7 +99,7 @@ function custom_woocommerce_debug_tools( $tools ) {
  */
 function woocommerce_delete_tax_rates() {
 	global $wpdb;
-			
+
 	$wpdb->query( "TRUNCATE " . $wpdb->prefix . "woocommerce_tax_rates" );
 	$wpdb->query( "TRUNCATE " . $wpdb->prefix . "woocommerce_tax_rate_locations" );
 
@@ -188,7 +188,7 @@ function custom_text( $translated_text, $text, $text_domain ) {
 		return 'Continue Shopping'; /* change this */
 	}
 	/* checkout form text */
-	
+
 	if('Billing Details' === $text) {
 		return 'Contact Info';
 	}
@@ -214,7 +214,7 @@ add_filter('gettext', 'custom_text', 10, 3);
 
 /* changing the text of the Place Order button is harder because it relies on jquery */
 function woocommerce_custom_order_button_text() {
-	return __('Place My Order!', 'woocommerce'); 
+	return __('Continue', 'woocommerce'); 
 }
 add_filter('woocommerce_order_button_text', 'woocommerce_custom_order_button_text');
 
@@ -348,4 +348,3 @@ function get_cool_pillow_id(){
 
 add_filter( 'excerpt_length', 'td_excerptLength' );
 function td_excerptLength( $length ) { return 40; };
-
