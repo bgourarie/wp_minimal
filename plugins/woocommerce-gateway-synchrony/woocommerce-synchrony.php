@@ -263,9 +263,9 @@ class WC_Gateway_Synchrony extends WC_Payment_Gateway {
 			$output .= '<label for="promo_code_'.$promo['tckt_term'].'">&nbsp;'
 					. '<input type="radio" id="promo_code_'.$promo['tckt_term'].'" name="promoCode" value="'
 					.$promo['tckt_term'].'" '. ( $i == 1 ? 'selected />' : '/>')
-					.( $this->test_mode == 'yes' ? "<em>Promo Code = ".$promo['tckt_term']." </em>  ": "" )
+					.( $this->test_mode == 'yes' ? "<em>Promo Code = ".$promo['tckt_term']." </em>  <strong>": "<strong>" )
 					.$promo['option_text']
-					.' <a href="http://'.$promo['disclosure_url'].'"> See Full details here </a>
+					.'</strong> <a href="http://'.$promo['disclosure_url'].'"><em>See Full details here</em></a>
 					</label>
 			</p>
 					';
@@ -306,9 +306,8 @@ class WC_Gateway_Synchrony extends WC_Payment_Gateway {
 					echo '<input type="hidden" name="'.$name.'" value="'.$value.'" />';
 				}
 			}
-			echo '<button type="submit" class="button" value="SynchronySecureCheckout">Secure Checkout</button>';
-		echo "</form><br>";
-		echo '<a class="button cancel" href="'.$order->get_cancel_order_url().'">Cancel Order & Restore Cart</a>';
+			echo '<button type="submit" class="button alt" value="SynchronySecureCheckout">Secure Checkout</button> <button class="button cancel" href="'.$order->get_cancel_order_url().'">Cancel Order & Restore Cart</button>';
+		echo "</form>";
 
 	}
 
