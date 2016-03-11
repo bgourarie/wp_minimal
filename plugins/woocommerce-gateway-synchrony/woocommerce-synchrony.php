@@ -286,30 +286,37 @@ class WC_Gateway_Synchrony extends WC_Payment_Gateway {
 		$values = $this->build_info_for_synchrony($order);
 		$test_mode = $values['clientTestFlag'];
 		woocommerce_order_review();
-		echo '<p class="woocommerce-info"> '.$this->description.'</p>';
-		echo '<div class="col-md-7">';
-		echo '<form action="'.$this->processing_url.'" method="post" name="theform">';
-			echo '<p class="form-row form-row-wide">
-				<label for="billToSsn"> Social Security Number (Required if no Account number)</label>
-				<input id="billToSsn" name="billToSsn" class="input-text" type="text" maxlength="9" placeholder="xxx-xx-xxxx"/>
-			</p>';
-			echo '<p class="form-row form-row-wide">
-				<label for="billToAccountNumber"> Account number  (Required if no Social Security Number) </label>
-				<input id="billToAccountNumber" name="billToAccountNumber" class="input-text" type="text" maxlength="16" placeholder="**** **** **** ****"/>
-			</p>';
-			echo '<h4>Your Mattress Firm Credit Card purchase qualifies for your choice of the following offers:</h4>';
-			foreach($values as $name => $value){
-				if($name == 'promoCode'){
+		echo '<div class="synchrony-container">';
+			echo '<p class="woocommerce-info"> '.$this->description.'</p>';
+			echo '<div class="col-md-7">';
+				echo '<form action="'.$this->processing_url.'" method="post" name="theform">';
+					echo '<p class="form-row form-row-wide">
+						<label for="billToSsn"> Social Security Number (Required if no Account number)</label>
+						<input id="billToSsn" name="billToSsn" class="input-text" type="text" maxlength="9" placeholder="xxx-xx-xxxx"/>
+					</p>';
+					echo '<p class="form-row form-row-wide">
+						<label for="billToAccountNumber"> Account number  (Required if no Social Security Number) </label>
+						<input id="billToAccountNumber" name="billToAccountNumber" class="input-text" type="text" maxlength="16" placeholder="**** **** **** ****"/>
+					</p>';
+
+					echo '<h4>Your Mattress Firm Credit Card purchase qualifies for your choice of the following offers:</h4>';
 					echo $this->output_applicable_promocodes($order);
+					
+					foreach($values as $name => $value){
+						if($name != 'billToSsn' && $name != 'billToAccountNumber' && $name != "promoCode" ){
+							echo "<!-- do not edit these values or the order may fail -->";
+							echo '<input type="hidden" name="'.$name.'" value="'.$value.'" />';
+						}
+					}
+					echo '<a type="submit" class="button alt" value="SynchronySecureCheckout">Secure Checkout</a> 
+						<a class="button cancel" href="'.$order->get_cancel_order_url().'">Cancel Order & Restore Cart</a>';
+				echo "</form>";
+			echo "</div>";
+			echo '<div class="col-md-5 woocommerce-info">';
+				foreach($values as $name => $value){
+					echo $name . ": ". $value. " <br>";
 				}
-				elseif($name != 'billToSsn' && $name != 'billToAccountNumber'){
-					echo "<!-- do not edit these values or the order may fail -->";
-					echo '<input type="hidden" name="'.$name.'" value="'.$value.'" />';
-				}
-			}
-			echo '<button type="submit" class="button alt" value="SynchronySecureCheckout">Secure Checkout</button> 
-			<a class="button cancel" href="'.$order->get_cancel_order_url().'">Cancel Order & Restore Cart</button>';
-		echo "</form>";
+			echo '</div>';
 		echo "</div>";
 	}
 
@@ -346,10 +353,10 @@ class WC_Gateway_Synchrony extends WC_Payment_Gateway {
 			"billToState" 				=> $order->billing_state ,
 			"billToZipCode" 			=> $order->billing_postcode ,
 			"bllToHomePhone" 			=> $order->billing_phone ,
-			"billToSsn" 					=> "",
-			"billToAccountNumber"	=> "",
+		//	"billToSsn" 					=> "",
+		//	"billToAccountNumber"	=> "",
 			"transactionAmount"		=> $order->order_total,
-			"promoCode"						=> "",
+			//"promoCode"						=> "",
 			"clientTestFlag"			=> $test_flag,
 			"billToExpMM"					=> "12", // hardcode default
 			"billToExpYY"					=> "49", // hardcode default
