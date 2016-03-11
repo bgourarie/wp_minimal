@@ -285,6 +285,7 @@ class WC_Gateway_Synchrony extends WC_Payment_Gateway {
 		$this->setup_token();
 		$values = $this->build_info_for_synchrony($order);
 		$test_mode = $values['clientTestFlag'];
+		woocommerce_order_review();
 		echo '<p class="woocommerce-info"> '.$this->description.'</p>';
 		echo '<div class="col-md-7">';
 		echo '<form action="'.$this->processing_url.'" method="post" name="theform">';
@@ -306,7 +307,8 @@ class WC_Gateway_Synchrony extends WC_Payment_Gateway {
 					echo '<input type="hidden" name="'.$name.'" value="'.$value.'" />';
 				}
 			}
-			echo '<button type="submit" class="button alt" value="SynchronySecureCheckout">Secure Checkout</button> <button class="button cancel" href="'.$order->get_cancel_order_url().'">Cancel Order & Restore Cart</button>';
+			echo '<button type="submit" class="button alt" value="SynchronySecureCheckout">Secure Checkout</button> 
+			<a class="button cancel" href="'.$order->get_cancel_order_url().'">Cancel Order & Restore Cart</button>';
 		echo "</form>";
 		echo "</div>";
 	}
@@ -435,5 +437,9 @@ class WC_Gateway_Synchrony extends WC_Payment_Gateway {
 		}
 	}
 
+	public function get_icon(){
+		$icon  = '<img src="' . WC_HTTPS::force_https_url( WC()->plugin_url() . '/mfrm-card.png' ) . '" alt="MattressFirm Credit Card" />';
+		return apply_filters( 'woocommerce_gateway_icon', $icon, $this->id );
+	}
 // end payment gateway class:
 }
