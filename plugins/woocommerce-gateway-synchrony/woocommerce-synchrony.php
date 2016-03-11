@@ -31,97 +31,168 @@ class WC_Gateway_Synchrony extends WC_Payment_Gateway {
     $this->logo_url = $this->get_option('logo_url');
     $this->processing_url = $this->get_option('processing_url');
     $this->test_mode = $this->get_option('test_mode');
+    $this->promoCodes = $this->absorb_and_assimilate_promo_codes();
 		add_action( 'woocommerce_update_options_payment_gateways_' . $this->id, array( $this, 'process_admin_options' ) );
 		add_action( 'woocommerce_receipt_' . $this->id, array( $this, 'receipt_page' ) );
 		add_action( 'woocommerce_api_wc_gateway_synchrony', array( $this, 'return_handler'));
 	}
+	function absorb_and_assimilate_promo_codes(){
+		$promoCodeArray = array();
+		for($i = 1; $i < 8 , $i ++){
+			$promoCodeArray[$i] = array(
+				'time' => $this->get_option['time'.$i];
+				'option_text' => $this->get_option['option_text'.$i];
+				'minimum_spend' => $this->get_option['minimum_spend'.$i];
+				'tckt_term' => $this->get_option['tckt_term'.$i];
+				'start_date' => $this->get_option['start_date'.$i];
+				'end_date' => $this->get_option['end_date'.$i];
+				'promo_ID' => $this->get_option['promo_ID'.$i];
+				'discount' => $this->get_option['discount'.$i];
+				'disclosure_url' => $this->get_option['disclosure_url'.$i];
+			);	
+		}
+		return $promoCodeArray;
+	}
 
 	function init_form_fields(){
-		$this->form_fields = array(
-			'enabled' => array(
-				'title' => __( 'Enable/Disable', 'woocommerce' ),
-				'type' => 'checkbox',
-				'label' => __( 'Enable Synchrony Financial', 'woocommerce' ),
-				'default' => 'yes'
+
+		$promoCodeArray = array();
+		for($i=1; $i<8; $i++){
+			$promoCodeArray['time'.$i] = array(
+					'title' => __("Time ".$i,'woocommerce');
+					'type'  => 'text',
+					'description' => __(" Enter the Time length for promo code ".$i, 'woocommerce'),
+				);
+			$promoCodeArray['option_text'.$i] = array(
+					'title' => __("Option Text  ".$i,'woocommerce');
+					'type'  => 'text',
+					'description' => __(" The Option text which will be visible to customers for promo code ".$i, 'woocommerce'),
+				);
+			$promoCodeArray['minimum_spend'.$i] = array(
+					'title' => __("Minimum spend for Promo Code  ".$i,'woocommerce');
+					'type'  => 'text',
+					'description' => __(" Enter the minimum spend for promo code ".$i, 'woocommerce'),
+				);
+			$promoCodeArray['tckt_term'.$i] = array(
+					'title' => __("TCKT TERM (Synchrony Promo Code) ".$i,'woocommerce'),
+					'type' 	=> 'text',
+					'label' => __('Three digit promo code to submit to synchrony for promo code  '.$i, 'woocommerce'),
+			);
+			$promoCodeArray['start_date'.$i] = array(
+				'title' => __("Start Date ".$i, 'woocommerce'),
+				'type' 	=> 'date',
+				'description' => __("Start date for promo code  ".$i, 'woocommerce'),			
+			);
+			$promoCodeArray['end_date'.$i] = array(
+				'title' => __("End Date ".$i, 'woocommerce'),
+				'type' 	=> 'date',
+				'description' => __("End date for promo code ".$i, 'woocommerce'),			
+			);
+			$promoCodeArray['promo_ID'.$i] = array(
+				'title' => __("Promo ID ".$i, 'woocommerce'),
+				'type' 	=> 'text',
+				'description' => __("MFRM's Promotional ID for promo code ".$i, 'woocommerce'),			
+			);
+			$promoCodeArray['discount'.$i] = array(
+				'title' => __("Discount % ".$i, 'woocommerce'),
+				'type' 	=> 'text',
+				'description' => __("MFRM's Discount Percentage for promo code ".$i, 'woocommerce'),			
+			);
+			$promoCodeArray['disclosure_url'.$i] = array(
+				'title' => __("Disclosure URL ".$i, 'woocommerce'),
+				'type' 	=> 'text',
+				'description' => __("URL of disclosure text and details for promo code ".$i, 'woocommerce'),			
+			);
+		}
+		$this->form_fields = array_merge(
+			array(
+				'enabled' => array(
+					'title' => __( 'Enable/Disable', 'woocommerce' ),
+					'type' => 'checkbox',
+					'label' => __( 'Enable Synchrony Financial', 'woocommerce' ),
+					'default' => 'yes'
+				),
+				'title' => array(
+					'title' => __( 'Title', 'woocommerce' ),
+					'type' => 'text',
+					'description' => __( 'This controls the title which the user sees during checkout.', 'woocommerce' ),
+					'default' => __( 'Financing through Synchrony Financial', 'woocommerce' ),
+					'desc_tip'      => true,
+				),
+				'user_id' => array(
+					'title' => __( 'User ID', 'woocommerce' ),
+					'type' => 'text',
+					'description' => __( 'The User ID to login with Synchrony financial.', 'woocommerce' ),
+					'default' => __( '5348122280400082', 'woocommerce' ),
+					'desc_tip'      => true,
+				),
+				'password' => array(
+					'title' => __( 'Password', 'woocommerce' ),
+					'type' => 'password',
+					'description' => __( 'Password for login to Synchrony financial', 'woocommerce' ),
+					'default' => __( '00082$Test', 'woocommerce' ),
+					'desc_tip'      => true,
+				),
+				'description' => array(
+					'title' => __( 'Customer Message for Synchrony Financial Form', 'woocommerce' ),
+					'type' => 'textarea',
+					'default' => ''
+				),
+				'checkout_description' => array(
+					'title' => __( 'Customer Message for Checkout page', 'woocommerce' ),
+					'type' => 'textarea',
+					'default' => 'Please submit your order to continue to enter additional information for Synchrony Financial.'
+				),
+				'synchrony_error' => array(
+					'title' => __( 'Synchrony Payment Failure Error Message', 'woocommerce' ),
+					'type' => 'textarea',
+					'default' => "Your Synchrony financial payment has failed, please proceed with a different method of payment. Alternatively, you may correct any errors and attempt payment again through Synchrony Financial."
+				),
+				'synchrony_success' => array(
+					'title' => __( 'Synchrony Payment Success Notification Message', 'woocommerce' ),
+					'type' => 'textarea',
+					'default' => "Your order will complete processing when Synchrony Financial submits authorization data."
+				),
+				'test_mode' => array(
+					'title' => __( 'Test Mode', 'woocommerce' ),
+					'type' => 'checkbox',
+					'default' => 1,
+					'description' => "Use the test mode for development, see docs for more info on test values."
+				),
+				'merchant_number' => array(
+					'title' => __( 'Merchant Number', 'woocommerce' ),
+					'type' => 'text',
+					'default' => "5348122280400082",
+					'description' => "The Merchant Number for the website to use. Submitted to Synchrony for verification."
+				),
+				'login_url' => array(
+					'title' => 'Login URL for Synchrony endpoint',
+					'default' => 'https://twww.secureb2c.com/process/login.do',
+					'description' => 'This is the URL used to validate the apps access to Synchrony',
+				),
+				'processing_url' => array(
+					'title' => 'Processing URL for Synchrony endpoint',
+					'default' => 'https://twww.secureb2c.com/process/shoppingCartProcessor.do',
+					'description' => 'This is the URL which Synchrony will trigger processing on when data is submitted',
+				),
+				'home_url' => array(
+					'title' => 'Homepage URL linking back to Synchrony endpoint',
+					'default' => "http://www.dreambed.com",
+					'description' => 'This is the URL which will show up on synchrony webpages which links back to your site',
+				),
+				'bg_color' => array(
+					'title' => 'Background color',
+					'default' => "F8BE42",
+					'description' => 'Background color for synchrony financial to use on their pages to match the look and feel of your site',
+				),
+				'logo_url' => array(
+					'title' => 'Path to Logo image file',
+					'default' => get_bloginfo("template_url")."/images/logo-the-dream-bed.svg",
+					'description' => 'Must be a publicly accessible file that will be displayed on the synchrony financial pages. ',
+				),
 			),
-			'title' => array(
-				'title' => __( 'Title', 'woocommerce' ),
-				'type' => 'text',
-				'description' => __( 'This controls the title which the user sees during checkout.', 'woocommerce' ),
-				'default' => __( 'Financing through Synchrony Financial', 'woocommerce' ),
-				'desc_tip'      => true,
-			),
-			'user_id' => array(
-				'title' => __( 'User ID', 'woocommerce' ),
-				'type' => 'text',
-				'description' => __( 'The User ID to login with Synchrony financial.', 'woocommerce' ),
-				'default' => __( '5348122280400082', 'woocommerce' ),
-				'desc_tip'      => true,
-			),
-			'password' => array(
-				'title' => __( 'Password', 'woocommerce' ),
-				'type' => 'password',
-				'description' => __( 'Password for login to Synchrony financial', 'woocommerce' ),
-				'default' => __( '00082$Test', 'woocommerce' ),
-				'desc_tip'      => true,
-			),
-			'description' => array(
-				'title' => __( 'Customer Message for Synchrony Financial Form', 'woocommerce' ),
-				'type' => 'textarea',
-				'default' => ''
-			),
-			'checkout_description' => array(
-				'title' => __( 'Customer Message for Checkout page', 'woocommerce' ),
-				'type' => 'textarea',
-				'default' => 'Please submit your order to continue to enter additional information for Synchrony Financial.'
-			),
-			'synchrony_error' => array(
-				'title' => __( 'Synchrony Payment Failure Error Message', 'woocommerce' ),
-				'type' => 'textarea',
-				'default' => "Your Synchrony financial payment has failed, please proceed with a different method of payment. Alternatively, you may correct any errors and attempt payment again through Synchrony Financial."
-			),
-			'synchrony_success' => array(
-				'title' => __( 'Synchrony Payment Success Notification Message', 'woocommerce' ),
-				'type' => 'textarea',
-				'default' => "Your order will complete processing when Synchrony Financial submits authorization data."
-			),
-			'test_mode' => array(
-				'title' => __( 'Test Mode', 'woocommerce' ),
-				'type' => 'checkbox',
-				'default' => 1,
-				'description' => "Use the test mode for development, see docs for more info on test values."
-			),
-			'merchant_number' => array(
-				'title' => __( 'Merchant Number', 'woocommerce' ),
-				'type' => 'text',
-				'default' => "5348122280400082",
-				'description' => "The Merchant Number for the website to use. Submitted to Synchrony for verification."
-			),
-			'login_url' => array(
-				'title' => 'Login URL for Synchrony endpoint',
-				'default' => 'https://twww.secureb2c.com/process/login.do',
-				'description' => 'This is the URL used to validate the apps access to Synchrony',
-			),
-			'processing_url' => array(
-				'title' => 'Processing URL for Synchrony endpoint',
-				'default' => 'https://twww.secureb2c.com/process/shoppingCartProcessor.do',
-				'description' => 'This is the URL which Synchrony will trigger processing on when data is submitted',
-			),
-			'home_url' => array(
-				'title' => 'Homepage URL linking back to Synchrony endpoint',
-				'default' => "http://www.dreambed.com",
-				'description' => 'This is the URL which will show up on synchrony webpages which links back to your site',
-			),
-			'bg_color' => array(
-				'title' => 'Background color',
-				'default' => "F8BE42",
-				'description' => 'Background color for synchrony financial to use on their pages to match the look and feel of your site',
-			),
-			'logo_url' => array(
-				'title' => 'Path to Logo image file',
-				'default' => get_bloginfo("template_url")."/images/logo-the-dream-bed.svg",
-				'description' => 'Must be a publicly accessible file that will be displayed on the synchrony financial pages. ',
-			),
+//	fields for promo code management
+			$promoCodeArray,
 		);
 	}
 
@@ -158,7 +229,6 @@ class WC_Gateway_Synchrony extends WC_Payment_Gateway {
 				'result'   => 'success',
 				'redirect' => $order->get_checkout_payment_url( true )
 		);
-		
 		$response = wp_safe_remote_post( $this->processing_url, array(
 			'method'    => 'POST',
 			'body'      => http_build_query( $this->build_info_for_synchrony($order) ),
@@ -177,6 +247,25 @@ class WC_Gateway_Synchrony extends WC_Payment_Gateway {
 			'result' => 'success',
 			'redirect' => $this->get_return_url( $order )
 		);
+	}
+
+	function output_applicable_promocodes($order){
+		$total = $order->order_total;
+		$output = "";
+		foreach($this->promoCodes as $promo){
+			if(
+				$total < $promo['minimum_spend'] 
+				&& strtotime($promo['start_date']) < time()
+				&& strtotime($promo['end_date']) >= time()
+			){
+				$output .= '<input type="radio" name="promoCode" value="'
+					.$promo['tckt_term'].'" '. ( $i == 1 ? 'selected >' : '>')
+					.( $this->test_mode == 'yes' ? "Promo Code = ".$promo['tckt_term'] : "" ) 
+					.$promo['option_text']
+					.'a href="'.$promo['disclosure_url'].'"> See Full details here </a> <br>
+					';
+			}
+		}
 	}
 
 	/**
@@ -202,9 +291,8 @@ class WC_Gateway_Synchrony extends WC_Payment_Gateway {
 				<input id="billToAccountNumber" name="billToAccountNumber" class="input-text" type="text" maxlength="16" placeholder="**** **** **** ****"/>
 			</p>';
 			foreach($values as $name => $value){
-				if($test_mode && $name == 'promoCode'){
-					echo '<label for"promoCode"> Promo Code for transaction: </label>';
-					echo '<input id="promoCode" name="promoCode" class="input-text" type="text" maxlength="3" placeholder="***"/>';
+				if($name == 'promoCode'){
+					echo $this->output_applicable_promocodes($order);
 				}
 				elseif($name != 'billToSsn' && $name != 'billToAccountNumber'){
 					echo "<!-- do not edit these values or the order may fail -->";
@@ -212,8 +300,7 @@ class WC_Gateway_Synchrony extends WC_Payment_Gateway {
 				}
 			}
 			echo '<input type="submit" value="SynchronySecureCheckout" />';
-		echo "</form>";
-
+		echo "</form><br>";
 		echo '<a class="button cancel" href="'.$order->get_cancel_order_url().'">Cancel Order & Restore Cart</a>';
 
 	}
@@ -231,7 +318,9 @@ class WC_Gateway_Synchrony extends WC_Payment_Gateway {
 			$this->client_token = $token;
 		}	
 	}
-
+	/**
+		Builds the values to send to synchrony. Blank values will need a field for the end-user to input
+	*/
 	function build_info_for_synchrony( $order){
 		$test_flag = $this->test_mode == 'yes'  ? 'Y' : 'N';
 		return array(
@@ -252,7 +341,7 @@ class WC_Gateway_Synchrony extends WC_Payment_Gateway {
 			"billToSsn" 					=> "",
 			"billToAccountNumber"	=> "",
 			"transactionAmount"		=> $order->order_total,
-			"promoCode"						=> "100", // what determines this?!
+			"promoCode"						=> "",
 			"clientTestFlag"			=> $test_flag,
 			"billToExpMM"					=> "12", // hardcode default
 			"billToExpYY"					=> "49", // hardcode default
