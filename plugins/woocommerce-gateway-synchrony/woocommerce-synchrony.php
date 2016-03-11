@@ -49,7 +49,7 @@ class WC_Gateway_Synchrony extends WC_Payment_Gateway {
 				'promo_ID' 				=> $this->get_option('promo_ID'.$i),
 				'discount' 				=> $this->get_option('discount'.$i),
 				'disclosure_url'	=> $this->get_option('disclosure_url'.$i),
-			);	
+			);
 		}
 		return $promoCodeArray;
 	}
@@ -81,27 +81,27 @@ class WC_Gateway_Synchrony extends WC_Payment_Gateway {
 			$promoCodeArray['start_date'.$i] = array(
 				'title' => __("Start Date ".$i, 'woocommerce'),
 				'type' 	=> 'date',
-				'description' => __("Start date for promo code  ".$i, 'woocommerce'),			
+				'description' => __("Start date for promo code  ".$i, 'woocommerce'),
 			);
 			$promoCodeArray['end_date'.$i] = array(
 				'title' => __("End Date ".$i, 'woocommerce'),
 				'type' 	=> 'date',
-				'description' => __("End date for promo code ".$i, 'woocommerce'),			
+				'description' => __("End date for promo code ".$i, 'woocommerce'),
 			);
 			$promoCodeArray['promo_ID'.$i] = array(
 				'title' => __("Promo ID ".$i, 'woocommerce'),
 				'type' 	=> 'text',
-				'description' => __("MFRM's Promotional ID for promo code ".$i, 'woocommerce'),			
+				'description' => __("MFRM's Promotional ID for promo code ".$i, 'woocommerce'),
 			);
 			$promoCodeArray['discount'.$i] = array(
 				'title' => __("Discount % ".$i, 'woocommerce'),
 				'type' 	=> 'text',
-				'description' => __("MFRM's Discount Percentage for promo code ".$i, 'woocommerce'),			
+				'description' => __("MFRM's Discount Percentage for promo code ".$i, 'woocommerce'),
 			);
 			$promoCodeArray['disclosure_url'.$i] = array(
 				'title' => __("Disclosure URL ".$i, 'woocommerce'),
 				'type' 	=> 'text',
-				'description' => __("URL of disclosure text and details for promo code ".$i, 'woocommerce'),			
+				'description' => __("URL of disclosure text and details for promo code ".$i, 'woocommerce'),
 			);
 		}
 		$this->form_fields = array_merge(
@@ -219,7 +219,7 @@ class WC_Gateway_Synchrony extends WC_Payment_Gateway {
 	}
 
 	/**
-	* triggered on submitting from checkout page 
+	* triggered on submitting from checkout page
 	* Doesn't actually process payment yet, because we are 	* redirecting to synchrony's external site and handling their response instead
 	*/
 	function process_payment( $order_id ) {
@@ -241,7 +241,7 @@ class WC_Gateway_Synchrony extends WC_Payment_Gateway {
 				'result'   => 'fail',
 				'redirect' => ''
 			);
-		} 
+		}
 		// redirect to the receipt page
 		return array(
 			'result' => 'success',
@@ -254,13 +254,13 @@ class WC_Gateway_Synchrony extends WC_Payment_Gateway {
 		$output = "";
 		foreach($this->promoCodes as $promo){
 			if(
-				$total >= $promo['minimum_spend'] 
+				$total >= $promo['minimum_spend']
 				&& strtotime($promo['start_date']) < time()
 				&& strtotime($promo['end_date']) >= time()
 			){
 				$output .= '<input type="radio" name="promoCode" value="'
 					.$promo['tckt_term'].'" '. ( $i == 1 ? 'selected >' : '>')
-					.( $this->test_mode == 'yes' ? "<em>Promo Code = ".$promo['tckt_term']." </em>  <b> ": "<b>" ) 
+					.( $this->test_mode == 'yes' ? "<em>Promo Code = ".$promo['tckt_term']." </em>  <b> ": "<b>" )
 					.$promo['option_text']
 					.'</b> <a href="http://'.$promo['disclosure_url'].'"> See Full details here </a> <br>
 					';
@@ -272,7 +272,7 @@ class WC_Gateway_Synchrony extends WC_Payment_Gateway {
 	/**
 	 * Receipt page
 	 * This is our real payment form, which will send data on to synchrony financial
-	 * 
+	 *
 	 * @param  int $order_id
 	 */
 	public function receipt_page( $order_id ) {
@@ -291,6 +291,7 @@ class WC_Gateway_Synchrony extends WC_Payment_Gateway {
 				<label for="billToAccountNumber"> Account number  (Required if no Social Security Number) </label>
 				<input id="billToAccountNumber" name="billToAccountNumber" class="input-text" type="text" maxlength="16" placeholder="**** **** **** ****"/>
 			</p>';
+			echo '<h4>Your Mattress Firm Credit Card purchase qualifies for your choice of the following offers:</h4>';
 			foreach($values as $name => $value){
 				if($name == 'promoCode'){
 					echo $this->output_applicable_promocodes($order);
@@ -300,7 +301,7 @@ class WC_Gateway_Synchrony extends WC_Payment_Gateway {
 					echo '<input type="hidden" name="'.$name.'" value="'.$value.'" />';
 				}
 			}
-			echo '<input type="submit" value="SynchronySecureCheckout" />';
+			echo '<button type="submit" class="button" value="SynchronySecureCheckout">Secure Checkout</button>';
 		echo "</form><br>";
 		echo '<a class="button cancel" href="'.$order->get_cancel_order_url().'">Cancel Order & Restore Cart</a>';
 
@@ -311,13 +312,13 @@ class WC_Gateway_Synchrony extends WC_Payment_Gateway {
 		$cart_url = $woocommerce->cart->get_cart_url();
 		$token = $this->get_user_token();
 		if( $token == $this->LOGIN_UNAUTH_FAIL
-				|| $token == $this->LOGIN_URL_FAIL){ 
+				|| $token == $this->LOGIN_URL_FAIL){
 			wc_add_notice('Error connecting to the Synchrony Financial Gateway. Please contact site administrator. '.$token, 'error');
 			wp_redirect($cart_url);
 		}
 		else{
 			$this->client_token = $token;
-		}	
+		}
 	}
 	/**
 		Builds the values to send to synchrony. Blank values will need a field for the end-user to input
@@ -354,10 +355,10 @@ class WC_Gateway_Synchrony extends WC_Payment_Gateway {
 			"clientUnsuccessApplyUrl"				=> $this->get_url_for('clientUnsuccessfulAppply',$order->id),
 			"clientSuccessfulApplyUrl"			=> $this->get_url_for('clientSuccessfulApply',$order->id),
 			"clientToken"										=> trim($this->client_token),
-		);	
-	}	
+		);
+	}
 		/*
-	* Return handler 
+	* Return handler
 	*/
 	function return_handler(){
 		error_log("return handling ".implode(",",$_POST));
@@ -386,7 +387,7 @@ class WC_Gateway_Synchrony extends WC_Payment_Gateway {
 						wc_add_notice($this->synchrony_error,'error');
 						wp_redirect($cart_url);
 						break;
-					default:						
+					default:
 				}
 
 			}
@@ -394,7 +395,7 @@ class WC_Gateway_Synchrony extends WC_Payment_Gateway {
 	}
 
 	function get_user_token(){
-		$auth = "Basic ".base64_encode($this->user_id.':'.$this->password);	
+		$auth = "Basic ".base64_encode($this->user_id.':'.$this->password);
 		// this encoding might be wrong, for the Basic auth type?
 		$type = 'application/xml';
 		$response = wp_safe_remote_post( $this->login_url, array(
