@@ -266,7 +266,7 @@ class WC_Gateway_Synchrony extends WC_Payment_Gateway {
 					<label for="promo_code_'.$promo['tckt_term'].'">'
 					.( $this->test_mode == 'yes' ? "<em>Promo Code = ".$promo['tckt_term']." </em>  <b> ": "<b>" )
 					.$promo['option_text']
-					.'</b> <a href="http://'.$promo['disclosure_url'].'"> See Full details here </a> 
+					.'</b> <a href="http://'.$promo['disclosure_url'].'"> See Full details here </a>
 					</label>
 				<br>
 			</p>
@@ -289,7 +289,7 @@ class WC_Gateway_Synchrony extends WC_Payment_Gateway {
 		$test_mode = $values['clientTestFlag'];
 
 		echo '<form action="'.$this->processing_url.'" method="post" name="theform">';
-			echo '<p class="alert"> '.$this->description.'</p>';
+			echo '<p class="woocommerce-info"> '.$this->description.'</p>';
 			echo '<p class="form-row form-row-wide">
 				<label for="billToSsn"> Social Security Number (Required if no Account number)</label>
 				<input id="billToSsn" name="billToSsn" class="input-text" type="text" maxlength="9" placeholder="xxx-xx-xxxx"/>
