@@ -286,7 +286,7 @@ class WC_Gateway_Synchrony extends WC_Payment_Gateway {
 		$values = $this->build_info_for_synchrony($order);
 		$test_mode = $values['clientTestFlag'];
 		echo '<p class="woocommerce-info"> '.$this->description.'</p>';
-		echo '<div class="col-md-7">'
+		echo '<div class="col-md-7">';
 		echo '<form action="'.$this->processing_url.'" method="post" name="theform">';
 			echo '<p class="form-row form-row-wide">
 				<label for="billToSsn"> Social Security Number (Required if no Account number)</label>
