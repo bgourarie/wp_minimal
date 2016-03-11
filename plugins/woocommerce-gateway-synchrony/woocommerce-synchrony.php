@@ -263,11 +263,10 @@ class WC_Gateway_Synchrony extends WC_Payment_Gateway {
 			$output .= '<label for="promo_code_'.$promo['tckt_term'].'">&nbsp;'
 					. '<input type="radio" id="promo_code_'.$promo['tckt_term'].'" name="promoCode" value="'
 					.$promo['tckt_term'].'" '. ( $i == 1 ? 'selected />' : '/>')
-					.( $this->test_mode == 'yes' ? "<em>Promo Code = ".$promo['tckt_term']." </em>  <b> ": "<b>" )
+					.( $this->test_mode == 'yes' ? "<em>Promo Code = ".$promo['tckt_term']." </em>  ": "" )
 					.$promo['option_text']
-					.'</b> <a href="http://'.$promo['disclosure_url'].'"> See Full details here </a>
+					.' <a href="http://'.$promo['disclosure_url'].'"> See Full details here </a>
 					</label>
-				<br>
 			</p>
 					';
 			}
