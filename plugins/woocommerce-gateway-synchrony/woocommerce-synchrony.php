@@ -302,19 +302,17 @@ class WC_Gateway_Synchrony extends WC_Payment_Gateway {
 					echo $this->output_applicable_promocodes($order);
 					
 					foreach($values as $name => $value){
-						if($name != 'billToSsn' && $name != 'billToAccountNumber' && $name != "promoCode" ){
-							echo "<!-- do not edit these values or the order may fail -->";
-							echo '<input type="hidden" name="'.$name.'" value="'.$value.'" />';
-						}
+						echo '<!-- do not edit these values or the order may fail -->
+								<input type="hidden" name="'.$name.'" value="'.$value.'" />';
 					}
-					echo '<a type="submit" class="button alt" value="SynchronySecureCheckout">Secure Checkout</a> 
+					echo '<input type="submit" class="button alt" value="Secure Checkout"/>
 						<a class="button cancel" href="'.$order->get_cancel_order_url().'">Cancel Order & Restore Cart</a>';
 				echo "</form>";
 			echo "</div>";
 			echo '<div class="col-md-5">';
 				woocommerce_order_review();
 				echo '<div class="woocommerce-info">';
-					echo "<h4> Customer Details </h4><br>";
+					echo "<h4> Customer Details </h4>";
 					echo $values["billToFirstName"]." ";
 					echo $values["billToMiddleInitial"]." ";
 					echo $values["billToLastName"]."<br>";
