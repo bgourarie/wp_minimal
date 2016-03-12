@@ -285,7 +285,6 @@ class WC_Gateway_Synchrony extends WC_Payment_Gateway {
 		$this->setup_token();
 		$values = $this->build_info_for_synchrony($order);
 		$test_mode = $values['clientTestFlag'];
-		woocommerce_order_review();
 		echo '<div class="synchrony-container">';
 			echo '<p class="woocommerce-info"> '.$this->description.'</p>';
 			echo '<div class="col-md-7">';
@@ -312,16 +311,20 @@ class WC_Gateway_Synchrony extends WC_Payment_Gateway {
 						<a class="button cancel" href="'.$order->get_cancel_order_url().'">Cancel Order & Restore Cart</a>';
 				echo "</form>";
 			echo "</div>";
-			echo '<div class="col-md-5 woocommerce-info">';
-				echo $values["billToFirstName"]." "; 		
-				echo $values["billToMiddleInitial"]." "; 
-				echo $values["billToLastName"]."<br>"; 			
-				echo $values["billToAddress1"]."<br>"; 			
-				echo $values["billToAddress2"]."<br>"; 			
-				echo $values["billToCity"].", "; 					
-				echo $values["billToState"]." "; 				
-				echo $values["billToZipCode"]."<br>"; 			
-				echo $values["bllToHomePhone"]."<br>"; 			
+			echo '<div class="col-md-5">';
+				woocommerce_order_review();
+				echo '<div class="woocommerce-info">';
+					echo "<h4> Customer Details </h4><br>";
+					echo $values["billToFirstName"]." ";
+					echo $values["billToMiddleInitial"]." ";
+					echo $values["billToLastName"]."<br>";
+					echo $values["billToAddress1"]."<br>";
+					echo $values["billToAddress2"] ? $values["billToAddress2"]."<br>" : "" ;
+					echo $values["billToCity"].", ";
+					echo $values["billToState"]." ";
+					echo $values["billToZipCode"]."<br>";
+					echo "Phone: ".$values["bllToHomePhone"]."<br>";
+				echo '</div>';
 			echo '</div>';
 		echo "</div>";
 	}
