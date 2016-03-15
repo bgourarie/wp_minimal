@@ -28,6 +28,6 @@ if($_POST['ClientTransactionID']){
     else{
         error_log("failed to record order for ".$err_str);
         if($order)
-            add_order_note("Response from Synchrony Financial indicated payment failure or error.<br><BR>".$str)
+            add_order_note("Response from Synchrony Financial indicated payment failure or error.<br><BR>".$str);
     }
 }
