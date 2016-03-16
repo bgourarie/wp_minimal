@@ -13,7 +13,7 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-sm-8 col-sm-offset-2 col-xs-12">
-				<h1><?php echo get_field('header_text'); ?></h1>
+				<h1 class="hidden-sm"><?php echo get_field('header_text'); ?></h1>
 				<div class="cta"><a href="<?php echo get_field('button_link') ?>" class="btn btn-dream btn-lg" role="button"><?php echo get_field('button_text') ?></a></div>
 				<img class="pin" src="<?php echo get_field('hero_image'); ?>" data-pin-description="The Dream Bed: Free shipping and a no nightmare guarantee." alt="">
 			</div>
