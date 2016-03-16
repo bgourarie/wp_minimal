@@ -348,3 +348,6 @@ function get_cool_pillow_id(){
 
 add_filter( 'excerpt_length', 'td_excerptLength' );
 function td_excerptLength( $length ) { return 40; };
+
+/* disable xmlrpc */
+add_filter( 'xmlrpc_enabled', '__return_false' );
