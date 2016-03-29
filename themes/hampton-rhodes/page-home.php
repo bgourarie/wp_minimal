@@ -96,24 +96,16 @@
 		</div>
 	</div>
 </div>
-<div class="home-free-shipping">
-	<!-- <div class="container">
+<div class="container">
 		<div class="row">
 			<div class="col-xs-10 col-xs-offset-1 col-md-4 col-md-offset-4">
-				<div class="home-unboxing-box-content">
+				<div class="home-free-shipping">
 					<div>
-						<a href="#" data-toggle="modal" data-target="#unboxing-video"><img src="<?php bloginfo("template_url"); ?>/images/icon-unboxingbox.svg" class="img-responsive" alt=""></a>
-					</div>
-					<div>
-						<h4>Unboxing is Easy!</h4>
-						<p>Watch Meredith, Chris, and Hank set up their new Dream Bed.</p>
-						<p><a href="#" class="btn btn-dream drop-shadow" role="button" data-toggle="modal" data-target="#unboxing-video">See the Video</a></p>
+						<h4>Free shipping -- this container is full width for the free shpping and pickup banner thing!</h4>
 					</div>
 				</div>	
 			</div>
 		</div>
-	</div> -->
-	free shipping alert goes here
 </div>
 <div class="jumbotron home-jumbo hidden-xs" style="background-image: url('<?php echo get_field('footer_hero_image'); ?>')">
 	<div class="container">

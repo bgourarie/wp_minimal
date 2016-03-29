@@ -133,137 +133,137 @@ function uptop_product_images() {
 	?>
 		</div>
 
-<?php
-global $post;
-$terms = wp_get_post_terms( $post->ID, 'product_cat' );
-foreach ( $terms as $term ) $categories[] = $term->slug;
+	<?php
+	global $post;
+	$terms = wp_get_post_terms( $post->ID, 'product_cat' );
+	foreach ( $terms as $term ) $categories[] = $term->slug;
 
-	if ( in_array( 'mattress', $categories ) ) { 
-	/* show if this is a mattress - bed setup and comparison chart */ ?>
-				
-		<div class="container bed-setup">
-    		<div class="row">
-				<div class="col-sm-12 text-center">
-					<h2>Set up anywhere</h2>
-				</div>
-			</div>
-			<div class="row">
-				<div class="col-sm-4 text-center">
-					<img src="<?php bloginfo("template_url"); ?>/images/icon-boxspring.svg" alt="" class="center-block setup-img">
-					<h4>Box Spring</h4>
-					<p>The Dream Bed works on most box springs. Make sure there is no more than 3" between each slat.</p>
-				</div>
-				<div class="col-sm-4 text-center">
-					<img src="<?php bloginfo("template_url"); ?>/images/icon-adjustable.svg" alt="" class="center-block setup-img">
-					<h4>Adjustable Frame</h4>
-					<p>Our bed is flexible, so you can you use it with any adjustable bed base.</p>
-
-				</div>
-				<div class="col-sm-4 text-center">
-					<img src="<?php bloginfo("template_url"); ?>/images/icon-flat-surface.svg" alt="" class="center-block setup-img">
-					<h4>Any Flat Surface</h4>
-					<p>Platform bed, bunky board, the floor? Any and all flat surfaces will work with The Dream Bed.</p>
-				</div>
-			</div>
-		</div>
-		
-		<div class="compare-beds">	
-			<div class="container">
-				<div class="row">
+		if ( in_array( 'mattress', $categories ) ) { 
+		/* show if this is a mattress - bed setup and comparison chart */ ?>
+					
+			<div class="container bed-setup">
+	    		<div class="row">
 					<div class="col-sm-12 text-center">
-						<h2>Compare The Dream Bed</h2>
+						<h2>Set up anywhere</h2>
 					</div>
 				</div>
 				<div class="row">
-					<div class="col-sm-12">
-						<div class="table-responsive comparison-table">
-							<table class="table table-hover table-bordered">
-								<tbody>
-									<tr class="nobox">
-										<th scope="col" class="col-xs-2">&nbsp;</th>
-										<th scope="col" class="original col-xs-2">Original Dream Bed</th>
-										<th scope="col" class="cool col-xs-2">Cool Dream Bed</th>
-										<th scope="col" class="col-xs-2">Casper</th>
-										<th scope="col" class="col-xs-2">Leesa</th>
-									</tr>
-									<tr>
-										<th scope="row">Layers</th>
-										<td>1.5&quot; Latex, 1.5&quot; Memory Foam, 7&quot; support foam</td>
-										<td>0.125&quot; Cool Gel, 3&quot; Memory Foam, 7.5&quot; support foam</td>
-										<td>1.5&quot; Latex, 1.5&quot; Memory Foam, 7&quot; support foam</td>
-										<td>2&quot; Cooling Foam, 2&quot; Memory Foam, 6&quot; support foam</td>
-									</tr>
-									<tr>
-										<th scope="row">Total Height</th>
-										<td>10&quot; </td>
-										<td>10.5&quot; </td>
-										<td>10&quot; </td>
-										<td>10&quot; </td>
-									</tr>
-									<tr>
-										<th scope="row">Cover Material</th>
-										<td>Woven Cover</td>
-										<td>Woven Cover</td>
-										<td>Polyester/Polypropylene</td>
-										<td>Polyester/lycra blend</td>
-									</tr>
-									<tr>
-										<th scope="row">Price Range</th>
-										<td>$699 - $999</td>
-										<td>$899 - $1199</td>
-										<td>$500 - $950</td>
-										<td>$525 - $990</td>
-									</tr>
-									<tr>
-										<th scope="row">Trial Period</th>
-										<td>180 days</td>
-										<td>180 days</td>
-										<td>100 days</td>
-										<td>100 days</td>
-									</tr>
-									<tr>
-										<th scope="row">Giving Programs</th>
-										<td>Donates a bed for every bed sold</td>
-										<td>Donates a bed for every bed sold</td>
-										<td>None</td>
-										<td>None</td>
-									</tr>
-									<tr>
-										<th scope="row">Warranty</th>
-										<td>10 Year Full Warranty</td>
-										<td>10 Year Full Warranty</td>
-										<td>10 Year Limited Warranty</td>
-										<td>10 Year Limited Warranty</td>
-									</tr>
-									<tr>
-										<th scope="row">Shipping</th>
-										<td>Free shipping, on average &lt; 48 hours</td>
-										<td>Free shipping, on average &lt; 48 hours</td>
-										<td>Free shipping, 2-5 days</td>
-										<td>Free shipping, 1-5 days</td>
-									</tr>
-									<tr>
-										<th scope="row">Returns</th>
-										<td>Free returns and exchanges, no questions asked!</td>
-										<td>Free returns and exchanges, no questions asked!</td>
-										<td>Free returns, full money refund</td>
-										<td>Free returns, full money refund (except AK &amp; HI)</td>
-									</tr>
-								</tbody>
-							</table>
+					<div class="col-sm-4 text-center">
+						<img src="<?php bloginfo("template_url"); ?>/images/icon-boxspring.svg" alt="" class="center-block setup-img">
+						<h4>Box Spring</h4>
+						<p>The Dream Bed works on most box springs. Make sure there is no more than 3" between each slat.</p>
+					</div>
+					<div class="col-sm-4 text-center">
+						<img src="<?php bloginfo("template_url"); ?>/images/icon-adjustable.svg" alt="" class="center-block setup-img">
+						<h4>Adjustable Frame</h4>
+						<p>Our bed is flexible, so you can you use it with any adjustable bed base.</p>
+
+					</div>
+					<div class="col-sm-4 text-center">
+						<img src="<?php bloginfo("template_url"); ?>/images/icon-flat-surface.svg" alt="" class="center-block setup-img">
+						<h4>Any Flat Surface</h4>
+						<p>Platform bed, bunky board, the floor? Any and all flat surfaces will work with The Dream Bed.</p>
+					</div>
+				</div>
+			</div>
+			
+			<div class="compare-beds">	
+				<div class="container">
+					<div class="row">
+						<div class="col-sm-12 text-center">
+							<h2>Compare The Dream Bed</h2>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-sm-12">
+							<div class="table-responsive comparison-table">
+								<table class="table table-hover table-bordered">
+									<tbody>
+										<tr class="nobox">
+											<th scope="col" class="col-xs-2">&nbsp;</th>
+											<th scope="col" class="original col-xs-2">Original Dream Bed</th>
+											<th scope="col" class="cool col-xs-2">Cool Dream Bed</th>
+											<th scope="col" class="col-xs-2">Casper</th>
+											<th scope="col" class="col-xs-2">Leesa</th>
+										</tr>
+										<tr>
+											<th scope="row">Layers</th>
+											<td>1.5&quot; Latex, 1.5&quot; Memory Foam, 7&quot; support foam</td>
+											<td>0.125&quot; Cool Gel, 3&quot; Memory Foam, 7.5&quot; support foam</td>
+											<td>1.5&quot; Latex, 1.5&quot; Memory Foam, 7&quot; support foam</td>
+											<td>2&quot; Cooling Foam, 2&quot; Memory Foam, 6&quot; support foam</td>
+										</tr>
+										<tr>
+											<th scope="row">Total Height</th>
+											<td>10&quot; </td>
+											<td>10.5&quot; </td>
+											<td>10&quot; </td>
+											<td>10&quot; </td>
+										</tr>
+										<tr>
+											<th scope="row">Cover Material</th>
+											<td>Woven Cover</td>
+											<td>Woven Cover</td>
+											<td>Polyester/Polypropylene</td>
+											<td>Polyester/lycra blend</td>
+										</tr>
+										<tr>
+											<th scope="row">Price Range</th>
+											<td>$699 - $999</td>
+											<td>$899 - $1199</td>
+											<td>$500 - $950</td>
+											<td>$525 - $990</td>
+										</tr>
+										<tr>
+											<th scope="row">Trial Period</th>
+											<td>180 days</td>
+											<td>180 days</td>
+											<td>100 days</td>
+											<td>100 days</td>
+										</tr>
+										<tr>
+											<th scope="row">Giving Programs</th>
+											<td>Donates a bed for every bed sold</td>
+											<td>Donates a bed for every bed sold</td>
+											<td>None</td>
+											<td>None</td>
+										</tr>
+										<tr>
+											<th scope="row">Warranty</th>
+											<td>10 Year Full Warranty</td>
+											<td>10 Year Full Warranty</td>
+											<td>10 Year Limited Warranty</td>
+											<td>10 Year Limited Warranty</td>
+										</tr>
+										<tr>
+											<th scope="row">Shipping</th>
+											<td>Free shipping, on average &lt; 48 hours</td>
+											<td>Free shipping, on average &lt; 48 hours</td>
+											<td>Free shipping, 2-5 days</td>
+											<td>Free shipping, 1-5 days</td>
+										</tr>
+										<tr>
+											<th scope="row">Returns</th>
+											<td>Free returns and exchanges, no questions asked!</td>
+											<td>Free returns and exchanges, no questions asked!</td>
+											<td>Free returns, full money refund</td>
+											<td>Free returns, full money refund (except AK &amp; HI)</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
 						</div>
 					</div>
 				</div>
 			</div>
-		</div>
-				
-<?php				
-	} else {
-	/* show if this is a NOT mattress */ ?>				
-				
-		<!-- comparison chart tbd -->
-				
-<?php } ?>	
+					
+	<?php				
+			} else {
+		/* show if this is a NOT mattress */ ?>				
+					
+			<!-- comparison chart tbd -->
+					
+	<?php } ?>	
 
 		
     	
@@ -288,83 +288,9 @@ foreach ( $terms as $term ) $categories[] = $term->slug;
 		<?php
 }
 
-// add_action('woocommerce_single_product_summary','uptop_product_ratings',10);
-function uptop_product_ratings(){
-	/* query to get all ratings and build average rating */
-	global $product;
-	
-	$prod_show = $product->id;
-	$args = array(
-		'post_type' => 'review',
-		'meta_query' => array(
-			array(
-				'key'     => 'product',
-				'value'   => $prod_show,
-			),
-		),
-		'orderby' => 'menu_order',
-		'order' => 'ASC'
-	);
-	$ratings = array();
-	$review_query = new WP_Query($args);
-	if ($review_query->have_posts()) {
-		$count = 0;
-		while ($review_query->have_posts() ) {
-			$review_query->the_post();
-			$rating = get_field('rating');
-			$ratings[] = $rating;
-			$count++;
-		}
-		wp_reset_postdata();
 
-	  $average_rating = round((calculate_average($ratings) * 2), 0) / 2;
-		// first print out the title /explanatory bit...
 
-	  echo '<div class="pdp-review-summary">';
-	  	
-	  	echo '<div class="pdp-review-stars-container">';
-			  // Loop and print a whole star for each step.
-			  for ($i = 1; $i <= $average_rating; $i++) {
-			      echo '<img class="pdp-star-reviews" src="' . get_bloginfo("template_url") . '/images/one-star.svg" />';
-			  }
-			  // If average rating is not a whole number, we need to print an additional half star after the loop.
-			  if (strpos($average_rating, '.')){
-			      echo '<img class="pdp-review-stars" src="' . get_bloginfo("template_url") . '/images/half-star.svg" />';
-			  }
-?>
-			  <!--<a href="<?php bloginfo('url')?>/reviews/" class="pdp-review-link">Read Reviews</a>-->
-		  <?php
-		  // close product-review-stars
-			echo '</div>';
-	  //close product-review-summary
-	  echo '</div>';
-  }	
-}
 
-if ( ! function_exists( 'woocommerce_single_variation' ) ) {
-	function woocommerce_single_variation() {
-		echo '<div class="single_variation"></div> + FREE SHIPPING';
-	}
-}
-
-if ( ! function_exists( 'woocommerce_single_variation_add_to_cart_button' ) ) {
-
-	/**
-	 * Output the add to cart button for variations.
-	 */
-	function woocommerce_single_variation_add_to_cart_button() {
-		global $product;
-		?>
-		<div class="variations_button clearfix">
-			<?php //woocommerce_quantity_input( array( 'input_value' => isset( $_POST['quantity'] ) ? wc_stock_amount( $_POST['quantity'] ) : 1 ) ); ?>
-			<button type="submit" class="btn btn-dream drop-shadow btn-block"><?php echo esc_html( $product->single_add_to_cart_text() ); ?></button>
-			<input type="hidden" name="add-to-cart" value="<?php echo absint( $product->id ); ?>" />
-			<input type="hidden" name="product_id" value="<?php echo absint( $product->id ); ?>" />
-			<input type="hidden" name="variation_id" class="variation_id" value="" />
-		</div>
-		<?php
-	}
-}
 
 /*add_filter('wc_price_args', 'uptop_price_text', 98);
 function uptop_price_text($text) {

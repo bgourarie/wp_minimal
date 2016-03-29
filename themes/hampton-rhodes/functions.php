@@ -7,8 +7,7 @@
 
 // adding shop pages
 require get_template_directory() . '/includes/shop.php';
-// add blog post inclusions
-//require get_template_directory() . '/includes/blog-posts.php';
+require get_template_directory() . '/includes/product-single.php';
 // adding header pixels.
 //require get_template_directory() . '/includes/trackers-and-pixels.php';
 
@@ -43,19 +42,19 @@ function wc_hide_trailing_zeros( $trim ) {
     return !is_checkout();
 }
 
-/* hide product data tabs on woocommerce product page */
-add_filter('woocommerce_product_tabs', 'woo_remove_product_tabs', 98);
-function woo_remove_product_tabs($tabs) {
-    $tabs['overview'] = $tabs['description']; // remove the description tab
-    unset($tabs['description']); // remove the description tab
-    //unset($tabs['reviews']); // remove the reviews tab
-    $tabs['details'] = $tabs['additional_information']; // remove the additional information tab
-    unset($tabs['additional_information']); // remove the additional information tab
-    return $tabs;
-}
+// /* hide product data tabs on woocommerce product page */
+// add_filter('woocommerce_product_tabs', 'woo_remove_product_tabs', 98);
+// function woo_remove_product_tabs($tabs) {
+//     $tabs['overview'] = $tabs['description']; // remove the description tab
+//     unset($tabs['description']); // remove the description tab
+//     //unset($tabs['reviews']); // remove the reviews tab
+//     $tabs['details'] = $tabs['additional_information']; // remove the additional information tab
+//     unset($tabs['additional_information']); // remove the additional information tab
+//     return $tabs;
+// }
 
 /* hide related products on woocommerce product page */
-remove_action('woocommerce_after_single_product_summary', 'woocommerce_output_related_products', 20);
+// remove_action('woocommerce_after_single_product_summary', 'woocommerce_output_related_products', 20);
 
 /* change default text of the option dropdown */
 function choose_option($translated) {
@@ -108,17 +107,17 @@ function woocommerce_delete_tax_rates() {
 	echo '<div class="updated"><p>' . __( 'Tax rates successfully deleted', 'woocommerce' ) . '</p></div>';
 }
 
-// suppress categories for 'Post' posts (blog posts)
-function suppress_post_categories($args){
-	global $post;
-	if($post && get_post_type($post->id)=='post'){
-		$blog_cat = get_category_by_slug('blog');
-		$args['descendants_and_self'] = $blog_cat->term_id;
-		$args['popular_cats'] = get_field('blog_categories','options');
-	}
-	return $args;
-}
-add_filter('wp_terms_checklist_args','suppress_post_categories');
+// // suppress categories for 'Post' posts (blog posts)
+// function suppress_post_categories($args){
+// 	global $post;
+// 	if($post && get_post_type($post->id)=='post'){
+// 		$blog_cat = get_category_by_slug('blog');
+// 		$args['descendants_and_self'] = $blog_cat->term_id;
+// 		$args['popular_cats'] = get_field('blog_categories','options');
+// 	}
+// 	return $args;
+// }
+// add_filter('wp_terms_checklist_args','suppress_post_categories');
 
 /* add options page for global settings */
 if(function_exists('acf_add_options_page')) {
@@ -127,17 +126,17 @@ if(function_exists('acf_add_options_page')) {
 
 /* remove visual editor for non- Posts */
 //add_filter('user_can_richedit', 'disable_wysiwyg_for_non_post');
-function disable_wysiwyg_for_non_post($default) {
-  global $post;
-  /*$current_user = wp_get_current_user();
-  if(in_array( 'author', $current_user->roles)){
-  	return true;
-  }*/
-  if ('post' == get_post_type($post)){
-      return true;
-  }
-  return false;
-}
+// function disable_wysiwyg_for_non_post($default) {
+//   global $post;
+//   $current_user = wp_get_current_user();
+//   if(in_array( 'author', $current_user->roles)){
+//   	return true;
+//   }
+//   if ('post' == get_post_type($post)){
+//       return true;
+//   }
+//   return false;
+// }
 //add_filter('user_can_richedit', create_function ('$a' , 'return false;') , 50);
 
 /* remove pods shortcode button from editor */
@@ -194,6 +193,9 @@ function custom_text( $translated_text, $text, $text_domain ) {
 
 	if('Billing Details' === $text) {
 		return 'Contact Info';
+	}
+	if('Product Description' === $text) {
+		return 'Product Overview';
 	}
 	if('Ship to a different address?' === $text) {
 		return 'Shipping Address';
@@ -299,18 +301,18 @@ function the_dream_bed_setup() {
 		'quote',
 		'link',
 	) );
-	remove_role('blog_author');
-	add_role ('blog_author','Blog Author', array(
-		'delete_posts' => true,
-		'delete_published_posts' => true,
-		'edit_posts' => true,
-		'edit_published_posts' => true,
-		'publish_posts' => true,
-		'read' => true,
-		'upload_files' => true,
-		'edit_others_posts' => true,
-		'delete_others_posts' => true,
-	));
+	// remove_role('blog_author');
+	// add_role ('blog_author','Blog Author', array(
+	// 	'delete_posts' => true,
+	// 	'delete_published_posts' => true,
+	// 	'edit_posts' => true,
+	// 	'edit_published_posts' => true,
+	// 	'publish_posts' => true,
+	// 	'read' => true,
+	// 	'upload_files' => true,
+	// 	'edit_others_posts' => true,
+	// 	'delete_others_posts' => true,
+	// ));
 }
 endif; // the_dream_bed_setup
 add_action( 'after_setup_theme', 'the_dream_bed_setup' );
@@ -328,24 +330,6 @@ function the_dream_bed_scripts() {
 	);
 }
 add_action( 'wp_enqueue_scripts', 'the_dream_bed_scripts' );
-
-
-
-/*
-* Some helper methods:
-*/
-function get_original_bed_id(){
-	return get_field('original_bed','options');
-}
-function get_cool_bed_id(){
-	return get_field('cool_bed','options');
-}
-function get_original_pillow_id(){
-	return get_field('original_pillow','options');
-}
-function get_cool_pillow_id(){
-	return get_field('cool_pillow','options');
-}
 
 /* this makes excerpts shorter */
 
