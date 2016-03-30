@@ -2,8 +2,26 @@
 
 
 /*** The actual "Shop" page (archive-product template)
-
+*
+*
 */
+add_action('woocommerce_before_main_content','output_shop_hero',5,0);
+function output_shop_hero(){
+	?>
+	<div class="jumbotron home-jumbo hidden-xs" style="background-image: url('<?php echo get_field('hero_image'); ?>')">
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-8 col-sm-offset-2 col-xs-12">
+					<h1 class="hidden-sm"><?php echo get_field('header_text'); ?></h1>
+					<div class="cta"><a href="<?php echo get_field('button_link') ?>" class="btn btn-dream btn-lg" role="button"><?php echo get_field('button_text') ?></a></div>
+					<img class="pin" src="<?php echo get_field('hero_image'); ?>" data-pin-description="The Dream Bed: Free shipping and a no nightmare guarantee." alt="">
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<?php
+}
 
 add_filter('woocommerce_show_page_title','disable_shop_title',1,1);
 function disable_shop_title($bool){

@@ -42,20 +42,6 @@ function wc_hide_trailing_zeros( $trim ) {
     return !is_checkout();
 }
 
-// /* hide product data tabs on woocommerce product page */
-// add_filter('woocommerce_product_tabs', 'woo_remove_product_tabs', 98);
-// function woo_remove_product_tabs($tabs) {
-//     $tabs['overview'] = $tabs['description']; // remove the description tab
-//     unset($tabs['description']); // remove the description tab
-//     //unset($tabs['reviews']); // remove the reviews tab
-//     $tabs['details'] = $tabs['additional_information']; // remove the additional information tab
-//     unset($tabs['additional_information']); // remove the additional information tab
-//     return $tabs;
-// }
-
-/* hide related products on woocommerce product page */
-// remove_action('woocommerce_after_single_product_summary', 'woocommerce_output_related_products', 20);
-
 /* change default text of the option dropdown */
 function choose_option($translated) {
 	$translated = str_ireplace('Choose an option',  'Select an option',  $translated);
@@ -151,12 +137,6 @@ function remove_ul($menu) {
 	return preg_replace(array('#^<ul[^>]*>#', '#</ul>$#'), '', $menu);
 }
 add_filter('wp_nav_menu', 'remove_ul');
-
-/* change "checkout" button text */
-function woocommerce_button_proceed_to_checkout() {
-	$checkout_url = WC()->cart->get_checkout_url();
-	echo '<a href="'. $checkout_url .'" class="checkout-button button alt wc-forward">Checkout</a>';
-}
 
 /* change woocommerce text */
 function custom_text( $translated_text, $text, $text_domain ) {
