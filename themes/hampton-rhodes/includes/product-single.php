@@ -7,6 +7,7 @@
 add_action('init', 'move_and_remove_pdp_stuff');
 function move_and_remove_pdp_stuff(){
 	remove_action('woocommerce_before_single_product_summary','woocommerce_show_product_sale_flash',10,0);
+	remove_action('woocommerce_single_product_summary','woocommerce_template_single_meta',40,0);
 }
 
 

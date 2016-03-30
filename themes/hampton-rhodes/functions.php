@@ -177,6 +177,9 @@ function custom_text( $translated_text, $text, $text_domain ) {
 	if('Product Description' === $text) {
 		return 'Product Overview';
 	}
+	if('Related Products' === $text) {
+		return 'You may also like...';
+	}
 	if('Ship to a different address?' === $text) {
 		return 'Shipping Address';
 	}

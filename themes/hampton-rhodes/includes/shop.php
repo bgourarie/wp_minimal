@@ -7,6 +7,7 @@
 */
 add_action('woocommerce_before_main_content','output_shop_hero',5,0);
 function output_shop_hero(){
+	if(is_shop()):
 	?>
 	<div class="jumbotron home-jumbo hidden-xs" style="background-image: url('<?php echo get_field('hero_image'); ?>')">
 		<div class="container">
@@ -19,10 +20,14 @@ function output_shop_hero(){
 			</div>
 		</div>
 	</div>
-
 	<?php
+	endif;
 }
-
+// show 9 products per page...
+add_filter('loop_shop_per_page','show_nine_beds_per_page',10, 1);
+function show_nine_beds_per_page($qty){
+	return 9;
+}
 add_filter('woocommerce_show_page_title','disable_shop_title',1,1);
 function disable_shop_title($bool){
 	return false;
