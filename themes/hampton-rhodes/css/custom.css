@@ -12,6 +12,7 @@ p.demo_store {
   bottom: 0;
   left: 0;
   right: 0;
+  top: auto;
   margin: 0;
   width: 100%;
   font-size: 1em;
