@@ -1,5 +1,41 @@
 <?php
 
+
+/*** The actual "Shop" page (archive-product template)
+
+*/
+
+add_filter('woocommerce_show_page_title','disable_shop_title',1,1);
+function disable_shop_title($bool){
+	return false;
+}
+add_action( 'init', 'move_and_remove_shop_things' );
+function move_and_remove_shop_things() {
+    remove_action( 'woocommerce_before_main_content', 'woocommerce_breadcrumb', 20, 0 );
+    remove_action( 'woocommerce_before_shop_loop', 'woocommerce_result_count', 20, 0 );
+    remove_action( 'woocommerce_before_shop_loop_item_title', 'woocommerce_show_product_loop_sale_flash', 10, 0 );
+    remove_action( 'woocommerce_after_shop_loop_item_title', 'woocommerce_template_loop_rating', 5, 0 );
+    remove_action( 'woocommerce_after_shop_loop_item', 'woocommerce_template_loop_add_to_cart', 10, 0 );
+    add_action( 'woocommerce_after_shop_loop_item', 'woocommerce_template_loop_rating', 15, 0 );
+}
+
+/*
+	change price "from-to" to show it cooler... 
+*/
+add_filter('woocommerce_get_price_html_from_to','show_price_how_we_want_it_sale',10,4);
+function show_price_how_we_want_it_sale($price, $from, $to, $prod){
+	// may need to logic out which page we're on..
+	// we basically want to switch the deleted and inserted parts so:
+	$del_start = strpos($price, '<del>');
+	$del_end = strpos($price, '</del>') + 6;
+	$ins_start = strpos($price, '<ins>');
+	$ins_end = strpos($price, '</ins>') + 6;
+
+	$deleted = substr($price, $del_start, $del_end - $del_start);
+	$inserted = substr($price, $ins_start, $ins_end - $ins_start);
+	return '<span class="on-sale">on sale</span> '.$inserted.$deleted;
+}
+
 /*--------------------------------------------------------------
 # Single Product
 --------------------------------------------------------------*/

@@ -12,9 +12,9 @@ function hr_modify_prod_tabs($tabs){
 		'priority' => 40,
 		'callback' 	=> 'hr_faq_tab',
 		);
-	if($tabs['additional_information'])
+	if(array_key_exists('additional_information',$tabs))
 		$tabs['additional_information']['title'] = __('Details', 'woocommerce');
-	if($tabs['description'])
+	if(array_key_exists('description', $tabs))
 		$tabs['description']['title'] = __('Overview', 'woocommerce');
 	return $tabs;
 }
