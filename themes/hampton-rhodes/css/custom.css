@@ -7,7 +7,7 @@ body {
 	color: #808284;
 }
 
-.demo_store {
+p.demo_store {
   position: fixed;
   bottom: 0;
   left: 0;
