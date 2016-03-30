@@ -7,6 +7,22 @@ body {
 	color: #808284;
 }
 
+.demo_store {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: 0;
+  width: 100%;
+  font-size: 1em;
+  padding: 1em 0;
+  text-align: center;
+  background-color: #A5ABAB;
+  color: #fff;
+  z-index: 99998;
+  box-shadow: 0 1px 1em rgba(0,0,0,.2);
+}
+
 .navbar {
 	text-transform: uppercase;
 	background-color: #fff;
