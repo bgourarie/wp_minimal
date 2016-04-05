@@ -2,9 +2,51 @@
 
 
 /*** The actual "Shop" page (archive-product template)
-*
+* also applies to category/subcategory pages
 *
 */
+
+// show the subcategories as a list next to the sorting dropdown.
+add_action('woocommerce_before_shop_loop','show_subcategories_if_applicable', 20,0);
+function show_subcategories_if_applicable(){
+	$term = get_queried_object();
+	$cat_id = empty($term->term_id) ? 0 : $term->term_id;
+	$tax = empty($term->taxonomy) ? 'product_cat' : $term->taxonomy;
+	$parent = empty($term->parent) ? 0 : $term->parent;
+	if($parent == 0)
+		$children = get_term_children($cat_id, $tax );
+	else
+		$children = get_term_children($parent, $tax );
+
+	if( !$children || is_wp_error($children)) 
+		return;
+	?>
+	<div class="product-subcat">
+		<div class="subcat-all">
+			<a href="<?php echo get_term_link($parent !== 0 ? $parent : $cat_id ,$tax);?>">
+				All
+			</a>
+		</div> 	
+		<?php 
+	if($children){
+		?>
+			<?php foreach($children as $child){ 
+				$subcat = get_term($child,$tax);
+				?>
+				<div class="<?php echo $subcat->slug; ?>">
+					<a href="<?php echo get_term_link($subcat,$tax);?>">
+						<?php echo $subcat->name; ?>
+					</a>
+				</div> 	
+			<?php } ?>
+		</div>
+		<?php
+	}
+	else{ // this is actually impossible but i'm leaving it in to be super defensive.
+		echo "</div>";
+	}
+}
+
 add_action('woocommerce_before_main_content','output_shop_hero',5,0);
 function output_shop_hero(){
 	if(is_shop()):

@@ -59,6 +59,9 @@
 
 ?>
 <div class="home-featured-specials">
+<h1> Web Only Specials </h1>
+<h3> Amazing Savings on our exclusive online offerings</h3>
+
 	<div class="container">
 		<div class="row">
 			<div class="col-sm-7 center-block text-center">
@@ -71,6 +74,14 @@
 				<p>
 					<?php echo apply_filters('the_excerpt', get_post_field('post_excerpt', $fp1->get_id())); ?>
 				</p>
+					<div class="product-tags">
+				<?php 
+				$prod_tags = $fp1->get_tags();
+				foreach($prod_tags as $tag ){
+					?>
+					<div class="<?php echo $tag;?>"></div>
+				<?php } ?>
+			</div>
 				<?php echo $fp1->get_price_html(); ?> 
 				<a href="<?php echo $fp1->add_to_cart_url(); ?>">
 					<?php echo $fp1->add_to_cart_text(); ?>
@@ -85,6 +96,14 @@
 			<p>
 				<?php echo apply_filters('the_excerpt', get_post_field('post_excerpt', $fp2->get_id())); ?>
 			</p>
+			<div class="product-tags">
+			<?php 
+				$prod_tags = $fp2->get_tags();
+				foreach($prod_tags as $tag ){
+					?>
+					<div class="<?php echo $tag;?>"></div>
+			<?php } ?>
+			</div>
 			<?php echo $fp2->get_price_html(); ?> 
 				<a href="<?php echo $fp2->add_to_cart_url(); ?>">
 					<?php echo $fp2->add_to_cart_text(); ?>

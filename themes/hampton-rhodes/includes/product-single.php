@@ -10,6 +10,11 @@ function move_and_remove_pdp_stuff(){
 	remove_action('woocommerce_single_product_summary','woocommerce_template_single_meta',40,0);
 }
 
+// add logo above product name -- priority 4 because title is 5
+add_action('woocommerce_single_product_summary', 'add_logo_on_pdp',4,0);
+function add_logo_on_pdp(){
+	echo "<div class='ben'>PRODUCT LOGO</div>";
+}
 
 add_filter('woocommerce_product_tabs','hr_modify_prod_tabs', 100, 1);
 function hr_modify_prod_tabs($tabs){
