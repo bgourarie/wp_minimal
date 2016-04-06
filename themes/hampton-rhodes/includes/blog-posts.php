@@ -31,7 +31,7 @@ function output_post_teaser($post){
 	Returns the formatted category button for blog posts and pages.
 */
 function get_category_button($cat_id) { ?>
-	<a href="<?php echo get_category_link($cat_id); ?>" class="blogcat-<?php echo get_cat_name($cat_id);?> btn btn-small" role="button">
+	<a href="<?php echo get_category_link($cat_id); ?>" class="blogcat-<?php echo get_cat_name($cat_id);?> btn btn-primary btn-sm" role="button">
 		<?php echo get_cat_name($cat_id);?>
 	</a>
 <?php }

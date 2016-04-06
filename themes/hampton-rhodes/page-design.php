@@ -18,7 +18,7 @@
 			<div class="col-sm-12 text-center">
 				<h3 class="original"><a href="<?php bloginfo('url'); ?>/shop/mattress/dream-bed/">Original Dream Bed</a></h3>
 				<a href="<?php bloginfo('url'); ?>/shop/mattress/dream-bed/"><img src="<?php bloginfo("template_url"); ?>/images/original-dream-bed-cutaway.png" class="img-responsive center-block" alt="Original Dream Bed cutaway showing product components"></a>
-				<p><a href="<?php bloginfo('url'); ?>/shop/mattress/dream-bed/" class="btn btn-dream" role="button">Shop Original Dream</a></p>
+				<p><a href="<?php bloginfo('url'); ?>/shop/mattress/dream-bed/" class="btn btn-primary" role="button">Shop Original Dream</a></p>
 			</div>
 		</div>
 	</div>
@@ -34,7 +34,7 @@
 			<div class="col-sm-12 text-center">
 				<h3 class="cool"><a href="<?php bloginfo('url'); ?>/shop/mattress/cool-gel-bed/">Cool Dream Bed</a></h3>
 				<a href="<?php bloginfo('url'); ?>/shop/mattress/cool-gel-bed/"><img src="<?php bloginfo("template_url"); ?>/images/cool-dream-bed-cutaway.png" class="img-responsive center-block" alt="Cool Dream Bed cutaway showing product components"></a>
-				<p><a href="<?php bloginfo('url'); ?>/shop/mattress/cool-gel-bed/" class="btn btn-dream" role="button">Shop Cool Dream</a></p>
+				<p><a href="<?php bloginfo('url'); ?>/shop/mattress/cool-gel-bed/" class="btn btn-primary" role="button">Shop Cool Dream</a></p>
 			</div>
 		</div>
 	</div>

@@ -56,7 +56,7 @@ function output_shop_hero(){
 			<div class="row">
 				<div class="col-sm-8 col-sm-offset-2 col-xs-12">
 					<h1 class="hidden-sm"><?php echo get_field('header_text'); ?></h1>
-					<div class="cta"><a href="<?php echo get_field('button_link') ?>" class="btn btn-dream btn-lg" role="button"><?php echo get_field('button_text') ?></a></div>
+					<div class="cta"><a href="<?php echo get_field('button_link') ?>" class="btn btn-primary btn-lg" role="button"><?php echo get_field('button_text') ?></a></div>
 					<img class="pin" src="<?php echo get_field('hero_image'); ?>" data-pin-description="The Dream Bed: Free shipping and a no nightmare guarantee." alt="">
 				</div>
 			</div>
@@ -166,7 +166,7 @@ function uptop_product_images() {
 							<h3>
 								<?php echo $product_slide[0][product_slide_text]; 
 								if($product_slide[0][product_slide_link_label]) { ?>
-								 	<a href=" <?php echo $product_slide[0][product_slide_link]; ?>" rel="button" class="btn btn-dream">	
+								 	<a href=" <?php echo $product_slide[0][product_slide_link]; ?>" rel="button" class="btn btn-primary">	
 							 		<?php echo  $product_slide[0][product_slide_link_label]; ?>
 							 		</a>
 				 				<?php } ?>
@@ -202,7 +202,7 @@ function uptop_product_images() {
 													<?php 
 													echo $headline; 
 													if($linktext) { ?>
-														<a href="<?php echo $link; ?>" rel="button" class="btn btn-dream">
+														<a href="<?php echo $link; ?>" rel="button" class="btn btn-primary">
 															<?php echo $linktext; ?>
 														</a>
 													<?php } ?>
@@ -386,7 +386,7 @@ function uptop_product_images() {
 				</div>
 				<div class="col-md-4 col-sm-6 text-center">
 					<h4>For every Dream Bed sold, we will give a bed to a person in need.<br><br>
-					<a href="<?php bloginfo('url'); ?>/giving/" class="btn btn-dream drop-shadow" role="button">See How We Give</a></h4>
+					<a href="<?php bloginfo('url'); ?>/giving/" class="btn btn-primary drop-shadow" role="button">See How We Give</a></h4>
 				</div>
 			</div>
 		</div>

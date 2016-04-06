@@ -1,5 +1,3 @@
-@import url('fontkit.css');
-
 @import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css');
 
 body {
@@ -110,37 +108,9 @@ input[type=text] {
 	text-decoration: underline;
 }
 
-.extole-header {
-	background-color: #808080;
-	color: #fff;
-	height: 50px;
-	line-height: 50px;
-	text-align: center;
-}
-
-.extole-header span.hidden-xs {
-	text-transform: none;
-}
-
-.extole-header img {
-	margin: 0 0 0 20px;
-	padding: 0;
-	vertical-align: -10px;
-}
-
 .footer {
 	position: relative;
-	background: url(../images/footer-bg.png) #dadcdd;
-}
-
-.badge {
-	font-weight: 400;
-	background-color: #fff;
-	border: 1px solid #808284;
-	color: #808284;
-	border-radius: 11px;
-	padding: 5px 7px 3px;
-	margin-top: -2px;
+	background: #EEEEEE;
 }
 
 /* jumbotron for specific pages */
@@ -174,16 +144,17 @@ input[type=text] {
 }
 
 .jumbotron h1 {
+	font-size: 36px;
 	font-family: 'FFDINWebPro', sans-serif;
-	text-shadow: 1px 1px 4px rgba(100, 100, 100, 1);
+	text-shadow: 0px 2px 4px rgba(0,0,0,0.50);
 	line-height: 1;
 	padding-bottom: 0;
 	margin-bottom: .1em;
-	font-weight: 500;
 }
 
 .jumbotron h2 {
-	text-shadow: 1px 1px 4px rgba(100, 100, 100, 1);
+	font-size: 24px;
+	text-shadow: 0px 2px 4px rgba(0,0,0,0.50);
 	padding-top: 0;
 	margin-top: 0;
 	margin-bottom: 0;
@@ -191,19 +162,6 @@ input[type=text] {
 
 .jumbotron .cta {
 	padding-top: 12px;
-}
-
-.thanks-page {
-	background-image: url(../images/photos/woman-curled-on-pink-dream-bed.jpg);
-	background-position: center;
-	top: -35px;
-	margin-bottom: -35px;
-}
-
-.shop-now-main {
-	background-image: url(../images/photos/two-dreamy-options-man-wide.jpg);
-	background-position: top;
-	z-index: 1000;
 }
 
 .no-padding {
@@ -224,128 +182,9 @@ input[type=text] {
 	overflow: hidden;
 }
 
-/* begin carousel customization */
+/* customized buttons */
 
-.slider-size {
-	height: 500px;
-	background-position: center;
-	background-color: #999;
-	/*-webkit-clip-path: polygon(0% 0%, 100% 0%, 100% 480px, calc(50% + 20px) 480px, 50% 100%, calc(50% - 20px) 480px, 0 480px);
-	clip-path: polygon(0% 0%, 100% 0%, 100% 480px, 53% 480px, 50% 100%, 47% 480px, 0 480px);*/
-	background-size: cover;
-	-webkit-box-shadow: inset 0 20px 20px -20px rgba(0,0,0,0.8);
-	-moz-box-shadow: inset 0 20px 20px -20px rgba(0,0,0,0.8);
-	box-shadow: inset 0 20px 20px -20px rgba(0,0,0,0.8);
-}
-
-.carousel {
-	width:100%; 
-	margin:0 auto;
-	
-}
-
-.carousel-caption {
-	right: 0;
-	left: 0;
-	text-align: center;
-	bottom: 0;
-	top: auto; 
-}
-
-.carousel-indicators {
-	bottom: 0;
-}
-
-.carousel-inner {
-  -webkit-transform-style: preserve-3d;
-}
-
-.carousel h1 {
-	font-family: 'FFDINWebPro', sans-serif;
-	text-shadow: 1px 1px 4px rgba(100, 100, 100, 1);
-	line-height: 1;
-	padding-bottom: 0;
-	margin-bottom: .1em;
-}
-
-.carousel h2 {
-	text-shadow: 1px 1px 4px rgba(100, 100, 100, 1);
-	padding-top: 0;
-	margin-top: 0;
-	margin-bottom: .5em;
-}
-
-.carousel-control .fa {
-	position: absolute;
-	top: 50%;
-	z-index: 5;
-	display: inline-block;
-	margin-top: -10px;
-	font-size: 45px;
-}
-
-.carousel-control .fa-chevron-circle-right, .carousel-control .fa-chevron-angle-right {
-	right: 25%;
-	margin-right: -10px;
-}
-
-.carousel-control .fa-chevron-circle-left, .carousel-control .fa-chevron-angle-left {
-	left: 25%;
-	margin-right: -10px;
-}
-
-/* pdp carousel */
-
-#pdp-carousel {
-	margin-top: 30px;
-}
-
-#pdp-carousel .slider-size {
-	height: 500px;
-	background-position: center;
-	background-color: #999;
-	background-size: cover;
-	-webkit-box-shadow: none;
-	-moz-box-shadow: none;
-	box-shadow: none;
-}
-
-#pdp-carousel .carousel-caption {
-	right: 0;
-	left: 0;
-	text-align: center;
-	bottom: auto;
-	top: 0; 
-	background: rgba(89,89,89,.9);
-	padding: 15px;
-	color: #fff;
-}
-
-#pdp-carousel h3 {
-	margin: 0;
-	line-height: 1.3em;
-}
-
-#pdp-carousel .btn-dream {
-	padding: 6px 16px;
-	margin-left: 10px;
-}
-
-#pdp-carousel .carousel-indicators {
-	bottom: 0;
-}
-
-#pdp-carousel .carousel h4 {
-	font-family: 'FFDINWebPro', sans-serif;
-	text-shadow: none;
-	margin: 0;
-}
-
-/* end carousel customization */
-
-/* customized dream-round buttons */
-
-.btn-dream {
+.btn-primary {
 	background-color: #FD9D2E;
 	border-color: #FD9D2E;
  	filter:progid:DXImageTransform.Microsoft.Gradient(enabled='false');
@@ -361,108 +200,21 @@ input[type=text] {
 	border-radius: 0;*/
 }
 
-.btn-dream:hover, .btn-dream:focus, .btn-dream:active, .btn-dream.active {
+.btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active {
 	background-color: #FDA641;
 	border-color: #FDA641;
 	color: #fff;
 }
 
-.btn-dream.disabled:hover, .btn-dream.disabled:focus, .btn-dream.disabled:active, .btn-dream.disabled.active, .btn-dream[disabled]:hover, .btn-dream[disabled]:focus, .btn-dream[disabled]:active, .btn-dream[disabled].active, fieldset[disabled] .btn-dream:hover, fieldset[disabled] .btn-dream:focus, fieldset[disabled] .btn-dream:active, fieldset[disabled] .btn-dream.active {
+.btn-primary.disabled:hover, .btn-primary.disabled:focus, .btn-primary.disabled:active, .btn-primary.disabled.active, .btn-primary[disabled]:hover, .btn-primary[disabled]:focus, .btn-primary[disabled]:active, .btn-primary[disabled].active, fieldset[disabled] .btn-primary:hover, fieldset[disabled] .btn-primary:focus, fieldset[disabled] .btn-primary:active, fieldset[disabled] .btn-primary.active {
 	background-color: #FD9D2E;
 	border-color: #FD9D2E;
-}
-
-.btn-dreaminv {
-	background-color: #808284;
-	border-color: #808284;
- 	filter:progid:DXImageTransform.Microsoft.Gradient(enabled='false');
-	-webkit-box-shadow: none;
-	-moz-box-shadow: none;
-	box-shadow: none;
-	background-image: none;
-	border: 0;
-	color: #fff;
-	text-transform: uppercase;
-	/*-webkit-border-radius: 0;
-	-moz-border-radius: 0;
-	border-radius: 0;*/
-}
-
-.btn-dreaminv:hover, .btn-dreaminv:focus, .btn-dreaminv:active, .btn-dreaminv.active {
-	background-color: #5D5F60;
-	border-color: #5D5F60;
-	color: #fff;
-}
-
-.btn-dreaminv.disabled:hover, .btn-dreaminv.disabled:focus, .btn-dreaminv.disabled:active, .btn-dreaminv.disabled.active, .btn-dreaminv[disabled]:hover, .btn-dreaminv[disabled]:focus, .btn-dreaminv[disabled]:active, .btn-dreaminv[disabled].active, fieldset[disabled] .btn-dreaminv:hover, fieldset[disabled] .btn-dreaminv:focus, fieldset[disabled] .btn-dreaminv:active, fieldset[disabled] .btn-dreaminv.active {
-	background-color: #808284;
-	border-color: #808284;
-}
-
-.btn-dream-link {
-	background-color: transparent;
-	border-color: transparent;
- 	filter:progid:DXImageTransform.Microsoft.Gradient(enabled='false');
-	-webkit-box-shadow: none;
-	-moz-box-shadow: none;
-	box-shadow: none;
-	background-image: none;
-	border: 0;
-	color: #FD9D2E;
-	text-transform: uppercase;
-	/*-webkit-border-radius: 0;
-	-moz-border-radius: 0;
-	border-radius: 0;*/
-}
-
-.btn-dream-link:hover, .btn-dream-link:focus, .btn-dream-link:active, .btn-dream-link.active {
-	background-color: rgba(255,255,255,.04);
-	border-color: transparent;
-	color: #FBA54C;
-	filter:progid:DXImageTransform.Microsoft.Gradient(enabled='false');
-	-webkit-box-shadow: none;
-	-moz-box-shadow: none;
-	box-shadow: none;
-}
-
-.btn-dream-link:active, .btn-dream-link.active {
-	background-color: rgba(255,255,255,.08);
-}
-
-.btn-small {
-	background-color: #F2F5F5;
-	border-color: #F2F5F5;
- 	filter:progid:DXImageTransform.Microsoft.Gradient(enabled='false');
-	-webkit-box-shadow: none;
-	-moz-box-shadow: none;
-	box-shadow: none;
-	background-image: none;
-	border: 0;
-	text-transform: uppercase;
-	font-size: 10px;
-	padding: 3px 10px;
-}
-
-.btn-small:hover, .btn-small:focus, .btn-small:active, .btn-small.active {
-	background-color: #DCDFDF;
-	border-color: #DCDFDF;
-	color: #fff;
 }
 
 .drop-shadow {
 	-webkit-box-shadow: 0 3px 4px 0 rgba(0, 0, 0, .14), 0 3px 3px -2px rgba(0, 0, 0, .2), 0 1px 8px 0 rgba(0, 0, 0, .12);
     -moz-box-shadow: 0 3px 4px 0 rgba(0, 0, 0, .14), 0 3px 3px -2px rgba(0, 0, 0, .2), 0 1px 8px 0 rgba(0, 0, 0, .12);
     box-shadow: 0 3px 4px 0 rgba(0, 0, 0, .14), 0 3px 3px -2px rgba(0, 0, 0, .2), 0 1px 8px 0 rgba(0, 0, 0, .12);
-}
-
-.shop-badges img {
-	width: 100%;
-	max-width: 100%;
-	margin-top: 20px;
-}
-
-.shop-badges h3 {
-	font-size: 20px;
 }
 
 .footer {
@@ -520,7 +272,6 @@ input[type=text] {
 	text-transform: uppercase;
 	color: #808284;
 }
-
 
 .footer .footer-contact a.email {
 	color: #FD9D2E;
@@ -592,90 +343,6 @@ input[type=text] {
 	margin: 0;
 }
 
-.alternate {
-	margin-bottom: 30px;
-}
-
-.alternate > div {
-	text-align: center;
-}
-
-.alternate .inside {
-	margin-top: 0;
-	margin-bottom: 0;
-}
-
-.alternate > div p:last-child {
-	margin-bottom: 0;
-	padding-bottom: 0;
-}
-
-.alternate .alt-side-image {
-	height: 100%;
-	background-postion: center;
-	background-size: cover;
-	/* ask me about this ridiculousness !! */
-	border-left: 15px solid #fff;
-	border-right: 15px solid #fff;
-	color: #fff;
-}
-
-.alternate h2 {
-	margin: .7em auto 130px;
-	text-shadow: 1px 1px 4px rgba(100, 100, 100, 1);
-}
-
-.alternate h3 {
-	margin: .7em auto;
-}
-
-.same {
-	padding-bottom: 30px;
-	margin-top: 30px;
-}
-
-.same > div {
-	text-align: center;
-	background-postion: center;
-	background-size: cover;
-	border-left: 15px solid #fff;
-	border-right: 15px solid #fff;
-	color: #fff;
-	height: 300px;
-	margin-bottom: 30px;
-}
-
-.same .inner {
-	position: absolute;
-	bottom: 30px;
-	width: calc(100% - 30px);
-	text-align: center;
-}
-
-.same > div p:last-child {
-	margin-bottom: 0;
-	padding-bottom: 0;
-}
-
-.same h3 {
-	text-shadow: 0 1px 4px rgba(100, 100, 100, 1);
-}
-
-.alt-side-image h3 {
-	text-shadow: 2px 2px 4px rgba(100, 100, 100, 1);
-}
-
-.callout-number {
-	display: inline-block;
-	font-weight: 400;
-	text-align: center;
-	white-space: nowrap;
-	color: #fff;
-	line-height: 1.1;
-	background-image: url(../images/bg-callout-number@2x.png);
-	background-size: 72px 72px;
-}
-
 .giving {
 	text-align: center;
 	padding-bottom: 40px;
@@ -691,10 +358,6 @@ input[type=text] {
 
 .alt-side > div {
 	background-color: #F1F2F2;
-}
-
-.alternate .inside {
-	min-height: 225px;
 }
 
 .bordered-action {
@@ -1703,7 +1366,7 @@ a.page-numbers:hover, a.page-numbers:active  {
 
 /* buttons for shop radios */
 
-.btn-dream-size {
+.btn-primary-size {
 	background-color: #fff;
 	border-color: #808284;
  	filter:progid:DXImageTransform.Microsoft.Gradient(enabled='false');
@@ -1720,23 +1383,23 @@ a.page-numbers:hover, a.page-numbers:active  {
 	margin-top: -1px;
 }
 
-.btn-dream-size:first-child {
+.btn-primary-size:first-child {
 	
 }
 
-.btn-dream-size:hover, .btn-dream-size:focus {
+.btn-primary-size:hover, .btn-primary-size:focus {
 	background-color: #fff;
 	border-color: #808284;
 	color: #FF9E14;
 }
 
-.btn-dream-size:active, .btn-dream-size.active {
+.btn-primary-size:active, .btn-primary-size.active {
 	background-color: #F2F2F2;
 	border-color: #808284;
 	color: #FF9E14;
 }
 
-.btn-dream-size.disabled:hover, .btn-dream-size.disabled:focus, .btn-dream-size.disabled:active, .btn-dream-size.disabled.active, .btn-dream[disabled]:hover, .btn-dream-size[disabled]:focus, .btn-dream[disabled]:active, .btn-dream[disabled].active, fieldset[disabled] .btn-dream-size:hover, fieldset[disabled] .btn-dream:focus, fieldset[disabled] .btn-dream-size:active, fieldset[disabled] .btn-dream-size.active {
+.btn-primary-size.disabled:hover, .btn-primary-size.disabled:focus, .btn-primary-size.disabled:active, .btn-primary-size.disabled.active, .btn-primary[disabled]:hover, .btn-primary-size[disabled]:focus, .btn-primary[disabled]:active, .btn-primary[disabled].active, fieldset[disabled] .btn-primary-size:hover, fieldset[disabled] .btn-primary:focus, fieldset[disabled] .btn-primary-size:active, fieldset[disabled] .btn-primary-size.active {
 	background-color: #FD9D2E;
 	border-color: #FD9D2E;
 }
@@ -2457,20 +2120,6 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
 	font-size: 2.143em;
 }
 
-.alternate {
-	margin-bottom: 15px;
-	padding-top: 15px;
-}
-
-.callout-number {
-	width: 36px;
-	height: 36px;
-	padding: 8px 13px;
-	font-size: 20px;
-	background: url(../images/bg-callout-number@2x.png) center no-repeat transparent;
-	background-size: 36px 36px;
-}
-
 .home-review-box {
 	background-image: url(../images/photos/girl-on-pink-bed.jpg);
 	background-position: left;
@@ -2490,18 +2139,6 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
 	height: 17px;
 	margin-left: 18px;
 	margin-right: 18px;
-}
-
-.alternate .inside {
-	padding: 30px;
-}
-
-.or-text {
-	font-size: 2.857em;
-	color: #808284;	
-	margin: 0;
-	padding: 0;
-	line-height: 1;
 }
 
 .btn-lg {
@@ -2638,15 +2275,6 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
 /* Extra Small Devices, Phones */ 
 @media only screen and (min-width : 480px) {
 
-.callout-number {
-	width: 36px;
-	height: 36px;
-	padding: 8px 13px;
-	font-size: 20px;
-	background: url(../images/bg-callout-number.png) center no-repeat transparent;
-	background-size: 36px 36px;
-}
-
 .btn-breadcrumb {
 	width: 100%;
 	margin-top: 0
@@ -2663,10 +2291,6 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
 
 .shop-badge-text {
 	padding-top: 20px;
-}
-
-.shop-badges img {
-	margin: 10px 0;
 }
 
 .signup {
@@ -2827,35 +2451,6 @@ h6, .h6 {
 	display: block;
 }
 
-.alternate {
-	display: table;
-	table-layout: fixed;
-	height: 100%;
-	width: 100%;
-}
-
-.alternate > div {
-	display: table-cell;
-	float: none;
-	height: 100%;
-}
-
-.reasons .alternate > div {
-	padding: 40px 20px;
-}
-
-.alternate .inside {
-	height: 100%;
-}
-
-.callout-number {
-	width: 72px;
-	height: 72px;
-	padding: 16px 26px;
-	font-size: 40px;
-	background: url(../images/bg-callout-number@2x.png) center no-repeat transparent;
-}
-
 .home-bed-options h2 {
 	font-size: 2.857em;
 }
@@ -2890,10 +2485,6 @@ h6, .h6 {
 	display: flex;
 	align-items: center;
 	justify-content: center; 
-}
-
-.shop-badges img {
-	margin-top: 20px;
 }
 
 .design-page, .giving-page, .how-to-dream-page {
@@ -3040,16 +2631,7 @@ h6, .h6 {
 	margin-top: 20px;
 }
 
-.alternate {
-	margin-bottom: 30px;
-	padding-top: 30px;
-}
-
-.alternate .col-sm-6 .inside {
-	padding: 30px;
-}
-
-.btn-dream {
+.btn-primary {
 	padding: 6px 32px;	
 }
 
@@ -3059,20 +2641,12 @@ h6, .h6 {
 	font-weight: 400;
 }
 
-.footer .btn-dream {
+.footer .btn-primary {
 	padding: 7px 12px;	
 }
 
 .footer .row [class^="col-"] {
 	padding-bottom: 0;
-}
-
-.shop-badges img {
-	margin: 0;
-}
-
-.shop-badges h3 {
-	font-size: 20px;
 }
 
 .review-pagination {
@@ -3187,11 +2761,6 @@ h6, .h6 {
 	background-size: 35px 66px;
 }
 
-.callout-number {
-	background-image: url(../images/bg-callout-number@2x.png);
-	background-size: 72px 72px;
-}
-
 .dark-grey-shapes {
 	position: relative;
 	background-image: url(../images/bg-dark-version.png);
@@ -3203,16 +2772,5 @@ h6, .h6 {
 
 @media (-webkit-min-device-pixel-ratio: 2) and (max-width : 767px) {
 
-.callout-number {
-	background-image: url(../images/bg-callout-number@2x.png);
-	background-size: 36px 36px;
-}
-}
 
-/* firefox targets */
-
-@-moz-document url-prefix() { 
-  .shop-badges {
-     padding-top: 20px;
-  }
 }

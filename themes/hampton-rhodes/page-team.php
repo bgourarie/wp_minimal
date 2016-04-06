@@ -20,17 +20,17 @@
 			</div>
 			<div class="row how-we-dream">
 				<div class="col-sm-4 text-center">
-					<h2 class="callout-number">1</h2>
+					<h2>1</h2>
 					<h3>What we dream</h3>
 					<p>Our dream is that everyone all over the world can get the proper sleep they deserve so they can dream big.</p>
 				</div>
 				<div class="col-sm-4 text-center">
-					<h2 class="callout-number">2</h2>
+					<h2>2</h2>
 					<h3>Where we dream</h3>
 					<p>Dream Bed currently provides dreams with the help of giving partners nationwide.</p>
 				</div>
 				<div class="col-sm-4 text-center">
-					<h2 class="callout-number">3</h2>
+					<h2>3</h2>
 					<h3>Share your dream</h3>
 					<p>With your help, the we are improving lives one night at a time. The gift of sleep is one of the most important gifts of all.</p>
 					<p>Help us Dream it Forward.</p>

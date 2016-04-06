@@ -38,7 +38,7 @@ get_header(); ?>
 						</p>
 						
 						<p>
-							<a href="<?php echo get_permalink($post->ID); ?>" title="<?php get_the_title($post->ID); ?>" class="btn btn-dream" role="button">
+							<a href="<?php echo get_permalink($post->ID); ?>" title="<?php get_the_title($post->ID); ?>" class="btn btn-primary" role="button">
 								Read more
 							</a>
 						</p>
@@ -62,7 +62,7 @@ get_header(); ?>
 						<p>Sorry, there are no search results for <?php printf('<b>' . get_search_query() . '</b>' ); ?> on the site. </p>
 						
 						<p>
-							<a href="javascript:history.back()" class="btn btn-dream" role="button">
+							<a href="javascript:history.back()" class="btn btn-primary" role="button">
 								<i class="fa fa-chevron-left"></i> Go Back
 							</a>
 						</p>
