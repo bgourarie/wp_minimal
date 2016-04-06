@@ -1,7 +1,44 @@
 @import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css');
 
+/* custom fonts */
+
+@font-face {
+	font-family: 'Spinnaker';
+	src: url('webfonts/spinnaker-regular-webfont.eot');
+	src: url('webfonts/spinnaker-regular-webfont.eot?#iefix') format('embedded-opentype'), url('webfonts/spinnaker-regular-webfont.woff2') format('woff2'), url('webfonts/spinnaker-regular-webfont.woff') format('woff'), url('webfonts/spinnaker-regular-webfont.ttf') format('truetype'), url('webfonts/spinnaker-regular-webfont.svg#spinnakerregular') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Lato';
+	src: url('webfonts/lato-regular-webfont.eot');
+	src: url('webfonts/lato-regular-webfont.eot?#iefix') format('embedded-opentype'), url('webfonts/lato-regular-webfont.woff2') format('woff2'), url('webfonts/lato-regular-webfont.woff') format('woff'), url('webfonts/lato-regular-webfont.ttf') format('truetype'), url('webfonts/lato-regular-webfont.svg#latoregular') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Lato Bold';
+	src: url('webfonts/lato-bold-webfont.eot');
+	src: url('webfonts/lato-bold-webfont.eot?#iefix') format('embedded-opentype'), url('webfonts/lato-bold-webfont.woff2') format('woff2'), url('webfonts/lato-bold-webfont.woff') format('woff'), url('webfonts/lato-bold-webfont.ttf') format('truetype'), url('webfonts/lato-bold-webfont.svg#latobold') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Lato Light';
+	src: url('webfonts/lato-light-webfont.eot');
+	src: url('webfonts/lato-light-webfont.eot?#iefix') format('embedded-opentype'), url('webfonts/lato-light-webfont.woff2') format('woff2'), url('webfonts/lato-light-webfont.woff') format('woff'), url('webfonts/lato-light-webfont.ttf') format('truetype'), url('webfonts/lato-light-webfont.svg#latolight') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+/* end custom fonts */
+
+
 body {
-	font-family: 'FFDINWebPro', sans-serif;
+	font-family: 'Lato Light', sans-serif;
 	color: #808284;
 }
 
@@ -145,7 +182,7 @@ input[type=text] {
 
 .jumbotron h1 {
 	font-size: 36px;
-	font-family: 'FFDINWebPro', sans-serif;
+	font-family: 'Spinnaker', sans-serif;
 	text-shadow: 0px 2px 4px rgba(0,0,0,0.50);
 	line-height: 1;
 	padding-bottom: 0;
@@ -662,16 +699,6 @@ input[type=text] {
 
 .fivestars {
 	margin-bottom: 17px;
-}
-
-h2.bedcount {
-	font-family: 'FFDINWebPro', sans-serif;
-	text-transform: lowercase;
-	line-height: 1;
-	padding-bottom: 0;
-	margin-bottom: .1em;
-	font-size: 3.571em;
-	margin-top: 1.5em;
 }
 
 .products {
@@ -2049,7 +2076,6 @@ div.bg-Health a, div.bg-Lifestyle a {
 }
 
 button.alm-load-more-btn {	
-	font-family: 'FFDINWebPro', sans-serif;
 	font-weight: 400;
 	background: #fff;
 	color:#808080;
