@@ -48,7 +48,7 @@
 				<div class="navbar-header">
 					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
 				</div>
-				<div class="navbar-brand"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><img src="<?php bloginfo("template_url"); ?>/images/logo-the-dream-bed.svg" alt="The Dream Bed"></a></div>
+				<div class="navbar-brand"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><img src="<?php bloginfo("template_url"); ?>/images/hampton-rhodes-logo.svg" alt="Hampton & Rhodes"></a></div>
 				<div class="navbar-collapse collapse">
 					<?php if(!is_page(array('checkout', 'order-received'))) { ?>
 					<ul class="nav navbar-nav navbar-left">
@@ -92,7 +92,7 @@
 						global $woocommerce;
 						$qty = $woocommerce->cart->get_cart_contents_count();
 						$cart_url = $woocommerce->cart->get_cart_url();
-						echo '<li><a href="'. $cart_url .'">Cart ('. $qty .')</a></li>';
+						echo '<li><a href="'. $cart_url .'"  class="cart">Cart ['. $qty .']</a></li>';
 						?>
 						<li><a href="tel:<?php echo get_field('phone_number', 'options'); ?>" class="phone"><?php echo get_field('phone_number', 'options'); ?></a></li>
 					</ul>

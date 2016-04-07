@@ -16,7 +16,7 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-md-2 col-xs-12">
-				<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><img src="<?php bloginfo("template_url"); ?>/images/logo-the-dream-bed.svg" width="116" height="35" alt="The Dream Bed" class="footer-logo"></a>
+				<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><img src="<?php bloginfo("template_url"); ?>/images/hampton-rhodes-logo.svg" width="116" height="35" alt="Hampton & Rhodes" class="footer-logo"></a>
 			</div>
 			<div class="col-md-2 col-xs-5">
 				<ul class="list-unstyled footer-nav">

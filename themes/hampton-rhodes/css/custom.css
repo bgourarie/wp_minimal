@@ -88,8 +88,8 @@ input[type=text] {
 	appearance: none;
 }
 
-.navbar-default .navbar-nav>li>a.phone {
-	color: #FD9D2E;
+.navbar-default .navbar-nav>li>a.phone, .navbar-default .navbar-nav>li>a.cart {
+	color: #673956;
 }
 
 .navbar-default .navbar-nav>li>a {
@@ -101,12 +101,12 @@ input[type=text] {
 }
 
 .navbar-default .navbar-toggle .icon-bar {
-	background-color: #B9D635;
+	background-color: #532944;
 	height: 3px;
 }
 
 .navbar-default .navbar-toggle {
-	border: none;
+	/*border: none;*/
 	background-color: transparent;
 }
 
@@ -142,7 +142,8 @@ input[type=text] {
 }
 
 .yamm .yamm-content a {
-	text-decoration: underline;
+	text-decoration: none;
+	color: #000;
 }
 
 .footer {
@@ -222,15 +223,14 @@ input[type=text] {
 /* customized buttons */
 
 .btn-primary {
-	background-color: #FD9D2E;
-	border-color: #FD9D2E;
+	background-color: #FAAF4C;
+	border: 1px solid #979797;
  	filter:progid:DXImageTransform.Microsoft.Gradient(enabled='false');
 	-webkit-box-shadow: none;
 	-moz-box-shadow: none;
 	box-shadow: none;
 	background-image: none;
-	border: 0;
-	color: #F9FBED;
+	color: #fff;
 	text-transform: uppercase;
 	/*-webkit-border-radius: 0;
 	-moz-border-radius: 0;
@@ -239,13 +239,13 @@ input[type=text] {
 
 .btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active {
 	background-color: #FDA641;
-	border-color: #FDA641;
+	border-color: #979797;
 	color: #fff;
 }
 
 .btn-primary.disabled:hover, .btn-primary.disabled:focus, .btn-primary.disabled:active, .btn-primary.disabled.active, .btn-primary[disabled]:hover, .btn-primary[disabled]:focus, .btn-primary[disabled]:active, .btn-primary[disabled].active, fieldset[disabled] .btn-primary:hover, fieldset[disabled] .btn-primary:focus, fieldset[disabled] .btn-primary:active, fieldset[disabled] .btn-primary.active {
 	background-color: #FD9D2E;
-	border-color: #FD9D2E;
+	border-color: #979797;
 }
 
 .drop-shadow {
@@ -378,23 +378,6 @@ input[type=text] {
 .page-header h2 {
 	line-height: 1;
 	margin: 0;
-}
-
-.giving {
-	text-align: center;
-	padding-bottom: 40px;
-}
-
-.giving h2 {
-	margin-bottom: .2em;
-}
-
-.giving .box {
-	display: inline-block;
-}
-
-.alt-side > div {
-	background-color: #F1F2F2;
 }
 
 .bordered-action {
@@ -760,33 +743,6 @@ input[type=text] {
 
 .rowpadding > div {
 	padding: 30px;
-}
-
-.design-page, .giving-page, .how-to-dream-page {
-	text-align: center;
-}
-
-.design-page img, .giving-page img, .how-to-dream-page img {
-	margin-left: auto;
-	margin-right: auto;
-}
-
-.giving-map {
-	padding-top: 30px;
-	padding-bottom: 30px;
-}
-
-.giving-samples .row > div {
-	background-size: cover;
-	background-position: center;
-}
-
-.giving-samples .play-button {
-	width: 100px;
-	height: auto;
-	position: absolute;
-	top: calc(50% - 50px);
-	left: calc(50% - 50px);
 }
 
 .partners {
@@ -1794,287 +1750,6 @@ a.page-numbers:hover, a.page-numbers:active  {
 	left: -100px;
 }
 
-/* blog stuff */
-
-.blog-header {
-	margin-top: 10px;
-	margin-bottom: 5px;
-}
-
-.blog-title {
-	font-size: 1.143em;
-	text-transform: uppercase;
-}
-
-.blog-title a {
-	text-decoration: none;
-}
-
-.blog-title a:hover {
-	color: #4f4f4f;
-}
-
-.blog-post-content img {
-	max-width: 100%;
-	height: auto;
-	margin: 1.5em 0;
-}
-
-/* blog nav */
-
-.blog-categories {
-	height: 20px;
-	padding: 0;
-	margin: 0;
-}
-
-.navtable {
-	border: 0;
-	padding: 0;
-	margin: 0 0 0 auto;
-	height: 6px;
-}
-
-.navtable td {
-	width: 80px;
-	height: 8px;
-	text-align: center;
-	border: 0;
-	padding: 0;
-	margin: 0;
-	overflow: hidden;
-	font-size: 1px;
-}
-
-.navtable .btn {
-	padding: 0;
-	line-height: 1em;
-	font-size: 8px;
-}
-
-.navtable:hover {
-	height: 20px;
-	-webkit-transition: height 100ms ease-in-out;
-	-moz-transition: height 100ms ease-in-out;
-	-o-transition: height 100ms ease-in-out;
-	transition: height 100ms ease-in-out;
-	cursor: pointer;
-}
-
-.navtable a {
-	width: 100%;
-	display: block;
-	height: 100%;
-	color: transparent;
-}
-
-td.bg-Sleep, td.bg-Sleep a.btn {
-	background-color: #76C6ED;
-	color: #76C6ED;
-}
-
-td.bg-Giving, td.bg-Giving a.btn {
-	background-color: #F79D33;
-	color: #F79D33;
-}
-
-td.bg-Health, td.bg-Health a.btn, td.bg-Lifestyle, td.bg-Lifestyle a.btn {
-	background-color: #88C45B;
-	color: #88C45B;
-}
-
-.navcolors {
-	font-size: 60px;
-	text-align: center;	
-}
-
-.navcolors a {
-	width: 100%;
-	display: block;
-}
-
-.navcolors .row div {
-	display: none;
-}
-
-.navcolors .row div a:hover {
-	text-decoration: none;
-}
-
-.navcolors .row div.bg-Sleep, .navcolors .row div.bg-Giving, .navcolors .row div.bg-Health, .navcolors .row div.bg-Lifestyle {
-	display: block;
-}
-
-div.bg-Sleep {
-	background-color: #76C6ED;
-	color: #fff;
-	-webkit-transition: background-color 500ms ease-in-out;
-	-moz-transition: background-color 500ms ease-in-out;
-	-o-transition: background-color 500ms ease-in-out;
-	transition: background-color 500ms ease-in-out;
-}
-
-div.bg-Sleep:hover {
-	background-color: #5792AE;
-}
-
-div.bg-Sleep a {
-	color: #fff;
-}
-
-div.bg-Giving {
-	background-color: #F79D33;
-	color: #fff;
-	-webkit-transition: background-color 500ms ease-in-out;
-	-moz-transition: background-color 500ms ease-in-out;
-	-o-transition: background-color 500ms ease-in-out;
-	transition: background-color 500ms ease-in-out;
-}
-
-div.bg-Giving:hover {
-	background-color: #B77633;
-}
-
-div.bg-Giving a {
-	color: #fff;
-}
-
-div.bg-Health, div.bg-Lifestyle {
-	background-color: #88C45B;
-	color: #fff;
-	-webkit-transition: background-color 500ms ease-in-out;
-	-moz-transition: background-color 500ms ease-in-out;
-	-o-transition: background-color 500ms ease-in-out;
-	transition: background-color 500ms ease-in-out;
-}
-
-div.bg-Health:hover, div.bg-Lifestyle:hover {
-	background-color: #5C843F;
-}
-
-div.bg-Health a, div.bg-Lifestyle a {
-	color: #fff;
-}
-
-#jumpnav {
-	position: absolute;
-	width: 100%;
-	z-index: 1;
-}
-
-/* end blog nav */
-
-.blogcat-Giving, .blogcat-giving {
-	color: #f99d1e;
-}
-
-.blogcat-Sleep, .blogcat-sleep {
-	color: #72c6ef;
-}
-
-.blogcat-Health, .blogcat-health, .blogcat-Lifestyle, .blogcat-lifestyle {
-	color: #86c555;
-}
-
-.blogcatbg-Giving, .blogcatbg-giving {
-	background-color: #f99d1e;
-	color: #fff;
-}
-
-.blogcatbg-Sleep, .blogcatbg-sleep {
-	background-color: #72c6ef;
-	color: #fff;
-}
-
-.blogcatbg-Health, .blogcatbg-health, .blogcatbg-Lifestyle, .blogcatbg-lifestyle {
-	background-color: #86c555;
-	color: #fff;
-}
-
-.blogcat-Uncategorized, .blogcat-Blog {
-	display: none;
-}
-
-.blog-featured-hero img {
-	width: 100%;
-	height: auto;
-}
-
-.blog-featured {
-	position: relative;
-	min-height: 200px;
-	display: block;
-}
-
-.blog-featured-text {
-	text-align: center;
-	background-color: rgba(255,255,255,1);
-	padding: 0 15px;
-	margin-top: -30px;
-}
-
-.what-else {
-	margin-top: 30px;
-	background-color: #fff;
-}
-
-.what-else h2 {
-	margin-bottom: 0;
-	line-height: 1em;
-	margin-top: 30px;
-}
-
-.blog-related-posts-header h2 {
-	margin: 30px auto;
-}
-.blog-other-posts, .blog-post-container {
-	padding-top: 30px;
-	background-color: #fff;
-}
-
-.blog-other-posts .btn-default {
-	text-transform: uppercase;
-	padding: 6px 50px;
-	color: #808285;
-}
-
-.blog-other-teaser {
-	padding-bottom: 30px;
-}
-
-.blog-other-teaser img {
-	width: 100%;
-	height: auto;
-}
-
-.blog-other-teaser h4 {
-	margin-bottom: .2em;
-}
-
-.blog-related-posts {
-	background-color: #F2F5F5;
-	margin-top: 30px;
-	margin-bottom: 0;
-}
-
-.blog-post-hero img {
-	width: 100%;
-	height: auto;
-	display: block;
-	margin-bottom: 30px;
-}
-
-.share-posts {
-	text-align: left;
-}
-
-.share-posts-box {
-	background-color: #f1f2f2;
-	padding: 5px;
-	text-align: left;
-	display: inline-block;
-}
-
 button.alm-load-more-btn {	
 	font-weight: 400;
 	background: #fff;
@@ -2092,7 +1767,7 @@ button.alm-load-more-btn:hover{
 @media only screen and (min-width : 320px) {
 
 body {
-	padding-top: 102px;	
+	padding-top: 56px;	
 }
 
 h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
@@ -2107,14 +1782,14 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
 .navbar-brand {
 	position: absolute;
 	left: 15px;
-	top: 8px;
+	top: 16px;
 	text-align: left;
 	margin: auto;
 }
 
 .navbar-brand img {
 	margin: 0 auto;
-	width: 120px;
+	width: 200px;
 	height: auto;
 	margin-top: 0;
 }
@@ -2146,25 +1821,8 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
 	font-size: 2.143em;
 }
 
-.home-review-box {
-	background-image: url(../images/photos/girl-on-pink-bed.jpg);
-	background-position: left;
-}
-
 .giving h2 {
 	font-size: 24px;
-}
-
-.giving .box img.block {
-	width: 50px;
-	height: 50px;
-}
-
-.giving .box img.math {
-	width: 17px;
-	height: 17px;
-	margin-left: 18px;
-	margin-right: 18px;
 }
 
 .btn-lg {
@@ -2217,16 +1875,6 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
 	text-decoration: none;
 }
 
-.dream-it-forward-jumbo h1 {
-	font-size: 1.857em;
-}
-
-.dream-it-forward-jumbo .play-button {
-	width: 100px;
-	height: auto;
-	margin-bottom: 15px;
-}
-
 .signup {
 	width: 100%;
 }
@@ -2243,57 +1891,8 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
 	padding-bottom: 15px;
 }
 
-.ellen {
-	padding: 20px 0;
-	background-color: #52bfe3;
-	color: #fff;
-}
-
-.as-seen-on {
-	width: 200px;
-	height: auto;
-}
-
-.unboxing {
-	padding: 20px 0;
-	background-color: #fff;
-}
-
-.unboxing h4, .ellen h4 {
-	font-size: 1em;	
-	line-height: 1.429em;
-}
-
-.featured-news h2 {
-	margin-top: 0;
-	margin-bottom: 0;
-}
-
-.featured-news p {
-	display: none;
-}
-
-.dreamsearchform {
-	display: block;
-	margin-bottom: 20px;
-}
-
-#jumpnav {
-	top: 206px;
-}
-
 .faq-header {
 	margin-bottom: -93px
-}
-
-.mattress-bg img {
-	margin: 0 auto 100px auto;
-	width: 70%;
-	height: auto;
-}
-
-.mattress-bg h1 {
-	top: 20px;
 }
 
 }
@@ -2304,15 +1903,6 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
 .btn-breadcrumb {
 	width: 100%;
 	margin-top: 0
-}
-
-.dream-it-fwd {
-	background-position: top right -100px;
-	padding-top: 15px;
-}
-
-.dream-it-fwd h3 {
-	font-size: 1.143em;
 }
 
 .shop-badge-text {
@@ -2364,22 +1954,8 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
 	text-align: center;
 }
 
-#jumpnav {
-	top: 206px;
-}
-
 .faq-header {
 	margin-bottom: -93px
-}
-
-.mattress-bg img {
-	margin: 0 auto 100px auto;
-	width: 70%;
-	height: auto;
-}
-
-.mattress-bg h1 {
-	top: 20px;
 }
 
 }
@@ -2388,7 +1964,7 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
 @media only screen and (min-width : 768px) {
 
 body {
-	padding-top: 99px;	/* this is for the fixed navbar - take out if not using */
+	padding-top: 70px;	/* this is for the fixed navbar - take out if not using */
 }
 
 h1, .h1 {
@@ -2419,34 +1995,23 @@ h6, .h6 {
 	font-size: 2.143em;
 }
 
-.dream-it-fwd {
-	background-position: right top;
-	padding-top: 0;
-}
-
-.dream-it-forward-jumbo .play-button {
-	width: 65px;
-	height: auto;
-	margin-bottom: 15px;
-}
-
 .navbar-brand {
 	position: absolute;
 	width: 100%;
 	text-align: center;
 	margin: auto;
-	top: 7px;
+	top: 25px;
 }
 
 .navbar-brand img {
 	margin: 0 auto;
-	width: 110px;
+	width: 200px;
 	height: auto;
 }
 
 .navbar-nav>li>a {
-	padding-top: 15px;
-	padding-bottom: 13px;
+	padding-top: 25px;
+	padding-bottom: 25px;
 }
 
 .btn-lg {
@@ -2485,36 +2050,8 @@ h6, .h6 {
 	background-image: url(../images/photos/feet-hanging-off-bed.jpg);
 }
 
-.giving .box img.block {
-	width: 88px;
-	height: 88px;
-}
-
-.giving .box img.math {
-	width: 30px;
-	height: 30px;
-	margin-left: 40px;
-	margin-right: 40px;
-}
-
 .shop-badge-text {
 	padding-top: 0;
-}
-
-.vertical-align {
-	display: flex;
-	flex-direction: row;
-}
-
-.vertical-align > [class^="col-"],
-.vertical-align > [class*=" col-"] {
-	display: flex;
-	align-items: center;
-	justify-content: center; 
-}
-
-.design-page, .giving-page, .how-to-dream-page {
-	text-align: left;
 }
 
 .instagram-review-photos ul>li:nth-child(even) {
@@ -2525,16 +2062,6 @@ h6, .h6 {
 .instagram-review-photos ul>li:nth-child(odd) {
 	padding-left: 15px;
 	padding-right: 15px;
-}
-
-.unboxing {
-	padding: 20px 0;
-	background-color: #f2f2f2;	
-}
-
-.unboxing h4, .ellen h4 {
-	font-size: 1.286em;
-	line-height: 1.429em;
 }
 
 .as-seen-on {
@@ -2600,18 +2127,6 @@ h6, .h6 {
 	margin-bottom: -39px
 }
 
-.mattress-bg img {
-	margin: 0 auto 80px auto;
-}
-
-.mattress-bg h1 {
-	top: 17px;
-}
-
-#jumpnav {
-	top: 184px;
-}
-
 }
 
 /* Medium Devices, Desktops */
@@ -2619,24 +2134,13 @@ h6, .h6 {
 
 .navbar-brand {
 	padding-left: 0;
+	top: 20px;
 }
 
 .navbar-brand img {
 	margin: 0 auto;
-	width: 110px;
+	width: 298px;
 	height: auto;
-}
-
-.dream-it-fwd {
-	background-position: top center;
-}
-
-.dream-it-fwd h3 {
-	font-size: 1.429em;
-}
-
-.giving h2 {
-	font-size: 40px;
 }
 
 .jumbotron {
@@ -2682,25 +2186,6 @@ h6, .h6 {
 
 .review-add-button {
 	text-align: right;
-}
-
-.as-seen-on {
-	width: 100%;
-	height: auto;
-}
-
-.why-choose img {
-	margin-top: 0;
-}
-
-.why-choose p {
-	margin-left: 20px;
-	margin-right: 20px;
-}
-
-.divided {
-	background: url(../images/bg-line.svg) center no-repeat;
-	background-size: auto 90%;
 }
 
 .home-bed-options .text-part {
@@ -2770,10 +2255,7 @@ h6, .h6 {
 /* Large Devices, Wide Screens */
 @media only screen and (min-width : 1200px) {
 
-.blog-featured-text {
-	width: 30%;
-	right: 0;
-}
+
 
 }
 
@@ -2786,17 +2268,5 @@ h6, .h6 {
 	background-image: url(../images/footer-bg@2x.png);
 	background-size: 35px 66px;
 }
-
-.dark-grey-shapes {
-	position: relative;
-	background-image: url(../images/bg-dark-version.png);
-	background-size: 35px 66px;
-	background-position: 0 -15px;
-}
-
-}
-
-@media (-webkit-min-device-pixel-ratio: 2) and (max-width : 767px) {
-
 
 }
