@@ -2145,6 +2145,10 @@ h6, .h6 {
 	height: auto;
 }
 
+.yamm .yamm-content {
+	font-size: 18px;
+}
+
 .jumbotron {
 	height: 500px;
 	min-height: 500px;

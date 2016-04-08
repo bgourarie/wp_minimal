@@ -53,7 +53,7 @@
 					<?php if(!is_page(array('checkout', 'order-received'))) { ?>
 					<ul class="nav navbar-nav navbar-left">
 						<li class="dropdown yamm-fw">
-							<a href="#" class="dropdown-toggle" data-toggle="dropdown">Shop <i class="fa fa-angle-down"></i></a>
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown">Products <i class="fa fa-angle-down"></i></a>
 							<ul class="dropdown-menu">
 								<li>
 									<div class="yamm-content">
