@@ -63,6 +63,7 @@ p.demo_store {
 	text-transform: uppercase;
 	background-color: #fff;
 	margin-bottom: 0;
+	box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.50);
 }
 
 .navbar-brand {
@@ -157,9 +158,9 @@ input[type=text] {
 	overflow: hidden;
 	text-align: center;
 	color: #fff;
-	-webkit-box-shadow: inset 0 20px 20px -20px rgba(0,0,0,0.8);
+	/*-webkit-box-shadow: inset 0 20px 20px -20px rgba(0,0,0,0.8);
 	-moz-box-shadow: inset 0 20px 20px -20px rgba(0,0,0,0.8);
-	box-shadow: inset 0 20px 20px -20px rgba(0,0,0,0.8);
+	box-shadow: inset 0 20px 20px -20px rgba(0,0,0,0.8);*/
 	display: table;
 	margin-bottom: 30px;
 	background-size: cover;
@@ -587,90 +588,6 @@ input[type=text] {
 	color: #fff;
 }
 
-.jump-on-bed {
-	height: 534px;
-	background-image: url(../images/photos/kids-jumping-on-dream-bed.jpg);
-	background-position: bottom center;	
-	position: relative; 
-	width: 100%;
-	padding: 0;
-}
-
-.jump-on-bed-cta {
-	position: absolute;
-	top: 441px;
-	text-align: center;
-	width: 100%;
-	padding: 0;
-}
-
-.dream-it-fwd {
-	background: url(../images/photos/dream-it-fwd-mattress.jpg) no-repeat;
-	background-size: cover;
-	height: 411px;
-	background-position: top right -160px;
-}
-
-.dream-it-fwd-content {
-	text-align: center;
-}
-
-.dream-it-fwd-content img {
-	margin: 20px auto;
-	width: 218px;
-	height: auto;
-}
-
-.dream-it-fwd h3 {
-	text-shadow: 1px 1px 4px rgba(100, 100, 100, 1);
-	color: #fff;
-	font-weight: 700;
-	margin-top: 0;
-	font-size: 20px;
-}
-
-.mobile-home-jumbo {
-	background-image: url(../images/photos/feet-hanging-off-bed-detail.jpg);
-	background-position: left;
-	-webkit-clip-path: none;
-	clip-path: none;
-	margin-bottom: 0;
-	padding: 0;
-}
-
-.mobile-home-jumbo .main-text {
-	position: absolute;
-	padding: 0;
-	text-align: center;
-	bottom: 0;
-	padding: 15px 0;
-	width: 100%;
-	background-color: rgba(124,124,124,.5);
-}
-
-.mobile-home-jumbo h1 {
-	text-transform: none;
-	margin-bottom: 15px;
-	margin-top: 0;
-}
-
-.dream-it-forward-jumbo {
-	background-image: url(../images/photos/dream-it-fwd-mattress-delivery-van.jpg);
-	-webkit-clip-path: none;
-	clip-path: none;
-	margin-bottom: 0;
-	padding-bottom: 30px;
-	-webkit-box-shadow: inset 0 20px 20px -20px rgba(0,0,0,0.8), inset 0 -20px 80px -20px rgba(0,0,0,0.8);
-	-moz-box-shadow: inset 0 20px 20px -20px rgba(0,0,0,0.8), inset 0 -20px 80px -20px rgba(0,0,0,0.8);
-	box-shadow: inset 0 20px 20px -20px rgba(0,0,0,0.8), inset 0 -20px 80px -20px rgba(0,0,0,0.8);
-	border-bottom: 2px solid #999999;
-}
-
-.dream-it-forward-jumbo h1 {
-	text-transform: none;
-	margin-bottom: 20px;
-}
-
 .home-find-store p:last-child {
 	margin-bottom: 50px;
 }
@@ -717,14 +634,6 @@ input[type=text] {
 .products .product-text {
 	width: 75%;
 	margin: 0 auto;
-}
-
-.products .or-text {
-	position: relative;
-	top: 70px;
-	width: 10%;
-	left: 45%;
-	text-align: center;
 }
 
 .product-image-cta {
@@ -1769,7 +1678,7 @@ button.alm-load-more-btn:hover{
 @media only screen and (min-width : 320px) {
 
 body {
-	padding-top: 56px;	
+	padding-top: 54px;	
 }
 
 h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
@@ -1804,11 +1713,6 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
 .jumbotron {
 	height: 300px;
 	min-height: 300px;
-}
-
-.mobile-home-jumbo {
-	height: 360px;
-	min-height: 370px;
 }
 
 .carousel h1 {
@@ -2150,8 +2054,8 @@ h6, .h6 {
 }
 
 .jumbotron {
-	height: 500px;
-	min-height: 500px;
+	height: 680px;
+	min-height: 680px;
 }
 
 .page-header {
@@ -2210,7 +2114,7 @@ h6, .h6 {
 }
 
 .home-jumbo {
-	background-position: 0 60%;
+	
 }
 
 .featured-news h2 {

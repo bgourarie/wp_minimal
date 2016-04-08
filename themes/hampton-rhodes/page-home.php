@@ -2,14 +2,7 @@
 
 <div id="home">
 
-<div class="jumbotron mobile-home-jumbo visible-xs">
-	<div class="main-text">
-		<h1><?php echo get_field('header_text'); ?></h1>
-		<div><a href="<?php echo get_field('button_link') ?>" class="btn btn-primary btn-lg" role="button"><?php echo get_field('button_text') ?></a></div>
-	</div>
-</div>
-
-<div class="jumbotron home-jumbo hidden-xs" style="background-image: url('<?php echo get_field('hero_image'); ?>')">
+<div class="jumbotron home-jumbo" style="background-image: url('<?php echo get_field('hero_image'); ?>')">
 	<div class="container">
 		<div class="row">
 			<div class="col-sm-8 col-sm-offset-2 col-xs-12">
