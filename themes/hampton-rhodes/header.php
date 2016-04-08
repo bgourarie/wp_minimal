@@ -59,16 +59,16 @@
 									<div class="yamm-content">
 										<div class="row"> 
 											<div class="col-sm-4 col-xs-4 text-center">
-												<a href="<?php bloginfo('url'); ?>/shop/"><img src="<?php bloginfo("template_url"); ?>/images/menu-mattresses.png" alt="Shop Mattresses" class="img-responsive"></a>
-												<p><a href="<?php bloginfo('url'); ?>/shop/">Mattresses</a></p>
+												<a href="<?php bloginfo('url'); ?>/product-category/mattress/"><img src="<?php bloginfo("template_url"); ?>/images/menu-mattresses.png" alt="Shop Mattresses" class="img-responsive"></a>
+												<p><a href="<?php bloginfo('url'); ?>/product-category/mattress/">Mattresses</a></p>
 											</div>
 											<div class="col-sm-4 col-xs-4 text-center">
-												<a href="<?php bloginfo('url'); ?>/shop/"><img src="<?php bloginfo("template_url"); ?>/images/menu-mattress-sets.png" alt="Shop Mattress Sets" class="img-responsive"></a>
-												<p><a href="<?php bloginfo('url'); ?>/shop/">Mattress Sets</a></p>
+												<a href="<?php bloginfo('url'); ?>/product-category/bed-sets/"><img src="<?php bloginfo("template_url"); ?>/images/menu-mattress-sets.png" alt="Shop Mattress Sets" class="img-responsive"></a>
+												<p><a href="<?php bloginfo('url'); ?>/product-category/bed-sets/">Mattress Sets</a></p>
 											</div>
 											<div class="col-sm-4 col-xs-4 text-center">
-												<a href="<?php bloginfo('url'); ?>/shop/"><img src="<?php bloginfo("template_url"); ?>/images/menu-accessories.png" alt="Shop Accessories" class="img-responsive"></a>
-												<p><a href="<?php bloginfo('url'); ?>/shop/">Accessories</a></p>
+												<a href="<?php bloginfo('url'); ?>/product-category/accessories/"><img src="<?php bloginfo("template_url"); ?>/images/menu-accessories.png" alt="Shop Accessories" class="img-responsive"></a>
+												<p><a href="<?php bloginfo('url'); ?>/product-category/accessories/">Accessories</a></p>
 											</div>
 										</div>
 									</div>
