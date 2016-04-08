@@ -15,8 +15,8 @@
 <footer class="footer">
 	<div class="container">
 		<div class="row">
-			<div class="col-md-2 col-xs-12">
-				<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><img src="<?php bloginfo("template_url"); ?>/images/hampton-rhodes-logo.svg" width="116" height="35" alt="Hampton & Rhodes" class="footer-logo"></a>
+			<div class="col-md-3 col-xs-12">
+				<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><img src="<?php bloginfo("template_url"); ?>/images/hampton-rhodes-logo.svg" alt="Hampton & Rhodes" class="footer-logo"></a>
 			</div>
 			<div class="col-md-2 col-xs-5">
 				<ul class="list-unstyled footer-nav">
@@ -24,7 +24,7 @@
 					<li><script type="extole/widget">{"zone":"db_global_footer"}</script></li>
 				</ul>
 			</div>
-			<div class="col-md-4 col-xs-6">
+			<div class="col-md-3 col-xs-6">
 				<div class="footer-contact">
 					<h4>Customer Service</h4>
 					<ul class="list-unstyled">
@@ -37,7 +37,7 @@
 			<div class="col-md-4 col-xs-12">
 				<div class="footer-newsletter clearfix">
 					<h4>Newsletter Signup</h4>
-					<?php //gravity_form(1, false, false, false, '', true, 12); ?>
+					<?php gravity_form(2, false, false, false, '', true, 12); ?>
 				</div>
 				<div class="footer-social">
 					<div><a href="https://instagram.com/hamptonrhodes/" target="_blank"><img src="<?php bloginfo("template_url"); ?>/images/ico-instagram.svg" alt="Instagram"></a></div>
