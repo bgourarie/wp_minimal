@@ -58,22 +58,17 @@
 								<li>
 									<div class="yamm-content">
 										<div class="row"> 
-											<div class="col-sm-3 col-xs-6 text-center">
-												<a href="<?php bloginfo('url'); ?>/shop/mattress/dream-bed/"><img src="<?php bloginfo("template_url"); ?>/images/menu-original-bed.png" alt="Shop Original Dream Bed" class="img-responsive"></a>
-												<p><a href="<?php bloginfo('url'); ?>/shop/mattress/dream-bed/">Original Dream Bed</a></p>
+											<div class="col-sm-4 col-xs-4 text-center">
+												<a href="<?php bloginfo('url'); ?>/shop/"><img src="<?php bloginfo("template_url"); ?>/images/menu-mattresses.png" alt="Shop Mattresses" class="img-responsive"></a>
+												<p><a href="<?php bloginfo('url'); ?>/shop/">Mattresses</a></p>
 											</div>
-											<div class="col-sm-3 col-xs-6 text-center">
-												<a href="<?php bloginfo('url'); ?>/shop/mattress/cool-gel-bed/"><img src="<?php bloginfo("template_url"); ?>/images//menu-cool-bed.png" alt="Shop Cool Dream Bed" class="img-responsive"></a>
-												<p><a href="<?php bloginfo('url'); ?>/shop/mattress/cool-gel-bed/">Cool Dream Bed</a></p>
+											<div class="col-sm-4 col-xs-4 text-center">
+												<a href="<?php bloginfo('url'); ?>/shop/"><img src="<?php bloginfo("template_url"); ?>/images/menu-mattress-sets.png" alt="Shop Mattress Sets" class="img-responsive"></a>
+												<p><a href="<?php bloginfo('url'); ?>/shop/">Mattress Sets</a></p>
 											</div>
-											<div class="clearfix visible-xs"></div>
-											<div class="col-sm-3 col-xs-6 text-center">
-												<a href="<?php bloginfo('url'); ?>/shop/pillows/original-dream-pillow/"><img src="<?php bloginfo("template_url"); ?>/images/menu-original-pillow.png" alt="Shop Cool Dream Pillow" class="img-responsive"></a>
-												<p><a href="<?php bloginfo('url'); ?>/shop/pillows/original-dream-pillow/">Original Dream Pillow</a></p>
-											</div>
-											<div class="col-sm-3 col-xs-6 text-center">
-												<a href="<?php bloginfo('url'); ?>/shop/pillows/cool-dream-pillow/"><img src="<?php bloginfo("template_url"); ?>/images//menu-cool-pillow.png" alt="Shop Cool Dream Pillow" class="img-responsive"></a>
-												<p><a href="<?php bloginfo('url'); ?>/shop/pillows/cool-dream-pillow/">Cool Dream Pillow</a></p>
+											<div class="col-sm-4 col-xs-4 text-center">
+												<a href="<?php bloginfo('url'); ?>/shop/"><img src="<?php bloginfo("template_url"); ?>/images/menu-accessories.png" alt="Shop Accessories" class="img-responsive"></a>
+												<p><a href="<?php bloginfo('url'); ?>/shop/">Accessories</a></p>
 											</div>
 										</div>
 									</div>
