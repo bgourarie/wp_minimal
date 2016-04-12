@@ -94,7 +94,7 @@
 			<div class="col-lg-4 col-md-4 col-sm-5 col-xs-6">
 				<h3>Delivery Guarantee</h3>
 				<p>Our Red Carpet Delivery Service&trade; guarantees your purchase is delivered within a 3 hour window, or else it&rsquo;s FREE.</p>
-				<p><a href="<?php echo $fp1->get_permalink(); ?>" role="button" class="btn btn-primary">Learn More</a></p>
+				<p><a href="#" role="button" class="btn btn-primary">Learn More</a></p>
 			</div>
 		</div>
 	</div>

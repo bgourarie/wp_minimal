@@ -65,6 +65,7 @@ p.demo_store {
   color: #fff;
   z-index: 99998;
   box-shadow: 0 1px 1em rgba(0,0,0,.2);
+  opacity: .2;
 }
 
 .navbar {
