@@ -85,42 +85,19 @@
 		</div>
 	</div>
 </div>
-
-<div class="container">
-		<div class="row">
-			<div class="col-xs-10 col-xs-offset-1 col-md-4 col-md-offset-4">
-				<div class="home-free-shipping">
-					<div>
-						<h4>Free shipping -- this container is full width for the free shpping and pickup banner thing!</h4>
-					</div>
-				</div>	
-			</div>
-		</div>
-</div>
-
-<div class="dark-grey-shapes why-choose">
+<div class="home-free-shipping">
 	<div class="container">
 		<div class="row">
-			<div class="col-xs-6 col-sm-3 text-center">
-				<img src="<?php bloginfo("template_url"); ?>/images/icon-moon.svg" class="center-block" alt="">
-				Badge text to go along the side of the icon i guess
+			<div class="col-lg-3 col-lg-offset-3 col-md-3 col-md-offset-3 col-sm-4 col-sm-offset-2 col-xs-4 col-xs-offset-1 text-right">
+				<img src="<?php bloginfo("template_url"); ?>/images/icon-deliverytruck.png" class="img-responsive truck" alt="">
 			</div>
-			<div class="col-xs-6 col-sm-3 text-center">
-				<img src="<?php bloginfo("template_url"); ?>/images/icon-deliverybox.svg" class="center-block" alt="">
-				Badge text to go along the side of the icon i guess
-			</div> 
-			<div class="clearfix visible-xs-block"></div>
-			<div class="col-xs-6 col-sm-3 text-center">
-				<img src="<?php bloginfo("template_url"); ?>/images/icon-dreamboxes.svg" class="center-block" alt="">
-				Badge text to go along the side of the icon i guess
-			</div> 
-			<div class="col-xs-6 col-sm-3 text-center">
-				<img src="<?php bloginfo("template_url"); ?>/images/icon-heartbed.svg" class="center-block" alt="">
-				Badge text to go along the side of the icon i guess
-			</div> 
+			<div class="col-lg-4 col-md-4 col-sm-5 col-xs-6">
+				<h3>Delivery Guarantee</h3>
+				<p>Our Red Carpet Delivery Service&trade; guarantees your purchase is delivered within a 3 hour window, or else it&rsquo;s FREE.</p>
+				<p><a href="<?php echo $fp1->get_permalink(); ?>" role="button" class="btn btn-primary">Learn More</a></p>
+			</div>
 		</div>
 	</div>
 </div>
-
 
 <?php get_footer(); ?>
