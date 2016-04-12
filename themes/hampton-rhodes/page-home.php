@@ -63,7 +63,10 @@
 		<div class="triangle">
 			<div class="container">
 			<div class="row">
-				<div class="col-sm-5">
+				<div class="col-sm-7 col-sm-push-5 featured-product-image center-block">
+					<?php echo $fp2->get_image($image_size); ?>
+				</div>
+				<div class="col-sm-5 col-sm-pull-7">
 					<h3><a href="<?php echo $fp2->get_permalink(); ?>"><?php echo $fp2->get_title(); ?></a></h3>
 					<p><?php echo apply_filters('the_excerpt', get_post_field('post_excerpt', $fp2->get_id())); ?></p>
 					<div class="product-tags">
@@ -77,9 +80,6 @@
 					<p><?php echo $fp2->get_price_html(); ?></p>
 					<p><a href="<?php echo $fp1->get_permalink(); ?>" role="button" class="btn btn-primary btn-lg">Shop Now</a></p>			
 				</div>
-				<div class="col-sm-7 featured-product-image center-block">
-					<?php echo $fp2->get_image($image_size); ?>
-				</div>
 			</div>
 		</div>
 		</div>
@@ -89,7 +89,7 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-lg-3 col-lg-offset-3 col-md-3 col-md-offset-3 col-sm-4 col-sm-offset-2 col-xs-4 col-xs-offset-1 text-right">
-				<img src="<?php bloginfo("template_url"); ?>/images/icon-deliverytruck.png" class="img-responsive truck" alt="">
+				<img src="<?php bloginfo("template_url"); ?>/images/icon-deliverytruck.png" class="img-responsive" alt="">
 			</div>
 			<div class="col-lg-4 col-md-4 col-sm-5 col-xs-6">
 				<h3>Delivery Guarantee</h3>

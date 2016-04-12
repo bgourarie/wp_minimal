@@ -324,10 +324,59 @@ input[type=text] {
 	border-color: #979797;
 }
 
+.input-group-btn .btn-primary {
+	border-color: #CCCCCC;
+}
+
 .drop-shadow {
 	-webkit-box-shadow: 0 3px 4px 0 rgba(0, 0, 0, .14), 0 3px 3px -2px rgba(0, 0, 0, .2), 0 1px 8px 0 rgba(0, 0, 0, .12);
     -moz-box-shadow: 0 3px 4px 0 rgba(0, 0, 0, .14), 0 3px 3px -2px rgba(0, 0, 0, .2), 0 1px 8px 0 rgba(0, 0, 0, .12);
     box-shadow: 0 3px 4px 0 rgba(0, 0, 0, .14), 0 3px 3px -2px rgba(0, 0, 0, .2), 0 1px 8px 0 rgba(0, 0, 0, .12);
+}
+
+.find-a-store {
+	background: #fff;
+	color: #4C4C4C;
+	border-top: 2px solid #E5E5E5;
+}
+
+.find-a-store .fa {
+	color: #512641;
+	font-size: larger;
+	padding-right: 8px
+}
+
+.find-a-store .logo {
+	display: inline-block;
+}
+
+.find-a-store .row {
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+.vertical-align {
+	display: table;
+}
+
+.vertical-align div {
+	display: table-cell;
+	vertical-align: middle;
+}
+
+.our-guarantees {
+	border-bottom: 2px solid #DDDDDD;
+	padding-bottom: 40px;
+	margin-bottom: 40px;
+}
+
+.gicon {
+	padding-right: 14px;
+}
+
+.gicon img {
+	height: 43px;
+	width: auto;
 }
 
 .footer {
@@ -1919,6 +1968,16 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
 	padding-bottom: 20px;
 }
 
+.find-a-store {
+	padding-bottom: 20px;
+}
+
+.find-a-store .logo {
+	height: 40px;
+	width: auto;
+	margin: 10px;
+}
+
 .home-jumbo {
 	background-position: bottom;
 }
@@ -2032,6 +2091,17 @@ h6, .h6 {
 	display: block;
 }
 
+.find-a-store {
+	padding-top: 30px;
+	padding-bottom: 50px;
+}
+
+.find-a-store .logo {
+	height: 60px;
+	width: auto;
+	margin: 20px;
+}
+
 .home-bed-options h2 {
 	font-size: 2.857em;
 }
@@ -2140,6 +2210,12 @@ h6, .h6 {
 .footer .footer-logo {
 	width: 210px;
 	height: auto;
+}
+
+.find-a-store .logo {
+	height: 34px;
+	width: auto;
+	margin: 20px;
 }
 
 .btn-primary {

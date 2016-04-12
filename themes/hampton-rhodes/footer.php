@@ -11,8 +11,54 @@
 
 
 	</div><!-- #content -->
-	
+<div class="find-a-store">
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-12 text-center">
+				<h2><i class="fa fa-map-marker" aria-hidden="true"></i> Find a Store</h2>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-12 text-center">
+				<img src="<?php bloginfo("template_url"); ?>/images/logo-mattress-firm.png" class="logo" alt="Mattress Firm">
+				<img src="<?php bloginfo("template_url"); ?>/images/logo-sleep-train.png" class="logo" alt="Mattress Firm">
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-4 col-md-offset-4 col-sm-6 col-sm-offset-3 text-center">
+				<div class="input-group">
+					<input type="text" class="form-control" placeholder="ZIP code or City, State">
+					<span class="input-group-btn">
+						<button class="btn btn-primary" type="button">Search</button>
+					</span>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
 <footer class="footer">
+	<div class="container hidden-xs our-guarantees">
+		<div class="row">
+			<div class="col-sm-4">
+				<div class="vertical-align">
+					<div class="gicon"><img src="<?php bloginfo("template_url"); ?>/images/icon-100percent.png" alt="Happiness guarantee"></div>
+					<div class="text">Happy or your money back<br>Comfort, Service and Price</div>
+				</div>
+			</div>
+			<div class="col-sm-4">
+				<div class="vertical-align center-block">
+					<div class="gicon"><img src="<?php bloginfo("template_url"); ?>/images/icon-dollarsign.png" alt="Low price guarantee"></div>
+					<div class="text">Our Low price Guarantee<br> We'll beat any competitor's price</div>
+				</div>
+			</div>
+			<div class="col-sm-4">
+				<div class="vertical-align pull-right">
+					<div class="gicon"><img src="<?php bloginfo("template_url"); ?>/images/icon-trucker.png" alt="Delivery guarantee"></div>
+					<div class="text">Delivery Guarantee<br>Guaranteed on time</div>
+				</div>
+			</div>
+		</div>
+	</div>
 	<div class="container">
 		<div class="row">
 			<div class="col-md-3 col-xs-12">
