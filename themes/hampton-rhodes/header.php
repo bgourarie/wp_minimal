@@ -37,13 +37,6 @@
 
 	<header id="masthead" class="site-header" role="banner">
 		<nav class="navbar yamm navbar-default navbar-fixed-top" role="navigation">
-			<!-- <div class="container-fluid extole-header">
-				<div class="row">
-					<div class="col-sm-12">
-							Give $50, get $50 <span class="hidden-xs">when you share Dream Bed with a friend!</span> <script type="extole/widget">{"zone":"db_banner_qa"}</script>
-					</div>
-				</div>
-			</div> -->
 			<div class="container">
 				<div class="navbar-header">
 					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>

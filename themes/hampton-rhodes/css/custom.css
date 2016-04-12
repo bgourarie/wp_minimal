@@ -61,11 +61,11 @@ p.demo_store {
   font-size: 1em;
   padding: 1em 0;
   text-align: center;
-  background-color: #A5ABAB;
+  background-color: #f00;
   color: #fff;
   z-index: 99998;
   box-shadow: 0 1px 1em rgba(0,0,0,.2);
-  opacity: .2;
+  opacity: .3;
 }
 
 .navbar {
