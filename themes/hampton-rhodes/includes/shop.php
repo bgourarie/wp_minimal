@@ -52,6 +52,7 @@ function output_shop_hero(){
 	if(is_product_category()){
 		$hero_img_url = get_field('hero_image', "product_cat_".get_queried_object()->term_id); 
 		$hero_text = get_field('header_text',  "product_cat_".get_queried_object()->term_id );
+		$hero_subtext = get_field('subheader_text',  "product_cat_".get_queried_object()->term_id );
 		$hero_button_url = get_field('button_link', "product_cat_".get_queried_object()->term_id);
 		$hero_button_text =  get_field('button_text',  "product_cat_".get_queried_object()->term_id);
 		if($hero_img_url):
@@ -61,10 +62,15 @@ function output_shop_hero(){
 				<div class="row">
 					<div class="col-sm-8 col-sm-offset-2 col-xs-12">
 						<?php if($hero_text){ ?>
-						<h1 class="hidden-sm"><?php echo $hero_text;  ?></h1>
+							<h1 class="hidden-sm"><?php echo $hero_text;  ?></h1>
+						<?php } ?>
+						<?php if($hero_subtext){ ?>
+							<h3 class="hidden-sm"><?php echo $hero_subtext;  ?></h3>
 						<?php } ?>
 						<?php if ($hero_button_text && $hero_button_url){ ?>
-						<div class="cta"><a href="<?php echo $hero_button_url; ?>" class="btn btn-primary btn-lg" role="button"><?php echo $hero_button_text; ?></a></div>
+							<div class="cta">
+								<a href="<?php echo $hero_button_url; ?>" class="btn btn-primary btn-lg" role="button"><?php echo $hero_button_text; ?></a>
+							</div>
 						<?php } ?>
 						<img class="pin" src="<?php echo $hero_img_url; ?>" data-pin-description="" alt="">
 					</div>
