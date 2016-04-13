@@ -49,21 +49,31 @@ function show_subcategories_if_applicable(){
 
 add_action('woocommerce_before_main_content','output_shop_hero',5,0);
 function output_shop_hero(){
-	if(is_shop()):
-	?>
-	<div class="jumbotron home-jumbo hidden-xs" style="background-image: url('<?php echo get_field('hero_image'); ?>')">
-		<div class="container">
-			<div class="row">
-				<div class="col-sm-8 col-sm-offset-2 col-xs-12">
-					<h1 class="hidden-sm"><?php echo get_field('header_text'); ?></h1>
-					<div class="cta"><a href="<?php echo get_field('button_link') ?>" class="btn btn-primary btn-lg" role="button"><?php echo get_field('button_text') ?></a></div>
-					<img class="pin" src="<?php echo get_field('hero_image'); ?>" data-pin-description="The Dream Bed: Free shipping and a no nightmare guarantee." alt="">
+	if(is_product_category()){
+		$hero_img_url = get_field('hero_image', "product_cat_".get_queried_object()->term_id); 
+		$hero_text = get_field('header_text',  "product_cat_".get_queried_object()->term_id );
+		$hero_button_url = get_field('button_link', "product_cat_".get_queried_object()->term_id);
+		$hero_button_text =  get_field('button_text',  "product_cat_".get_queried_object()->term_id);
+		if($hero_img_url):
+		?>
+		<div class="jumbotron home-jumbo hidden-xs" style="background-image: url('<?php echo $hero_img_url; ?>')">
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-8 col-sm-offset-2 col-xs-12">
+						<?php if($hero_text){ ?>
+						<h1 class="hidden-sm"><?php echo $hero_text;  ?></h1>
+						<?php } ?>
+						<?php if ($hero_button_text && $hero_button_url){ ?>
+						<div class="cta"><a href="<?php echo $hero_button_url; ?>" class="btn btn-primary btn-lg" role="button"><?php echo $hero_button_text; ?></a></div>
+						<?php } ?>
+						<img class="pin" src="<?php echo $hero_img_url; ?>" data-pin-description="" alt="">
+					</div>
 				</div>
 			</div>
 		</div>
-	</div>
-	<?php
-	endif;
+		<?php
+		endif;
+	}
 }
 // show 9 products per page...
 add_filter('loop_shop_per_page','show_nine_beds_per_page',10, 1);
